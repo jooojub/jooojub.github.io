@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>BlogInn | Jekyll Theme Documentation</title>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600" type="text/css" media="all">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all">
+</head>
+<body>
+    <div class="wrap">
+        <header class="site-header">
+            <h1 class="site-title">BlogInn - Jekyll Theme v1.0.2</h1>
+            <p class="site-description">Theme Documentation</p>
+        </header><!-- .site-header -->
+        <div id="main">
+            <div class="intro">
+                <p>First of all a huge thanks for purchasing this theme! If you have any questions that are not answered here, please feel free to email via our user page <a href="http://themeforest.net/user/justgoodthemes">here</a>. Thanks so much!</p>
+                <ul class="byline">
+                    <li><em>Email:</em> <a href="mailto:justgoodthemes@gmail.com">justgoodthemes@gmail.com</a></li>
+                    <li><em>Twitter:</em> <a href="https://twitter.com/justgoodthemes">@justgoodthemes</a></li>
+                </ul>
+            </div><!-- .intro -->
+            <div id="content" role="main">
+                <section>
+                    <h2 id="toc">Table of Contents</h2>
+                    <ol>
+                        <li><a href="#theme-info"><strong>Theme Information</strong></a>
+                            <ol>
+                                <li><a href="#keyfeatures">Key Features</a></li>
+                                <li><a href="#themestructure">Theme Structure</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#installation"><strong>Installation</strong></a>
+                            <ol>
+                                <li><a href="#methodOne">Method One</a></li>
+                                <li><a href="#methodTwo">Method Two</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#themeConfiguration"><strong>Theme Configuration</strong></a>
+                            <ol>
+                                <li><a href="#authorInformation">Author Information</a></li>
+                                <li><a href="#sidebarConfiguration">Sidebar Configuration</a></li>
+                                <li><a href="#socialLinks">Social Links</a></li>
+                             </ol>
+                        </li>
+                        <li><a href="#otherOptions "><strong>Other Theme Options</strong></a>
+                            <ol>
+                                <li><a href="#favicon">Favicon</a></li>
+                                <li><a href="#404page">404 Page</a></li>
+                                <li><a href="#images">Images</a></li>
+                                <li><a href="#siteNavigation">Site Navigation</a></li>
+                            </ol>
+                        </li>                      
+                        <li><a href="#Support"><strong>Support</strong></a></li>
+                        <li><a href="#Updates"><strong>Updates</strong></a></li>
+                        <li><a href="#Credits"><strong>Credits</strong></a></li>
+                    </ol>
+                    <hr />
+                </section>
+                <section>
+                    <h2 id="theme-info">A. Theme Information</h2>
+                    <ul>
+                      <li>Name: <strong>BlogInn</strong></li>
+                      <li>Description: Responsive, bold &amp; minimal <a href="https://jekyllrb.com/">Jekyll</a> theme</li>
+                      <li>Current Version: 1.0.2</li>
+                      <li>Released: 07/04/2016</li>
+                      <li>Creator: <a href="https://justgoodthemes.com">JustGoodThemes.com</a></li>
+                      <li><a href="https://jekyllrb.com/">Jekyll</a> version: 3.2.x</li>
+                    </ul>
+                    <h3 id="keyfeatures">1. Key Features</h3>
+                    <ul>
+                        <li>Mobile first &amp; fully responsive (wide, normal, narrow, mobile)</li>
+                        <li>Retina display ready – all icons are optimized for retina devices</li>
+                        <li>Clean, well commented code, easy to customize</li>
+                        <li>Author information</li>
+                        <li>Tag page support</li>
+                        <li>Code syntax highlighter</li>
+                        <li>Disqus commenting</li>
+                        <li>Sharing post integration</li>
+                        <li>Social media icons</li>
+                        <li>Tag cloud and latest posts widgets</li>
+                        <li>Regular theme updates</li>
+                    </ul>
+                    <h3 id="themestructure">2. Theme Structure</h3>
+                    <p>Here's an overview of the theme file structure.</p>
+<pre><code>.
+├── _config.yml
+├── _includes
+│   ├── disqus.html
+│   ├── footer.html
+│   ├── image_caption.html
+│   ├── image_full.html
+│   └── sidebar.html
+├── _layouts
+│   ├── default.html
+│   ├── page.html
+│   └── post.html
+├── _posts
+│   ├── 2016-03-01-the-advantages-and-disadvantages-of-working-from-home.md
+│   ├── 2016-03-02-set-up-your-new-iphone-6-the-Right-Way.md
+│   ├── 2016-03-19-basic-rules-for-walking-in-the-mountains.md
+│   ├── 2016-03-22-a-week-with-the-apple-watch.md
+│   └── 2016-03-23-Graphic-Designer-On-The-Road.md
+├── _sass
+│   ├── _general.scss
+│   ├── _icons.scss
+│   ├── _reset.scss
+│   └── _variables.scss
+├── _site
+├── css
+│   └── main.scss
+├── fonts
+│   ├── fontawesome.eot
+│   ├── fontawesome.svg
+│   ├── fontawesome.ttf
+│   └── fontawesome.woff
+├── images
+│   ├── 404.jpg
+│   ├── aboutPage.jpg
+│   ├── authorimage.png
+│   ├── banner.jpg
+│   └── posts
+│       ├── Apple-Watch-In-Car.jpg
+│       ├── Apple-Watch.jpg
+│       ├── Desk.jpg
+│       ├── Mountain.jpg
+│       ├── Mountain2.jpg
+│       ├── design.jpg
+│       ├── iPhone-6.jpg
+│       ├── iPhone-In-Hand.jpg
+│       └── road.jpg
+├── js
+│   ├── custom.js
+│   └── plugins.js
+└── tags
+    └── index.html
+├── about.md
+├── style-guide.md
+├── 404.md
+├── favicon.ico
+├── feed.xml
+├── index.html
+    </code></pre>
+                    <hr />
+                </section>
+                <p>The following guide assumes you have some knowledge of the Jekyll platform, including setting up of its prerequisites and a suitable server environment. Further information on this can be found in the official <a href="http://jekyllrb.com/docs/home/">Jekyll Documentation</a>.</p>
+                <section>
+                    <h2 id="installation">B. Installation - <a href="#toc">top</a></h2>
+                    <p>Sites built using Jekyll can be deployed in a large number of ways due to the static nature of the generated output. A few of the most common deployment methods are described below.</p>
+                    <h3 id="methodOne">Method One</h3>
+                    <ul>
+                        <li>Login to your hosting environment via (S)FTP, or preferred file transfer method.</li>
+                        <li>Navigate to the directory you wish to install the blog. If you have an already existing Jekyll install, it's recommended to start a new blog, and transfer the files over to the new install.</li>
+                        <li>Copy the contents of 'bloginn' into the newly created directory.</li>
+                        <li>Edit the <strong>_config.yml</strong> file. More information on the available options can be found in the <strong>Customization</strong> section of this document.</li>
+                        <li>Using SSH, run <strong>jekyll serve</strong> within the directory.</li>
+                    </ul>
+                    <h3 id="methodtwo">Method Two</h3>
+                    <p>Just about any traditional web hosting provider will let you upload files to their servers over FTP. To upload a Jekyll site to a web host using FTP, simply run the <strong>jekyll build</strong> command and copy the generated <strong>_site</strong> folder to the root folder of your hosting account. This is most likely to be the <strong>httpdocs</strong> or <strong>public_html</strong> folder on most hosting providers.</p>
+                </section>
+                <section>
+                    <h2 id="themeConfiguration">C. Theme Configuration - <a href="#toc">top</a></h2>
+                    <p>These options can be found within the <strong>_config.yml</strong> file. More information about Jekyll configuration can be found in the <a href="https://jekyllrb.com/docs/configuration/">Jekyll documentation</a>.</p>
+                    <ul>
+                        <li><strong>title</strong> - the title of your blog, shown in the page and description areas.</li>
+                        <li><strong>description</strong> - a description of your site for social meta tag, search engines, and feed.xml.</li>
+                        <li><strong>tagline</strong> - a tagline shown next to the site title.</li>
+                        <li><strong>baseurl</strong> - the subpath of your site, e.g. /blog, for generating urls. If baseurl is set, you will need to prepend the baseurl to these settings: author image, site navigation, post images.</li>
+                        <li><strong>url</strong> - the base hostname and protocol of your site for where absolute urls are needed.</li>
+                        <li><strong>disqus</strong> - your Disqus shortname. Enter the Disqus shortname here if you wish to have Disqus comments enabled, leave blank to disable comments.</li>
+                        <li><strong>paginate</strong> - the option responsible for posts per page count.</li>
+                    </ul>
+                    <h3 id="authorInformation">Author information</h3>
+                    <ul>
+                        <li><strong>author_name</strong> - name of the post/blog author.</li>
+                        <li><strong>author_bio</strong> - author biography which is shown at the bottom of each post.</li>
+                        <li><strong>author_url</strong> - URL of the author website.</li>
+                        <li><strong>author_location</strong> - author location e.g. London, UK.</li>
+                        <li><strong>author_image</strong> - author profile image, shown at the bottom of each post. Author image can be found in <strong>bloginn/images/authorimage.jpg</strong> location.</li>
+                    </ul>
+                    <h3 id="sidebarConfiguration">Sidebar Configuration</h3>
+                    <h4 id="adBanner">Ad Banner</h4>
+                    <ul>
+                        <li><strong>banner_url</strong> - the banner URL.</li>
+                        <li><strong>banner_image</strong> - the banner image path. Banner image can be found in <strong>bloginn/images/banner.jpg</strong> location.</li>
+                    </ul>
+                   <h4 id="newsletterSignup">Newsletter Signup</h4>
+                   <ul>
+                        <li><strong>mailchimp_url</strong> - your form action URL for MailChimp newsletter signup form.</li>
+                   </ul>
+                   <h3 id="socialLinks">Social Links</h3>
+                   <p>To enable social links in the footer simply enter your social profile username, for example <strong>twitter_username: "justgoodthemes" </strong>. If a field is left blank, the social icon will not be shown.</p>
+                    <ul>
+                        <li>twitter_username</li>
+                        <li>facebook_username</li>
+                        <li>googleplus_username</li>
+                        <li>github_username</li>
+                        <li>codepen_username</li>
+                        <li>dribbble_uername</li>
+                        <li>medium_username</li>
+                        <li>instagram_username</li>
+                        <li>pinterest_username</li>
+                        <li>linkedin_username</li>
+                    </ul>
+                </section>
+                <section>
+                    <h2 id="otherOptions">D. Other Theme Options - <a href="#toc">top</a></h2>
+                    <h3 id="favicon">Favicon</h3>
+                    <p>To change the favicon, replace favicon.ico file located in the root folder of the theme.</p>
+                    <h3 id="404page">404 page</h3>
+                    <p>The 404 page is located in the root folder of the theme. The image of this page is located in <strong>bloginn/images/404.jpg</strong> location.</p>
+                    <h3 id="images">Images</h3>
+                    <p>Images for pages are located in the <strong>bloginn/images</strong> folder and the images for posts are located in the <strong>bloginn/images/posts</strong> folder.</p>
+                    <h3 id="imageCaption">Image With Caption</h3>
+                    <p>Within your blog posts you can include captions for images. This requires using some HTML markup.</p>
+                    <p>The example below illustrates how to include an image with a caption in a blog post:</p>
+                    <pre><code>{% include image_caption.html imageurl="/images/posts/Apple-Watch-In-Car.jpg" 
+title="Apple Super" caption="supertest" %}</code></pre>
+                    <p>Add the following code into your post/page markdown and change its attributes accordingly.</p>
+                    <h3 id="imagefull">Full Width Image With Caption</h3>
+                    <p>The example below shows how to include a full width image with a caption in a blog post:</p> 
+                    <pre><code>{% include image_full.html imageurl="/images/posts/Apple-Watch-In-Car.jpg" 
+title="Apple" caption="This is caption" %}</code></pre>
+                    <p>Add the following code into your post/page markdown and change its attributes accordingly.</p>
+                    <h2 id="siteNavigation">Site Navigation</h2>
+                    <p>Site navigation can be found in the <strong>_config.yml</strong> file. To add a page to site navigation simply add your new page in markdown format (e.g. newpage.md) in the theme root folder. Next edit your navigation menu located in _config.yml file on line 26. To add a new item in navigation you have to add the item name and url. For example:</p>
+                    <pre><code>
+    navigation:
+    - text: New Page
+      url: /newpage/
+                    </code></pre>
+                </section>
+                <section>
+                    <h2 id="Support">E. Support - <a href="#toc">top</a></h2>
+                    <p>The documentation included provides all the information needed to get the theme installed and customized. However, if you have any questions you can email us at justgoodthemes@gmail.com, and we will be happy to help you.</p>
+                    <p>If you have any bug reports, or feature requests, please let us know!</p>
+                    <hr />
+                </section>
+                <section>
+                    <h2 id="Updates">F. Updates - <a href="#toc">top</a></h2>
+                    <p>We’re dedicated to keeping our <strong>BlogInn</strong> Jekyll theme up to date.</p>
+                    <hr />
+                </section>
+                <section>
+                    <h2 id="Credits">G. Credits - <a href="#toc">top</a></h2>
+                    <p>We have used the following scripts, fonts or other files as listed.</p>
+                    <ul>
+                        <li>Lato font: <a href="https://www.google.com/fonts/specimen/Lato">https://www.google.com/fonts/specimen/Lato</a></li>
+                        <li>Font Awesome icons: <a href=" http://fontawesome.io"> http://fontawesome.io</a></li>
+                        <li>FitVids plugin: <a href="http://fitvidsjs.com/">http://fitvidsjs.com/</a></li>
+                    </ul>
+                    <hr />
+                </section>
+                <p><a href="#toc">Go To Table of Contents</a></p>
+            </div><!-- #content -->
+        </div><!-- #main -->
+        <footer class="site-info">
+            <p>© 2016 Just Good Themes. All rights reserved.</p>
+        </footer><!-- .site-info -->
+    </div><!-- .wrap -->
+</body>
+</html>

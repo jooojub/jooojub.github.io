@@ -1,0 +1,475 @@
+/* Colors
+------------------------
+Green:                           #FFCB2E;
+Darker Green:                    #ffedb7;
+Blue (Links):                   #0c92f2;
+Blue Light (Hover):             #a1d5fa;
+White (background):             #f5f5f5;
+Lither Grey (body txt):         #313131;
+Light Grey:                     #dcdcdc;
+------------------------
+*/
+
+/* Font Awesome icons by Dave Gandy | http://fontawesome.io
+------------------------*/
+@font-face {
+    font-family: 'fontawesome';
+    src:url('../fonts/fontawesome.eot?8twc17');
+    src:url('../fonts/fontawesome.eot?8twc17#iefix') format('embedded-opentype'),
+        url('../fonts/fontawesome.ttf?8twc17') format('truetype'),
+        url('../fonts/fontawesome.woff?8twc17') format('woff'),
+        url('../fonts/fontawesome.svg?8twc17#fontawesome') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    font-family: 'fontawesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-star:before {
+    content: "\f005";
+}
+.icon-close:before {
+    content: "\f00d";
+}
+.icon-signal:before {
+    content: "\f012";
+}
+.icon-map-marker:before {
+    content: "\f041";
+}
+.icon-chevron-left:before {
+    content: "\f053";
+}
+.icon-chevron-right:before {
+    content: "\f054";
+}
+.icon-chevron-up:before {
+    content: "\f077";
+}
+.icon-twitter:before {
+    content: "\f099";
+}
+.icon-facebook:before {
+    content: "\f09a";
+}
+.icon-feed:before {
+    content: "\f09e";
+}
+.icon-chain:before {
+    content: "\f0c1";
+}
+.icon-navicon:before {
+    content: "\f0c9";
+}
+.icon-google:before {
+    content: "\f0d5";
+}
+.icon-envelope:before {
+    content: "\f0e0";
+}
+.icon-linkedin:before {
+    content: "\f0e1";
+}
+.icon-github:before {
+    content: "\f113";
+}
+.icon-code:before {
+    content: "\f121";
+}
+.icon-youtube:before {
+    content: "\f16a";
+}
+.icon-instagram:before {
+    content: "\f16d";
+}
+.icon-flickr:before {
+    content: "\f16e";
+}
+.icon-tumblr:before {
+    content: "\f173";
+}
+.icon-dribbble:before {
+    content: "\f17d";
+}
+.icon-behance:before {
+    content: "\f1b4";
+}
+.icon-soundcloud:before {
+    content: "\f1be";
+}
+.icon-vine:before {
+    content: "\f1ca";
+}
+.icon-codepen:before {
+    content: "\f1cb";
+}
+.icon-pinterest:before {
+    content: "\f231";
+}
+.icon-medium:before {
+    content: "\f23a";
+}
+.icon-500px:before {
+    content: "\f26e";
+}
+.icon-vimeo:before {
+    content: "\f27d";
+}
+
+/* Reset
+------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+		border: 0;
+		font-family: inherit;
+		font-size: 100%;
+		font-style: inherit;
+		font-weight: inherit;
+		margin: 0;
+		outline: 0;
+		padding: 0;
+		vertical-align: baseline;
+}
+
+html {
+		font-size: 100%;
+		-webkit-text-size-adjust: 100%;
+		-ms-text-size-adjust: 100%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section {
+		display: block;
+}
+
+table {
+		border-collapse: separate;
+		border-spacing: 0;
+}
+
+caption, th, td {
+		font-weight: normal;
+		text-align: left;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+		content: "";
+}
+
+blockquote, q {
+		quotes: "" "";
+}
+
+a:focus {
+		outline: thin dotted;
+}
+
+a:hover,
+a:active {
+		outline: 0;
+}
+
+a img {
+		border: 0;
+}
+
+/* Global
+------------------------*/
+
+body {
+		background: #f5f5f5;
+		border-top: 4px solid #e8e8e8;
+		color: #313131;
+		font-family: "Open Sans", Helvetica, Arial, sans-serif;
+		line-height: 1.75;
+}
+
+h1, h2, h3, h4, h5, h6 {
+		color: #1f1f1f;
+		font-weight: bold;
+		margin: 28px 0 22px;
+}
+
+h1 {
+		font-size: 36px;
+		line-height: 42px;
+		letter-spacing: -1px;
+}
+
+h2 {
+		font-size: 28px;
+		line-height: 32px;
+		letter-spacing: -1px;
+}
+
+h3 {
+		font-size: 22px;
+		line-height: 30px;
+		letter-spacing: -1px;
+}
+
+h4 {
+		font-size: 18px;
+		line-height: 24px;
+}
+
+h5 {
+		font-size: 16px;
+		line-height: 20px;
+}
+
+hr {
+		background: #dcdcdc;
+		border: 0;
+		height: 1px;
+		margin: 28px 0;
+}
+
+p {
+		margin-bottom: 22px;
+}
+
+code,
+kbd,
+pre,
+samp {
+	background: #f5f5f5;
+	font-family: monospace, serif;
+	font-size: 16px;
+	padding: 0 3px;
+}
+
+pre {
+	margin: 0 0 22px;
+}
+
+dl {
+		margin: 0 30px 28px;
+}
+
+dt {
+		font-weight: bold;
+}
+
+dd {
+		margin: 0 0 22px;
+}
+
+ul, ol {
+		margin-bottom: 22px;
+		padding-left: 30px;
+}
+
+ul {
+		list-style: circle;
+}
+
+ol {
+		list-style: upper-alpha;
+}
+
+ol ol {
+		list-style: decimal;
+}
+
+li > ul,
+li > ol {
+		margin-bottom: 0;
+}
+
+b,
+strong {
+		font-weight: bold;
+}
+
+dfn,
+em,
+cite,
+i {
+		font-style: italic;
+}
+
+a {
+		border-bottom: 1px solid #0c92f2;
+		color: #0c92f2;
+		text-decoration: none;
+		-webkit-transition: all 0.3s;
+		-moz-transition: all 0.3s;
+		transition: all 0.3s;
+}
+
+a:hover {
+		border-bottom: 1px solid #a1d5fa;
+		color: #a1d5fa;
+}
+
+img {
+		height: auto;
+		max-width: 100%;
+		vertical-align: middle;
+		width: auto;
+		-ms-interpolation-mode: bicubic;
+}
+
+/* Clearing floats */
+.row:after { 
+	clear: both; 
+}
+
+.row:before,.row:after { 
+	content: ""; 
+	display: table; 
+}
+
+/* Grid */
+.row {
+	margin-left: -30px;
+}
+
+.one-third {
+	-webkit-box-sizing:	border-box;
+	-moz-box-sizing:	border-box;
+	box-sizing:			border-box;
+	float: left;
+	margin-bottom: 14px;
+	padding-left: 30px;
+	width: 33.333%;
+}
+
+/* Structure
+------------------------*/
+
+body {
+	padding: 0 15px;
+}
+
+.wrap {
+		margin: 0 auto;
+		max-width: 980px;
+}
+
+/* Header
+------------------------*/
+
+.site-header {
+		padding: 28px 30px;
+}
+
+.site-title {
+		margin: 0;
+		text-align: center;
+}
+
+.site-description {
+		font-size: 24px;
+		letter-spacing: -1px;
+		line-height: 30px;
+		margin-bottom: 28px;
+		text-align: center;
+}
+
+/* Main
+------------------------*/
+
+#main {
+		background: #fff;
+		border: 1px solid #dcdcdc;
+}
+
+/* Intro */
+.intro {
+		background: #262626;
+		color: #fff;
+		padding: 28px 30px;
+		text-align: center;
+}
+
+.intro p {
+	font-size: 22px;
+	font-style: italic;
+	line-height: 30px;
+	margin-bottom: 28px;
+}
+
+.intro a {
+		border-color: #FFCB2E;
+		color: #FFCB2E;
+}
+
+.intro a:hover {
+		border-color: #ffedb7;
+		color: #ffedb7;
+}
+
+.byline {
+		list-style: none;
+		margin-bottom: 28px;
+		padding-left: 0;
+		text-align: center;
+}
+
+.byline em {
+		color: #888;
+}
+
+/* Content */
+#content {
+	margin: 0 auto;
+	padding: 28px 60px;
+}
+
+#content section {
+	margin-bottom: 56px;
+}
+
+.icon {
+	font-size: 14px;
+	margin-right: 10px;
+}
+
+/* Footer
+------------------------*/
+.site-info {
+		font-size: 14px;
+		line-height: 24px;
+		padding: 28px 30px;
+		text-align: center;
+}
+
+
+
+/* Media Queries
+------------------------*/
+@media only screen and (max-width: 767px) {
+	#content {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
