@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site title
-title: "BlogInn"
+title: "jooojub"
 
 # A description of your site for social meta tag, search engines, and feed.xml
 description: "BlogInn is a bold theme for the Jekyll blogging platform. Available for purchase at ThemeForest.net."
@@ -38,10 +38,10 @@ navigation:
 disqus:
 
 # Author information - author info at the bottom of the post
-author_name: "John Doe"
+author_name: "jooojub"
 author_bio: "John is a designer, photographer, speaker, author of a couple of books about typography and the founder of photo magazine Curious."
-author_url:  "http://justgoodthemes.com"
-author_location: "Vilnius, Lithuania"
+author_url:  "http://jooojub.github.io"
+author_location: "Korea, Suwon"
 author_image: /images/authorimage.png
 
 # Sidebar Add banner
@@ -52,16 +52,16 @@ banner_image: images/banner.jpg
 mailchimp_url: "//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117"
 
 # Social links in the site footer
-twitter_username: "username"
-facebook_username: "username"
-googleplus_username: "+username"
-github_username: "username"
-codepen_username: "username"
-dribbble_uername: "username"
-medium_username: "@username"
-instagram_username: "username"
-pinterest_username: "username"
-linkedin_username: "username"
+#twitter_username: "username"
+#facebook_username: "username"
+#googleplus_username: "+username"
+github_username: "jooojub"
+#codepen_username: "username"
+#dribbble_uername: "username"
+#medium_username: "@username"
+#instagram_username: "username"
+#pinterest_username: "username"
+#linkedin_username: "username"
 
 # http://jekyllrb.com/docs/pagination/
 paginate: 5
