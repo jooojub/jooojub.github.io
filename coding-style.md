@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Style Guide
+title: Coding Style
 description: This is a style guide of the BlogInn Jekyll theme
 ---
 

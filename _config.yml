@@ -9,10 +9,10 @@
 title: "jooojub"
 
 # A description of your site for social meta tag, search engines, and feed.xml
-description: "BlogInn is a bold theme for the Jekyll blogging platform. Available for purchase at ThemeForest.net."
+description: "Think deeply..."
 
 # Tagline near the site title
-tagline: "Thoughts, stories and ideas."
+tagline: "Think deeply..."
 
 # The subpath of your site, e.g. /blog, for generating urls
 baseurl:
@@ -21,7 +21,7 @@ sass:
   sass_dir: _sass
 
 # The base hostname & protocol of your site for where absolute urls are needed
-url: "http://justgoodthemes.com"
+url: "http://jooojub.github.io"
 
 # Site navigation - each item must have a title and a url.
 navigation:
@@ -29,27 +29,27 @@ navigation:
   url: /
 - text: About
   url: /about/
-- text: Style Guides
-  url: /style-guide/
 - text: Archives
   url: /tags/
+- text: Coding Style
+  url: /coding-style/
 
 # The shortname for your Disqus site to enable comments.
 disqus:
 
 # Author information - author info at the bottom of the post
 author_name: "jooojub"
-author_bio: "John is a designer, photographer, speaker, author of a couple of books about typography and the founder of photo magazine Curious."
+author_bio: "jooojub is an ordinary system s/w engineer. Specifically, linux kernel, u-boot, systemd, tizen, etc..."
 author_url:  "http://jooojub.github.io"
 author_location: "Korea, Suwon"
 author_image: /images/authorimage.png
 
 # Sidebar Add banner
-banner_url: "http://justgoodthemes.com"
+banner_url: "http://jooojub.github.io"
 banner_image: images/banner.jpg
 
 # Sidebar newsletter widget - add your form action url for MailChimp signup form here
-mailchimp_url: "//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117"
+#mailchimp_url: "//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117"
 
 # Social links in the site footer
 #twitter_username: "username"
