@@ -185,6 +185,7 @@
   color: #f92672;
 }
 .highlight {
+  border-radius: 10px;
   color: #75715e;
   background-color: #212121;
 }
@@ -195,6 +196,17 @@
   margin-top: 5px;
   margin-left: 5px;
 }
+.highlight pre {
+  font-size: 14px;
+  font-family: monospace;
+  line-height: 1.6;
+  border: 0px;
+  padding: 10px 10px 10px 15px;
+  position: relative;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
 .highlight pre code {
   display: block;
   white-space: pre;
@@ -202,7 +214,7 @@
   word-wrap: normal;
 }
 .hljs-attribute, .hljs-keyword, .hljs-name, .hljs-section, .hljs-selector-tag, .hljs-title {
-  font-weight:400!important;
+  font-weight: 400!important;
 }
 .highlight td {
   margin: 0;
