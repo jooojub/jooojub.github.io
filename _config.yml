@@ -71,4 +71,13 @@ gems: [jekyll-paginate]
 permalink: pretty
 markdown: kramdown
 kramdown:
-    auto_ids: false
+  input: GFM
+  syntax_highlighter: rouge
+  auto_ids: false
+  syntax_highlighter_opts:
+    default_lang: c
+    css_class: 'highlight'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
