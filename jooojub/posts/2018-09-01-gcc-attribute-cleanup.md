@@ -32,44 +32,49 @@ The following phrases are noticeable:
 > The cleanup attribute runs a function when the variable goes out of scope
 
 It means, if used well, we will be able to prevent situations where a leak occur due to failure to maintain the pair like {malloc/free, open/close, ...}
-
-# HoHoHo
+## Check with code
+sample source code:
 {% highlight c linenos %}
 #include <stdio.h>
+#define cleanup \
+    __attribute__ ((__cleanup__(clean_up)))
 
-/* comment */
-int main(void) {
-  int val = 1;
+void clean_up(int *arg) {
+    printf("%s: called by __clean_up__: %d\n", __func__, *arg);
 
+    return;
+}
 
+int main(int argc, char **argv) {
+    /* Use __cleanup__ attribute */
+    cleanup int val = 5;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  printf("Test: %d\n", val);
-  return 0;
+    return 0;
 }
 {% endhighlight %}
+result:
+{% highlight python %}
+$ clean_up: called by __clean_up__: 5
+{% endhighlight %}
+assembly:
+{% highlight iasm linenos %}
+00000000004005c1 <main>:
+...
+  4005da:   mov    %rax,-0x18(%rbp)
+  4005de:   xor    %eax,%eax
+  4005e0:   movl   $0x5,-0x1c(%rbp)
+  4005e7:   mov    $0x0,%ebx
+  4005ec:   lea    -0x1c(%rbp),%rax
+  4005f0:   mov    %rax,%rdi
 
-{% highlight c %}
-int val = 1;
+  /* cleanup is called automatically before return */
+  4005f3:   callq  400596 <clean_up>
+...
+  40060e:   add    $0x28,%rsp
+  400612:   pop    %rbx
+  400613:   pop    %rbp
+  400614:   retq
+  400615:   nopw   %cs:0x0(%rax,%rax,1)
+  40061c:
+  40061f:   nop
 {% endhighlight %}
