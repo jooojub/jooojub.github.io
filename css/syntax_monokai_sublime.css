@@ -193,12 +193,12 @@
   color: #ccc;
   display: inline-block;
   padding: 0px;
-  margin-top: 5px;
+  margin-top: 8px;
   margin-left: 5px;
 }
 .highlight pre {
-  font-size: 14px;
-  font-family: monospace;
+  font-size: 16px;
+  font-family: 'Ubuntu';
   line-height: 1.6;
   border: 0px;
   padding: 10px 10px 10px 15px;
@@ -208,6 +208,8 @@
   word-wrap: break-word;
 }
 .highlight pre code {
+  font-size: 16px;
+  font-family: 'Ubuntu';
   display: block;
   white-space: pre;
   overflow-x: auto;
