@@ -65,7 +65,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 
 .hljs-string,
 .hljs-type,
-.hljs-built_in,
 .hljs-builtin-name,
 .hljs-selector-id,
 .hljs-selector-attr,
@@ -76,8 +75,36 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   color: #e6db74;
 }
 
+.hljs-built_in {
+  color: #66d9ef;
+}
+
 .hljs-comment,
-.hljs-deletion,
-.hljs-meta {
+.hljs-deletion {
   color: #75715e;
+}
+
+.hljs-meta {
+  color: #f92672;
+}
+
+.hljs-types {
+  color: #66d9ef;
+  font-style: italic;
+}
+
+.hljs-meta-string {
+  color: #e6db74;
+}
+
+.hljs-header {
+  color: #e6db74;
+}
+
+.hljs-format-string {
+  color: #ae81ff;
+}
+
+.hljs-custom_keywords {
+  color: #ae81ff;
 }
