@@ -8,7 +8,8 @@
     <link rel="shortcut icon" href="{{ "/favicon.ico" | prepend: site.baseurl }}">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Ubuntu:400,700" />
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/syntax_monokai_sublime.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/style/monokai-sublime.css" />
+    <link rel="stylesheet" href="{{ site.baseurl }}/css/custom.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css" />
     <link rel="canonical" href="{{ page.url | replace:'/index.html','/' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }} Feed" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
@@ -41,6 +42,18 @@
     </header>
     {{content}}
     {% include footer.html %}
+    <script src="{{ site.baseurl }}/css/highlight.pack.js"></script>
+    <script src="{{ site.baseurl }}/css/highlightjs-line-numbers.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.initLineNumbersOnLoad();
+        $(document).ready(function() {
+            $('code.hljs').each(function(i, block) {
+                hljs.lineNumbersBlock(block);
+            });
+        });
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/js/plugins.js"></script>
     <script type="text/javascript" src="{{ site.baseurl }}/js/custom.js"></script>
