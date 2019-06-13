@@ -34,13 +34,13 @@ The following phrases are noticeable:
 It means, if used well, we will be able to prevent situations where a leak occur due to failure to maintain the pair like {malloc/free, open/close, ...}
 ## Check with code
 sample source code:
-{% highlight c linenos %}
+{% highlight c %}
 #include <stdio.h>
 #define cleanup \
     __attribute__ ((__cleanup__(clean_up)))
 
 void clean_up(int *arg) {
-    printf("%s: called by __clean_up__: %d\n", __func__, *arg);
+    printf("%s: called by __clean_up__: %d %lld\n", __func__, *arg);
 
     return;
 }
@@ -57,7 +57,7 @@ result:
 $ clean_up: called by __clean_up__: 5
 {% endhighlight %}
 assembly:
-{% highlight iasm linenos %}
+{% highlight x86asm %}
 00000000004005c1 <main>:
 ...
   4005da:   mov    %rax,-0x18(%rbp)
