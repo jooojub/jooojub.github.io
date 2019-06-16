@@ -20,6 +20,9 @@ layout: default
                 </header><!-- .entry-header -->
                 <div class="entry-content">
                     {{content}}
+		    <div class="comments">
+			{% include disqus_comments.html %}
+		    </div>
                 </div><!-- .entry-content -->
                 <footer class="entry-footer">
                     <div class="share-post">
