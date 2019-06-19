@@ -170,6 +170,9 @@
     function lineNumbersBlock (element, options) {
         if (typeof element !== 'object') return;
 
+	if ($(element).parents('div').attr('class') == 'noline')
+	    return;
+
         async(function () {
             element.innerHTML = lineNumbersInternal(element, options);
         });
