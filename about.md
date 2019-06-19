@@ -4,7 +4,7 @@ title: About this blog
 description: An optional about page for BlogInn Jekyll theme
 banner_image: aboutPage.jpg
 ---
-This blog will be written in my own wiki and portfolio, not the usual blog pages.
+This blog will be written in my own wiki and portfolio. Unkindness pages...
 
 ### Areas of interest
 + Bootloader
@@ -13,11 +13,4 @@ This blog will be written in my own wiki and portfolio, not the usual blog pages
 + Tizen
 + Reverse engineering
 + Clean and security coding
-
-### Language Skills
-+ C and C++
-+ assembly (arm, intel)
-+ java
-+ MFC, C# and WPF
-+ shell script
-+ python
++ Compiler
