@@ -1,1 +1,1 @@
-../jooojub/posts/gcc/attribute_cleanup/2018-09-01-gcc-attribute-cleanup.md
+../jooojub/posts/gcc/attribute_cleanup/2019-06-16-gcc-attribute-cleanup.md

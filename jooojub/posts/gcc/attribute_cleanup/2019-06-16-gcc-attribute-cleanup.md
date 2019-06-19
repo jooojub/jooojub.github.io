@@ -106,10 +106,12 @@ int main(int argc, char **argv) {
 }
 {% endhighlight %}
 <mark>result:</mark>
+<div class="noline" markdown="1">
 {% highlight bash%}
 value freed
 before return
 {% endhighlight %}
+</div>
 
 <mark>assembly:</mark>
 {% highlight x86asm %}
@@ -157,7 +159,7 @@ int main(int argc, char **argv) {
 	char *value = NULL;
 
 	value = (char *)new_buffer(5);
-	strncpy(value, "test", 10);
+	strncpy(value, "test", 5);
 
 	printf("value: %s\n", value);
 
