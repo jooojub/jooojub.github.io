@@ -2,6 +2,7 @@
 layout: post
 title:  "gcc attribute: nonnull"
 date:   2019-07-01
+share:	false
 tags: [gcc, attribute]
 ---
 
