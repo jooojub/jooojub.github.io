@@ -40,7 +40,7 @@ In the gcc-3.3 release note, nonnull was first introduced and used in many place
 </table>
 ***
 
-For more information, kindly write to gcc documents.
+Details are kindly documented in the gcc documentation.
 
 ***
 <table>
@@ -101,10 +101,12 @@ I have specified that `dest` and `src` in my_test_function() should not be NULL.
 $ gcc -Wnonnull nonnull.c
 
 nonnull.c: In function ‘main’:
-nonnull.c:11:2: warning: null argument where non-null required (argument 1) [-Wnonnull]
+nonnull.c:11:2: warning: null argument where non-null required
+										(argument 1) [-Wnonnull]
   my_test_function(NULL, NULL, 10);
   ^~~~~~~~~~~~~~~~
-nonnull.c:11:2: warning: null argument where non-null required (argument 2) [-Wnonnull]
+nonnull.c:11:2: warning: null argument where non-null required
+										(argument 2) [-Wnonnull]
 {% endhighlight %}
 </div>
 The compiler kindly warned that we could not use NULL for argnument 1, 2.<br>
@@ -114,10 +116,12 @@ Because warning can overlook sometimes, we can print it out as an error to cause
 $ gcc -Werror=nonnull nonnull.c
 
 nonnull.c: In function ‘main’:
-nonnull.c:11:2: error: null argument where non-null required (argument 1) [-Werror=nonnull]
+nonnull.c:11:2: error: null argument where non-null required
+										(argument 1) [-Werror=nonnull]
   my_test_function(NULL, NULL, 10);
   ^~~~~~~~~~~~~~~~
-nonnull.c:11:2: error: null argument where non-null required (argument 2) [-Werror=nonnull]
+nonnull.c:11:2: error: null argument where non-null required
+										(argument 2) [-Werror=nonnull]
 cc1: some warnings being treated as errors
 {% endhighlight %}
 </div>
@@ -129,7 +133,8 @@ This attribute only check the detectable state at compile-time, which also has l
 #include <string.h>
 #include <stdlib.h>
 
-void __attribute__((nonnull(1, 2))) my_test_function(char *dest, const char *src, int len) {
+void __attribute__((nonnull(1, 2)))
+		my_test_function(char *dest, const char *src, int len) {
 	strncpy(dest, src, len);
 }
 
@@ -153,7 +158,8 @@ If no argument index list is given to the `nonnull attribute`, NULL is checked f
 #include <string.h>
 #include <stdlib.h>
 
-void __attribute__((nonnull)) my_test_function(char *dest, const char *src, int len) {
+void __attribute__((nonnull))
+		my_test_function(char *dest, const char *src, int len) {
 	strncpy(dest, src, len);
 }
 
@@ -168,10 +174,12 @@ int main(void) {
 $ gcc -Werror=nonnull nonnull.c
 
 nonnull.c: In function ‘main’:
-nonnull.c:11:2: error: null argument where non-null required (argument 1) [-Werror=nonnull]
+nonnull.c:11:2: error: null argument where non-null required
+										(argument 1) [-Werror=nonnull]
   my_test_function(NULL, NULL, 10);
   ^~~~~~~~~~~~~~~~
-nonnull.c:11:2: error: null argument where non-null required (argument 2) [-Werror=nonnull]
+nonnull.c:11:2: error: null argument where non-null required
+										(argument 2) [-Werror=nonnull]
 cc1: some warnings being treated as errors
 {% endhighlight %}
 </div>
