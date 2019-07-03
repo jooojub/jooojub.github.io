@@ -3,7 +3,7 @@ layout: post
 title:  "gcc attribute: cleanup"
 date:   2019-06-16
 share:	false
-tags: [gcc, attribute]
+tags: [gcc-attribute]
 ---
 
 Requires :
