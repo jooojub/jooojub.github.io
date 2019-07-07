@@ -143,7 +143,7 @@ I have seen how to treat `char` by default for each architecture.
 ...
 {% endhighlight %}
 #### -> ppc: default unsigned char
-{% highlight mipsasm %}
+{% highlight x86asm %}
  /*
   - lis (Load Immediate Shifted): signed char
   - li (Load Immediate): unsigned char
