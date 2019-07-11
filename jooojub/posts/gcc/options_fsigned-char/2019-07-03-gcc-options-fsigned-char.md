@@ -2,8 +2,10 @@
 layout: post
 title:  "gcc options: -fsigned-char"
 date:   2019-07-03
-share:	false
+share:	true
 tags: [gcc-options]
+keywords: [gcc-options, gcc, options, fsigned-char]
+description: "This option, and its inverse, let you make such a program work with the opposite default."
 ---
 
 Requires :
