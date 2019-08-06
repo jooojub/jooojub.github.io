@@ -1,0 +1,1 @@
+../jooojub/posts/gcc/builtin_alloca/2019-08-04-gcc-builtin-alloca.md
