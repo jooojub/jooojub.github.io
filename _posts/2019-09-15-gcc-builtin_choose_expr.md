@@ -1,0 +1,1 @@
+../jooojub/posts/gcc/builtin_choose_expr/2019-09-15-gcc-builtin_choose_expr.md
