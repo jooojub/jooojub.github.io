@@ -11,22 +11,23 @@ description: "This option, and its inverse, let you make such a program work wit
 Requires :
  * compiler: gcc 2.8 later
 
+만약 compile option 없이 `char`를 사용한다면, `signed` 일까요 `unsigned`? <br>
+결과는 architecture에 따라, 그리고 compiler version에 따라 다를 것입니다.
 
-If I declare `char` with no compile options, will it be regarded as `signed` or `unsigned`?<br>
-The results are different for each of architecture. Maybe it depends on the compiler version.
+많은 사람들은 대부분 `char`는 `signed char`라고 생각하며 코드를 작성합니다.<br>
+그러나 이건 architecture 또는 compiler option에 따라 다르기 때문에 위험한 코드입니다.<br>
+특히 architecture independent code를 작성해야 한다면 절대로 피해야 하는 코딩 습관입니다.
 
-Most of the time, naturally writing code with assuming that `char` is a `signed char`, but it is depends on the compiler options, which can sometimes be dangerous. Especially if you want to write architecture independent code.
+gcc compiler에는 `char`를 `signed` 또는 `unsigned`로 다룰지에 대한 gcc option[^1]이 있다.
 
-The gcc ompiler has a options[^1] that allows you to set whether `char` is treated as `signed` or `unsigned`.
-
-[^1]: The gcc documentation is also referred to as <b>gcc commands</b>. I will use it together.
+[^1]: gcc 문서에는 <b>gcc commands</b>라고 명명하고 있습니다. 저는 두 용어 모두 혼용해서 사용하겠습니다 :)
 > -fsigned-char, -funsigned-char, -fno-signed-char", -fno-unsigned-char
 
-It looks like there's a lot of options, in the end it means just two things.
+많은 option이 있지만 결국은 두 가지 의미로 사용됩니다.
 > <b>char -> signed char</b>: -fsigned-char == -fno-unsigned-char<br>
 > <b>char -> unsigned char</b>: -funsigned-char == -fno-signed-char
 
-It is a simple and explicit option, so it is also briefly described in the gcc documentation.
+아주 심플한 gcc option이며, gcc 문서에서도 자세히 설명되어 있습니다.
 
 ***
 <table>
@@ -51,7 +52,7 @@ It is a simple and explicit option, so it is also briefly described in the gcc d
 </table>
 
 ***
-I haven't checked in detail which version of the option was added, but it was already included in gcc 2.8.
+이 option이 처음 등장했던 gcc version을 자세히 살펴보진 않았지만, gcc 2.8에는 이미 해당 option이 포함되어 있습니다.
 
 #### -> git checkout gcc-2_8_0-release
 {% highlight c %}
@@ -66,7 +67,7 @@ char *lang_options[] =
   "-fno-unsigned-char",
   ...
 {% endhighlight %}
-It isn't noted in the release note, but in cpp, these options were added in gcc 3.1.
+gcc release note에서는 찾아볼 수 없으나, cpp에서는 gcc 3.1에 추가된 걸로 보입니다.
 #### -> git checkout gcc-3_1-release
 {% highlight c %}
 $ cat ./gcc/cppinit.c
@@ -78,7 +79,7 @@ $ cat ./gcc/cppinit.c
   DEF_OPT("funsigned-char",           0,      OPT_funsigned_char)
 
 {% endhighlight %}
-Let's check the code to see if the options are work correctly.
+option이 의도대로 잘 동작하는지 코드로 살펴봅시다.
 ### Check with code
 #### -> sample source code: char.c
 {% highlight c %}
@@ -98,17 +99,17 @@ $ gcc -o char char.c
 $ ./char
 -1
 {% endhighlight %}
-x86_64 gcc treats `char` as a `signed char`.
-Let's build with `-funsigned-char` options.
+x86_64에서는 `char`를 `signed char`로 취급합니다.
+`-funsigned-char` option을 추가해 봅시다.
 #### -> gcc version 7.4.0 --target=x86_64-linux-gnu
 {% highlight bash %}
 $ gcc -funsigned-char -o char char.c 
 $ ./char
 255
 {% endhighlight %}
--funisgned-char option is added, so `char` is treated as `unsigned char`.
+`-funisgned-char` option이 추가되어 `char`를 `unsigned char`로 취급합니다.
 
-I have seen how to treat `char` by default for each architecture.
+각 architecture 별로 `char`를 어떻게 다루는지 살펴보았습니다.
 #### -> x86_64: default signed char
 {% highlight x86asm %}
 ...
@@ -153,7 +154,7 @@ I have seen how to treat `char` by default for each architecture.
  1000046c:	38 00 ff ff 	li      r0,-1
  10000470:	98 1f 00 0a 	stb     r0,10(r31)
 {% endhighlight %}
-I have found that simpler test code whether the defaults are `signed` or `unsigned` in stackoverflow.
+stack overflow에서 `char`가 `signed`인지 `unsigned`인지를 쉽게 확인할 수 있는 sample code를 찾았습니다.
 {% highlight c %}
 #include <stdio.h>
 
@@ -173,10 +174,9 @@ $ gcc -funsigned-char -o simple simple.c
 $ ./simple
 128
 {% endhighlight %}
-If we are working on a large project, we will not be able to set the compile-options for each process because it use compile options globally.
+거대한 project에서는 global 하게 compile option이 추가되기 때문에, 각 process 별로 compile option을 통일하는 게 일반적입니다.
 
-That is, because we can't rely on the compile options, should always use `signed char` or `unsigned char` when it depends on the signedness of type.
-
+즉, compile option에 의존해서 코드를 작성하는 것 보다는 signed 인지 unsigned 인지가 중요한 코드에서는 `char`가 아닌 명시적으로 `signed char` 또는 `unsigned char`를 이용해서 코드를 작성하는 게 좋아 보입니다.
 <div align="right">
 jooojub.
 </div>

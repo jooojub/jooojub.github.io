@@ -10,14 +10,15 @@ keywords: [gcc-builtin, gcc, builtin, __builtin_choose_expr]
 Requires:
  * compiler: gcc 3.1 later
 
-Let's take a look at `__builtin_choose_expr` that one of the gcc builtins.
+이번은 gcc builtin 중 `__builtin_choose_expr`에 대해서 살펴봅시다.<br>
+이 built-in function은 C++에는 없고 C에만 존재합니다.<br>
 
-This only include in C not C++. It behaves like a 3-way operator(? : operator) in C,
-However, this is determined at compile time, not runtime.
+마치 C의 3-way operator(? : operator)처럼 동작합니다.<br>
+그러나 run-time이 아니라 compile-time에 동작한다는 것을 명심해야 합니다.
 
-This was added by the 'Aldy Hernandez' patch in gcc-3.1.
+이 built-in은 gcc-3.1에 'Aldy Hernandez' patch를 통해 추가되었습니다.
 
-Let's look at the description in the gcc document.
+gcc 문서의 설명을 확인해보겠습니다.
 
 ***
 <table>
@@ -39,8 +40,8 @@ Let's look at the description in the gcc document.
 
 ***
 
-Looking at the gcc code will help you understand how this builtin function works.<br>
-Let's look at gcc 7.4.
+gcc code를 살펴보면 이 builtin function이 어떻게 동작하는지에 대해 쉽게 이해하실 수 있을 겁니다.<br>
+gcc 7.4의 코드를 살펴보겠습니다.
 
 #### -> git checkout gcc-7_4_0-release
 {% highlight c %}
@@ -68,8 +69,7 @@ $ cat ./gcc/c/c-parser.c
 		...
 {% endhighlight %}
 
-
-If you look at the gcc implementation, you can see that it is implemented as a 3-way ooperator.
+코드들 자세히 보시면 3-way ooperator로 구현이 되었다는 것을 보실 수 있습니다.
 
 {% highlight c %}
 expr = integer_zerop (c) ? *e3_p : *e2_p;
@@ -79,7 +79,8 @@ expr = integer_zerop (c) ? *e3_p : *e2_p;
 
 > Don't confuse gcc builtin as a function called at compile time
 
-The first argument must be `const_exp`. In other words, even variables that can be determined at compile time cannot be used as the first argument.
+첫 번째 argument는 `const_exp` 이어야 합니다.<br>
+다시 말해, variable이 compile time에 정해진다고 해도 argument로 사용할 수 없다는 뜻입니다.<br>
 
 #### -> can we use the variables for the first argument?
 {% highlight c %}
@@ -103,7 +104,8 @@ cond_expr.c:5:18: error: first argument to ‘__builtin_choose_expr’ not a con
   char *boolean = __builtin_choose_expr(cond, "true", "false");
 {% endhighlight %}
 
-Notice that a compile error occurs. That is, only `const expr` can be used as follows.
+compile error가 발생하는걸 볼 수 있습니다.<br>
+즉, 다음과 같이 `const expr`만 사용할 수 있습니다.
 
 #### -> use const expr for the first argument
 {% highlight c %}
@@ -152,13 +154,13 @@ $ strings -t x bool_to_str
     5d4 false
     5da true
 {% endhighlight %}
-You can see that `__builtin_choose_expr` has been changed at compile time to `exp1` or `exp2` each.
+`__builtin_choose_expr`가 compile-time에 각각 `exp1` 또는 `exp2`로 변환 된 것을 볼 수 있습니다.
 
-You might think that this is a rather unnecessary builtin function due to the constraint that only `const exp` is available in first arugments.
+`const exp`만 사용할 수 있기 때문에, 불필요한 builtin function 아닌가 생각할 수도 있습니다.
 
-However, There are many ways to use it.
+그러나, 의외로 많은 활용을 할 수 있습니다.
 
-For example, you can write the following to determine the behavior of a particular bit of its value at compile time.
+예를 들어, 특정 bit가 설정되어 있는지 compile time에 확인하는 IS_MASKED macro를 다음과 같이 작성할 수 있습니다.
 
 #### -> e.g. masked
 {% highlight c %}
@@ -180,8 +182,8 @@ masked: 1
 masked: 0
 masked: 1
 {% endhighlight %}
-Another example may be used with sizeof.
-In the eBPF code of the kernel, It used the following with sizeof:
+sizeof와 같이 활용할 수도 있습니다.<br>
+Kernel에서 eBPF code를 살펴보면, 아래와 같이 sizeof와 같이 활용한 예가 있습니다.
 #### -> e.g. sizeof in BPF
 {% highlight c %}
 $ cat ./include/trace/bpf_probe.h
@@ -203,9 +205,10 @@ $ cat ./include/trace/bpf_probe.h
 
 ***
 
-This builtin function has a slightly different mechanism than the 3-way operator that we know well.
+이 builtin function 3-way operator와는 약간 다른 차이점이 있습니다.
 
-For the 3-way operator, the return type will be `type cast` to larger type, but the return type of this `builtin function` is the `type` of each `exp1` or `exp2`.
+3-way operator는 더욱 사이즈가 큰 type으로 `type cast` 되어 return 되지만, `builtin function`은 `exp1` 또는 `exp2` 각자의 `type`이 return 됩니다.
+
 #### -> check return type
 {% highlight c %}
 #include <stdio.h>
@@ -238,10 +241,11 @@ $ gcc -o return_type return_type.c
 sizeof: 1
 sizeof: 4
 {% endhighlight %}
-we can make the sample code to more nice with `__builtin_types_compatible_p`, but I'll save it for the next post :)
+`__builtin_types_compatible_p`와 같이 사용하면 더욱 멋진 활용이 가능합니다만, 다음 post를 위해 아껴두겠습니다. :)<br>
 
-The `__builtin_choose_expr` is come into its own when combined with other built-in functions that return const exp.
-For example, In combination with `__builtin_types_compatible_p`, we can provide `function overloading` for `type-arguments` that were previously impossible in std C.
+`__builtin_choose_expr`은 const expr를 return 하는 다른 build-in function과 조합해서 많이 사용합니다.<br>
+예를 들어 `__builtin_types_compatible_p`와 조합하면 C에서 불가능해만 보였던 `type-arguments`을 위한 `function overloading` 구현도 가능합니다.
+
 #### -> functon overloading 
 {% highlight c %}
 #include <stdio.h>
@@ -270,10 +274,10 @@ $ ./function_overloading
 jooojub
 {% endhighlight %}
 
-A detailed description of `__builtin_types_compatible_p` will be given in the another post.
-> Also possible to overlading the `number of arguments` in std C using macro. If there is a chance, I'll cover it in another post also.
+`__builtin_types_compatible_p`에 대해서는 다른 post에서 다루겠습니다.
+> 또한 standard C에서도 macro를 이용해 `number of arguments`를 구현할 수 있습니다. 기회가 된다면 이 또한 다른 post에서 다루겠습니다.
 
-This built-in function is simple to operate and understand, yet powerful. A good use will help remove unnecessary code and refactoring. So, please remember that there is `__builtin_choose_expr` function in gcc.
+`__builtin_choose_expr`는 쉽게 단순해서 이해하기 쉽지만, 유용하게 사용한다면 불필요한 코드를 줄일 수 있으므로, 많이 활용하길 바랍니다.
 
 <div align="right">
 jooojub.

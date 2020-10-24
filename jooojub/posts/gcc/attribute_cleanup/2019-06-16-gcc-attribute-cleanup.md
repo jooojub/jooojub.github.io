@@ -11,9 +11,9 @@ description: "The cleanup attribute runs a function when the variable goes out o
 Requires :
  * compiler: gcc 3.3.1 later
 
-In systemd code, we can find may `attribute` keywords. Among them, I decided to take a closer look at `cleanup`, which may be useful for security coding.
+systemd 코드에서, 'attribute' keyword 들을 많이 볼 수 있습니다. 그중에서 security coding에 많은 도움이 될 수 있는 'cleanup' keyword에 대해서 살펴보겠습니다.
 
-It says so on the gnu gcc documents.
+'cleanup' keyword에 대해서 gcc 문서에서는 다음과 같이 설명합니다.
 
 ***
 <table>
@@ -36,10 +36,10 @@ It says so on the gnu gcc documents.
 </table>
 
 ***
-The following phrases are noticeable:
+다음 설명이 중요한 요점 같네요.
 > The cleanup attribute runs a function when the variable goes out of scope
 
-It means, if used well, we will be able to prevent situations where a leak occur due to failure to maintain the pair like {malloc/free, open/close, ...}
+즉, 잘 사용한다면, pair를 맞춰야 하는 코드 {malloc/free, open/close, ...} 관리가 편해, leak이 발생하는 상황을 막을 수 있어 보입니다.
 ### Check with code
 #### -> sample source code: simple
 {% highlight c %}
@@ -71,8 +71,8 @@ auto_function: called by __clean_up__: 5
   4005f3:	e8 9e ff ff ff          callq  400596 <auto_function>
   ...
 {% endhighlight %}
-We can see that auto_function(& val) was called automatically.<br>
-In other words, we can called the free() or close() without forgetting.
+auto_function(& val)이 자동으로 호출되는 것을 볼 수 있습니다.<br>
+이곳에 free() 또는 close()를 추가하게 되면 신경 쓰지 않아도 자동으로 호출되게 할 수 있습니다.
 
 #### -> sample source code: fclose
 {% highlight c %}
@@ -89,9 +89,10 @@ int main(int argc, char **argv) {
 	return 0;
 }
 {% endhighlight %}
-
-The point at which the function is called by the `__cleanup__` attribute is important.<br>
-The document specifies `The cleanup attribute runs a function when the variable goes out of scope`. Let's check.
+`__cleanup__` attribute에 의해 호출되는 함수의 시점이 중요합니다.<br>
+문서에는 다음과 같이 명시되어 있습니다.<br>
+`The cleanup attribute runs a function when the variable goes out of scope`<br>
+확인해봅시다.
 
 #### -> sample source code: scope
 {% highlight c %}
@@ -145,7 +146,7 @@ before return
 }
 
 {% endhighlight %}
-So, be careful to make the following mistakes.
+즉, 다음과 같은 실수를 하지 않도록 조심해야 합니다.
 
 #### -> sample source code: be careful with scope
 {% highlight c %}

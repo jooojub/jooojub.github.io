@@ -10,12 +10,13 @@ keywords: [gcc-builtin, gcc, builtin, alloca]
 Requires:
  * compiler: gcc 2.8 later
 
-Let's take a look at `__builtin_alloca` that one of the gcc builtins.
+gcc builtin 중의 하나인 `__builtin_alloca`에 대해서 살펴보겠습니다.
 
-The first thing to keep in mind is that many books and posts recommend that you do not use this `alloca built-in` function for security code. 
-I hope you understand the reason in this post.
+우선 명심해야 할 것은 많은 책이나 posts에서 `alloca built-in`을 security 관점에서 사용하지 말 것을 권고하고 있습니다.
+이번 post를 통해서 왜 그런지 이유를 명확하게 이해했으면 좋겠습니다.
 
-If you look at several open-source code, you'll often find it called `__builtin_alloca`. For example, you can see it if you look at a macro called `strdupa`.
+open-source code를 많이 살펴보셨다면, 종종 `__builtin_alloca`를 잧아 볼 수 있을 겁니다.<br>
+예를 들어 glibc의 `strdupa` macro를 다음과 같이 정의되어 있습니다.
 
 #### -> strdupa macro (glibc/string/string.h)
 {% highlight c %}
@@ -28,13 +29,17 @@ If you look at several open-source code, you'll often find it called `__builtin_
       (char *) memcpy (__new, __old, __len);			\
     }))
 {% endhighlight %}
-`__builtin_alloca` is a function of gcc that can be assigned to the stack rather than the heap for dynmaic variables. So, if you look at the code that uses `strdupa`, you will see that it doesn't have a free().
-Unlike malloc which assigns to heap, Its lifetime is a `function block`. 
-Therefore restoration to the caller function's stack pointer is enough.
-In conclusion, There is a speed and time advantage over malloc.
+`__builtin_alloca`는 dynamic variable를 할당할 때, heap 대신 stack에 할당되도록 설정할 수 있는 gcc built-in function입니다.<br>
+그래서 glibc의 `strdupa` 코드를 살펴보면 free()를 따로 호출하지 않는 것을 볼 수 있습니다.<br>
+malloc()처럼 heap에 할당되는 것이 아니기 때문에 life-time은 `function block`이 됩니다.<br>
 
-The `__builtin_alloca` function in gcc is a function called by the gcc compiler at compile-time, not a function called run-time of the process.
-It's like a macro, but technically it's not a macro. You can see that `__builtin_alloca` was replaced by code other than function calling code in assembly.
+따라서, 여느 local variable과 동일하게 별도의 free() 없이도, caller function으로의 stack pointer 복원만으로도 free를 하는 효과를 발휘할 수 있습니다.
+
+결과적으로 malloc보다 cpu-time과 memory 모두 이점이 있습니다.
+
+`__builtin_alloca`은 run-time에 process에 의해 호출되는 함수가 아닌 compile-time에 gcc에 의해서 호출되는 함수입니다.<br>
+macro처럼 동작하지만, 엄연히 말해 macro는 아닙니다.<br>
+disassemble을 통해 gcc에 의해 `__builtin_alloca`가 다른 코드로 변환되는 것을 확인할 수 있습니다.
 
 #### -> builtin_alloca was replaced to
 {% highlight x86asm %}
@@ -60,11 +65,11 @@ void func(size_t n, const char* src) {
 	memcpy(val, src, n);
 	...
 {% endhighlight %}
-It isn't calling function like `callq __builtin_alloca`
+`callq __builtin_alloca`와 같은 함수 호출 형태가 아니라는 것을 볼 수 있습니다.
 
-It is used when you want to assign a dynamic variable and it is guaranteed to be used only temporarily inside a function
+이 builtin은 dynamic variable을 할당하고 local variable처럼 임시적으로 함수 안에서 사용하는 게 보장되는 곳에서 사용하고 있습니다.
 
-Let's look at the description in the gcc document.
+gcc 문서를 살펴보겠습니다.
 
 ***
 <table>
@@ -87,10 +92,9 @@ Let's look at the description in the gcc document.
 
 ***
 
+gcc 코드를 자세히 살펴보진 않았지만, gcc 2.8에부터 존재했던 builtin입니다.
 
-ref: I haven't checked in detail which version of the option was added, but it was already included in gcc 2.8.
-
-We can easily see how it compiles using sample code.
+sample code를 통해 사용법을 쉽게 확인해 봅시다.
 #### -> sample code: alloca.c
 {% highlight c %}
 #include <stdio.h>
@@ -149,24 +153,30 @@ void func(const size_t n, const char* src) {
  7a6:	c9                   	leaveq 
  7a7:	c3                   	retq   
 {% endhighlight %}
-The complicated align routines have been added, but the key is simply increase the size of the stack and then `retq`. And also we can see the scope of the variable specified in the document.
+compiler에 의해 align routines 또한 추가되었지만 중요한 부분은 variable 할당을 위해 단지 stack size를 증가시켰다는 것이며, 함수가 return 할 때 free() 없이 단순히 `retq` 하였다는 것입니다.<br>
+
+gcc 문서에서는 scope에 대해 다음과 같이 설명되어 있습니다.
 > The lifetime of the allocated object ends just before the calling function returns to its caller
 
-`__builtin_alloca` is defined as `alloca` from glibc 1.09 to avoid using the tremendous name.
+glibc 1.09에서는 `__builtin_alloca`를 `alloca`로 define 하여 긴 이름을 줄였습니다.
+
 #### -> __builtin_alloca is defined as alloca in glibc/stdlib/alloca.h
 {% highlight c %}
 #ifdef	__GNUC__
 # define alloca(size)	__builtin_alloca (size)
 #endif /* GCC.  */
 {% endhighlight %}
-So if you include `alloca.h`, you can simply use `alloca`. But in my personal opinion, since gcc builtin functions are functions that are called at compile-time rather than we usually think of run-time function, it seems to be better to use `__builtin` prefix to represent this. But this is a just problmes of coding style. So, If it is a project where many people participate, it is enough to unify the style through appropriate discussion.
+그래서 만약 `alloca.h`를 include 한다면, 단순히 `alloca`라고 사용할 수 있습니다.
 
-Although alloca seems to have the same functionality as a VLA[^1] supporting C99, lifetime is different from VLA.
+그러나 개인적인 의견으로는 gcc built-in은 run-time에 호출되는 함수가 아니라 compile-time에 gcc에 의해 호출되는 함수이기 때문에 이를 나타내는 `__builtin`이라는 prefix를 그대로 표현하게는 좋지 않을까 생각됩니다.<br>
+그러나 이것은 단순히 coding style 문제이고 만약 여러 사람이 참여하는 프로젝트라면 어떤 식으로 사용할지에 대해 약속하고 그것을 사용하면 됩니다. 
+
+C99에서 지원하는 VLA[^1]와 같아 보이지만 VLA와는 lifetime이 다릅니다.
 
 [^1]: variable-length array (VLA), also called variable-sized, runtime-sized, is an array data structure whose length is determined at run time instead of at compile time
 
-VLA litftime is block scope but, alloca is function scope.
-In other words, it cann't be solved by VLA in the following situations.
+VLA의 litftime block scope이고 `alloca`는 function scope입니다.<br>
+즉, 다음과 같은 상황에서는 VLA을 사용할 수 없습니다.
 
 #### -> It is impossible in VLA
 {% highlight c %}
@@ -196,14 +206,16 @@ void func(void) {
 }
 {% endhighlight %}
 
-Of course, many books and posts comments suggest that code that assigns variables to the stack, like alloca and VLA, should not be used as un-safe code, and I agree with them.
-Variables assigned to the stack cause stack overflow, which is a security hole. And also passing the negative number in alloca could be executed in not intended at all. In addition, this is different from the typical alloc/free sequence in Standard C, beginners can be confusing.<br>
--> alloca is not a standrad - it is GNU extension...
+위에서 언급했던 거처럼, 많은 책과 post에서 stack에 변수를 동적 할당하는 VLA나 alloca는 security 측면에서 un-safe 하기 때문에 사용을 자제하라고 권고하고 있고, 저 또한 동의합니다.<br>
+stack에 변수를 동적 할당하는 코드는 stack overflow를 유발 할 수 있으며 이것이 security hole이 될 수 있습니다.<br>
+또한 length에 nagative number가 사용된다면 전혀 의도하지 않은 방향으로 코드가 흘러갈 수 있습니다.<br>
+그리고 Standard C에서 흔히 동적 할당에 사용되는 alloc/free 짝을 맞춰 코딩하는 방식과는 다르기 때문에 `alloca`를 모르는 사람들에게 혼돈을 줄 수 있습니다.<br>
+-> alloca는 standard가 아닙니다 - GNU extension 입니다...
 
-For various reasons, The kernel has been working on eliminating code that uses VLAs, and all of them have been removed in 4.20 perfectly.
+위와 같은 이유에서, kernel 프로젝트에서는 VLA 코드 제거에 많은 노력을 하였으며 결과적으로 4.20에서 완벽하게 성공하였습니다.
 > ref: https://www.phoronix.com/scan.php?page=news_item&px=Linux-Kills-The-VLA
 
-In the GNU document, The advantages of the alloca are described as follows:
+GNU document에서는 `alloca`의 이점에 대해서 다음과 같이 설명하였습니다:
 
 ***
 <table>
@@ -227,7 +239,7 @@ In the GNU document, The advantages of the alloca are described as follows:
 
 ***
 
-And also described of disadvantages
+또한, 단점은 다음과 같이 설명하였습니다.
 
 ***
 <table>
@@ -250,18 +262,24 @@ And also described of disadvantages
 
 ***
 
-Since gcc 4.7, `__builtin_alloca_with_align` has been added, and since gcc 8.1, `__builtin_alloca_with_align_and_max` has also been added. Its added to set align and max_size to make `alloca` safer.
+gcc 4.7에는 `__builtin_alloca_with_align`가 추가되었으며 gcc 8.1에는 `__builtin_alloca_with_align_and_max`가 추가되었습니다.<br>
+`alloca`를 좀 더 safe하게 사용할 수 있게 max_size 또는 align을 설정할 수 있도록 추가되었습니다.
 
-It's simple, please check the document.
+단순한 추가입니다. 문서에서 확인하세요.
 > https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html<br><br>
 > Built-in Function: void *__builtin_alloca_with_align (size_t size, size_t alignment)<br>
 > Built-in Function: void *__builtin_alloca_with_align_and_max (size_t size, size_t alignment, size_t max_size)
 
-As discussion continues about stability of alloca, gcc 7.0 has added gcc options to detect whether `alloca` is used or make it safer to use. We will discuss this in a separate post later.
+`alloca`를 더욱 safe 하게 사용할 수 있도록 gcc 7.0에서는 alloca의 max size를 compile-time에 확인할 수 있는 compile option이 추가되었습니다.<br>
+또한 코드에서 `alloca`가 사용되었는지도 확인할 수 있습니다.<br><br>
+
+이것들은 이후 다른 post에서 설명하겠습니다.
 > -Walloca-larger-than, -Walloca ...
 
-If you get a situation where you have to use `alloca`, pay attention to the size and range check. Note that even if you do a range range check, using it in an inline function can lead to unpredictable situations, so it's better not to use it in an inline function.
+만약 `alloca`를 사용하게 된다면, size와 range check에 신경 써야 합니다.<br>
 
+참고로 `alloca`를 inline function에서 사용할 경우 의도하지 않은 동작이 될 수도 있습니다.<br>
+이유는 구글링해 보시면 쉽게 아실 수 있습니다 :)
 <div align="right">
 jooojub.
 </div>
