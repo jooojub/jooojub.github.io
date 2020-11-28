@@ -14,10 +14,11 @@ $front-page-feature-image-height : 400px; // min 150px recommended
    ========================================================================== */
 
 $base-font                       : 'Lato', Calibri, Arial, sans-serif;
+// $base-font                       : 'Gothic A1', sans-serif;
 $heading-font                    : $base-font;
 $caption-font                    : $base-font;
-$code-font                       : monospace;
-$alt-font                        : serif;
+$code-font                       : 'Nanum Gothic Coding', monospace;
+$alt-font                        : 'Nanum Gothic Coding', monospace;
 
 $doc-font-size                   : 16;
 $doc-line-height                 : 26;
