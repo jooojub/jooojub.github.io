@@ -1,0 +1,1 @@
+../jooojub/posts/gcc/options_format/2020-11-28-gcc-options-format.md
