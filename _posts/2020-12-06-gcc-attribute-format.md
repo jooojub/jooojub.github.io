@@ -1,0 +1,1 @@
+../jooojub/posts/gcc/attribute_format/2020-12-06-gcc-attribute-format.md
