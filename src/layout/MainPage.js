@@ -15,8 +15,10 @@ import clsx from "clsx";
 const useStyles = makeStyles({
   headerNavBar: {
     boxShadow: "none",
+    backgroundColor: "#0D1317",
   },
   headerContainer: {
+    display: "none",
     "@media (min-width:576px)": {
       display: "none",
     },
@@ -31,25 +33,27 @@ const useStyles = makeStyles({
     },
   },
   logo: {
-    fontSize: "21px",
-    fontWeight: 700,
-    color: "#444444",
-  },
-  search: {
-    "@media (max-width: 800px)": {
-      backgroundColor: "green",
-    },
+    color: "#000000",
+    userSelect: "none",
   },
   menu: {
-    fontSize: "16px",
-    fontWeight: "700",
-    lineHeight: "28.8px",
-    textDecoration: "none solid rgb(102, 126, 234)",
-    color: "#667EEA",
-    // word-spacing: 0px
+    color: "#444444",
+    margin: "10px",
+    fontSize: "17px",
+    fontWeight: 700,
+    marginTop: "10px",
+    borderBottom: "3px solid transparent",
+    userSelect: "none",
+    "&:hover": {
+      cursor: "pointer",
+      borderBottom: "3px solid #007bff",
+      transition: "all 0.5s linear",
+      borderRadius: "20%",
+    },
   },
   footerContainer: {
     backgroundColor: "#0D1317",
+    userSelect: "none",
   },
   footerSubContainer: {
     backgroundColor: "#000000",
@@ -70,7 +74,6 @@ const useStyles = makeStyles({
       padding: "0.4rem",
       width: "fit-content",
       display: "inline-block",
-      userSelect: "none",
       "&:hover": {
         backgroundColor: "#007bff",
         cursor: "pointer",
@@ -91,36 +94,23 @@ function MainPage() {
   const classes = useStyles();
 
   return (
-    // <div className="d-flex justify-content-center">
-    //   <div className={clsx("row", classes.header)} style={{width: "80%"}}>
-    //     <div className={clsx("col", classes.logo)}><h2 class="display-5">jooojubBlog</h2></div>
-    //     <div className={clsx("col", classes.search)}>search</div>
-    //     <div className={clsx("col")}>
-    //         <a className={classes.menu}>Home</a>
-    //         <a className={classes.menu}>About Me</a>
-    //         <a className={classes.menu}>Posts</a>
-    //         <a className={classes.menu}>Links</a>
-    //     </div>
-    //   </div>
-    // </div>
     <>
-      <Navbar className={classes.headerNavBar}>
-        {/* <Container md="2" className={classes.headerContainer}> */}
-        {/* <Container> */}
+      <Navbar className={classes.headerNavBar} variant="dark">
         <div className={clsx("col-2", classes.headerContainer)} />
-        <div className="col-10 d-flex align-items-center">
+        <div className="col-8 d-flex align-items-center">
           <Navbar.Brand>
             <Avatar alt="jooojub" src="/assets/images/avatars/toto.jpg" />
           </Navbar.Brand>
           <Navbar.Brand href="#home" className={classes.logo}>
-            Jooojub
+            <h4 className="title font-weight-bold mb-0">Jooojub</h4>
           </Navbar.Brand>
-          <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
-            <Navbar.Text></Navbar.Text>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse className="justify-content-end align-items-center">
+            <Navbar.Brand className={classes.menu}>Home</Navbar.Brand>
+            <Navbar.Brand className={classes.menu}>About Me</Navbar.Brand>
+            <Navbar.Brand className={classes.menu}>Posts</Navbar.Brand>
           </Navbar.Collapse>
         </div>
-        {/* </Container> */}
       </Navbar>
       <br />
       <br />
