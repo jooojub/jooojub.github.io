@@ -5,7 +5,7 @@ import 'mdbreact/dist/css/mdb.css';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{overflow: "hidden"}}>
       <MainPage />
     </div>
   );

@@ -51,9 +51,44 @@ const useStyles = makeStyles({
       borderRadius: "20%",
     },
   },
+  contentContainer: {
+    display: "none",
+    "@media (min-width:576px)": {
+      display: "none",
+    },
+    "@media (min-width:768px)": {
+      display: "block",
+    },
+    "@media (min-width:992px)": {
+      display: "block",
+    },
+    "@media (min-width: 1200px)": {
+      display: "block",
+    },
+  },
+  contentSidebarContainer: {
+    minWidht: "250px",
+    maxWidth: "250px",
+    display: "none",
+    "@media (min-width:576px)": {
+      display: "none",
+    },
+    "@media (min-width:768px)": {
+      display: "block",
+    },
+    "@media (min-width:992px)": {
+      display: "block",
+    },
+    "@media (min-width: 1200px)": {
+      display: "block",
+    },
+  },
   footerContainer: {
     backgroundColor: "#0D1317",
     userSelect: "none",
+    position: "absolute",
+    bottom: "0",
+    width: "100%",
   },
   footerSubContainer: {
     backgroundColor: "#000000",
@@ -96,8 +131,8 @@ function MainPage() {
   return (
     <>
       <Navbar className={classes.headerNavBar} variant="dark">
-        <div className={clsx("col-2", classes.headerContainer)} />
-        <div className="col-8 d-flex align-items-center">
+        <div className={clsx("col-1", classes.headerContainer)} />
+        <div className="col d-flex align-items-center">
           <Navbar.Brand>
             <Avatar alt="jooojub" src="/assets/images/avatars/toto.jpg" />
           </Navbar.Brand>
@@ -111,42 +146,29 @@ function MainPage() {
             <Navbar.Brand className={classes.menu}>Posts</Navbar.Brand>
           </Navbar.Collapse>
         </div>
+      <div className={clsx("col-1", classes.headerContainer)} />
       </Navbar>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+      <div className="row">
+        <div className={clsx("col-1", classes.contentContainer)} />
+        <div className="col">
+          <div className="row">
+            {/* contents */}
+            <div className="col">
+
+            </div>
+            {/* side-contents */}
+            <div className={clsx("col", classes.contentSidebarContainer)} >
+            </div>
+          </div>
+        </div>
+        <div className={clsx("col-1", classes.contentContainer)} />
+      </div>
       <MDBFooter
         className={clsx("font-small pt-4 mt-4", classes.footerContainer)}
       >
         <MDBContainer fluid className={clsx("text-center text-md-left")}>
           <MDBRow>
-            <MDBCol md="2" />
+            <MDBCol md="1" />
             <MDBCol md="2">
               <h1 className="title font-weight-bold">Jooojub</h1>
               <p>
@@ -158,6 +180,7 @@ function MainPage() {
                 </h7>
               </p>
             </MDBCol>
+            <MDBCol md="1" />
             <MDBCol md="2">
               <h6 className="title font-weight-bold pb-3">Categories</h6>
               <table
@@ -210,7 +233,7 @@ function MainPage() {
                 </div>
               </div>
             </MDBCol>
-            <MDBCol md="2">
+            <MDBCol md="3">
               <h6 className="title font-weight-bold pb-3">Recent Post</h6>
               <p>
                 <h7>
@@ -221,17 +244,18 @@ function MainPage() {
                 </h7>
               </p>
             </MDBCol>
+            <MDBCol md="1" />
           </MDBRow>
         </MDBContainer>
         <div className={clsx("text-center py-3", classes.footerSubContainer)}>
           <MDBContainer fluid>
             <MDBRow>
-              <MDBCol md="2" />
-              <MDBCol md="6" className={clsx("d-flex align-items-center h7")}>
+              <MDBCol md="1" />
+              <MDBCol md="8" className={clsx("d-flex align-items-center h7")}>
                 &copy; {new Date().getFullYear()} - All Right Reserved. Designed
                 and Developed by jooojub
               </MDBCol>
-              <MDBCol md="2" className={clsx("d-flex align-items-right")}>
+              <MDBCol md="2" className={clsx("d-flex justify-content-end")}>
                 <FontAwesomeIcon
                   icon={faGithub}
                   className={clsx("m-2 h5", classes.footerIcon)}
@@ -245,7 +269,7 @@ function MainPage() {
                   className={clsx("m-2 h5", classes.footerIcon)}
                 />
               </MDBCol>
-              <MDBCol md="2" />
+              <MDBCol md="1" />
             </MDBRow>
           </MDBContainer>
         </div>
