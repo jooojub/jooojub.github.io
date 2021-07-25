@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import { Navbar } from "react-bootstrap";
-import { Avatar } from "@material-ui/core";
+import { Avatar, Button } from "@material-ui/core";
 import { MDBFooter, MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -15,10 +15,14 @@ import clsx from "clsx";
 const useStyles = makeStyles({
   headerNavBar: {
     boxShadow: "none",
-    backgroundColor: "#0D1317",
+    // backgroundColor: "#0D1317",
+    // marginBottom: "4rem",
   },
-  headerContainer: {
+  navBarContainer: {
     display: "none",
+    "@media (max-width:576px)": {
+      display: "none",
+    },
     "@media (min-width:576px)": {
       display: "none",
     },
@@ -31,6 +35,7 @@ const useStyles = makeStyles({
     "@media (min-width: 1200px)": {
       display: "block",
     },
+    display: "block",
   },
   logo: {
     color: "#000000",
@@ -49,6 +54,129 @@ const useStyles = makeStyles({
       borderBottom: "3px solid #007bff",
       transition: "all 0.5s linear",
       borderRadius: "20%",
+    },
+  },
+  primaryBtn: {
+    backgroundColor: "#30475E",
+    borderRadius: "1rem",
+    fontSize: "11px",
+    padding: "0.3rem",
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
+    "&:hover": {
+      backgroundColor: "#0D1317",
+      cursor: "pointer",
+      transition: "all 0.5s linear",
+    },
+  },
+  headerContainer: {
+    background: "#fffff",
+    height: "300px",
+    marginBottom: "30px",
+    "& .header-container-image": {
+      opacity: "30%",
+    },
+    "@media (max-width:576px)": {
+      "& .header-container-margin": {
+        display: "block",
+      },
+      "& .header-container": {
+        position: "relative",
+      },
+      "& .header-container-text": {
+        padding: "2rem",
+      },
+      "& .header-container-image": {
+        position: "absolute",
+        top: "0",
+        left: "0",
+        zIndex: "-1",
+        padding: "0rem",
+      },
+    },
+    "@media (min-width:576px)": {
+      "& .header-container-margin": {
+        display: "block",
+      },
+      "& .header-container": {
+        position: "relative",
+      },
+      "& .header-container-text": {
+        padding: "2rem",
+      },
+      "& .header-container-image": {
+        position: "absolute",
+        top: "0",
+        left: "0",
+        zIndex: "-1",
+        padding: "0rem",
+      },
+    },
+    "@media (min-width:768px)": {
+      "& .header-container-margin": {
+        display: "block",
+      },
+      "& .header-container": {
+        position: "absolute",
+        flexDirection: "row",
+        display: "flex",
+        flexWrap: "wrap",
+        marginRight: "-15px",
+        marginLeft: "-15px",
+      },
+      "& .header-container-text": {
+        padding: "2rem",
+      },
+      "& .header-container-image": {
+        position: "relative",
+        top: "0",
+        left: "0",
+        padding: "3rem",
+      },
+    },
+    "@media (min-width:992px)": {
+      "& .header-container-margin": {
+        display: "block",
+      },
+      "& .header-container": {
+        position: "absolute",
+        flexDirection: "row",
+        display: "flex",
+        flexWrap: "wrap",
+        marginRight: "-15px",
+        marginLeft: "-15px",
+      },
+      "& .header-container-text": {
+        padding: "2rem",
+      },
+      "& .header-container-image": {
+        position: "relative",
+        top: "0",
+        left: "0",
+        padding: "3rem",
+      },
+    },
+    "@media (min-width: 1200px)": {
+      "& .header-container-margin": {
+        display: "block",
+      },
+      "& .header-container": {
+        position: "absolute",
+        flexDirection: "row",
+        display: "flex",
+        flexWrap: "wrap",
+        marginRight: "-15px",
+        marginLeft: "-15px",
+      },
+      "& .header-container-text": {
+        padding: "2rem",
+      },
+      "& .header-container-image": {
+        position: "relative",
+        top: "0",
+        left: "0",
+        padding: "3rem",
+      },
     },
   },
   contentContainer: {
@@ -86,9 +214,9 @@ const useStyles = makeStyles({
   footerContainer: {
     backgroundColor: "#0D1317",
     userSelect: "none",
-    position: "absolute",
-    bottom: "0",
-    width: "100%",
+    // position: "absolute",
+    // bottom: "0",
+    // width: "100%",
   },
   footerSubContainer: {
     backgroundColor: "#000000",
@@ -110,7 +238,8 @@ const useStyles = makeStyles({
       width: "fit-content",
       display: "inline-block",
       "&:hover": {
-        backgroundColor: "#007bff",
+        // backgroundColor: "#007bff",
+        backgroundColor: "#112D4E",
         cursor: "pointer",
         transition: "all 0.5s linear",
       },
@@ -130,8 +259,8 @@ function MainPage() {
 
   return (
     <>
-      <Navbar className={classes.headerNavBar} variant="dark">
-        <div className={clsx("col-1", classes.headerContainer)} />
+      <Navbar className={classes.headerNavBar} variant="light">
+        <div className={clsx("col-1", classes.navBarContainer)} />
         <div className="col d-flex align-items-center">
           <Navbar.Brand>
             <Avatar alt="jooojub" src="/assets/images/avatars/toto.jpg" />
@@ -141,24 +270,150 @@ function MainPage() {
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="justify-content-end align-items-center">
-            <Navbar.Brand className={classes.menu}>Home</Navbar.Brand>
+            {/* <Navbar.Brand className={classes.menu}>Home</Navbar.Brand> */}
             <Navbar.Brand className={classes.menu}>About Me</Navbar.Brand>
             <Navbar.Brand className={classes.menu}>Posts</Navbar.Brand>
           </Navbar.Collapse>
         </div>
-      <div className={clsx("col-1", classes.headerContainer)} />
+        <div className={clsx("col-1", classes.navBarContainer)} />
       </Navbar>
-      <div className="row">
+      <div className={clsx("row", classes.headerContainer)}>
+        <div className="col-1 header-container-margin" />
+        <div className="col">
+          <div className="header-container h-100 w-100">
+            <div
+              className="col-md-5 header-container-text"
+              style={{ textAlign: "left", color: "#0D1317" }}
+            >
+              <font
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "48px",
+                  fontWeight: "900",
+                }}
+              >
+                Hello ;)
+              </font>
+              <br />
+              <font
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "24px",
+                  fontWeight: "900",
+                }}
+              >
+                please take a break!
+              </font>
+              <br />
+              <br />
+              <font
+                style={{
+                  fontFamily: "Inter, sans-serif",
+                  fontSize: "14px",
+                  fontWeight: "600",
+                }}
+              >
+                I'm system S/W Engineers. However, interested in many fields.
+                Let's study together!
+              </font>
+              <div className="mt-3 text-right">
+                <Button
+                  className={classes.primaryBtn}
+                  variant="contained"
+                  color="primary"
+                >
+                  show profile
+                  <font style={{ fontSize: "18px", marginLeft: "10px" }}>
+                    &#129046;
+                  </font>
+                </Button>
+              </div>
+            </div>
+            <div className="col-md-7 w-100 h-100 header-container-image">
+              <div
+                className="w-100 h-100 rounded-lg shadow"
+                style={{
+                  backgroundImage:
+                    "url(https://unsplash.it/600/800?image=1061)",
+                  backgroundSize: "contain",
+                }}
+              ></div>
+            </div>
+          </div>
+        </div>
+        <div className="col-1 header-container-margin" />
+      </div>
+      <div
+        className="row"
+        style={{ background: "#F8F8F8", paddingTop: "4rem" }}
+      >
         <div className={clsx("col-1", classes.contentContainer)} />
         <div className="col">
-          <div className="row">
+          <div className="row text-justify d-flex">
             {/* contents */}
-            <div className="col">
-
+            <div className="col ml-4">
+              <h4 className="title font-weight-bold">Recently Posts</h4>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
             </div>
             {/* side-contents */}
-            <div className={clsx("col", classes.contentSidebarContainer)} >
-            </div>
+            <div className={clsx("col", classes.contentSidebarContainer)}></div>
           </div>
         </div>
         <div className={clsx("col-1", classes.contentContainer)} />
