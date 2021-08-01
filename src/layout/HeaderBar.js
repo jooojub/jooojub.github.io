@@ -54,7 +54,7 @@ function HeaderBar() {
                   textShadow: "1px 1px #000000",
                 }}
               >
-                Hello ;)
+                &nbsp;&nbsp;&nbsp;Hello ;)
               </font>
               <br />
               <font
@@ -81,7 +81,8 @@ function HeaderBar() {
                 Let's study together!
               </font>
               <div className="mt-4 pt-4 text-center">
-                <a href="/profile" type="button" class="btn btn-primary hvr-wobble-vertical">show profile</a>
+                {/* <a href="/profile" type="button" class="btn btn-primary hvr-wobble-vertical">show profile</a> */}
+                <a href="/profile" type="button" class="btn btn-outline-white wow fadeInDown waves-effect waves-light">about me</a>
               </div>
             </div>
           </div>

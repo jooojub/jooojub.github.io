@@ -63,8 +63,8 @@ function Footer() {
       >
         <MDBContainer fluid className={clsx("text-center text-md-left")}>
           <MDBRow>
-            <MDBCol md="2" />
-            <MDBCol md="2">
+            <MDBCol md="1" />
+            <MDBCol lg="3" md="3">
               <h1 className="title font-weight-bold">Jooojub</h1>
               <p>
                 <h7>
@@ -127,7 +127,7 @@ function Footer() {
                 </div>
               </div>
             </MDBCol>
-            <MDBCol md="2">
+            <MDBCol lg="3" md="3">
               <h6 className="title font-weight-bold pb-3">Recent Post</h6>
               <p>
                 <h7>
@@ -163,7 +163,7 @@ function Footer() {
                   className={clsx("m-2 h5", classes.footerIcon)}
                 />
               </MDBCol>
-              <MDBCol md="2" />
+              <MDBCol md="1" />
             </MDBRow>
           </MDBContainer>
         </div>

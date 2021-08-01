@@ -35,7 +35,7 @@ function HeaderNavBar() {
 
   return (
     <Navbar className={classes.headerNavBar} variant="dark">
-      <div className="col-2 d-none d-md-block" />
+      <div className="col-1 d-none d-md-block" />
       <div className="col d-flex align-items-center">
         <Navbar.Brand>
           <Avatar alt="jooojub" src="/assets/images/avatars/toto.jpg" />
@@ -49,7 +49,7 @@ function HeaderNavBar() {
           <Navbar.Brand className={classes.menu}>Posts</Navbar.Brand>
         </Navbar.Collapse>
       </div>
-      <div className="col-2 d-none d-md-block" />
+      <div className="col-1 d-none d-md-block" />
     </Navbar>
   );
 }
