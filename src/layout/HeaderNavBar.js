@@ -45,8 +45,8 @@ function HeaderNavBar() {
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end align-items-center">
-          <Navbar.Brand className={classes.menu}>Profile</Navbar.Brand>
-          <Navbar.Brand className={classes.menu}>Posts</Navbar.Brand>
+          {/* <Navbar.Brand className={classes.menu}>Profile</Navbar.Brand>
+          <Navbar.Brand className={classes.menu}>Posts</Navbar.Brand> */}
         </Navbar.Collapse>
       </div>
       <div className="col-1 d-none d-md-block" />

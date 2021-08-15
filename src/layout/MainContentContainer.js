@@ -1,8 +1,10 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
 import BlogCard from "../components/BlogCard";
-
-import clsx from "clsx";
+import CategoriesComponent from "../components/CategoriesComponent";
+import ArchiveComponent from "../components/ArchiveComponent";
+import ContentTitle from "../components/ContentTitle";
+import SearchInBlog from "../components/SearchInBlog";
 
 const useStyles = makeStyles({
   contentSidebarContainer: {
@@ -41,12 +43,6 @@ const useStyles = makeStyles({
       maxWidth: "1200px",
     },
   },
-  contentTitle: {
-    display: "flex",
-    alignItems: "center",
-    borderLeft: "5px solid #E2E8F0",
-    paddingLeft: "20px",
-  }
 });
 
 function MainContentContainer() {
@@ -55,34 +51,33 @@ function MainContentContainer() {
   return (
     // <div className={classes.contentContainer}>
     <div className="container">
-      <div
-        className="row"
-        style={{ paddingTop: "3rem" }}
-      >
+      <div className="row" style={{ paddingTop: "3rem" }}>
         <div className="col-0 col-xl-1" />
         <div className="col">
           <div className="row text-justify d-flex">
             {/* contents */}
             <div className="col-md-8 col-12">
-              <div className={classes.contentTitle}>
-                <h4 className="title font-weight-bold mb-0">Recent Posts</h4>
+              <ContentTitle value={"Recent Posts"}/>
+              <div className="m-2">
+                <BlogCard />
+                <BlogCard />
+                <BlogCard />
+                <br />
               </div>
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
             </div>
             {/* side-contents */}
             <div className="col-md-4 col-12">
-            <div className={classes.contentTitle}>
-                <h4 className="title font-weight-bold mb-0">Categories</h4>
+              <ContentTitle value={"Search in blog"}/>
+              <div className="m-2">
+                <SearchInBlog />
+              </div>
+              <ContentTitle value={"Categories"}/>
+              <div className="m-2">
+                <CategoriesComponent />
+              </div>
+              <ContentTitle value={"Archive"}/>
+              <div className="m-2">
+                <ArchiveComponent />
               </div>
             </div>
           </div>
