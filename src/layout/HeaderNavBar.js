@@ -7,7 +7,6 @@ const useStyles = makeStyles({
   headerNavBar: {
     boxShadow: "none",
     backgroundColor: "#0D1317",
-    // marginBottom: "4rem",
   },
   logo: {
     color: "#000000",
@@ -40,7 +39,7 @@ function HeaderNavBar() {
         <Navbar.Brand>
           <Avatar alt="jooojub" src="/assets/images/avatars/toto.jpg" />
         </Navbar.Brand>
-        <Navbar.Brand href="#home" className={classes.logo}>
+        <Navbar.Brand href="/" className={classes.logo}>
           <h4 className="title font-weight-bold mb-0">Jooojub</h4>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
