@@ -58,116 +58,100 @@ function Footer() {
   const classes = useStyles();
 
   return (
-      <MDBFooter
-        className={clsx("font-small pt-4 mt-4", classes.footerContainer)}
-      >
-        <MDBContainer fluid className={clsx("text-center text-md-left")}>
-          <MDBRow>
-            <MDBCol md="1" />
-            <MDBCol lg="3" md="3">
-              <h1 className="title font-weight-bold">Jooojub</h1>
-              <p>
-                <h7>
-                  <font color="#A9AFB3">
-                    Here you can use rows and columns here to organize your
-                    footer content.
-                  </font>
-                </h7>
-              </p>
-            </MDBCol>
-            <MDBCol md="2">
-              <h6 className="title font-weight-bold pb-3">Categories</h6>
-              <table
-                className={clsx(
-                  "table table-borderless",
-                  classes.footerCategoriesTable
-                )}
-              >
+    <MDBFooter
+      className={clsx("font-small pt-4 mt-4", classes.footerContainer)}
+    >
+      <MDBContainer fluid className={clsx("text-center text-md-left")}>
+        <MDBRow>
+          <MDBCol md="1" />
+          <MDBCol lg="3" md="3">
+            <h1 className="title font-weight-bold">Jooojub</h1>
+            <p>
+              <font color="#A9AFB3">
+                Here you can use rows and columns here to organize your footer
+                content.
+              </font>
+            </p>
+          </MDBCol>
+          <MDBCol md="2">
+            <h6 className="title font-weight-bold pb-3">Categories</h6>
+            <table
+              className={clsx(
+                "table table-borderless",
+                classes.footerCategoriesTable
+              )}
+            >
+              <tbody>
                 <tr>
-                  <td class="p-0 pr-4 pb-1 font-weight-bold">
-                    <h7 className="title">toolchain</h7>
+                  <td className="p-0 pr-4 pb-1">
+                    <p className="title font-weight-bold">toolchain</p>
                   </td>
-                  <td class="p-0 pr-4 pb-1 font-weight-bold">
-                    <h7 className="title">glibc</h7>
+                  <td className="p-0 pr-4 pb-1">
+                    <p className="title font-weight-bold">glibc</p>
                   </td>
                 </tr>
                 <tr>
-                  <td class="p-0 pr-4 pb-1 font-weight-bold">
-                    <h7 className="title">Linux</h7>
+                  <td className="p-0 pr-4 pb-1">
+                    <p className="title font-weight-bold">Linux</p>
                   </td>
-                  <td class="p-0 pr-4 pb-1 font-weight-bold">
-                    <h7 className="title">test</h7>
+                  <td className="p-0 pr-4 pb-1">
+                    <p className="title font-weight-bold">test</p>
                   </td>
                 </tr>
-              </table>
-            </MDBCol>
-            <MDBCol md="2" className="mb-4">
-              <h6 className="title font-weight-bold pb-3">Browse by Tag</h6>
-              <div
-                className={clsx("flex flex-wrap", classes.footerTagContainer)}
-              >
-                <div className="tag-btn">
-                  <h8>gcc options</h8>
-                </div>
-                <div className="tag-btn">
-                  <h8>glibc</h8>
-                </div>
+              </tbody>
+            </table>
+          </MDBCol>
+          <MDBCol md="2" className="mb-4">
+            <h6 className="title font-weight-bold pb-3">Browse by Tag</h6>
+            <div className={clsx("flex flex-wrap", classes.footerTagContainer)}>
+              <div className="tag-btn">gcc options</div>
+              <div className="tag-btn">glibc</div>
 
-                <div className="tag-btn">
-                  <h8>linux</h8>
-                </div>
-                <div className="tag-btn">
-                  <h8>test1</h8>
-                </div>
-                <div className="tag-btn">
-                  <h8>wformat</h8>
-                </div>
-                <div className="tag-btn">
-                  <h8>force</h8>
-                </div>
-              </div>
+              <div className="tag-btn">linux</div>
+              <div className="tag-btn">test1</div>
+              <div className="tag-btn">wformat</div>
+              <div className="tag-btn">force</div>
+            </div>
+          </MDBCol>
+          <MDBCol lg="3" md="3">
+            <h6 className="title font-weight-bold pb-3">Recent Post</h6>
+            <p>
+              <font color="#A9AFB3">
+                Here you can use rows and columns here to organize your footer
+                content.
+              </font>
+            </p>
+          </MDBCol>
+          <MDBCol md="1" />
+        </MDBRow>
+      </MDBContainer>
+      <div className={clsx("text-center py-3", classes.footerSubContainer)}>
+        <MDBContainer fluid>
+          <MDBRow>
+            <MDBCol md="2" />
+            <MDBCol md="6" className={clsx("d-flex align-items-center")}>
+              &copy; {new Date().getFullYear()} - All Right Reserved. Designed
+              and Developed by jooojub
             </MDBCol>
-            <MDBCol lg="3" md="3">
-              <h6 className="title font-weight-bold pb-3">Recent Post</h6>
-              <p>
-                <h7>
-                  <font color="#A9AFB3">
-                    Here you can use rows and columns here to organize your
-                    footer content.
-                  </font>
-                </h7>
-              </p>
+            <MDBCol md="2" className={clsx("d-flex justify-content-end")}>
+              <FontAwesomeIcon
+                icon={faGithub}
+                className={clsx("m-2 h5", classes.footerIcon)}
+              />
+              <FontAwesomeIcon
+                icon={faLinkedinIn}
+                className={clsx("m-2 h5", classes.footerIcon)}
+              />
+              <FontAwesomeIcon
+                icon={faGoogle}
+                className={clsx("m-2 h5", classes.footerIcon)}
+              />
             </MDBCol>
             <MDBCol md="1" />
           </MDBRow>
         </MDBContainer>
-        <div className={clsx("text-center py-3", classes.footerSubContainer)}>
-          <MDBContainer fluid>
-            <MDBRow>
-              <MDBCol md="2" />
-              <MDBCol md="6" className={clsx("d-flex align-items-center h7")}>
-                &copy; {new Date().getFullYear()} - All Right Reserved. Designed
-                and Developed by jooojub
-              </MDBCol>
-              <MDBCol md="2" className={clsx("d-flex justify-content-end")}>
-                <FontAwesomeIcon
-                  icon={faGithub}
-                  className={clsx("m-2 h5", classes.footerIcon)}
-                />
-                <FontAwesomeIcon
-                  icon={faLinkedinIn}
-                  className={clsx("m-2 h5", classes.footerIcon)}
-                />
-                <FontAwesomeIcon
-                  icon={faGoogle}
-                  className={clsx("m-2 h5", classes.footerIcon)}
-                />
-              </MDBCol>
-              <MDBCol md="1" />
-            </MDBRow>
-          </MDBContainer>
-        </div>
-      </MDBFooter>
+      </div>
+    </MDBFooter>
   );
 }
 

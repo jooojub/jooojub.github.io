@@ -36,28 +36,24 @@ function CategoriesComponent() {
   return (
     <div className={clsx("mt-3 p-3", classes.CategoriesContainer)}>
       <div className="tag-btn">
-        <h8>
           gcc options
-          <span class="ml-2 badge bg-dark ms-2">23</span>
-        </h8>
+          <span className="ml-2 badge bg-dark ms-2">23</span>
       </div>
       <div className="tag-btn">
-        <h8>
-          glibc<span class="ml-2 badge bg-dark ms-2">3</span>
-        </h8>
+          glibc<span className="ml-2 badge bg-dark ms-2">3</span>
       </div>
 
       <div className="tag-btn">
-        <h8>linuxglibc<span class="ml-2 badge bg-dark ms-2">12</span></h8>
+        linuxglibc<span className="ml-2 badge bg-dark ms-2">12</span>
       </div>
       <div className="tag-btn">
-        <h8>test1glibc<span class="ml-2 badge bg-dark ms-2">51</span></h8>
+        test1glibc<span className="ml-2 badge bg-dark ms-2">51</span>
       </div>
       <div className="tag-btn">
-        <h8>wformatglibc<span class="ml-2 badge bg-dark ms-2">77</span></h8>
+        wformatglibc<span className="ml-2 badge bg-dark ms-2">77</span>
       </div>
       <div className="tag-btn">
-        <h8>forceglibc<span class="ml-2 badge bg-dark ms-2">20</span></h8>
+        forceglibc<span className="ml-2 badge bg-dark ms-2">20</span>
       </div>
     </div>
   );

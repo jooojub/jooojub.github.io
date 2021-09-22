@@ -57,7 +57,7 @@ function MainPage() {
           <a
             href="/profile"
             type="button"
-            class="btn btn-outline-white wow fadeInDown waves-effect waves-light"
+            className="btn btn-outline-white wow fadeInDown waves-effect waves-light"
           >
             about me
           </a>

@@ -71,8 +71,8 @@ function BlogCard() {
     </div> */}
     <div className="col-12 col-md-12 p-3">
       <div className="mb-3">
-      <button type="button" class="btn btn-primary rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0 mr-2">gcc</button>
-      <button type="button" class="btn btn-dark rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0">options</button>
+      <button type="button" className="btn btn-primary rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0 mr-2">gcc</button>
+      <button type="button" className="btn btn-dark rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0">options</button>
       </div>
       <div className="mb-3">
         <h4 className="font-weight-bold text-left">This is title of the news</h4>
@@ -87,7 +87,7 @@ function BlogCard() {
         </p>
       </div>
       <div>
-      <p class="text-right mb-0 text-uppercase font-small  font-weight-bold">
+      <p className="text-right mb-0 text-uppercase font-small  font-weight-bold">
         <a className={classes.readmoreText}>
           read more
           <FontAwesomeIcon className="ml-1" icon={faChevronRight}/>

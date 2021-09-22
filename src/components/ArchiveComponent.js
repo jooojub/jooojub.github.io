@@ -36,24 +36,12 @@ function ArchiveComponent() {
 
   return (
     <div className={clsx("mt-3 p-3", classes.ArchiveContainer)}>
-      <div className="archive-btn">
-        <h8>January 2021</h8>
-      </div>
-      <div className="archive-btn">
-        <h8>February 2021</h8>
-      </div>
-      <div className="archive-btn">
-        <h8>March 2021</h8>
-      </div>
-      <div className="archive-btn">
-        <h8>April 2021</h8>
-      </div>
-      <div className="archive-btn">
-        <h8>May 2021</h8>
-      </div>
-      <div className="archive-btn">
-        <h8>June 2021</h8>
-      </div>
+      <div className="archive-btn">January 2021</div>
+      <div className="archive-btn">February 2021</div>
+      <div className="archive-btn">March 2021</div>
+      <div className="archive-btn">April 2021</div>
+      <div className="archive-btn">May 2021</div>
+      <div className="archive-btn">June 2021</div>
     </div>
   );
 }
