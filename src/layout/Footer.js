@@ -8,6 +8,9 @@ import {
   faGoogle,
 } from "@fortawesome/free-brands-svg-icons";
 
+import PostParser from "../api/PostParser";
+import { Link } from "react-router-dom";
+
 import clsx from "clsx";
 
 const useStyles = makeStyles({
@@ -50,6 +53,39 @@ const useStyles = makeStyles({
   },
 });
 
+function tags() {
+  const post_parser = new PostParser();
+  const jsx = [];
+
+  post_parser.getTags().forEach((tag) => {
+    jsx.push(
+      <Link key={`${tag.value}`} to={`/posts/${tag.value}`}>
+        <div className="tag-btn">{post_parser.tagToString(tag.value)}</div>
+      </Link>
+    );
+  });
+
+  return jsx;
+}
+
+function recentPost() {
+  const post_parser = new PostParser();
+  const jsx = [];
+
+  const recent_post = post_parser.getRecentPosts(1, 1);
+
+  jsx.push(
+    // <Link key={`${recent_post[0].file}`} to={`/posts/${recent_post[0].tags[0]}`}>
+    <p key={`${recent_post[0].file}`}>
+      <font color="#A9AFB3">
+        {recent_post[0].description.slice(0, 100) + "..."}
+      </font>
+    </p>
+    // </Link>
+  );
+
+  return jsx;
+}
 function Footer() {
   const classes = useStyles();
 
@@ -102,22 +138,12 @@ function Footer() {
               Browse by Categories
             </h6>
             <div className={clsx("flex flex-wrap", classes.footerTagContainer)}>
-              <div className="tag-btn">gcc options</div>
-              <div className="tag-btn">glibc</div>
-              <div className="tag-btn">linux</div>
-              <div className="tag-btn">test1</div>
-              <div className="tag-btn">wformat</div>
-              <div className="tag-btn">force</div>
+              {tags()}
             </div>
           </MDBCol>
           <MDBCol lg="3" md="3">
             <h6 className="title font-weight-bold pb-3">Recent Post</h6>
-            <p>
-              <font color="#A9AFB3">
-                Here you can use rows and columns here to organize your footer
-                content.
-              </font>
-            </p>
+            {recentPost()}
           </MDBCol>
           <MDBCol md="1" />
         </MDBRow>

@@ -27,7 +27,6 @@ const posts = (current_posts, current, perPage) => {
 };
 
 function PostListPage(props) {
-  const post_parser = new PostParser();
   const history = useHistory();
 
   const [current, setCurrent] = useState(1);
@@ -37,6 +36,8 @@ function PostListPage(props) {
   const [currentPosts, setCurrentPosts] = useState([]);
 
   useEffect(() => {
+    const post_parser = new PostParser();
+  
     const tag_match = post_parser
       .getTags()
       .filter((x) => x.value === props.match.params.category);
@@ -59,7 +60,7 @@ function PostListPage(props) {
     }
 
     setCurrent(1);
-  }, [props.match.params.category]);
+  }, [props.match.params.category, history]);
 
   return (
     <>
@@ -87,7 +88,7 @@ function PostListPage(props) {
               textShadow: "1px 1px #000000",
             }}
           >
-            # {post_parser.tagToString(props.match.params.category)}
+            # {new PostParser().tagToString(props.match.params.category)}
           </font>
         }
       />
@@ -96,7 +97,7 @@ function PostListPage(props) {
           {/* contents */}
           <div className="col-md-8 col-12 pr-4">
             <ContentTitle
-              value={post_parser
+              value={new PostParser()
                 .tagToString(props.match.params.category)
                 .toUpperCase()}
             />

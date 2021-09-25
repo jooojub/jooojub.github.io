@@ -52,13 +52,13 @@ const tags = (file) => {
 
     if (index === 0) {
       jsx.push(
-        <div className="btn btn-primary rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0 mr-2">
+        <div key={key} className="btn btn-primary rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0 mr-2">
           {key}
         </div>
       );
     } else {
       jsx.push(
-        <div className="btn btn-dark rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0">
+        <div key={key} className="btn btn-dark rounded-lg btn-sm pt-1 pb-1 pl-3 pr-3 m-0">
           {key}
         </div>
       );
@@ -80,7 +80,7 @@ const date = (file) => {
 
 function BlogCard(props) {
   const classes = useStyles();
-  const [file, setFile] = useState(props.file);
+  const [file] = useState(props.file);
 
   return (
     <div className="row mt-3">

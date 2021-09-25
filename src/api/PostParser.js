@@ -104,7 +104,7 @@ class PostParser {
     const begin = (current - 1) * perPage;
 
     sort_date.sort((a, b) => {
-      if (a.date == b.date) {
+      if (a.date === b.date) {
         return 0;
       }
       return a.date < b.date ? 1 : -1;

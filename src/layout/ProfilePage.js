@@ -56,7 +56,6 @@ const useStyles = makeStyles({
   skilInfo: {
     backgroundColor: "#213447",
     textAlign: "center",
-    display: "inline-block",
     padding: "4px 12px",
     width: "auto",
     color: "white",
@@ -77,7 +76,7 @@ const ProfilePage = () => {
     {
       skill: "c ",
       render: () => {
-        return <i class="fa fab-github pr-2" aria-hidden="true" />;
+        return <i className="fa fab-github pr-2" aria-hidden="true" />;
       },
     },
     {
@@ -244,7 +243,7 @@ const ProfilePage = () => {
               <div className="row m-4 justify-content-md-start justify-content-center">
                 {interest_list.map((obj) => {
                   return (
-                    <div className={classes.skilInfo}>
+                    <div key={obj.skill} className={classes.skilInfo}>
                       {obj.render && obj.render()}
                       <div>{obj.skill}</div>
                     </div>

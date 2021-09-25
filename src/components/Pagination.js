@@ -15,7 +15,7 @@ function PageItem(current, setCurrent, totalPage, perPage) {
 
   for (var idx = 0; idx < pageCnt; idx++) {
     jsx.push(
-      <MDBPageItem active={idx + 1 === current}>
+      <MDBPageItem key={idx} active={idx + 1 === current}>
         <MDBPageNav
           value={idx + 1}
           onClick={(e) => {
