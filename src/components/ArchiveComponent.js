@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/styles";
+import { Link } from "react-router-dom";
 
 import PostParser from "../api/PostParser";
 
@@ -31,7 +32,11 @@ const dates = () => {
   const jsx = [];
 
   post_parser.getDate().forEach((date) => {
-    jsx.push(<div className="archive-btn">{date.value}</div> );
+    jsx.push(
+      <Link key={`${date.value}`} to={`/posts/${date.value}`}>
+        <div className="archive-btn">{date.value}</div>
+      </Link>
+      );
   });
 
   return jsx;

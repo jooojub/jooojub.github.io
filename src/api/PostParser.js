@@ -69,7 +69,6 @@ class PostParser {
   }
 
   getWithTag(tag) {
-    const tags = this.getTags();
     const result = [];
 
     posts.forEach((post) => {
@@ -81,6 +80,22 @@ class PostParser {
         }
       });
     });
+
+    return result;
+  }
+
+  getWithDate(date) {
+    const result = [];
+
+    posts.forEach((post) => {
+      const post_date = new Intl.DateTimeFormat("en-US", {
+        year: "numeric",
+        month: "long",
+      }).format(new Date(post.date));
+
+      if (post_date === date)
+        result.push(post);
+    })
 
     return result;
   }

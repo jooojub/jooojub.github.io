@@ -13,13 +13,23 @@ import SearchInBlog from "../components/SearchInBlog";
 import PostParser from "../api/PostParser";
 import { useHistory } from "react-router-dom";
 
-const posts = (tag) => {
+const posts = (category) => {
   const post_parser = new PostParser();
   const jsx = [];
+  var find = false;
 
-  post_parser.getWithTag(tag).forEach((post) => {
-    jsx.push(<BlogCard key={post.file} file={post}/>);
+  // is tag
+  post_parser.getWithTag(category).forEach((post) => {
+    jsx.push(<BlogCard key={post.file} file={post} />);
+    find = true;
   });
+
+  // is archive
+  if (find === false) {
+    post_parser.getWithDate(category).forEach((post) => {
+      jsx.push(<BlogCard key={post.file} file={post} />);
+    });  
+  }
 
   return jsx;
 };
@@ -29,11 +39,16 @@ function PostListPage(props) {
   const history = useHistory();
 
   useEffect(() => {
-    const match = post_parser
+    const tag_match = post_parser
       .getTags()
       .filter((x) => x.value === props.match.params.category);
 
-    if (match.length === 0) history.push("/");
+    if (tag_match.length === 0) {
+      const date_match = post_parser
+        .getDate()
+        .filter((x) => x.value === props.match.params.category);
+      if (date_match.length === 0) history.push("/");
+    }
   });
 
   return (
@@ -71,7 +86,9 @@ function PostListPage(props) {
           {/* contents */}
           <div className="col-md-8 col-12 pr-4">
             <ContentTitle
-              value={post_parser.tagToString(props.match.params.category).toUpperCase()}
+              value={post_parser
+                .tagToString(props.match.params.category)
+                .toUpperCase()}
             />
             <div className="m-2">
               {posts(props.match.params.category)}
