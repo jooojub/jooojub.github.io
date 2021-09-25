@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import HeaderNavBar from "./HeaderNavBar";
 import HeaderBar from "./HeaderBar";
 import Footer from "./Footer";
@@ -13,23 +13,15 @@ import SearchInBlog from "../components/SearchInBlog";
 import PostParser from "../api/PostParser";
 import { useHistory } from "react-router-dom";
 
-const posts = (category) => {
-  const post_parser = new PostParser();
+import Pagination from "../components/Pagination";
+
+const posts = (current_posts, current, perPage) => {
   const jsx = [];
-  var find = false;
+  const begin = (current - 1) * perPage;
 
-  // is tag
-  post_parser.getWithTag(category).forEach((post) => {
+  current_posts.slice(begin, begin + perPage).forEach((post) => {
     jsx.push(<BlogCard key={post.file} file={post} />);
-    find = true;
   });
-
-  // is archive
-  if (find === false) {
-    post_parser.getWithDate(category).forEach((post) => {
-      jsx.push(<BlogCard key={post.file} file={post} />);
-    });  
-  }
 
   return jsx;
 };
@@ -37,6 +29,12 @@ const posts = (category) => {
 function PostListPage(props) {
   const post_parser = new PostParser();
   const history = useHistory();
+
+  const [current, setCurrent] = useState(1);
+  const perPage = 5;
+  const [totalPage, setTotalPage] = useState(1);
+
+  const [currentPosts, setCurrentPosts] = useState([]);
 
   useEffect(() => {
     const tag_match = post_parser
@@ -48,8 +46,20 @@ function PostListPage(props) {
         .getDate()
         .filter((x) => x.value === props.match.params.category);
       if (date_match.length === 0) history.push("/");
+
+      const cur_post = post_parser.getWithDate(props.match.params.category);
+
+      setTotalPage(cur_post.length);
+      setCurrentPosts(cur_post);
+    } else {
+      const cur_post = post_parser.getWithTag(props.match.params.category);
+
+      setTotalPage(cur_post.length);
+      setCurrentPosts(cur_post);
     }
-  });
+
+    setCurrent(1);
+  }, [props.match.params.category]);
 
   return (
     <>
@@ -91,8 +101,16 @@ function PostListPage(props) {
                 .toUpperCase()}
             />
             <div className="m-2">
-              {posts(props.match.params.category)}
+              {posts(currentPosts, current, perPage)}
               <br />
+              <div className="d-flex justify-content-center mt-2">
+                <Pagination
+                  current={current}
+                  setCurrent={setCurrent}
+                  totalPage={totalPage}
+                  perPage={perPage}
+                />
+              </div>
             </div>
           </div>
           {/* side-contents */}

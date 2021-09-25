@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HeaderNavBar from "./HeaderNavBar";
 import HeaderBar from "./HeaderBar";
 import Footer from "./Footer";
@@ -10,7 +10,30 @@ import ArchiveComponent from "../components/ArchiveComponent";
 import ContentTitle from "../components/ContentTitle";
 import SearchInBlog from "../components/SearchInBlog";
 
+import PostParser from "../api/PostParser";
+import Pagination from "../components/Pagination";
+
+const posts = (current, perPage) => {
+  const post_parser = new PostParser();
+  const jsx = [];
+
+  post_parser.getRecentPosts(current, perPage).forEach((post) => {
+    jsx.push(<BlogCard key={post.file} file={post} />);
+  });
+
+  return jsx;
+};
+
 function MainPage() {
+  const [current, setCurrent] = useState(1);
+  const perPage = 5;
+  const [totalPage, setTotalPage] = useState(1);
+
+  useEffect(() => {
+    const post_parser = new PostParser();
+    setTotalPage(post_parser.getPostCount());
+  }, []);
+
   return (
     <>
       <HeaderNavBar />
@@ -69,10 +92,16 @@ function MainPage() {
           <div className="col-md-8 col-12 pr-4">
             <ContentTitle value={"Recent Posts"} />
             <div className="m-2">
-              <BlogCard />
-              <BlogCard />
-              <BlogCard />
+              {posts(current, perPage)}
               <br />
+              <div className="d-flex justify-content-center mt-2">
+                <Pagination
+                  current={current}
+                  setCurrent={setCurrent}
+                  totalPage={totalPage}
+                  perPage={perPage}
+                />
+              </div>
             </div>
           </div>
           {/* side-contents */}

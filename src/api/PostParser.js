@@ -93,11 +93,28 @@ class PostParser {
         month: "long",
       }).format(new Date(post.date));
 
-      if (post_date === date)
-        result.push(post);
-    })
+      if (post_date === date) result.push(post);
+    });
 
     return result;
+  }
+
+  getRecentPosts(current, perPage) {
+    var sort_date = posts;
+    const begin = (current - 1) * perPage;
+
+    sort_date.sort((a, b) => {
+      if (a.date == b.date) {
+        return 0;
+      }
+      return a.date < b.date ? 1 : -1;
+    });
+
+    return sort_date.slice(begin, begin + perPage);
+  }
+
+  getPostCount() {
+    return posts.length;
   }
 }
 
