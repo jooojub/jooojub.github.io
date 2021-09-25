@@ -3,7 +3,7 @@ layout: post
 title:  "gcc options: -Wmissing-format-attribute"
 date:   2020-12-20
 share:	true
-tags: [gcc-options]
+tags: [gcc_options]
 keywords: [gcc-options, gcc, options, -Wmissing-format-attribute, -Wsuggest-attribute=format]
 description: "Warn about function pointers that might be candidates for format attributes. Note these are only possible candidates, not absolute ones. GCC guesses that function pointers with format attributes that are used in assignment, initialization, parameter passing or return statements should have a corresponding format attribute in the resulting type."
 ---

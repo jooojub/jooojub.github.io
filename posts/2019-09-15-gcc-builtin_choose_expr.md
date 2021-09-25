@@ -3,7 +3,7 @@ layout: post
 title:  "gcc builtin: choose_expr"
 date:   2019-09-15
 share:	true
-tags: [gcc-builtin]
+tags: [gcc_builtin]
 keywords: [gcc-builtin, gcc, builtin, __builtin_choose_expr]
 description: "test"
 ---

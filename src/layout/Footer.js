@@ -14,9 +14,6 @@ const useStyles = makeStyles({
   footerContainer: {
     backgroundColor: "#0D1317",
     userSelect: "none",
-    // position: "absolute",
-    // bottom: "0",
-    // width: "100%",
   },
   footerSubContainer: {
     backgroundColor: "#000000",
@@ -38,7 +35,6 @@ const useStyles = makeStyles({
       width: "fit-content",
       display: "inline-block",
       "&:hover": {
-        // backgroundColor: "#007bff",
         backgroundColor: "#112D4E",
         cursor: "pointer",
         transition: "all 0.5s linear",
@@ -73,7 +69,7 @@ function Footer() {
               </font>
             </p>
           </MDBCol>
-          <MDBCol md="2">
+          {/* <MDBCol md="2">
             <h6 className="title font-weight-bold pb-3">Categories</h6>
             <table
               className={clsx(
@@ -100,13 +96,14 @@ function Footer() {
                 </tr>
               </tbody>
             </table>
-          </MDBCol>
-          <MDBCol md="2" className="mb-4">
-            <h6 className="title font-weight-bold pb-3">Browse by Tag</h6>
+          </MDBCol> */}
+          <MDBCol md="4" className="mb-4">
+            <h6 className="title font-weight-bold pb-3">
+              Browse by Categories
+            </h6>
             <div className={clsx("flex flex-wrap", classes.footerTagContainer)}>
               <div className="tag-btn">gcc options</div>
               <div className="tag-btn">glibc</div>
-
               <div className="tag-btn">linux</div>
               <div className="tag-btn">test1</div>
               <div className="tag-btn">wformat</div>
@@ -128,8 +125,8 @@ function Footer() {
       <div className={clsx("text-center py-3", classes.footerSubContainer)}>
         <MDBContainer fluid>
           <MDBRow>
-            <MDBCol md="2" />
-            <MDBCol md="6" className={clsx("d-flex align-items-center")}>
+            <MDBCol md="1" />
+            <MDBCol md="8" className={clsx("d-flex align-items-center")}>
               &copy; {new Date().getFullYear()} - All Right Reserved. Designed
               and Developed by jooojub
             </MDBCol>

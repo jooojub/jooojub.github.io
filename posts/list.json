@@ -2,7 +2,7 @@
  {
   "file": "2019-06-16-gcc-attribute-cleanup.md",
   "title": "gcc attribute: cleanup",
-  "tags": "gcc-attribute, gccs",
+  "tags": "gcc_attribute, gccs",
   "date": "2019-06-16",
   "description": "The cleanup attribute runs a function when the variable goes out of scope. This attribute can only be applied to auto function scope variables."
  },
@@ -16,14 +16,14 @@
  {
   "file": "2019-07-01-gcc-attribute-nonnull.md",
   "title": "gcc attribute: nonnull",
-  "tags": "gcc-attribute",
+  "tags": "gcc_attribute",
   "date": "2019-07-01",
   "description": "A new function attribute, nonnull, has been added which allows pointer arguments to functions to be specified as requiring a non-null value."
  },
  {
   "file": "2019-07-03-gcc-options-fsigned-char.md",
   "title": "gcc options: -fsigned-char",
-  "tags": "gcc-options",
+  "tags": "gcc_options",
   "date": "2019-07-03",
   "description": "This option, and its inverse, let you make such a program work with the opposite default."
  },
@@ -37,42 +37,42 @@
  {
   "file": "2019-08-04-gcc-builtin-alloca.md",
   "title": "gcc builtin: alloca",
-  "tags": "gcc-builtin",
+  "tags": "gcc_builtin",
   "date": "2019-08-04",
   "description": "test"
  },
  {
   "file": "2019-09-15-gcc-builtin_choose_expr.md",
   "title": "gcc builtin: choose_expr",
-  "tags": "gcc-builtin",
+  "tags": "gcc_builtin",
   "date": "2019-09-15",
   "description": "test"
  },
  {
   "file": "2020-10-30-gcc-options-zeo-initialized-in-bss.md",
   "title": "gcc options: -fno-zero-initialized-in-bss",
-  "tags": "gcc-options",
+  "tags": "gcc_options",
   "date": "2020-10-30",
   "description": "초기화 되지 않은 global variable가 무조건 bss section에 들어가는 것은 아니다."
  },
  {
   "file": "2020-11-28-gcc-options-format.md",
   "title": "gcc options: -Wformat",
-  "tags": "gcc-options",
+  "tags": "gcc_options",
   "date": "2020-11-28",
   "description": "Check calls to printf and scanf, etc., to make sure that the arguments supplied have types appropriate to the format string specified, and that the conversions specified in the format string make sense."
  },
  {
   "file": "2020-12-06-gcc-attribute-format.md",
   "title": "gcc attribute: format, format_arg",
-  "tags": "gcc-attribute",
+  "tags": "gcc_attribute",
   "date": "2020-12-06",
   "description": "The format attribute specifies that a function takes printf, scanf, strftime or strfmon style arguments which should be type-checked against a format string."
  },
  {
   "file": "2020-12-24-gcc-options-missing-format-attribute.md",
   "title": "gcc options: -Wmissing-format-attribute",
-  "tags": "gcc-options",
+  "tags": "gcc_options",
   "date": "2020-12-20",
   "description": "Warn about function pointers that might be candidates for format attributes. Note these are only possible candidates, not absolute ones. GCC guesses that function pointers with format attributes that are used in assignment, initialization, parameter passing or return statements should have a corresponding format attribute in the resulting type."
  }

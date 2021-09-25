@@ -3,7 +3,7 @@ layout: post
 title:  "gcc options: -Wformat"
 date:   2020-11-28
 share:	true
-tags: [gcc-options]
+tags: [gcc_options]
 keywords: [gcc-options, gcc, options, -Wformat]
 description: "Check calls to printf and scanf, etc., to make sure that the arguments supplied have types appropriate to the format string specified, and that the conversions specified in the format string make sense."
 ---

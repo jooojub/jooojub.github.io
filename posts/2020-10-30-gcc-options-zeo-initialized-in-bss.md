@@ -3,7 +3,7 @@ layout: post
 title:  "gcc options: -fno-zero-initialized-in-bss"
 date:   2020-10-30
 share:	true
-tags: [gcc-options]
+tags: [gcc_options]
 keywords: [gcc-options, gcc, options, -fno-zero-initialized-in-bss]
 description: "초기화 되지 않은 global variable가 무조건 bss section에 들어가는 것은 아니다."
 ---

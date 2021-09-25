@@ -3,7 +3,7 @@ layout: post
 title:  "gcc builtin: alloca"
 date:   2019-08-04
 share:	true
-tags: [gcc-builtin]
+tags: [gcc_builtin]
 keywords: [gcc-builtin, gcc, builtin, alloca]
 description: "test"
 ---

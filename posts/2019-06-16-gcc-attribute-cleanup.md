@@ -2,7 +2,7 @@
 title:  "gcc attribute: cleanup"
 date:   2019-06-16
 share:	true
-tags: [gcc-attribute, gccs]
+tags: [gcc_attribute, gccs]
 keywords: [gcc-attribute, gcc, attribute, cleanup]
 description: "The cleanup attribute runs a function when the variable goes out of scope. This attribute can only be applied to auto function scope variables."
 ---

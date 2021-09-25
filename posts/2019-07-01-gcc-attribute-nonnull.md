@@ -3,7 +3,7 @@ layout: post
 title:  "gcc attribute: nonnull"
 date:   2019-07-01
 share:	true
-tags: [gcc-attribute]
+tags: [gcc_attribute]
 keywords: [gcc-attribute, gcc, attribute, nonnull]
 description: "A new function attribute, nonnull, has been added which allows pointer arguments to functions to be specified as requiring a non-null value."
 ---

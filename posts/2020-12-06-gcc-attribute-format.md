@@ -3,7 +3,7 @@ layout: post
 title:  "gcc attribute: format, format_arg"
 date:   2020-12-06
 share:	true
-tags: [gcc-attribute]
+tags: [gcc_attribute]
 keywords: [gcc-attribute, gcc, attribute, format, format_arg]
 description: "The format attribute specifies that a function takes printf, scanf, strftime or strfmon style arguments which should be type-checked against a format string."
 ---
