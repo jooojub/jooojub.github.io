@@ -6,6 +6,8 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 import { faCalendarMinus } from "@fortawesome/free-regular-svg-icons";
 
+import { Link } from "react-router-dom";
+
 const useStyles = makeStyles({
   blogCardImage: {
     width: "auto",
@@ -103,10 +105,12 @@ function BlogCard(props) {
         </div>
         <div>
           <p className="text-right mb-0 text-uppercase font-small  font-weight-bold">
-            <a className={classes.readmoreText}>
+            <Link key={`${file.file}`} to={`/post/${file.file}`}>
+            <p className={classes.readmoreText}>
               read more
               <FontAwesomeIcon className="ml-1" icon={faChevronRight} />
-            </a>
+            </p>
+            </Link>
           </p>
         </div>
       </div>

@@ -66,7 +66,7 @@ function PostListPage(props) {
     <>
       <HeaderNavBar />
       <HeaderBar
-        bgImage={"url(/assets/images/background/main_header_img.jpg)"}
+        bgImage={"url(/assets/images/background/post_list_header_img.jpg)"}
         mainComponent={
           <font
             style={{

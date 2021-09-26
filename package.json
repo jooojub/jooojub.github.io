@@ -15,6 +15,7 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.6.0",
+    "highlight.js": "^11.2.0",
     "hover.css": "^2.3.2",
     "mdbreact": "^5.0.2",
     "node-sass": "^6.0.1",
@@ -22,6 +23,7 @@
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",
+    "react-marked-markdown": "^1.4.6",
     "react-scripts": "4.0.3",
     "web-vitals": "^1.0.1"
   },
@@ -29,7 +31,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "post_build": "node ./tools/postParser.js"
   },
   "eslintConfig": {
     "extends": [

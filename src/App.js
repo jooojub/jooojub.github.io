@@ -2,6 +2,8 @@ import './App.css';
 import MainPage from './layout/MainPage'
 import ProfilePage from './layout/ProfilePage'
 import PostListPage from './layout/PostListPage'
+import PostPage from './layout/PostPage'
+
 import { BrowserRouter, Route } from 'react-router-dom';
 import "hover.css/css/hover-min.css";
 import 'mdbreact/dist/css/mdb.css';
@@ -15,6 +17,8 @@ function App() {
         <Route exact path="/" component={MainPage}/>
         <Route exact path="/profile" component={ProfilePage}/>
         <Route exact path="/posts/:category" component={PostListPage}/>
+        <Route exact path="/post/:file" component={PostPage}/>
+
       </BrowserRouter>
     </div>
   );

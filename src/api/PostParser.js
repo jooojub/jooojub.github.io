@@ -1,4 +1,5 @@
 import posts from "../posts/list.json";
+// import dd from "../posts/json/2019-06-16-gcc-attribute-cleanup.json";
 
 class PostParser {
   constructor() {
@@ -68,6 +69,19 @@ class PostParser {
     return this.date;
   }
 
+  getWithFile(file) {
+    var find_post = null;
+
+    posts.forEach((post) => {
+      if (post.file === file) {
+        find_post = post;
+        return;
+      }
+    });
+
+    return find_post;
+  }
+
   getWithTag(tag) {
     const result = [];
 
@@ -115,6 +129,15 @@ class PostParser {
 
   getPostCount() {
     return posts.length;
+  }
+
+  getPostWithFile(file, setCallback) {
+    if (file === undefined) return null;
+    if (setCallback === undefined) return null;
+
+    import(`../posts/json/${file.file}.json`).then(content => {
+      setCallback(content.content);
+    })
   }
 }
 

@@ -72,8 +72,7 @@ function MainPage() {
               textShadow: "1px 1px #000000",
             }}
           >
-            I'm system S/W Engineers. However, interested in many fields. Let's
-            study together!
+            I'm system S/W Engineers.
           </font>
         }
         subButton={
