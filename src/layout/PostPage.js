@@ -3,6 +3,7 @@ import HeaderNavBar from "./HeaderNavBar";
 import HeaderBar from "./HeaderBar";
 import Footer from "./Footer";
 import MainContentContainer from "./MainContentContainer";
+import { DiscussionEmbed } from "disqus-react";
 
 import CategoriesComponent from "../components/CategoriesComponent";
 import ArchiveComponent from "../components/ArchiveComponent";
@@ -80,8 +81,20 @@ function PostPage(props) {
           <div className="col-md-8 col-12 pr-4">
             {/* <ContentTitle value={currentPost && currentPost.title} /> */}
             {/* <div className="m-2"> */}
-            <Post file={currentPost} />
-            <br />
+            {currentPost && (
+              <>
+                <Post file={currentPost} />
+                <br />
+                <DiscussionEmbed
+                  shortname="jooojub"
+                  config={{
+                    url: window.location.href,
+                    identifier: currentPost.file,
+                    title: currentPost.title,
+                  }}
+                />
+              </>
+            )}
             <div className="d-flex justify-content-center mt-2">
               <Button
                 variant="dark"
