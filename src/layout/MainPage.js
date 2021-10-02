@@ -7,6 +7,7 @@ import MainContentContainer from "./MainContentContainer";
 import BlogCard from "../components/BlogCard";
 import CategoriesComponent from "../components/CategoriesComponent";
 import ArchiveComponent from "../components/ArchiveComponent";
+import SponsorComponent from "../components/SponsorComponent";
 import ContentTitle from "../components/ContentTitle";
 import SearchInBlog from "../components/SearchInBlog";
 
@@ -116,6 +117,10 @@ function MainPage() {
             <ContentTitle value={"Archive"} />
             <div className="m-2">
               <ArchiveComponent />
+            </div>
+            <ContentTitle value={"Sponsor"} />
+            <div className="m-2">
+              <SponsorComponent />
             </div>
           </div>
         </div>

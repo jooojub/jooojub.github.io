@@ -7,6 +7,7 @@ import { DiscussionEmbed } from "disqus-react";
 
 import CategoriesComponent from "../components/CategoriesComponent";
 import ArchiveComponent from "../components/ArchiveComponent";
+import SponsorComponent from "../components/SponsorComponent";
 import ContentTitle from "../components/ContentTitle";
 import SearchInBlog from "../components/SearchInBlog";
 import Post from "../components/Post";
@@ -95,6 +96,8 @@ function PostPage(props) {
                 />
               </>
             )}
+            <br />
+
             <div className="d-flex justify-content-center mt-2">
               <Button
                 variant="dark"
@@ -106,6 +109,8 @@ function PostPage(props) {
                 Previous
               </Button>
             </div>
+            <br />
+            <br />
             {/* </div> */}
           </div>
           {/* side-contents */}
@@ -121,6 +126,10 @@ function PostPage(props) {
             <ContentTitle value={"Archive"} />
             <div className="m-2">
               <ArchiveComponent />
+            </div>
+            <ContentTitle value={"Sponsor"} />
+            <div className="m-2">
+              <SponsorComponent />
             </div>
           </div>
         </div>

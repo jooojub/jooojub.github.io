@@ -11,7 +11,6 @@ import clsx from "clsx";
 import { Avatar } from "@material-ui/core";
 import ContentTitle from "../components/ContentTitle";
 
-
 const useStyles = makeStyles({
   profileAvatar: {
     height: "160px",
