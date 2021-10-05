@@ -11,26 +11,15 @@ import PostParser from "../api/PostParser";
 // import c from 'react-syntax-highlighter/dist/esm/languages/prism/c';
 // import prism from 'react-syntax-highlighter/dist/esm/styles/prism/prism';
 
-import { MarkdownPreview } from "react-marked-markdown";
 import hljs from "highlight.js";
 import c from "highlight.js/lib/languages/c";
 import javascript from "highlight.js/lib/languages/javascript";
 
+import marked, { Renderer } from "marked";
+
 import "../highlights/monokai.css";
 
 const useStyles = makeStyles({
-  blogCardImage: {
-    width: "auto",
-    // height: "auto",
-    borderRadius: "12px",
-    boxShadow: "0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)",
-    boxSizing: "border-box",
-
-    display: "block",
-    height: "100%",
-    objectFit: "cover",
-  },
-
   blogContent: {
     // fontSize: ".87rem",
     // lineHeight: "1.5rem",
@@ -51,6 +40,66 @@ const useStyles = makeStyles({
     "&:hover": {
       color: "#607d8b !important",
     },
+  },
+  blogMarkdown: {
+    "& ul": {
+      "& li::marker": {
+        fontSize: "1rem",
+      },
+    },
+    "& p": {
+      fontFamily: "'Noto Sans KR', sans-serif",
+    },
+    // "& #requires": {
+    //   color: "red",
+    // },
+    "& h4": {
+      fontWeight: "700 !important",
+    },
+    "& blockquote": {
+      textAlign: "left",
+      backgroundColor: "#FAFAFA",
+      borderLeft: "7px solid #666666",
+      padding: "0.7rem",
+      borderRadius: "5px",
+      "& p": {
+        fontSize: "14px",
+        marginBottom: "0rem",
+      },
+    },
+    "& mark": {
+      backgroundColor: "#272823",
+      color: "white",
+      paddingLeft: "0.5rem",
+      paddingRight: "0.5rem",
+      paddingTop: "0rem",
+      paddingBottom: "0rem",
+      borderRadius: "5px",
+    },
+    "& cd": {
+      color: "#F92672",
+    },
+    "& pre": {
+      borderRadius: "0.5rem",
+      boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;",
+      "& code": {
+        padding: "1rem",
+      },
+    },
+    "& #codeTitle": {
+      backgroundColor: "#212121",
+      color: "white",
+      padding: "0.8rem",
+    },
+    "& thead tr th": {
+      fontSize: "20px",
+    },
+    "& tbody tr td": {
+      fontSize: "16px",
+    },
+    "& dt": {
+      fontSize: "1rem",
+    }
   },
 });
 
@@ -96,8 +145,102 @@ const date = (file) => {
   }).format(new Date(file.date));
 };
 
+const description = {
+  name: "description",
+  level: "inline", // Is this a block-level or inline-level tokenizer?
+  start(src) {
+    return src.match(/:/)?.index;
+  }, // Hint to Marked.js to stop and check for a match
+  tokenizer(src, tokens) {
+    const rule = /^:([^:\n]+):([^:\n]*)(?:\n|$)/; // Regex for the complete token
+    const match = rule.exec(src);
+    if (match) {
+      return {
+        // Token to generate
+        type: "description", // Should match "name" above
+        raw: match[0], // Text to consume from the source
+        dt: this.lexer.inlineTokens(match[1].trim()), // Additional custom properties, including
+        dd: this.lexer.inlineTokens(match[2].trim()), //   any further-nested inline tokens
+      };
+    }
+  },
+  renderer(token) {
+    return `\n<dt><div><i class="fas fa-asterisk"></i>&nbsp;${this.parser.parseInline(
+      token.dt
+    )}</div></dt><dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${this.parser.parseInline(token.dd)}</dd>`;
+  },
+  childTokens: ["dt", "dd"], // Any child tokens to be visited by walkTokens
+  walkTokens(token) {
+    // Post-processing on the completed token tree
+    if (token.type === "strong") {
+      token.text += " walked";
+    }
+  },
+};
+
+marked.use({ extensions: [description] });
+
+const renderer = new Renderer();
+
+const escapeMap = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
+};
+
+function escapeForHTML(input) {
+  return input.replace(/([&<>'"])/g, (char) => escapeMap[char]);
+}
+
+renderer.code = (code, language) => {
+  const validLang = !!(language && hljs.getLanguage(language));
+
+  const rule = /^:([^:.]+)\n([\s\S]+)/; // Regex for the complete token
+  const match = rule.exec(code);
+  var title = "";
+
+  if (match) {
+    title = match[1].trim();
+    code = match[2];
+  }
+
+  // Highlight only if the language is valid.
+  // highlight.js escapes HTML in the code, but we need to escape by ourselves
+  // when we don't use it.
+  const highlighted = validLang
+    ? hljs.highlight(language, code).value
+    : escapeForHTML(code);
+
+  // Render the highlighted code with `hljs` class.
+  if (match)
+    return `<pre><div id="codeTitle"><i class="far fa-file-code"></i>&nbsp;${title}</div><code class="hljs ${language}">${highlighted}</code></pre>`;
+  else return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
+};
+
+marked.use({ renderer: renderer });
+
+const getMarkup = (content) => {
+  const rawMarkup = marked(content, {
+    // langPrefix: "hljs language-",
+    breaks: true,
+    // gfm: true,
+    // pedantic: true,
+    // highlight: function (code) {
+    //   return hljs.highlightAuto(code).value;
+    // },
+  });
+
+  return {
+    __html: rawMarkup,
+  };
+};
+
 function Post(props) {
   const classes = useStyles();
+  const [currentPost, setCurrentPost] = useState(undefined);
+  const [currentPostContent, setCurrentPostContent] = useState(null);
 
   useEffect(() => {
     setCurrentPost(props.file);
@@ -106,12 +249,11 @@ function Post(props) {
 
     hljs.registerLanguage("javascript", javascript);
     hljs.registerLanguage("c", c);
-
-    hljs.highlightAll();
   }, [props.file]);
 
-  const [currentPost, setCurrentPost] = useState(undefined);
-  const [currentPostContent, setCurrentPostContent] = useState(null);
+  useEffect(() => {
+    hljs.highlightAll();
+  }, [currentPostContent]);
 
   return (
     <div className="row">
@@ -130,14 +272,22 @@ function Post(props) {
         </div>
         <hr />
         <div>
-          <p className={classes.blogContent}>
-            <MarkdownPreview
-              value={currentPostContent}
-              markedOptions={{
-                langPrefix: "hljs language-", // # [1]
-              }}
-            />
-          </p>
+          {currentPostContent && (
+            <div
+              className={classes.blogMarkdown}
+              dangerouslySetInnerHTML={getMarkup(currentPostContent)}
+            >
+              {/* <MarkdownPreview
+                className={classes.blogMarkdown}
+                value={currentPostContent}
+                markedOptions={{
+                  langPrefix: "hljs language-",
+                  tables: true,
+                  renderer: renderer,
+                }}
+              /> */}
+            </div>
+          )}
         </div>
       </div>
     </div>

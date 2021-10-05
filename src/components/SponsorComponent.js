@@ -24,7 +24,7 @@ function SponsorComponent() {
         size="sm"
         alt="Buy me a coffee!!"
       >
-        <i class="fas fa-mug-hot" />
+        <i className="fas fa-mug-hot" />
         &nbsp;&nbsp;&nbsp;Buy me a coffee
       </Button>
     </div>

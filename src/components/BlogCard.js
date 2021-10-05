@@ -104,14 +104,14 @@ function BlogCard(props) {
           </p>
         </div>
         <div>
-          <p className="text-right mb-0 text-uppercase font-small  font-weight-bold">
+          <div className="text-right mb-0 text-uppercase font-small  font-weight-bold">
             <Link key={`${file.file}`} to={`/post/${file.file}`}>
             <p className={classes.readmoreText}>
               read more
               <FontAwesomeIcon className="ml-1" icon={faChevronRight} />
             </p>
             </Link>
-          </p>
+          </div>
         </div>
       </div>
     </div>

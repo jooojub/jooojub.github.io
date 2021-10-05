@@ -7,12 +7,27 @@ keywords: [gcc-attribute, gcc, attribute, cleanup]
 description: "The cleanup attribute runs a function when the variable goes out of scope. This attribute can only be applied to auto function scope variables."
 ---
 
-Requires :
- * compiler: gcc 3.3.1 later
+#### Requires
+: compiler : gcc 3.3.1 later
+***
 
-systemd 코드에서, 'attribute' keyword 들을 많이 볼 수 있습니다. 그중에서 security coding에 많은 도움이 될 수 있는 'cleanup' keyword에 대해서 살펴보겠습니다.
+> #### The quarterly results look great!
+>
+> - Revenue was off the chart.
+> - Profits were higher than ever.
+>
+>  *Everything* is going according to **plan**.
 
-'cleanup' keyword에 대해서 gcc 문서에서는 다음과 같이 설명합니다.
+
+```c
+: title sample
+#include <stdio.h>
+
+const int test = 0;
+```
+systemd 코드에서, <mark>attribute</mark> keyword 들을 많이 볼 수 있습니다. 그중에서 <cd>security coding</cd>에 많은 도움이 될 수 있는 'cleanup' keyword에 대해서 살펴보겠습니다.
+
+**cleanup** keyword에 대해서 gcc 문서에서는 다음과 같이 설명합니다.
 
 ***
 <table>
@@ -40,8 +55,8 @@ systemd 코드에서, 'attribute' keyword 들을 많이 볼 수 있습니다. �
 
 즉, 잘 사용한다면, pair를 맞춰야 하는 코드 {malloc/free, open/close, ...} 관리가 편해, leak이 발생하는 상황을 막을 수 있어 보입니다.
 ### Check with code
-#### -> sample source code: simple
-{% highlight c %}
+```c
+: sample source code - simple
 #include <stdio.h>
 
 void auto_function(int *arg) {
@@ -55,26 +70,26 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
-{% endhighlight %}
-#### -> result
-{% highlight bash %}
+```
+#### result
+```bash
 auto_function: called by __clean_up__: 5
-{% endhighlight %}
+```
 
-#### -> assembly: x86_64 AT&T
-{% highlight x86asm %}
+#### assembly: x86_64 AT&T
+```asm
 00000000004005c1 <main>:
   ...
   4005ec:	48 8d 45 e4             lea    -0x1c(%rbp),%rax
   4005f0:	48 89 c7                mov    %rax,%rdi
   4005f3:	e8 9e ff ff ff          callq  400596 <auto_function>
   ...
-{% endhighlight %}
+```
 auto_function(& val)이 자동으로 호출되는 것을 볼 수 있습니다.<br>
 이곳에 free() 또는 close()를 추가하게 되면 신경 쓰지 않아도 자동으로 호출되게 할 수 있습니다.
 
 #### -> sample source code: fclose
-{% highlight c %}
+```c
 ...
 void fclosep(FILE **f) {
 	fclose(f);
@@ -87,14 +102,14 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
-{% endhighlight %}
+```
 `__cleanup__` attribute에 의해 호출되는 함수의 시점이 중요합니다.<br>
 문서에는 다음과 같이 명시되어 있습니다.<br>
 `The cleanup attribute runs a function when the variable goes out of scope`<br>
 확인해봅시다.
 
 #### -> sample source code: scope
-{% highlight c %}
+```c
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -112,17 +127,15 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
-{% endhighlight %}
+```
 #### -> result
-<div class="noline" markdown="1">
-{% highlight bash%}
+```bash
 value freed
 before return
-{% endhighlight %}
-</div>
+```
 
 #### -> assembly: x86_64 AT&T
-{% highlight x86asm %}
+```x86asm
   ...
   40066a:	31 c0                	xor    %eax,%eax
 	{
@@ -143,12 +156,11 @@ before return
 	return 0;
   400690:	b8 00 00 00 00       	mov    $0x0,%eax
 }
-
-{% endhighlight %}
+```
 즉, 다음과 같은 실수를 하지 않도록 조심해야 합니다.
 
 #### -> sample source code: be careful with scope
-{% highlight c %}
+```c
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -173,12 +185,8 @@ int main(int argc, char **argv) {
 
 	return 0;
 }
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash
 Segmentation fault (core dumped)
-{% endhighlight %}
-
-<div align="right">
-jooojub.
-</div>
+```
