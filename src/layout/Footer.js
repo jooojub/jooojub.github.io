@@ -10,6 +10,7 @@ import {
 
 import PostParser from "../api/PostParser";
 import { Link } from "react-router-dom";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 import clsx from "clsx";
 
@@ -45,10 +46,17 @@ const useStyles = makeStyles({
     },
   },
   footerIcon: {
+    color: "#A9AFB3",
     "&:hover": {
       color: "#ffffff",
       cursor: "pointer",
       transition: "all 0.5s linear",
+    },
+  },
+  tooltip: {
+    "& .tooltip-inner": {
+      backgroundColor: "#213447",
+      color: "white",
     },
   },
 });
@@ -75,13 +83,18 @@ function recentPost() {
   const recent_post = post_parser.getRecentPosts(1, 1);
 
   jsx.push(
-    // <Link key={`${recent_post[0].file}`} to={`/posts/${recent_post[0].tags[0]}`}>
-    <p key={`${recent_post[0].file}`}>
-      <font color="#A9AFB3">
-        {recent_post[0].description.slice(0, 100) + "..."}
-      </font>
-    </p>
-    // </Link>
+    <Link
+      style={{ textDecoration: "none" }}
+      key={`${recent_post[0].file}`}
+      to={`/post/${recent_post[0].file}`}
+    >
+      <h6 className="title">{recent_post[0].title}</h6>
+      <p key={`${recent_post[0].file}`}>
+        <font color="#A9AFB3">
+          {recent_post[0].description.slice(0, 100) + "..."}
+        </font>
+      </p>
+    </Link>
   );
 
   return jsx;
@@ -97,12 +110,25 @@ function Footer() {
         <MDBRow>
           <MDBCol md="1" />
           <MDBCol lg="3" md="3">
-            <h1 className="title font-weight-bold">Jooojub</h1>
+            <h1 className="title font-weight-bold">
+              <OverlayTrigger
+                overlay={
+                  <Tooltip className={classes.tooltip} id="profile">
+                    About me!
+                  </Tooltip>
+                }
+                placement="bottom"
+              >
+                <Link
+                  style={{ textDecoration: "none", width: "fit-content" }}
+                  to={"/profile"}
+                >
+                  Jooojub
+                </Link>
+              </OverlayTrigger>
+            </h1>
             <p>
-              <font color="#A9AFB3">
-                Here you can use rows and columns here to organize your footer
-                content.
-              </font>
+              <font color="#A9AFB3">system S/W engineers</font>
             </p>
           </MDBCol>
           {/* <MDBCol md="2">
@@ -157,18 +183,58 @@ function Footer() {
               and Developed by jooojub
             </MDBCol>
             <MDBCol md="2" className={clsx("d-flex justify-content-end")}>
-              <FontAwesomeIcon
-                icon={faGithub}
-                className={clsx("m-2 h5", classes.footerIcon)}
-              />
-              <FontAwesomeIcon
-                icon={faLinkedinIn}
-                className={clsx("m-2 h5", classes.footerIcon)}
-              />
-              <FontAwesomeIcon
-                icon={faGoogle}
-                className={clsx("m-2 h5", classes.footerIcon)}
-              />
+              <OverlayTrigger
+                trigger="hover"
+                overlay={
+                  <Tooltip className={classes.tooltip} id="github">
+                    Github
+                  </Tooltip>
+                }
+                placement="top"
+              >
+                <div>
+                  <a href="https://github.com/jooojub" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      className={clsx("m-2 h5", classes.footerIcon)}
+                    />
+                  </a>
+                </div>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip className={classes.tooltip} id="linked-in">
+                    Linked in
+                  </Tooltip>
+                }
+                placement="top"
+              >
+                <div>
+                  {/* <a target="_blank"> */}
+                  <FontAwesomeIcon
+                    icon={faLinkedinIn}
+                    className={clsx("m-2 h5", classes.footerIcon)}
+                  />
+                  {/* </a> */}
+                </div>
+              </OverlayTrigger>
+              <OverlayTrigger
+                overlay={
+                  <Tooltip className={classes.tooltip} id="google">
+                    Google
+                  </Tooltip>
+                }
+                placement="top"
+              >
+                <div>
+                  <a href="mailto:jooojub@gmail.com" target="_blank" rel="noreferrer">
+                    <FontAwesomeIcon
+                      icon={faGoogle}
+                      className={clsx("m-2 h5", classes.footerIcon)}
+                    />
+                  </a>
+                </div>
+              </OverlayTrigger>
             </MDBCol>
             <MDBCol md="1" />
           </MDBRow>

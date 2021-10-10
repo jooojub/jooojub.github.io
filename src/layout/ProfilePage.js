@@ -5,6 +5,7 @@ import HeaderNavBar from "./HeaderNavBar";
 import HeaderBar from "./HeaderBar";
 import Footer from "./Footer";
 import MainContentContainer from "./MainContentContainer";
+import SponsorComponent from "../components/SponsorComponent";
 
 import clsx from "clsx";
 
@@ -74,9 +75,9 @@ const ProfilePage = () => {
   const interest_list = [
     {
       skill: "c ",
-      render: () => {
-        return <i className="fa fab-github pr-2" aria-hidden="true" />;
-      },
+      // render: () => {
+      //   return <i className="fa fab-github pr-2" aria-hidden="true" />;
+      // },
     },
     {
       skill: "c++",
@@ -210,14 +211,16 @@ const ProfilePage = () => {
                 system S/W engineers
               </h6>
               <div className="mb-4">
-                <i
-                  className={clsx(
-                    "fab fa-github",
-                    classes.circleIcon,
-                    classes.IconGithub
-                  )}
-                  aria-hidden="true"
-                />
+                <a href="https://github.com/jooojub" target="_blank" rel="noreferrer">
+                  <i
+                    className={clsx(
+                      "fab fa-github",
+                      classes.circleIcon,
+                      classes.IconGithub
+                    )}
+                    aria-hidden="true"
+                  />
+                </a>
                 <i
                   className={clsx(
                     "fab fa-linkedin-in",
@@ -226,14 +229,16 @@ const ProfilePage = () => {
                   )}
                   aria-hidden="true"
                 />
-                <i
-                  className={clsx(
-                    "fab fa-google",
-                    classes.circleIcon,
-                    classes.IconGoogle
-                  )}
-                  aria-hidden="true"
-                />
+                <a href="mailto:jooojub@gmail.com" target="_blank" rel="noreferrer">
+                  <i
+                    className={clsx(
+                      "fab fa-google",
+                      classes.circleIcon,
+                      classes.IconGoogle
+                    )}
+                    aria-hidden="true"
+                  />
+                </a>
               </div>
             </div>
 
@@ -290,6 +295,12 @@ const ProfilePage = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+            <div>
+              <ContentTitle value={"Sponsor"} />
+              <div className="m-2 text-left">
+                <SponsorComponent />
               </div>
             </div>
           </div>

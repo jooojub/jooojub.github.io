@@ -73,7 +73,7 @@ function MainPage() {
               textShadow: "1px 1px #000000",
             }}
           >
-            I'm system S/W Engineers.
+            personal blog for study
           </font>
         }
         subButton={
