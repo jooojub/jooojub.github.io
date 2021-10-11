@@ -38,7 +38,7 @@ const useStyles = makeStyles({
       padding: "0.4rem",
       width: "fit-content",
       display: "inline-block",
-      "&:hover": {
+      "&:hover &:focus": {
         backgroundColor: "#112D4E",
         cursor: "pointer",
         transition: "all 0.5s linear",
@@ -47,7 +47,7 @@ const useStyles = makeStyles({
   },
   footerIcon: {
     color: "#A9AFB3",
-    "&:hover": {
+    "&:hover &:focus": {
       color: "#ffffff",
       cursor: "pointer",
       transition: "all 0.5s linear",
@@ -57,6 +57,7 @@ const useStyles = makeStyles({
     "& .tooltip-inner": {
       backgroundColor: "#213447",
       color: "white",
+      margin: "0",
     },
   },
 });
@@ -112,19 +113,29 @@ function Footer() {
           <MDBCol lg="3" md="3">
             <h1 className="title font-weight-bold">
               <OverlayTrigger
+                trigger={["hover", "hover"]}
+                transition={false}
                 overlay={
-                  <Tooltip className={classes.tooltip} id="profile">
+                  <Tooltip
+                    className={classes.tooltip}
+                    style={{ margin: 0 }}
+                    id="profile"
+                  >
                     About me!
                   </Tooltip>
                 }
                 placement="bottom"
               >
-                <Link
-                  style={{ textDecoration: "none", width: "fit-content" }}
-                  to={"/profile"}
-                >
-                  Jooojub
-                </Link>
+                {({ ref, ...triggerHandler }) => (
+                  <Link
+                    {...triggerHandler}
+                    ref={ref}
+                    style={{ textDecoration: "none", width: "fit-content" }}
+                    to={"/profile"}
+                  >
+                    Jooojub
+                  </Link>
+                )}
               </OverlayTrigger>
             </h1>
             <p>
@@ -184,56 +195,87 @@ function Footer() {
             </MDBCol>
             <MDBCol md="2" className={clsx("d-flex justify-content-end")}>
               <OverlayTrigger
-                trigger="hover"
+                trigger={["hover", "hover"]}
+                transition={false}
                 overlay={
-                  <Tooltip className={classes.tooltip} id="github">
+                  <Tooltip
+                    className={classes.tooltip}
+                    style={{ margin: 0 }}
+                    id="github"
+                  >
                     Github
                   </Tooltip>
                 }
                 placement="top"
               >
-                <div>
-                  <a href="https://github.com/jooojub" target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      className={clsx("m-2 h5", classes.footerIcon)}
-                    />
-                  </a>
-                </div>
+                {({ ref, ...triggerHandler }) => (
+                  <div {...triggerHandler} ref={ref}>
+                    <a
+                      href="https://github.com/jooojub"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FontAwesomeIcon
+                        icon={faGithub}
+                        className={clsx("m-2 h5", classes.footerIcon)}
+                      />
+                    </a>
+                  </div>
+                )}
               </OverlayTrigger>
               <OverlayTrigger
+                trigger={["hover", "hover"]}
+                transition={false}
                 overlay={
-                  <Tooltip className={classes.tooltip} id="linked-in">
+                  <Tooltip
+                    className={classes.tooltip}
+                    style={{ margin: 0 }}
+                    id="linked-in"
+                  >
                     Linked in
                   </Tooltip>
                 }
                 placement="top"
               >
-                <div>
-                  {/* <a target="_blank"> */}
-                  <FontAwesomeIcon
-                    icon={faLinkedinIn}
-                    className={clsx("m-2 h5", classes.footerIcon)}
-                  />
-                  {/* </a> */}
-                </div>
+                {({ ref, ...triggerHandler }) => (
+                  <div {...triggerHandler} ref={ref}>
+                    {/* <a target="_blank"> */}
+                      <FontAwesomeIcon
+                        icon={faLinkedinIn}
+                        className={clsx("m-2 h5", classes.footerIcon)}
+                      />
+                    {/* </a> */}
+                  </div>
+                )}
               </OverlayTrigger>
               <OverlayTrigger
+                trigger={["hover", "hover"]}
+                transition={false}
                 overlay={
-                  <Tooltip className={classes.tooltip} id="google">
+                  <Tooltip
+                    className={classes.tooltip}
+                    style={{ margin: 0 }}
+                    id="google"
+                  >
                     Google
                   </Tooltip>
                 }
                 placement="top"
               >
-                <div>
-                  <a href="mailto:jooojub@gmail.com" target="_blank" rel="noreferrer">
-                    <FontAwesomeIcon
-                      icon={faGoogle}
-                      className={clsx("m-2 h5", classes.footerIcon)}
-                    />
-                  </a>
-                </div>
+                {({ ref, ...triggerHandler }) => (
+                  <div {...triggerHandler} ref={ref}>
+                    <a
+                      href="mailto:jooojub@gmail.com"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FontAwesomeIcon
+                        icon={faGoogle}
+                        className={clsx("m-2 h5", classes.footerIcon)}
+                      />
+                    </a>
+                  </div>
+                )}
               </OverlayTrigger>
             </MDBCol>
             <MDBCol md="1" />
