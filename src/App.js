@@ -3,6 +3,7 @@ import MainPage from './layout/MainPage'
 import ProfilePage from './layout/ProfilePage'
 import PostListPage from './layout/PostListPage'
 import PostPage from './layout/PostPage'
+import SearchPage from './layout/SearchPage'
 
 import { BrowserRouter, Route } from 'react-router-dom';
 import "hover.css/css/hover-min.css";
@@ -18,6 +19,7 @@ function App() {
         <Route exact path="/profile" component={ProfilePage}/>
         <Route exact path="/posts/:category" component={PostListPage}/>
         <Route exact path="/post/:file" component={PostPage}/>
+        <Route exact path="/search/:keyword" component={SearchPage}/>
 
       </BrowserRouter>
     </div>

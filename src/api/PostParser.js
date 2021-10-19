@@ -113,6 +113,26 @@ class PostParser {
     return result;
   }
 
+  getWithKeyword(keyword) {
+    const reg = new RegExp(keyword, 'i');
+
+    var post_match = [];
+
+    posts.forEach((post) => {
+      if (post.title.match(reg) !== null) {
+        post_match.push(post);
+      } else if (post.tags.match(reg) !== null) {
+        post_match.push(post);
+      } else if (post.date.match(reg) !== null) {
+        post_match.push(post);
+      } else if (post.description.match(reg) !== null) {
+        post_match.push(post);
+      }
+    });
+
+    return post_match;
+  }
+
   getRecentPosts(current, perPage) {
     var sort_date = posts;
     const begin = (current - 1) * perPage;
