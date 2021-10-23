@@ -11,6 +11,7 @@ import clsx from "clsx";
 
 import { Avatar } from "@material-ui/core";
 import ContentTitle from "../components/ContentTitle";
+import PostParser from "../api/PostParser";
 
 const useStyles = makeStyles({
   profileAvatar: {
@@ -268,7 +269,7 @@ const ProfilePage = () => {
                         className="text-left font-weight-bold mb-0"
                         style={{ fontFamily: "Inter, sans-serif" }}
                       >
-                        4
+                        {new PostParser().getPostCount()}
                       </h3>
                       <h6>
                         <p>Number of posts</p>

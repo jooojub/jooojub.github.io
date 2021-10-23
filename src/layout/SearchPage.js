@@ -62,7 +62,7 @@ function SearchPage(props) {
               textShadow: "1px 1px #000000",
             }}
           >
-            Matched posts
+            My posts
           </font>
         }
         subComponent={
@@ -71,6 +71,18 @@ function SearchPage(props) {
               fontFamily: "Inter, sans-serif",
               fontSize: "24px",
               fontWeight: "600",
+              textShadow: "1px 1px #000000",
+            }}
+          >
+            filter by keyword search
+          </font>
+        }
+        subSecondComponent={
+          <font
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: "400",
               textShadow: "1px 1px #000000",
             }}
           >

@@ -36,6 +36,8 @@ function PostListPage(props) {
 
   const [currentPosts, setCurrentPosts] = useState([]);
 
+  const [currentCategory, setCurrentCategory] = useState();
+
   useEffect(() => {
     const post_parser = new PostParser();
   
@@ -53,11 +55,13 @@ function PostListPage(props) {
 
       setTotalPage(cur_post.length);
       setCurrentPosts(cur_post);
+      setCurrentCategory("archive");
     } else {
       const cur_post = post_parser.getWithTag(props.match.params.category);
 
       setTotalPage(cur_post.length);
       setCurrentPosts(cur_post);
+      setCurrentCategory("categories");
     }
 
     setCurrent(1);
@@ -77,7 +81,7 @@ function PostListPage(props) {
               textShadow: "1px 1px #000000",
             }}
           >
-            Posts
+            My posts
           </font>
         }
         subComponent={
@@ -86,6 +90,18 @@ function PostListPage(props) {
               fontFamily: "Inter, sans-serif",
               fontSize: "24px",
               fontWeight: "600",
+              textShadow: "1px 1px #000000",
+            }}
+          >
+            filter by {currentCategory}
+          </font>
+        }
+        subSecondComponent={
+          <font
+            style={{
+              fontFamily: "Inter, sans-serif",
+              fontSize: "14px",
+              fontWeight: "400",
               textShadow: "1px 1px #000000",
             }}
           >
