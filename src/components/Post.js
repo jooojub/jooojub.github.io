@@ -81,7 +81,8 @@ const useStyles = makeStyles({
     },
     "& pre": {
       borderRadius: "0.5rem",
-      boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;",
+      boxShadow:
+        "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;",
       "& code": {
         padding: "1rem",
       },
@@ -99,7 +100,13 @@ const useStyles = makeStyles({
     },
     "& dt": {
       fontSize: "1rem",
-    }
+    },
+    "& ol": {
+      "& li.doc_endnote": {
+        fontSize: "0.8rem",
+        marginBottom: "1rem",
+      },
+    },
   },
 });
 
@@ -167,7 +174,9 @@ const description = {
   renderer(token) {
     return `\n<dt><div><i class="fas fa-asterisk"></i>&nbsp;${this.parser.parseInline(
       token.dt
-    )}</div></dt><dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${this.parser.parseInline(token.dd)}</dd>`;
+    )}</div></dt><dd>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${this.parser.parseInline(
+      token.dd
+    )}</dd>`;
   },
   childTokens: ["dt", "dd"], // Any child tokens to be visited by walkTokens
   walkTokens(token) {
@@ -179,6 +188,83 @@ const description = {
 };
 
 marked.use({ extensions: [description] });
+
+const doc_endnote = {
+  name: "doc_endnote",
+  level: "inline", // Is this a block-level or inline-level tokenizer?
+  start(src) {
+    return src.match(/\[\^/)?.index;
+  }, // Hint to Marked.js to stop and check for a match
+  tokenizer(src, tokens) {
+    const rule = /^\[\^([1-9]+)\]([^\n]*)/; // Regex for the complete token
+    const match = rule.exec(src);
+    if (match) {
+      return {
+        // Token to generate
+        type: "doc_endnote", // Should match "name" above
+        raw: match[0], // Text to consume from the source
+        num: this.lexer.inlineTokens(match[1].trim()), // Additional custom properties, including
+        txt: this.lexer.inlineTokens(match[2].trim()), //   any further-nested inline tokens
+      };
+    }
+  },
+  renderer(token) {
+    return `
+    <li id="fn:${this.parser.parseInline(token.num)}" class="doc_endnote">
+    ${this.parser.parseInline(token.txt)}
+    </li>
+    `;
+  },
+  childTokens: ["num", "txt"], // Any child tokens to be visited by walkTokens
+  walkTokens(token) {
+    // Post-processing on the completed token tree
+    if (token.type === "strong") {
+      token.text += " walked";
+    }
+  },
+};
+
+marked.use({ extensions: [doc_endnote] });
+
+const link_doc_endnote = {
+  name: "link_doc_endnote",
+  level: "inline", // Is this a block-level or inline-level tokenizer?
+  start(src) {
+    return src.match(/->\[\^/)?.index;
+  }, // Hint to Marked.js to stop and check for a match
+  tokenizer(src, tokens) {
+    const rule = /^->\[\^([1-9]+)\]([^[]*)\[\/\^\]/; // Regex for the complete token
+    const match = rule.exec(src);
+    if (match) {
+      return {
+        // Token to generate
+        type: "link_doc_endnote", // Should match "name" above
+        raw: match[0], // Text to consume from the source
+        num: this.lexer.inlineTokens(match[1].trim()), // Additional custom properties, including
+        txt: this.lexer.inlineTokens(match[2].trim()), //   any further-nested inline tokens
+      };
+    }
+  },
+  renderer(token) {
+    return `
+      <a href="#fn:${this.parser.parseInline(token.num)}">
+      ${this.parser.parseInline(token.txt)}
+        <sup>
+          ${this.parser.parseInline(token.num)}
+        </sup>
+      </a>
+    `;
+  },
+  childTokens: ["num", "txt"], // Any child tokens to be visited by walkTokens
+  walkTokens(token) {
+    // Post-processing on the completed token tree
+    if (token.type === "strong") {
+      token.text += " walked";
+    }
+  },
+};
+
+marked.use({ extensions: [link_doc_endnote] });
 
 const renderer = new Renderer();
 
@@ -197,7 +283,7 @@ function escapeForHTML(input) {
 renderer.code = (code, language) => {
   const validLang = !!(language && hljs.getLanguage(language));
 
-  const rule = /^:([^:.]+)\n([\s\S]+)/; // Regex for the complete token
+  const rule = /^:([^:^\n]+)\n([\s\S]+)/; // Regex for the complete token
   const match = rule.exec(code);
   var title = "";
 
