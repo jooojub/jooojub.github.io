@@ -13,6 +13,7 @@ import PostParser from "../api/PostParser";
 
 import hljs from "highlight.js";
 import c from "highlight.js/lib/languages/c";
+import bash from "highlight.js/lib/languages/bash";
 import javascript from "highlight.js/lib/languages/javascript";
 
 import marked, { Renderer } from "marked";
@@ -103,6 +104,7 @@ const useStyles = makeStyles({
     },
     "& ol": {
       "& li.doc_endnote": {
+        fontWeight: "bold",
         fontSize: "0.8rem",
         marginBottom: "1rem",
       },
@@ -335,6 +337,9 @@ function Post(props) {
 
     hljs.registerLanguage("javascript", javascript);
     hljs.registerLanguage("c", c);
+    hljs.registerLanguage("bash", bash);
+
+    hljs.configure({ ignoreUnescapedHTML: true })
   }, [props.file]);
 
   useEffect(() => {
