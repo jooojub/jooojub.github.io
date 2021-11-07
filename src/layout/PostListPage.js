@@ -112,7 +112,7 @@ function PostListPage(props) {
       <MainContentContainer>
         <div className="row text-justify d-flex">
           {/* contents */}
-          <div className="col-md-8 col-12 pr-4">
+          <div className="col-md-8 col-12 pr-4 pl-4">
             <ContentTitle
               value={new PostParser()
                 .tagToString(props.match.params.category)

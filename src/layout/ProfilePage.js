@@ -243,7 +243,7 @@ const ProfilePage = () => {
               </div>
             </div>
 
-            <div className="mb-5">
+            <div className="mb-5 pr-4 pl-3">
               <ContentTitle value={"Interest"} />
               <div className="row m-4 justify-content-md-start justify-content-center">
                 {interest_list.map((obj) => {
@@ -256,7 +256,7 @@ const ProfilePage = () => {
                 })}{" "}
               </div>
             </div>
-            <div>
+            <div className="pr-4 pl-3">
               <ContentTitle value={"Statistics"} />
               <div className="row">
                 <div className="m-1 ml-4">
@@ -279,7 +279,7 @@ const ProfilePage = () => {
                 </div>
 
                 <div className="m-1">
-                  <div className="row m-4">
+                  <div className="row m-4 pr-4 pl-3">
                     <h1 className="align-self-center">
                       <i className="fas fa-mug-hot"></i>
                     </h1>
@@ -298,7 +298,7 @@ const ProfilePage = () => {
                 </div>
               </div>
             </div>
-            <div>
+            <div className="pr-4 pl-3">
               <ContentTitle value={"Sponsor"} />
               <div className="m-2 text-left">
                 <SponsorComponent />
