@@ -14,6 +14,8 @@ import SearchInBlog from "../components/SearchInBlog";
 import PostParser from "../api/PostParser";
 import Pagination from "../components/Pagination";
 
+import { Link } from "react-router-dom";
+
 const posts = (current, perPage) => {
   const post_parser = new PostParser();
   const jsx = [];
@@ -77,13 +79,13 @@ function MainPage() {
           </font>
         }
         subButton={
-          <a
-            href="/profile"
-            type="button"
+          <Link to="/profile">
+          <p
             className="btn btn-outline-white wow fadeInDown waves-effect waves-light"
           >
             about me
-          </a>
+          </p>
+          </Link>
         }
       />
       <MainContentContainer>
