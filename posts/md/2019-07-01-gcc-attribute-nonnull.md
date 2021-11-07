@@ -8,79 +8,51 @@ keywords: [gcc-attribute, gcc, attribute, nonnull]
 description: "A new function attribute, nonnull, has been added which allows pointer arguments to functions to be specified as requiring a non-null value."
 ---
 
-Requires :
- * compiler: gcc 3.3 later
-
-`nonnull attribute`를 사용하면, function argument에 NULL을 넘기면 안되는 함수에 NULL을 사용하는 경우를 compile-time에 검출할 수 있습니다.<br><br>
-그러나 NULL이 implicitly(묵시적) 으로 지정된 경우에만 감지되고, 그렇지 않은 상황을 검출할 수 없는 한계가 있습니다.<br>
-이러한 한계는 이후에 다시 자세히 설명하겠습니다.
-
-이 attribute는 `-Wnonnull` 와 `-Werror=nonnull` compile options과 함께 사용되어야 의미가 있습니다.<br>
-`-Wno-nonnull`를 사용하면 애써 `nonnull attribute`를 사용한 의미가 없게 됩니다.<br>
-
-gcc-3.3 release note에서 nonnull이 처음 소개되었고, kernel이나 glibc와 같이 많은 오픈소스에서 사용되고 있습니다. 
-
-***
-<table>
-    <thead>
-        <tr>
-            <th>GCC 3.3 Changes</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <b>C/ObjC/C++</b><br>
-              ...<br>
-              A new function attribute, <b>nonnull</b>, has been added which allows pointer arguments to functions to be specified as requiring a non-null value. The compiler currently uses this information to issue a warning when it detects a null value passed in such an argument slot.
-              <br><br>
-              <cite>ref. <a href="https://gcc.gnu.org/gcc-3.3/changes.html"><code>https://gcc.gnu.org/gcc-3.3/changes.html</code></a></cite>
-            </td>
-        </tr>
-    </tbody>
-</table>
+#### Requires
+: compiler: gcc 3.3 later
 ***
 
-자세한 내용은 gcc 문서에 친절하게 나와 있습니다.
+If you use <mark>nonnull attribute</mark>, you can detect at compile-time when NULL is used in a function that `should not pass NULL` as a function argument.
 
-***
-<table>
-    <thead>
-        <tr>
-            <th>gcc 7.3/Common-Function-Attributes/nonnull</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <b>nonnull (arg-index, …)</b><br><br>
-              The nonnull attribute specifies that some function parameters should be non-null pointers. For instance, the declaration:
-              <div class="noline" markdown="1">
-              {% highlight c %}
-extern void *
-    my_memcpy (void *dest, const void *src, size_t len)
-    __attribute__((nonnull (1, 2)));{% endhighlight %}</div>
-causes the compiler to check that, in calls to my_memcpy, arguments dest and src are <b>non-null</b>. If the compiler determines that a <b>null pointer is passed in an argument slot marked as non-null</b>, and the <b>-Wnonnull</b> option is enabled, a warning is issued. The compiler may also choose to make optimizations based on the knowledge that certain function arguments will never be null.<br><br>
+However, It is detected only if NULL is specified as implicitly. 
+Therefore, there is a limit that it cannot detect a situation where it is not.
+These limitations will be discussed in more detail later.
 
-If no argument index list is given to the nonnull attribute, all pointer arguments are marked as non-null. To illustrate, the following declaration is equivalent to the previous example:
-              <div class="noline" markdown="1">
-              {% highlight c %}
-extern void *
-    my_memcpy (void *dest, const void *src, size_t len)
-    __attribute__((nonnull));{% endhighlight %}</div>
-              <cite>ref. <a href="https://gcc.gnu.org/gcc-3.3/changes.html"><code>https://gcc.gnu.org/gcc-3.3/changes.html</code></a></cite>
-            </td>
-        </tr>
-    </tbody>
-</table>
-***
+This attribute is meaningful only when used with the <mark>-Wnonnull</mark> or <mark>-Werror=nonnull</mark> compile options.
+Using <mark>-Wno-nonnull</mark> makes it meaningless to use <mark>nonnull attribute</mark> it on purpose.
 
-단순한 attribute이기 때문에 간단한 sample code로 이해할 수 있습니다.<br>
-중요한 것은 argument index list가 0-based가 아니라 1-based 라는 것입니다.
+<mark>nonnull</mark> was first introduced in the gcc-3.3 release note, and is used in many open-sources such as kernel and glibc.
 
-### Check with code
-#### -> sample source code: nonnull.c
-{% highlight c %}
+> #### GCC 3.3 Changes
+> <b>C/ObjC/C++</b>
+> ...
+> A new function attribute, <b>nonnull</b>,has been added which allows pointerarguments to functions to be specified asrequiring a non-null value. The compilercurrently uses this information to issue awarning when it detects a null value passedin such an argument slot.<br>
+> **ref:&nbsp;**<a target="_blank" href="https://gcc.gnu.org/gcc-3.3/changes.html"><code>https://gcc.gnu.org/gcc-3.3/changes.html</code></a></cite>
+
+More details are kindly given in the gcc documentation.
+
+
+
+> #### gcc 7.3/Common-Function-Attributes/nonnull
+> <b>nonnull (arg-index, …)</b><br>
+> The nonnull attribute specifies that some function parameters should be non-null pointers. For instance, the declaration:<br><br>
+> <pre><code>extern void *
+>    my_memcpy (void *dest, const void *src, size_t len)
+>    __attribute__((nonnull (1, 2)));</code></pre>
+> causes the compiler to check that, in calls to my_memcpy, arguments dest and src are <mark>non-null</mark>.
+> If the compiler determines that a <b>null pointer is passed in an argument slot marked as non-null</b>, and the <mark>-Wnonnull</mark> option is enabled, a warning is issued.
+> The compiler may also choose to make optimizations based on the knowledge that certain function arguments will never be null.<br>
+> If no argument index list is given to the nonnull attribute, all pointer arguments are marked as non-null. To illustrate, the following declaration is equivalent to the previous example:<br><br>
+> <pre><code>extern void *
+>    my_memcpy (void *dest, const void *src, size_t len)
+>    __attribute__((nonnull));</pre></code>
+> **ref:&nbsp;**<a target="_blank" href="https://gcc.gnu.org/gcc-3.3/changes.html"><code>https://gcc.gnu.org/gcc-3.3/changes.html</code></a></cite>
+
+Because it is a simple attribute, you can be understood with a simple sample code.
+The important thing is that the argument index list is `1-based`, not 0-based.
+
+```c 
+: sample source code - nonnull.c
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -95,10 +67,12 @@ int main(void) {
 
 	return 0;
 }
-{% endhighlight %}
-my_test_function()에서 `dest` 와 `src`는 NULL이 되면 안 된다고 명시했습니다.
-<div class="noline" markdown="1">
-{% highlight bash %}
+```
+
+In my_test_function(), I specified that `dest` and `src` must not be `NULL`.
+
+```bash
+: result
 $ gcc -Wnonnull nonnull.c
 
 nonnull.c: In function ‘main’:
@@ -108,12 +82,13 @@ nonnull.c:11:2: warning: null argument where non-null required
   ^~~~~~~~~~~~~~~~
 nonnull.c:11:2: warning: null argument where non-null required
 										(argument 2) [-Wnonnull]
-{% endhighlight %}
-</div>
-compiler가 친절하게 argument 1, 2에는 NULL을 사용하면 안 된다고 warning 메시지를 줬습니다.<br>
-Compile warning은 가끔 실수로 지나칠 수 있으니, compile이 실패 발생하도록 error로 바꾸는 게 좋겠네요.<br>
-<div class="noline" markdown="1">
-{% highlight bash %}
+```
+The compiler kindly gave me a warning message saying that arguments 1 and 2 should not be NULL.
+
+Compile warnings can sometimes be overlooked by mistake, so it is better to change them to errors so that compilation fails.
+
+```bash
+: change to error with -Werror=
 $ gcc -Werror=nonnull nonnull.c
 
 nonnull.c: In function ‘main’:
@@ -124,14 +99,15 @@ nonnull.c:11:2: error: null argument where non-null required
 nonnull.c:11:2: error: null argument where non-null required
 										(argument 2) [-Werror=nonnull]
 cc1: some warnings being treated as errors
-{% endhighlight %}
-</div>
-중요한 건, `nonnull attribute`을 사용했다고 해서, my_test_function() 함수 안에서 NULL check를 하지 않아도 된다는 뜻은 아닙니다.<br>
-이 attribute는 오직 compile-time에서 예측 가능한 상황에서만 동작합니다.<br>
-compile-time 검출의 한계이며 어찌 보면 당연한 한계 입니다.<br>
+```
 
-#### -> Can not detect for the following situations:
-{% highlight c %}
+Importantly, just because you use a <mark>nonnull attribute</mark> doesn't mean you don't need to check for NULL in my_test_function().
+This attribute only works in predictable situations at compile-time.
+It is a limitation of compile-time detection and in a way it is a natural limitation.
+
+
+```c
+: can not detect for the following situations
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -148,17 +124,20 @@ int main(void) {
 
 	return 0;
 }
-{% endhighlight %}
-<div class="noline" markdown="1">
-{% highlight bash %}
+```
+a is `null` but the build succeeds.
+```bash
+: result
 $ gcc -Werror=nonnull nonnull.c
 /* build success! */
-{% endhighlight %}
-</div>
-위 상황은 compiler 입장에서 충분히 예측 가능한 NULL인데도 불구하고 검출을 못 하네요..<br><br>
+```
 
-만약 `nonnull attribute`을 사용할 때, argument index list를 주지 않으면, 모든 argument에 대해서 nonnull check를 하게 됩니다.
-{% highlight c %}
+Although the above situation is NULL, which is sufficiently predictable from the point of view of the compiler, it cannot be detected... hmm
+
+When using <mark>nonnull attribute</mark>, if argument index list is not provided, nonnull check is performed for all arguments.
+
+```c
+: use without argument index list
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -173,11 +152,10 @@ int main(void) {
 
 	return 0;
 }
-{% endhighlight %}
-<div class="noline" markdown="1">
-{% highlight bash %}
+```
+```bash
+: result - build fail
 $ gcc -Werror=nonnull nonnull.c
-
 nonnull.c: In function ‘main’:
 nonnull.c:11:2: error: null argument where non-null required
 										(argument 1) [-Werror=nonnull]
@@ -186,10 +164,8 @@ nonnull.c:11:2: error: null argument where non-null required
 nonnull.c:11:2: error: null argument where non-null required
 										(argument 2) [-Werror=nonnull]
 cc1: some warnings being treated as errors
-{% endhighlight %}
-</div>
-비록 검출의 한계가 있지만, user의 실수를 compile-time에 검출할 가능성이 있다는 것은 큰 이점으로 보입니다.<br>
-Compiler attribute는 Runtime overhead도 없기 때문에, 이러한 `attribute`을 많이 활용할 계획입니다.<br>
-<div align="right">
-jooojub.
-</div>
+```
+
+Although there is a limit to detection, the possibility of detecting user mistakes at compile-time seems to be a big advantage.
+
+Compiler attribute has no `runtime overhead`, so I plan to make a lot of use of these `attributes`.

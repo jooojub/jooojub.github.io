@@ -2,7 +2,7 @@
 title:  "gcc attribute: cleanup"
 date:   2019-06-16
 share:	true
-tags: [gcc_attribute, gccs]
+tags: [gcc_attribute]
 keywords: [gcc-attribute, gcc, attribute, cleanup]
 description: "The cleanup attribute runs a function when the variable goes out of scope. This attribute can only be applied to auto function scope variables."
 ---
@@ -11,52 +11,28 @@ description: "The cleanup attribute runs a function when the variable goes out o
 : compiler : gcc 3.3.1 later
 ***
 
-> #### The quarterly results look great!
->
-> - Revenue was off the chart.
-> - Profits were higher than ever.
->
->  *Everything* is going according to **plan**.
+In systemd project code, you will see a lot of <mark>attribute</mark> keywords.
+Among them, let's look at the <mark>cleanup</mark> keyword, which can be very helpful for <cd>security coding</cd>.
 
+The <mark>cleanup</mark> keyword is described as follows in the gcc documentation.
 
-```c
-: title sample
-#include <stdio.h>
+> #### cleanup
+> <b>The cleanup attribute runs a function when the variable goes out of scope</b>.<br>
+> This attribute can only be applied to auto function scope variables; it may not be applied to parameters or variables with static storage duration.<br>
+> The function must take one parameter, a pointer to a type compatible with the variable.
+> The return value of the function (if any) is ignored.<br>
+> If -fexceptions is enabled, then cleanup_function is run during the stack unwinding that happens during the processing of the exception.
+> Note that the cleanup attribute does not allow the exception to be caught, only to perform an action.
+> It is undefined what happens if cleanup_function does not return normally.<br>
+> **ref:&nbsp;**<a target="_blank" href="https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html"><code>https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html</code></a></cite>
 
-const int test = 0;
-```
-systemd 코드에서, <mark>attribute</mark> keyword 들을 많이 볼 수 있습니다. 그중에서 <cd>security coding</cd>에 많은 도움이 될 수 있는 'cleanup' keyword에 대해서 살펴보겠습니다.
-
-**cleanup** keyword에 대해서 gcc 문서에서는 다음과 같이 설명합니다.
-
-***
-<table>
-    <thead>
-        <tr>
-            <th>cleanup</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-                <b>The cleanup attribute runs a function when the variable goes out of scope</b>. This attribute can only be applied to auto function scope variables; it may not be applied to parameters or variables with static storage duration. The function must take one parameter, a pointer to a type compatible with the variable. The return value of the function (if any) is ignored.
-                <br><br>
-                If -fexceptions is enabled, then cleanup_function is run during the stack unwinding that happens during the processing of the exception. Note that the cleanup attribute does not allow the exception to be caught, only to perform an action. It is undefined what happens if cleanup_function does not return normally.
-                <br><br>
-                <cite>ref. <a href="https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html"><code>https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html</code></a></cite>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-***
-다음 설명이 중요한 요점 같네요.
+I think the following explanation is an important point.
 > The cleanup attribute runs a function when the variable goes out of scope
 
-즉, 잘 사용한다면, pair를 맞춰야 하는 코드 {malloc/free, open/close, ...} 관리가 편해, leak이 발생하는 상황을 막을 수 있어 보입니다.
-### Check with code
+In other words, if used well, the code that needs to match the pair ( <mark>malloc/free</mark> or <mark>open/close</mark>... ) is easy to manage, and it seems to prevent leaks.
+
 ```c
-: sample source code - simple
+: sample source code - usage
 #include <stdio.h>
 
 void auto_function(int *arg) {
@@ -71,13 +47,15 @@ int main(int argc, char **argv) {
 	return 0;
 }
 ```
-#### result
 ```bash
+: result
 auto_function: called by __clean_up__: 5
 ```
 
-#### assembly: x86_64 AT&T
-```asm
+If you look at the assembly code, You can see that the code that calls <cd>auto_function()</cd> has been added automatically by gcc.
+
+```x86asm
+: assembly - x86_64 AT&T (usage)
 00000000004005c1 <main>:
   ...
   4005ec:	48 8d 45 e4             lea    -0x1c(%rbp),%rax
@@ -85,11 +63,10 @@ auto_function: called by __clean_up__: 5
   4005f3:	e8 9e ff ff ff          callq  400596 <auto_function>
   ...
 ```
-auto_function(& val)이 자동으로 호출되는 것을 볼 수 있습니다.<br>
-이곳에 free() 또는 close()를 추가하게 되면 신경 쓰지 않아도 자동으로 호출되게 할 수 있습니다.
+If you put <mark>free()</mark> or <mark>close()</mark> here, secure coding is possible without worrying about leaks like this,
 
-#### -> sample source code: fclose
 ```c
+: sample source code - fclose
 ...
 void fclosep(FILE **f) {
 	fclose(f);
@@ -103,13 +80,15 @@ int main(int argc, char **argv) {
 	return 0;
 }
 ```
-`__cleanup__` attribute에 의해 호출되는 함수의 시점이 중요합니다.<br>
-문서에는 다음과 같이 명시되어 있습니다.<br>
-`The cleanup attribute runs a function when the variable goes out of scope`<br>
-확인해봅시다.
+The timing of the function being called by the <mark>__cleanup__</mark> attribute is important.
 
-#### -> sample source code: scope
+The documentation describes it as:
+> The cleanup attribute runs a function when the variable goes out of scope
+
+Let's check if the above explanation is correct
+
 ```c
+: sample source code - scope
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -128,14 +107,13 @@ int main(int argc, char **argv) {
 	return 0;
 }
 ```
-#### -> result
 ```bash
+: result
 value freed
 before return
 ```
-
-#### -> assembly: x86_64 AT&T
 ```x86asm
+: assembly - x86_64 AT&T (scope)
   ...
   40066a:	31 c0                	xor    %eax,%eax
 	{
@@ -157,10 +135,11 @@ before return
   400690:	b8 00 00 00 00       	mov    $0x0,%eax
 }
 ```
-즉, 다음과 같은 실수를 하지 않도록 조심해야 합니다.
+Be mindful of the timing.
+Mistakes such as the following may also occur
 
-#### -> sample source code: be careful with scope
 ```c
+: sample source code - be careful with scope
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -188,5 +167,6 @@ int main(int argc, char **argv) {
 ```
 
 ```bash
+: result
 Segmentation fault (core dumped)
 ```

@@ -5,22 +5,25 @@ date:   2019-08-04
 share:	true
 tags: [gcc_builtin]
 keywords: [gcc-builtin, gcc, builtin, alloca]
-description: "test"
+description: "The alloca() function allocates size bytes of space in the stack frame of the caller.  This temporary space is automatically freed when the function that called alloca() returns to its caller."
 ---
 
-Requires:
- * compiler: gcc 2.8 later
+#### Requires
+: compiler: gcc 2.8 later
+***
 
-gcc builtin 중의 하나인 `__builtin_alloca`에 대해서 살펴보겠습니다.
+Let's take a look at <mark>__builtin_alloca</mark>, one of the gcc builtins.
 
-우선 명심해야 할 것은 많은 책이나 posts에서 `alloca built-in`을 security 관점에서 사용하지 말 것을 권고하고 있습니다.
-이번 post를 통해서 왜 그런지 이유를 명확하게 이해했으면 좋겠습니다.
+The first thing to keep in mind is that many books and posts advise against using <mark>alloca</mark> built-in' from a `security standpoint`.
 
-open-source code를 많이 살펴보셨다면, 종종 `__builtin_alloca`를 잧아 볼 수 있을 겁니다.<br>
-예를 들어 glibc의 `strdupa` macro를 다음과 같이 정의되어 있습니다.
+I hope that through this post, you can clearly understand why.
 
-#### -> strdupa macro (glibc/string/string.h)
-{% highlight c %}
+If you've looked at open-source code a lot, you'll often see <mark>__builtin_alloca</mark>.
+
+For example, glibc's `strdupa` macro is defined as follows:
+
+```c
+: strdupa macro (glibc/string/string.h)
 # define strdupa(s)							   			\
   (__extension__							     		\
     ({									      			\
@@ -29,21 +32,25 @@ open-source code를 많이 살펴보셨다면, 종종 `__builtin_alloca`를 잧�
       char *__new = (char *) __builtin_alloca (__len);	\
       (char *) memcpy (__new, __old, __len);			\
     }))
-{% endhighlight %}
-`__builtin_alloca`는 dynamic variable를 할당할 때, heap 대신 stack에 할당되도록 설정할 수 있는 gcc built-in function입니다.<br>
-그래서 glibc의 `strdupa` 코드를 살펴보면 free()를 따로 호출하지 않는 것을 볼 수 있습니다.<br>
-malloc()처럼 heap에 할당되는 것이 아니기 때문에 life-time은 `function block`이 됩니다.<br>
+```
 
-따라서, 여느 local variable과 동일하게 별도의 free() 없이도, caller function으로의 stack pointer 복원만으로도 free를 하는 효과를 발휘할 수 있습니다.
+<mark>__builtin_alloca</mark> is a gcc built-in function that can be set to be allocated on the `stack` instead of the `heap` when allocating dynamic variables.
 
-결과적으로 malloc보다 cpu-time과 memory 모두 이점이 있습니다.
+So if you look at glibc's `strdupa` code, you can see that it doesn't call free().
 
-`__builtin_alloca`은 run-time에 process에 의해 호출되는 함수가 아닌 compile-time에 gcc에 의해서 호출되는 함수입니다.<br>
-macro처럼 동작하지만, 엄연히 말해 macro는 아닙니다.<br>
-disassemble을 통해 gcc에 의해 `__builtin_alloca`가 다른 코드로 변환되는 것을 확인할 수 있습니다.
+Since it is not allocated on the heap like malloc(), its life-time becomes a `function block`.
 
-#### -> builtin_alloca was replaced to
-{% highlight x86asm %}
+Therefore, as with any local variable, without a separate free(), the effect of freeing can be exerted only by restoring the stack pointer to the caller function.
+
+As a result, both `cpu-time` and `memory` have advantages over malloc.
+
+<mark>__builtin_alloca</mark> is a function called by gcc at `compile-time`, not a function called by process at run-time.
+It works like a macro, but not strictly a macro.
+
+You can see that <mark>__builtin_alloca</mark> is converted to other code by gcc via disassemble.
+
+```x86asm
+: builtin_alloca was replaced to
 void func(size_t n, const char* src) {
     ...
 	char *val = (char *)__builtin_alloca(n);
@@ -65,64 +72,53 @@ void func(size_t n, const char* src) {
 
 	memcpy(val, src, n);
 	...
-{% endhighlight %}
-`callq __builtin_alloca`와 같은 함수 호출 형태가 아니라는 것을 볼 수 있습니다.
+```
+You can see that it is not in the form of a function call like `callq __builtin_alloca`
 
-이 builtin은 dynamic variable을 할당하고 local variable처럼 임시적으로 함수 안에서 사용하는 게 보장되는 곳에서 사용하고 있습니다.
+This builtin allocates a dynamic variable and is used where it is guaranteed to be used temporarily in a function, such as a local variable.
 
-gcc 문서를 살펴보겠습니다.
+Let's take a look at the gcc documentation.
 
-***
-<table>
-    <thead>
-        <tr>
-            <th>Built-in Function: void *__builtin_alloca (size_t size)</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-				The <b>__builtin_alloca</b> function must be called at block scope.
-				The function allocates an object size bytes large on the stack of the calling function. The object is aligned on the default <b>stack</b> alignment boundary for the target determined by the __BIGGEST_ALIGNMENT__ macro. The __builtin_alloca function returns a pointer to the first byte of the allocated object. The lifetime of the allocated object ends just before the <b>calling function returns to its caller</b>.
-				This is so even when __builtin_alloca is called within a nested block.<br><br>
-                <cite>ref. <a href="https://gcc.gnu.org/onlinedocs/gcc-7.4.0/gcc/Other-Builtins.html#Other-Builtins"><code>https://gcc.gnu.org/onlinedocs/gcc-7.4.0/gcc/Other-Builtins.html#Other-Builtins</code></a></cite>
-            </td>
-        </tr>
-    </tbody>
-</table>
+> #### Built-in Function: void *__builtin_alloca (size_t size)
+> The `__builtin_alloca` function must be called at block scope<br>.
+> The function allocates an object size bytes large on the stack of the calling function. The object is aligned on the default `stack` alignment boundary for the target determined by the __BIGGEST_ALIGNMENT__ macro.<br>
+> The __builtin_alloca function returns a pointer to the first byte of the allocated object.
+The lifetime of the allocated object ends just before the <b>calling function returns to its caller</b>.<br>
+> This is so even when __builtin_alloca is called within a nested block.<br>
+> **ref:&nbsp;**<a target="_blank" href="https://gcc.gnu.org/onlinedocs/gcc-7.4.0/gcc/Other-Builtins.html#Other-Builtins"><code>https://gcc.gnu.org/onlinedocs/gcc-7.4.0/gcc/Other-Builtins.html#Other-Builtins</code></a></cite>
 
-***
+I haven't looked closely at the gcc code, but it's a builtin that has been around since gcc 2.8.
 
-gcc 코드를 자세히 살펴보진 않았지만, gcc 2.8에부터 존재했던 builtin입니다.
+Let's easily check how to use it through the sample code.
 
-sample code를 통해 사용법을 쉽게 확인해 봅시다.
-#### -> sample code: alloca.c
-{% highlight c %}
+```c
+: sample code - alloca.c
 #include <stdio.h>
 #include <string.h>
 
 void func(const size_t n, const char* src) {
 	char *val = (char *)__builtin_alloca(n);
-	strncpy(val, src, n);
-	val[n] = '\0';
+	strncpy(val, src, n - 1);
+	val[n - 1] = '\0';
 
 	printf("val: %s\n", val);
 }
 
 int main(void) {
-	func(3, "simple");
+	func(4, "simple");
 
 	return 0;
 }
-{% endhighlight %}
-#### -> gcc version 7.4.0 --target=x86_64-linux-gnu
-{% highlight bash %}
+```
+```bash
+: gcc version 7.4.0 --target=x86_64-linux-gnu
 $ gcc -g -o alloca alloca.c
 $ ./alloca
 val: sim
-{% endhighlight %}
-#### -> assembly: x86_64 AT&T
-{% highlight x86asm %}
+```
+
+```x86asm
+: assembly - x86_64 AT&T
 void func(const size_t n, const char* src) {
  6fa:	55                   	push   %rbp
  6fb:	48 89 e5             	mov    %rsp,%rbp
@@ -153,28 +149,35 @@ void func(const size_t n, const char* src) {
  ...
  7a6:	c9                   	leaveq 
  7a7:	c3                   	retq   
-{% endhighlight %}
-compiler에 의해 align routines 또한 추가되었지만 중요한 부분은 variable 할당을 위해 단지 stack size를 증가시켰다는 것이며, 함수가 return 할 때 free() 없이 단순히 `retq` 하였다는 것입니다.<br>
+```
 
-gcc 문서에서는 scope에 대해 다음과 같이 설명되어 있습니다.
+The align routines were also added by the compiler, but the important part is that the stack size is just increased for variable allocation, and when the function returns, it simply `retq` without free().
+
+The gcc documentation describes scope as follows:
 > The lifetime of the allocated object ends just before the calling function returns to its caller
 
-glibc 1.09에서는 `__builtin_alloca`를 `alloca`로 define 하여 긴 이름을 줄였습니다.
+In glibc 1.09, <mark>__builtin_alloca</mark> was defined as <mark>alloca</mark> to shorten the long names.
 
-#### -> __builtin_alloca is defined as alloca in glibc/stdlib/alloca.h
-{% highlight c %}
+```c
+: __builtin_alloca is defined as alloca in glibc/stdlib/alloca.h
 #ifdef	__GNUC__
 # define alloca(size)	__builtin_alloca (size)
 #endif /* GCC.  */
-{% endhighlight %}
-그래서 만약 `alloca.h`를 include 한다면, 단순히 `alloca`라고 사용할 수 있습니다.
+```
+So if you include `alloca.h`, you can simply use `alloca`.
 
-그러나 개인적인 의견으로는 gcc built-in은 run-time에 호출되는 함수가 아니라 compile-time에 gcc에 의해 호출되는 함수이기 때문에 이를 나타내는 `__builtin`이라는 prefix를 그대로 표현하게는 좋지 않을까 생각됩니다.<br>
-그러나 이것은 단순히 coding style 문제이고 만약 여러 사람이 참여하는 프로젝트라면 어떤 식으로 사용할지에 대해 약속하고 그것을 사용하면 됩니다. 
+However, in my personal opinion, since gcc built-in is not a function called at run-time, but a function called by gcc at compile-time, I think it would be better to express the prefix <mark>__builtin</mark> as it is.
 
-C99에서 지원하는 VLA[^1]와 같아 보이지만 VLA와는 lifetime이 다릅니다.
+However, this is simply a matter of coding style, and if it is a multi-person project, you can make a promise (coding rules) about how to use it and use it.
 
-[^1]: variable-length array (VLA), also called variable-sized, runtime-sized, is an array data structure whose length is determined at run time instead of at compile time
+It looks like ->[^1]VLA[/^] supported by C99, but the lifetime is different from VLA.
+
+
+
+
+
+
+
 
 VLA의 litftime block scope이고 `alloca`는 function scope입니다.<br>
 즉, 다음과 같은 상황에서는 VLA을 사용할 수 없습니다.
@@ -281,6 +284,11 @@ gcc 4.7에는 `__builtin_alloca_with_align`가 추가되었으며 gcc 8.1에는 
 
 참고로 `alloca`를 inline function에서 사용할 경우 의도하지 않은 동작이 될 수도 있습니다.<br>
 이유는 구글링해 보시면 쉽게 아실 수 있습니다 :)
-<div align="right">
-jooojub.
-</div>
+
+
+***
+<ol>
+
+[^1]: variable-length array (VLA), also called variable-sized, runtime-sized, is an array data structure whose length is determined at run time instead of at compile time
+
+</ol>

@@ -2,7 +2,7 @@
  {
   "file": "2019-06-16-gcc-attribute-cleanup",
   "title": "gcc attribute: cleanup",
-  "tags": "gcc_attribute, gccs",
+  "tags": "gcc_attribute",
   "date": "2019-06-16",
   "description": "The cleanup attribute runs a function when the variable goes out of scope. This attribute can only be applied to auto function scope variables."
  },
@@ -25,35 +25,21 @@
   "title": "gcc options: -fsigned-char",
   "tags": "gcc_options",
   "date": "2019-07-03",
-  "description": "This option, and its inverse, let you make such a program work with the opposite default."
- },
- {
-  "file": "2019-07-14-64bit-data-models",
-  "title": "64bit data models",
-  "tags": "GNUC",
-  "date": "2019-07-14",
-  "description": "test"
+  "description": "These options control whether a bit-field is signed or unsigned, when the declaration does not use either signed or unsigned. By default, such a bit-field is signed, because this is consistent: the basic integer types such as int are signed types."
  },
  {
   "file": "2019-08-04-gcc-builtin-alloca",
   "title": "gcc builtin: alloca",
   "tags": "gcc_builtin",
   "date": "2019-08-04",
-  "description": "test"
+  "description": "The alloca() function allocates size bytes of space in the stack frame of the caller.  This temporary space is automatically freed when the function that called alloca() returns to its caller."
  },
  {
   "file": "2019-09-15-gcc-builtin_choose_expr",
   "title": "gcc builtin: choose_expr",
   "tags": "gcc_builtin",
   "date": "2019-09-15",
-  "description": "test"
- },
- {
-  "file": "2020-10-30-gcc-options-zeo-initialized-in-bss",
-  "title": "gcc options: -fno-zero-initialized-in-bss",
-  "tags": "gcc_options",
-  "date": "2020-10-30",
-  "description": "초기화 되지 않은 global variable가 무조건 bss section에 들어가는 것은 아니다."
+  "description": "You can use the built-in function __builtin_choose_expr to evaluate code depending on the value of a constant expression. This built-in function returns exp1 if const_exp, which is an integer constant expression, is nonzero. Otherwise it returns exp2."
  },
  {
   "file": "2020-11-28-gcc-options-format",
@@ -68,12 +54,5 @@
   "tags": "gcc_attribute",
   "date": "2020-12-06",
   "description": "The format attribute specifies that a function takes printf, scanf, strftime or strfmon style arguments which should be type-checked against a format string."
- },
- {
-  "file": "2020-12-24-gcc-options-missing-format-attribute",
-  "title": "gcc options: -Wmissing-format-attribute",
-  "tags": "gcc_options",
-  "date": "2020-12-20",
-  "description": "Warn about function pointers that might be candidates for format attributes. Note these are only possible candidates, not absolute ones. GCC guesses that function pointers with format attributes that are used in assignment, initialization, parameter passing or return statements should have a corresponding format attribute in the resulting type."
  }
 ]
