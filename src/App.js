@@ -14,7 +14,7 @@ import "./style/scss/_custom-style.scss";
 function App() {
   return (
     <div className="App" style={{overflow: "hidden"}}>
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Route exact path="/" component={MainPage}/>
         <Route exact path="/profile" component={ProfilePage}/>
         <Route exact path="/posts/:category" component={PostListPage}/>
