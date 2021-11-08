@@ -105,7 +105,7 @@ function Footer() {
 
   return (
     <MDBFooter
-      className={clsx("font-small pt-4 mt-4", classes.footerContainer)}
+      className={clsx("font-small pt-4 mt-4 container-fluid navbar-fixed-bottom", classes.footerContainer)}
     >
       <MDBContainer fluid className={clsx("text-center text-md-left")}>
         <MDBRow>
