@@ -172,18 +172,11 @@ However, this is simply a matter of coding style, and if it is a multi-person pr
 
 It looks like ->[^1]VLA[/^] supported by C99, but the lifetime is different from VLA.
 
+VLA litftime is block scope and <mark>alloca</mark> is function scope.
+This means that the VLA cannot be used in the following situations:
 
-
-
-
-
-
-
-VLA의 litftime block scope이고 `alloca`는 function scope입니다.<br>
-즉, 다음과 같은 상황에서는 VLA을 사용할 수 없습니다.
-
-#### -> It is impossible in VLA
-{% highlight c %}
+```c
+: It is impossible in VLA
 #define COUNT 10
 
 struct sample {
@@ -208,83 +201,51 @@ void func(void) {
 
 	return;
 }
-{% endhighlight %}
+```
 
-위에서 언급했던 거처럼, 많은 책과 post에서 stack에 변수를 동적 할당하는 VLA나 alloca는 security 측면에서 un-safe 하기 때문에 사용을 자제하라고 권고하고 있고, 저 또한 동의합니다.<br>
-stack에 변수를 동적 할당하는 코드는 stack overflow를 유발 할 수 있으며 이것이 security hole이 될 수 있습니다.<br>
-또한 length에 nagative number가 사용된다면 전혀 의도하지 않은 방향으로 코드가 흘러갈 수 있습니다.<br>
-그리고 Standard C에서 흔히 동적 할당에 사용되는 alloc/free 짝을 맞춰 코딩하는 방식과는 다르기 때문에 `alloca`를 모르는 사람들에게 혼돈을 줄 수 있습니다.<br>
--> alloca는 standard가 아닙니다 - GNU extension 입니다...
+As mentioned above, many books and posts advise against using VLA or alloca that dynamically allocates variables on the stack because they are un-safe in terms of security, and I agree.
+Code that dynamically allocates variables on the stack can cause a stack overflow, which can be a security hole.
+And also, if a negative number is used for length, the code may flow in an entirely unintended direction.
+And it can confuse people who don't know </mark>alloca</mark> because it's different from the alloc/free pairing commonly used for dynamic allocation in Standard C.
+> alloca is not standard - it is a GNU extension
 
-위와 같은 이유에서, kernel 프로젝트에서는 VLA 코드 제거에 많은 노력을 하였으며 결과적으로 4.20에서 완벽하게 성공하였습니다.
-> ref: https://www.phoronix.com/scan.php?page=news_item&px=Linux-Kills-The-VLA
+For the above reasons, the kernel project made a lot of effort to remove the VLA code, and as a result, it was completely successful in 4.20.
+> https://www.phoronix.com/scan.php?page=news_item&px=Linux-Kills-The-VLA
 
-GNU document에서는 `alloca`의 이점에 대해서 다음과 같이 설명하였습니다:
+The GNU documentation describes the benefits of <mark>alloca</mark> as follows:
 
-***
-<table>
-    <thead>
-        <tr>
-            <th>Advantages-of-Alloca</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-				* Using alloca wastes very <b>little space</b> and is very <b>fast</b>. (It is open-coded by the GNU C compiler.)<br><br>
-                * Since alloca does not have separate pools for different sizes of blocks, space used for any size block can be reused for any other size. alloca <b>does not cause memory fragmentation.</b><br><br>
-                * Nonlocal exits done with longjmp (see Non-Local Exits) automatically free the space allocated with alloca when they exit through the function that called alloca. This is the most important reason to use alloca.
-                <br><br>
-                <cite>ref. <a href="https://www.gnu.org/software/libc/manual/html_node/Advantages-of-Alloca.html#Advantages-of-Alloca"><code>https://www.gnu.org/software/libc/manual/html_node/Advantages-of-Alloca.html#Advantages-of-Alloca</code></a></cite>
-            </td>
-        </tr>
-    </tbody>
-</table>
+> #### Advantages-of-Alloca
+> * Using alloca wastes very <b>little space</b> and is very <b>fast</b>. (It is open-coded by the GNU C compiler.)<br>
+> * Since alloca does not have separate pools for different sizes of blocks, space used for any size block can be reused for any other size. alloca <b>does not cause memory fragmentation.</b><br>
+> * Nonlocal exits done with longjmp (see Non-Local Exits) automatically free the space allocated with alloca when they exit through the function that called alloca. This is the most important reason to use alloca.
+> **ref:&nbsp;**<a target="_blank" href="https://www.gnu.org/software/libc/manual/html_node/Advantages-of-Alloca.html#Advantages-of-Alloca"><code>https://www.gnu.org/software/libc/manual/html_node/Advantages-of-Alloca.html#Advantages-of-Alloca</code></a></cite>
 
-***
+The disadvantages are described as follows.
 
-또한, 단점은 다음과 같이 설명하였습니다.
+> #### Disadvantages-of-Alloca
+> * If you try to allocate more memory than the machine can provide, you don’t get a clean error message. Instead you get a fatal signal like the one you would get from an infinite recursion; probably a segmentation violation (see Program Error Signals).<br>
+> * Some non-GNU systems fail to support alloca, so it is less portable. However, a slower emulation of alloca written in C is available for use on systems with this deficiency.
+> **ref:&nbsp;**<a target="_blank" href="https://www.gnu.org/software/libc/manual/html_node/Disadvantages-of-Alloca.html#Disadvantages-of-Alloca"><code>https://www.gnu.org/software/libc/manual/html_node/Disadvantages-of-Alloca.html#Disadvantages-of-Alloca</code></a></cite>
 
-***
-<table>
-    <thead>
-        <tr>
-            <th>Disadvantages-of-Alloca</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-				* If you try to allocate more memory than the machine can provide, you don’t get a clean error message. Instead you get a fatal signal like the one you would get from an infinite recursion; probably a segmentation violation (see Program Error Signals).<br><br>
-                * Some non-GNU systems fail to support alloca, so it is less portable. However, a slower emulation of alloca written in C is available for use on systems with this deficiency.
-                <br><br>
-                <cite>ref. <a href="https://www.gnu.org/software/libc/manual/html_node/Disadvantages-of-Alloca.html#Disadvantages-of-Alloca"><code>https://www.gnu.org/software/libc/manual/html_node/Disadvantages-of-Alloca.html#Disadvantages-of-Alloca</code></a></cite>
-            </td>
-        </tr>
-    </tbody>
-</table>
+`__builtin_alloca_with_align` was added in gcc 4.7 and `__builtin_alloca_with_align_and_max` was added in gcc 8.1.
+Added to be able to set max_size or align to make <mark>alloca</mark> safer to use.
 
-***
+It's a simple addition. Check out the documentation.
 
-gcc 4.7에는 `__builtin_alloca_with_align`가 추가되었으며 gcc 8.1에는 `__builtin_alloca_with_align_and_max`가 추가되었습니다.<br>
-`alloca`를 좀 더 safe하게 사용할 수 있게 max_size 또는 align을 설정할 수 있도록 추가되었습니다.
+> #### https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html<br>
+> * Built-in Function: void *__builtin_alloca_with_align (size_t size, size_t alignment)<br>
+> * Built-in Function: void *__builtin_alloca_with_align_and_max (size_t size, size_t alignment, size_t max_size)
 
-단순한 추가입니다. 문서에서 확인하세요.
-> https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html<br><br>
-> Built-in Function: void *__builtin_alloca_with_align (size_t size, size_t alignment)<br>
-> Built-in Function: void *__builtin_alloca_with_align_and_max (size_t size, size_t alignment, size_t max_size)
+To make <mark>alloca</mark> safer to use, gcc 7.0 has added a compile option that can check the max size of alloca at compile-time.
+You can also check if <mark>alloca</mark> is used in your code at compile time.
 
-`alloca`를 더욱 safe 하게 사용할 수 있도록 gcc 7.0에서는 alloca의 max size를 compile-time에 확인할 수 있는 compile option이 추가되었습니다.<br>
-또한 코드에서 `alloca`가 사용되었는지도 확인할 수 있습니다.<br><br>
-
-이것들은 이후 다른 post에서 설명하겠습니다.
+These will be explained later in another post.
 > -Walloca-larger-than, -Walloca ...
 
-만약 `alloca`를 사용하게 된다면, size와 range check에 신경 써야 합니다.<br>
+If you're going to use <mark>alloca</mark>, you'll need to pay attention to size and range checks.
 
-참고로 `alloca`를 inline function에서 사용할 경우 의도하지 않은 동작이 될 수도 있습니다.<br>
-이유는 구글링해 보시면 쉽게 아실 수 있습니다 :)
-
+Note that using <mark>alloca</mark> in an inline function may result in unintended behavior.
+You can easily find out why if you google it :)
 
 ***
 <ol>
