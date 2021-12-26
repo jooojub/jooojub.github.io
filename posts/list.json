@@ -54,5 +54,12 @@
   "tags": "gcc_attribute",
   "date": "2020-12-06",
   "description": "The format attribute specifies that a function takes printf, scanf, strftime or strfmon style arguments which should be type-checked against a format string."
+ },
+ {
+  "file": "2021-12-05-gcc-attribute-constructor-destructor",
+  "title": "gcc attribute: constructor and destructor",
+  "tags": "gcc_attribute",
+  "date": "2021-12-05",
+  "description": "gcc provides a constructor that can be executed before the main function and descturtor that can be executed after the main function. If you use it well, you can make a hooking library and use it for debugging, etc."
  }
 ]

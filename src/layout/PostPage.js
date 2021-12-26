@@ -79,7 +79,7 @@ function PostPage(props) {
       <MainContentContainer>
         <div className="row text-justify d-flex">
           {/* contents */}
-          <div className="col-md-8 col-12 pr-4 pl-4">
+          <div className="col-md-8 col-12 pr-4 pl-4 text-left">
             {/* <ContentTitle value={currentPost && currentPost.title} /> */}
             {/* <div className="m-2"> */}
             {currentPost && (
