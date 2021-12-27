@@ -12,6 +12,7 @@ import clsx from "clsx";
 import { Avatar } from "@material-ui/core";
 import ContentTitle from "../components/ContentTitle";
 import PostParser from "../api/PostParser";
+import ReactHelmet from "../components/ReactHelmet";
 
 const useStyles = makeStyles({
   profileAvatar: {
@@ -150,6 +151,12 @@ const ProfilePage = () => {
 
   return (
     <>
+      <ReactHelmet
+        title="jooojub"
+        url="https://jooojub.github.io/profile"
+        image="https://jooojub.github.io/assets/images/avatars/toto.jpg"
+        description="system S/W engineers"
+      />
       <HeaderNavBar />
       <HeaderBar
         bgImage={"url(/assets/images/background/profile_header_img.jpg)"}

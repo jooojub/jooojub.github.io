@@ -16,6 +16,7 @@ import PostParser from "../api/PostParser";
 import { useHistory } from "react-router-dom";
 
 import Button from "react-bootstrap/Button";
+import ReactHelmet from "../components/ReactHelmet";
 
 function PostPage(props) {
   const history = useHistory();
@@ -31,6 +32,16 @@ function PostPage(props) {
 
   return (
     <>
+    {
+      currentPost && (
+        <ReactHelmet
+        title={`jooojub - post: ${currentPost.title}`}
+        url={`https://jooojub.github.io/posts/${props.match.params.file}`}
+        image="https://jooojub.github.io/assets/images/avatars/toto.jpg"
+        description={`${currentPost.description}`}
+      />
+      )
+    }
       <HeaderNavBar />
       <HeaderBar
         bgImage={"url(/assets/images/background/post_header_img.jpg)"}

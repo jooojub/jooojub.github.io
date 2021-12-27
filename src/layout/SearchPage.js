@@ -17,6 +17,8 @@ import { useHistory } from "react-router-dom";
 import Pagination from "../components/Pagination";
 import Button from "react-bootstrap/Button";
 
+import ReactHelmet from "../components/ReactHelmet";
+
 const posts = (current_posts, current, perPage) => {
   const jsx = [];
   const begin = (current - 1) * perPage;
@@ -50,6 +52,12 @@ function SearchPage(props) {
 
   return (
     <>
+      <ReactHelmet
+        title={`jooojub - posts: ${props.match.params.keyword}`}
+        url={`https://jooojub.github.io/posts/${props.match.params.keyword}`}
+        image="https://jooojub.github.io/assets/images/avatars/toto.jpg"
+        description="I studied and wrote on my own. There may be some mistakes, so please give me a lot of feedback. :)"
+      />
       <HeaderNavBar />
       <HeaderBar
         bgImage={"url(/assets/images/background/post_list_header_img.jpg)"}
