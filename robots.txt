@@ -1,4 +1,4 @@
-User-agent: *
-Allow: /
+User-Agent: *
+Disallow:
 
 Sitemap: https://jooojub.github.io/sitemaps.xml
