@@ -1,1 +1,0 @@
-self.__SSG_MANIFEST=new Set(["\u002Fposts\u002F[PostSeriesList]","\u002Fposts\u002Fcontent\u002F[PostView]","\u002Fsnippets\u002F[SnippetsSeriesList]","\u002Fsnippets\u002Fcontent\u002F[PostView]","\u002Ftags\u002F[TagList]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
