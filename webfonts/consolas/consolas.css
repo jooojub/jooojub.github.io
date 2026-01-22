@@ -1,0 +1,35 @@
+@font-face {
+  font-family: "Consolas";
+  src: local("Consolas Regular"), 
+       url("consola.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: local("Consolas Bold"),
+       url("consolab.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: local("Consolas Italic"),
+       url("consolai.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Consolas";
+  src: local("Consolas Bold Italic"),
+       url("consolaz.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
