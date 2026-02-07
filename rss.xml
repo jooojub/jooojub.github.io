@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 05 Feb 2026 01:07:48 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2026 07:03:25 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Enabling E-Ink Display on Raspberry Pi Zero 2W with Yocto</title>
+      <link>https://jooojub.github.io/posts/content/2026-02-05-post-rpi-zero2-enabling-eink-display-on-raspberry-pi-zero-2w-with-yocto</link>
+      <description><![CDATA[ A step-by-step guide to enabling the SPI interface and configuring Yocto recipes for E-Paper displays]]></description>
+      <pubDate>Thu, 05 Feb 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-02-05-post-rpi-zero2-enabling-eink-display-on-raspberry-pi-zero-2w-with-yocto</guid>
+    </item>
     <item>
       <title>Enabling GT911 Touchscreen on Raspberry Pi Zero 2W with Yocto</title>
       <link>https://jooojub.github.io/posts/content/2026-02-04-post-rpi-zero2-enabling-gt911-touchscreen-on-raspberry-pi-zero-2w-with-yocto</link>
