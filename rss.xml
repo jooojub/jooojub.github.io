@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 27 Feb 2026 01:31:49 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 01:34:28 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>삼체X: 관상지주</title>
+      <link>https://jooojub.github.io/snippets/content/2026-02-25-books-the-redemption-of-time</link>
+      <description><![CDATA[팬픽이 공식 후속작이 되다]]></description>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-02-25-books-the-redemption-of-time</guid>
+    </item>
     <item>
       <title>Bash $RANDOM Variable</title>
       <link>https://jooojub.github.io/posts/content/2026-02-19-post-bash_RANDOM_variable</link>
