@@ -5,15 +5,29 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 03 Mar 2026 00:54:13 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 11:03:05 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Building LineageOS 14.1 for Samsung Galaxy Note 8.0 (n5110)</title>
+      <link>https://jooojub.github.io/posts/content/2026-03-06-post-building-lineageos-14.1-for-samsung-galaxy-note-8.0</link>
+      <description><![CDATA[A guide to configuring a Docker build environment, syncing repositories, and compiling a custom ROM for the n5110]]></description>
+      <pubDate>Fri, 06 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-03-06-post-building-lineageos-14.1-for-samsung-galaxy-note-8.0</guid>
+    </item>
     <item>
       <title>Check Trading Holidays using exchange_calendars in python</title>
       <link>https://jooojub.github.io/snippets/content/2026-03-03-stash-check-trading-holidays-using-exchange_calendars</link>
       <description><![CDATA[How to check stock market trading holidays using the exchange_calendars library in Python.]]></description>
       <pubDate>Tue, 03 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-03-03-stash-check-trading-holidays-using-exchange_calendars</guid>
+    </item>
+    <item>
+      <title>왕과 사는 남자 (2026)</title>
+      <link>https://jooojub.github.io/snippets/content/2026-03-02-screen-movie-TheManWhoLiveswiththeKing2026</link>
+      <description><![CDATA[왕과 사는 남자 (2026)]]></description>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-03-02-screen-movie-TheManWhoLiveswiththeKing2026</guid>
     </item>
     <item>
       <title>춈</title>
