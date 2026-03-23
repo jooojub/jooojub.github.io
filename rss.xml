@@ -5,9 +5,44 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 19 Mar 2026 02:22:49 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 00:26:37 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-23-AI-web-summary</link>
+      <description><![CDATA[Mar 22, 2026 — 37 AI articles summarized]]></description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-23-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-22-AI-web-summary</link>
+      <description><![CDATA[Mar 21, 2026 — 41 AI articles summarized]]></description>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-22-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-21-AI-web-summary</link>
+      <description><![CDATA[Mar 20, 2026 — 57 AI articles summarized]]></description>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-21-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-20-AI-web-summary</link>
+      <description><![CDATA[Mar 19, 2026 — 69 AI articles summarized]]></description>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-20-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-19-AI-web-summary</link>
+      <description><![CDATA[Mar 18, 2026 — 83 AI articles summarized]]></description>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-19-AI-web-summary</guid>
+    </item>
     <item>
       <title>Flashing LineageOS 14.1 for Samsung Galaxy Note 8.0 (n5110)</title>
       <link>https://jooojub.github.io/posts/content/2026-03-10-post-flashing-lineageos-14.1-for-samsung-galaxy-note-8.0</link>
