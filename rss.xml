@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 03 Apr 2026 05:43:08 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 03 Apr 2026 05:59:27 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-04-03-AI-web-summary</link>
+      <description><![CDATA[Apr 2, 2026 — 68 AI articles summarized]]></description>
+      <pubDate>Fri, 03 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-04-03-AI-web-summary</guid>
+    </item>
     <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-04-03-AI-web-summary</link>
@@ -37,6 +44,13 @@
       <guid>https://jooojub.github.io/insights/content/2026-04-02-AI-web-summary</guid>
     </item>
     <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-04-02-AI-web-summary</link>
+      <description><![CDATA[Apr 1, 2026 — 68 AI articles summarized]]></description>
+      <pubDate>Thu, 02 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-04-02-AI-web-summary</guid>
+    </item>
+    <item>
       <title>gcc attribute: nonnull</title>
       <link>https://jooojub.github.io/posts/content/2026-04-01-post-gcc-attribute-nonnull</link>
       <description><![CDATA[The nonnull attribute specifies that some function parameters should be non-null pointers. This allows the compiler to check at compile-time if a null pointer is passed to these arguments.]]></description>
@@ -49,6 +63,13 @@
       <description><![CDATA[The nonnull attribute specifies that some function parameters should be non-null pointers. This allows the compiler to check at compile-time if a null pointer is passed to these arguments.]]></description>
       <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/posts/content/2026-04-01-post-gcc-attribute-nonnull</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-04-01-AI-web-summary</link>
+      <description><![CDATA[Mar 31, 2026 — 65 AI articles summarized]]></description>
+      <pubDate>Wed, 01 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-04-01-AI-web-summary</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
@@ -80,10 +101,31 @@
     </item>
     <item>
       <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-31-AI-web-summary</link>
+      <description><![CDATA[Mar 30, 2026 — 70 AI articles summarized]]></description>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-31-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-03-30-AI-web-summary</link>
       <description><![CDATA[Mar 29, 2026 — 33 AI articles summarized]]></description>
       <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-03-30-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-30-AI-web-summary</link>
+      <description><![CDATA[Mar 29, 2026 — 33 AI articles summarized]]></description>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-30-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-29-AI-web-summary</link>
+      <description><![CDATA[Mar 28, 2026 — 35 AI articles summarized]]></description>
+      <pubDate>Sun, 29 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-29-AI-web-summary</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
@@ -128,6 +170,13 @@
       <guid>https://jooojub.github.io/insights/content/2026-03-28-AI-web-summary</guid>
     </item>
     <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-28-AI-web-summary</link>
+      <description><![CDATA[Mar 27, 2026 — 64 AI articles summarized]]></description>
+      <pubDate>Sat, 28 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-28-AI-web-summary</guid>
+    </item>
+    <item>
       <title>레이디 두아 (2026)</title>
       <link>https://jooojub.github.io/snippets/content/2026-03-27-screen-tv-LadyDua2026</link>
       <description><![CDATA[레이디 두아 (2026)]]></description>
@@ -140,6 +189,13 @@
       <description><![CDATA[Lady Dua (2026)]]></description>
       <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-03-27-screen-tv-LadyDua2026</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-27-AI-web-summary</link>
+      <description><![CDATA[Mar 26, 2026 — 65 AI articles summarized]]></description>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-27-AI-web-summary</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
@@ -170,6 +226,13 @@
       <guid>https://jooojub.github.io/insights/content/2026-03-26-AI-web-summary</guid>
     </item>
     <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-26-AI-web-summary</link>
+      <description><![CDATA[Mar 25, 2026 — 72 AI articles summarized]]></description>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-26-AI-web-summary</guid>
+    </item>
+    <item>
       <title>gcc options: -Wformat</title>
       <link>https://jooojub.github.io/posts/content/2026-03-25-post-gcc-options-format</link>
       <description><![CDATA[Explore the -Wformat option in GCC to detect format string errors and security vulnerabilities at compile time.]]></description>
@@ -182,6 +245,13 @@
       <description><![CDATA[Explore the -Wformat option in GCC to detect format string errors and security vulnerabilities at compile time.]]></description>
       <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/posts/content/2026-03-25-post-gcc-options-format</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-25-AI-web-summary</link>
+      <description><![CDATA[Mar 24, 2026 — 76 AI articles summarized]]></description>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-25-AI-web-summary</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
@@ -227,10 +297,31 @@
     </item>
     <item>
       <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-24-AI-web-summary</link>
+      <description><![CDATA[Mar 23, 2026 — 85 AI articles summarized]]></description>
+      <pubDate>Tue, 24 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-24-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-03-23-AI-web-summary</link>
       <description><![CDATA[Mar 22, 2026 — 37 AI articles summarized]]></description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-03-23-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-23-AI-web-summary</link>
+      <description><![CDATA[Mar 22, 2026 — 37 AI articles summarized]]></description>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-23-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-22-AI-web-summary</link>
+      <description><![CDATA[Mar 21, 2026 — 41 AI articles summarized]]></description>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-22-AI-web-summary</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
@@ -317,6 +408,13 @@
       <guid>https://jooojub.github.io/insights/content/2026-03-21-AI-web-summary</guid>
     </item>
     <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-21-AI-web-summary</link>
+      <description><![CDATA[Mar 20, 2026 — 57 AI articles summarized]]></description>
+      <pubDate>Sat, 21 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-21-AI-web-summary</guid>
+    </item>
+    <item>
       <title>스미스엣홈</title>
       <link>https://jooojub.github.io/snippets/content/2026-03-20-location-cafe-Smithathome</link>
       <description><![CDATA[스미스엣홈]]></description>
@@ -371,6 +469,13 @@
       <description><![CDATA[Sinchang Gukbap Main Branch]]></description>
       <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-03-20-location-restaurant-SinchangGukbapMainBranch</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-03-20-AI-web-summary</link>
+      <description><![CDATA[Mar 19, 2026 — 69 AI articles summarized]]></description>
+      <pubDate>Fri, 20 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-03-20-AI-web-summary</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
