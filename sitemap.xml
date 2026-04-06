@@ -3,19 +3,6 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://jooojub.github.io/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/"/>
-  </url>
-  <url>
-    <loc>https://jooojub.github.io/naverd2c5cecaaf2f7ce71e7429ec30f843ee/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/naverd2c5cecaaf2f7ce71e7429ec30f843ee/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/naverd2c5cecaaf2f7ce71e7429ec30f843ee/"/>
-  </url>
-  <url>
     <loc>https://jooojub.github.io/about/</loc>
     <lastmod>2026-04-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/about/"/>
@@ -30,11 +17,24 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/insights/</loc>
     <lastmod>2026-04-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/naverd2c5cecaaf2f7ce71e7429ec30f843ee/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/naverd2c5cecaaf2f7ce71e7429ec30f843ee/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/naverd2c5cecaaf2f7ce71e7429ec30f843ee/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/</loc>
@@ -93,18 +93,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/insights/AI Insights/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/AI Insights/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/AI Insights/"/>
-  </url>
-  <url>
     <loc>https://jooojub.github.io/insights/AI Insights-1/</loc>
     <lastmod>2026-04-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights-1/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/AI Insights-1/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/AI Insights-1/"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/insights/AI Insights/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/AI Insights/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/AI Insights/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/main/2/</loc>
@@ -135,13 +135,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/main/5/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/posts/aosp/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/aosp/"/>
-  </url>
-  <url>
     <loc>https://jooojub.github.io/posts/aosp-1/</loc>
     <lastmod>2026-04-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp-1/"/>
@@ -149,11 +142,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/aosp-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/posts/embedded/</loc>
+    <loc>https://jooojub.github.io/posts/aosp/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/embedded/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/embedded/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/embedded/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/aosp/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/embedded-1/</loc>
@@ -163,11 +156,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/embedded-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/posts/gcc/</loc>
+    <loc>https://jooojub.github.io/posts/embedded/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/gcc/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/gcc/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/gcc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/embedded/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/embedded/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/embedded/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/gcc-1/</loc>
@@ -177,11 +170,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/gcc-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/posts/linux/</loc>
+    <loc>https://jooojub.github.io/posts/gcc/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/linux/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/linux/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/linux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/gcc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/gcc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/gcc/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/linux-1/</loc>
@@ -191,11 +184,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/linux-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/snippets/books/</loc>
+    <loc>https://jooojub.github.io/posts/linux/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/books/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/books/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/books/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/linux/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/linux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/linux/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/books-1/</loc>
@@ -219,11 +212,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/books-3/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/snippets/location/</loc>
+    <loc>https://jooojub.github.io/snippets/books/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/location/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/location/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/location/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/books/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/books/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/books/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/location-1/</loc>
@@ -233,11 +226,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/location-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/snippets/screen/</loc>
+    <loc>https://jooojub.github.io/snippets/location/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/screen/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/screen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/location/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/location/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/location/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/screen-1/</loc>
@@ -247,11 +240,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/screen-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/snippets/stash/</loc>
+    <loc>https://jooojub.github.io/snippets/screen/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/stash/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/stash/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/screen/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/screen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/screen/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/stash-1/</loc>
@@ -261,11 +254,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/android/</loc>
+    <loc>https://jooojub.github.io/snippets/stash/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/android/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/android/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/stash/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/stash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/android-1/</loc>
@@ -275,11 +268,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/android-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/anthropology/</loc>
+    <loc>https://jooojub.github.io/tags/android/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/anthropology/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/anthropology/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/anthropology/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/android/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/android/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/android/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/anthropology-1/</loc>
@@ -289,11 +282,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/anthropology-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/aosp/</loc>
+    <loc>https://jooojub.github.io/tags/anthropology/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/anthropology/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/anthropology/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/anthropology/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/aosp-1/</loc>
@@ -303,11 +296,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/aosp-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/attribute/</loc>
+    <loc>https://jooojub.github.io/tags/aosp/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/attribute/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/attribute/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/attribute/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/aosp/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/attribute-1/</loc>
@@ -317,11 +310,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/attribute-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/bash/</loc>
+    <loc>https://jooojub.github.io/tags/attribute/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/bash/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/bash/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/bash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/attribute/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/attribute/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/attribute/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/bash-1/</loc>
@@ -331,11 +324,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/bash-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/briefing/</loc>
+    <loc>https://jooojub.github.io/tags/bash/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/briefing/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/briefing/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/briefing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/bash/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/bash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/bash/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/briefing-1/</loc>
@@ -345,11 +338,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/briefing-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/cafe/</loc>
+    <loc>https://jooojub.github.io/tags/briefing/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/cafe/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/cafe/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/briefing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/briefing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/briefing/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/cafe-1/</loc>
@@ -359,11 +352,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/docker/</loc>
+    <loc>https://jooojub.github.io/tags/cafe/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/docker/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/docker/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/docker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/cafe/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/cafe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/docker-1/</loc>
@@ -373,11 +366,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/docker-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/gcc_builtin/</loc>
+    <loc>https://jooojub.github.io/tags/docker/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_builtin/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_builtin/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_builtin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/docker/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/docker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/docker/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/gcc_builtin-1/</loc>
@@ -387,11 +380,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_builtin-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/gcc_options/</loc>
+    <loc>https://jooojub.github.io/tags/gcc_builtin/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_options/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_options/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_options/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_builtin/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_builtin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_builtin/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/gcc_options-1/</loc>
@@ -401,11 +394,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_options-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/git/</loc>
+    <loc>https://jooojub.github.io/tags/gcc_options/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/git/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/git/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/git/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_options/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_options/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_options/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/git-1/</loc>
@@ -415,11 +408,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/git-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/gnu/</loc>
+    <loc>https://jooojub.github.io/tags/git/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gnu/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gnu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gnu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/git/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/git/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/git/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/gnu-1/</loc>
@@ -429,11 +422,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gnu-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/humanities/</loc>
+    <loc>https://jooojub.github.io/tags/gnu/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/humanities/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/humanities/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/humanities/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gnu/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gnu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gnu/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/humanities-1/</loc>
@@ -443,11 +436,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/humanities-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/linux/</loc>
+    <loc>https://jooojub.github.io/tags/humanities/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/linux/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/linux/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/linux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/humanities/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/humanities/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/humanities/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/linux-1/</loc>
@@ -457,11 +450,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/linux-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/llm/</loc>
+    <loc>https://jooojub.github.io/tags/linux/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/llm/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/llm/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/llm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/linux/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/linux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/linux/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/llm-1/</loc>
@@ -471,11 +464,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/llm-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/movie/</loc>
+    <loc>https://jooojub.github.io/tags/llm/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/movie/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/movie/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/movie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/llm/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/llm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/llm/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/movie-1/</loc>
@@ -485,11 +478,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/movie-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/mystery/</loc>
+    <loc>https://jooojub.github.io/tags/movie/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/mystery/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/mystery/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/mystery/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/movie/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/movie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/movie/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/mystery-1/</loc>
@@ -499,11 +492,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/mystery-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/novel/</loc>
+    <loc>https://jooojub.github.io/tags/mystery/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/novel/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/novel/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/mystery/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/mystery/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/mystery/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/novel-1/</loc>
@@ -513,11 +506,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/python/</loc>
+    <loc>https://jooojub.github.io/tags/novel/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/python/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/python/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/python/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/novel/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/novel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/python-1/</loc>
@@ -527,11 +520,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/python-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/restaurant/</loc>
+    <loc>https://jooojub.github.io/tags/python/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/restaurant/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/restaurant/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/python/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/python/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/python/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/restaurant-1/</loc>
@@ -541,11 +534,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/restaurant-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/science/</loc>
+    <loc>https://jooojub.github.io/tags/restaurant/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/science/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/science/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/science/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/restaurant/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/science-1/</loc>
@@ -555,11 +548,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/science-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/sf/</loc>
+    <loc>https://jooojub.github.io/tags/science/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/sf/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/sf/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/sf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/science/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/science/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/science/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/sf-1/</loc>
@@ -569,11 +562,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/sf-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/shell/</loc>
+    <loc>https://jooojub.github.io/tags/sf/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/shell/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/shell/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/shell/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/sf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/sf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/sf/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/shell-1/</loc>
@@ -583,11 +576,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/shell-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/smartthings/</loc>
+    <loc>https://jooojub.github.io/tags/shell/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/smartthings/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/smartthings/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/smartthings/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/shell/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/shell/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/shell/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/smartthings-1/</loc>
@@ -597,11 +590,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/smartthings-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/spot/</loc>
+    <loc>https://jooojub.github.io/tags/smartthings/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/spot/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/spot/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/smartthings/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/smartthings/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/smartthings/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/spot-1/</loc>
@@ -611,11 +604,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/story/</loc>
+    <loc>https://jooojub.github.io/tags/spot/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/story/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/story/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/story/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/spot/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/spot/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/story-1/</loc>
@@ -625,11 +618,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/story-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/thriller/</loc>
+    <loc>https://jooojub.github.io/tags/story/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/thriller/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/thriller/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/thriller/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/story/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/story/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/story/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/thriller-1/</loc>
@@ -639,11 +632,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/thriller-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/tv/</loc>
+    <loc>https://jooojub.github.io/tags/thriller/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/tv/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/tv/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/thriller/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/thriller/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/thriller/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/tv-1/</loc>
@@ -653,11 +646,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/tv-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/tags/yocto/</loc>
+    <loc>https://jooojub.github.io/tags/tv/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/yocto/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/yocto/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/tv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/tv/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/yocto-1/</loc>
@@ -667,11 +660,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/insights/AI Insights/</loc>
+    <loc>https://jooojub.github.io/tags/yocto/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/AI Insights/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/AI Insights/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/yocto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/yocto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/insights/AI Insights-1/</loc>
@@ -679,6 +672,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights-1/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/AI Insights-1/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/AI Insights-1/"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/AI Insights/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/AI Insights/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/AI Insights/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/main/2/</loc>
@@ -709,13 +709,6 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/main/5/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/posts/aosp/</loc>
-    <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/aosp/"/>
-  </url>
-  <url>
     <loc>https://jooojub.github.io/en/posts/aosp-1/</loc>
     <lastmod>2026-04-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp-1/"/>
@@ -723,11 +716,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/aosp-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/posts/embedded/</loc>
+    <loc>https://jooojub.github.io/en/posts/aosp/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/embedded/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/embedded/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/embedded/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/aosp/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/posts/embedded-1/</loc>
@@ -737,11 +730,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/embedded-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/posts/gcc/</loc>
+    <loc>https://jooojub.github.io/en/posts/embedded/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/gcc/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/gcc/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/gcc/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/embedded/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/embedded/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/embedded/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/posts/gcc-1/</loc>
@@ -751,11 +744,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/gcc-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/posts/linux/</loc>
+    <loc>https://jooojub.github.io/en/posts/gcc/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/linux/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/linux/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/linux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/gcc/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/gcc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/gcc/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/posts/linux-1/</loc>
@@ -765,11 +758,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/linux-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/snippets/books/</loc>
+    <loc>https://jooojub.github.io/en/posts/linux/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/books/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/books/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/books/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/linux/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/linux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/linux/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/snippets/books-1/</loc>
@@ -793,11 +786,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/books-3/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/snippets/location/</loc>
+    <loc>https://jooojub.github.io/en/snippets/books/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/location/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/location/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/location/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/books/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/books/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/books/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/snippets/location-1/</loc>
@@ -807,11 +800,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/location-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/snippets/screen/</loc>
+    <loc>https://jooojub.github.io/en/snippets/location/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/screen/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/screen/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/screen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/location/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/location/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/location/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/snippets/screen-1/</loc>
@@ -821,11 +814,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/screen-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/snippets/stash/</loc>
+    <loc>https://jooojub.github.io/en/snippets/screen/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/stash/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/stash/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/screen/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/screen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/screen/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/snippets/stash-1/</loc>
@@ -835,11 +828,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/android/</loc>
+    <loc>https://jooojub.github.io/en/snippets/stash/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/android/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/android/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/android/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/stash/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/stash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/android-1/</loc>
@@ -849,11 +842,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/android-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/anthropology/</loc>
+    <loc>https://jooojub.github.io/en/tags/android/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/anthropology/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/anthropology/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/anthropology/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/android/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/android/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/android/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/anthropology-1/</loc>
@@ -863,11 +856,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/anthropology-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/aosp/</loc>
+    <loc>https://jooojub.github.io/en/tags/anthropology/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/aosp/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/anthropology/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/anthropology/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/anthropology/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/aosp-1/</loc>
@@ -877,11 +870,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/aosp-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/attribute/</loc>
+    <loc>https://jooojub.github.io/en/tags/aosp/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/attribute/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/attribute/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/attribute/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/aosp/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/aosp/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/attribute-1/</loc>
@@ -891,11 +884,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/attribute-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/bash/</loc>
+    <loc>https://jooojub.github.io/en/tags/attribute/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/bash/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/bash/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/bash/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/attribute/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/attribute/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/attribute/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/bash-1/</loc>
@@ -905,11 +898,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/bash-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/briefing/</loc>
+    <loc>https://jooojub.github.io/en/tags/bash/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/briefing/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/briefing/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/briefing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/bash/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/bash/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/bash/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/briefing-1/</loc>
@@ -919,11 +912,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/briefing-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/cafe/</loc>
+    <loc>https://jooojub.github.io/en/tags/briefing/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/cafe/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/cafe/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/briefing/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/briefing/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/briefing/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/cafe-1/</loc>
@@ -933,11 +926,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/docker/</loc>
+    <loc>https://jooojub.github.io/en/tags/cafe/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/docker/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/docker/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/docker/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/cafe/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/cafe/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/docker-1/</loc>
@@ -947,11 +940,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/docker-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/gcc_builtin/</loc>
+    <loc>https://jooojub.github.io/en/tags/docker/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_builtin/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_builtin/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_builtin/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/docker/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/docker/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/docker/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/gcc_builtin-1/</loc>
@@ -961,11 +954,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_builtin-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/gcc_options/</loc>
+    <loc>https://jooojub.github.io/en/tags/gcc_builtin/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_options/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_options/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_options/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_builtin/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_builtin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_builtin/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/gcc_options-1/</loc>
@@ -975,11 +968,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_options-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/git/</loc>
+    <loc>https://jooojub.github.io/en/tags/gcc_options/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/git/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/git/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/git/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_options/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gcc_options/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gcc_options/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/git-1/</loc>
@@ -989,11 +982,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/git-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/gnu/</loc>
+    <loc>https://jooojub.github.io/en/tags/git/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gnu/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gnu/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gnu/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/git/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/git/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/git/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/gnu-1/</loc>
@@ -1003,11 +996,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gnu-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/humanities/</loc>
+    <loc>https://jooojub.github.io/en/tags/gnu/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/humanities/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/humanities/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/humanities/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gnu/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gnu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gnu/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/humanities-1/</loc>
@@ -1017,11 +1010,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/humanities-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/linux/</loc>
+    <loc>https://jooojub.github.io/en/tags/humanities/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/linux/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/linux/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/linux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/humanities/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/humanities/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/humanities/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/linux-1/</loc>
@@ -1031,11 +1024,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/linux-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/llm/</loc>
+    <loc>https://jooojub.github.io/en/tags/linux/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/llm/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/llm/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/llm/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/linux/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/linux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/linux/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/llm-1/</loc>
@@ -1045,11 +1038,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/llm-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/movie/</loc>
+    <loc>https://jooojub.github.io/en/tags/llm/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/movie/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/movie/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/movie/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/llm/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/llm/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/llm/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/movie-1/</loc>
@@ -1059,11 +1052,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/movie-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/mystery/</loc>
+    <loc>https://jooojub.github.io/en/tags/movie/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/mystery/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/mystery/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/mystery/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/movie/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/movie/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/movie/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/mystery-1/</loc>
@@ -1073,11 +1066,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/mystery-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/novel/</loc>
+    <loc>https://jooojub.github.io/en/tags/mystery/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/novel/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/novel/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/mystery/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/mystery/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/mystery/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/novel-1/</loc>
@@ -1087,11 +1080,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/python/</loc>
+    <loc>https://jooojub.github.io/en/tags/novel/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/python/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/python/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/python/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/novel/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/novel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/python-1/</loc>
@@ -1101,11 +1094,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/python-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/restaurant/</loc>
+    <loc>https://jooojub.github.io/en/tags/python/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/restaurant/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/restaurant/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/python/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/python/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/python/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/restaurant-1/</loc>
@@ -1115,11 +1108,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/restaurant-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/science/</loc>
+    <loc>https://jooojub.github.io/en/tags/restaurant/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/science/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/science/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/science/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/restaurant/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/restaurant/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/science-1/</loc>
@@ -1129,11 +1122,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/science-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/sf/</loc>
+    <loc>https://jooojub.github.io/en/tags/science/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/sf/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/sf/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/sf/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/science/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/science/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/science/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/sf-1/</loc>
@@ -1143,11 +1136,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/sf-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/shell/</loc>
+    <loc>https://jooojub.github.io/en/tags/sf/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/shell/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/shell/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/shell/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/sf/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/sf/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/sf/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/shell-1/</loc>
@@ -1157,11 +1150,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/shell-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/smartthings/</loc>
+    <loc>https://jooojub.github.io/en/tags/shell/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/smartthings/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/smartthings/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/smartthings/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/shell/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/shell/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/shell/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/smartthings-1/</loc>
@@ -1171,11 +1164,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/smartthings-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/spot/</loc>
+    <loc>https://jooojub.github.io/en/tags/smartthings/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/spot/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/spot/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/smartthings/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/smartthings/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/smartthings/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/spot-1/</loc>
@@ -1185,11 +1178,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/story/</loc>
+    <loc>https://jooojub.github.io/en/tags/spot/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/story/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/story/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/story/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/spot/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/spot/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/story-1/</loc>
@@ -1199,11 +1192,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/story-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/thriller/</loc>
+    <loc>https://jooojub.github.io/en/tags/story/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/thriller/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/thriller/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/thriller/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/story/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/story/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/story/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/thriller-1/</loc>
@@ -1213,11 +1206,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/thriller-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/tv/</loc>
+    <loc>https://jooojub.github.io/en/tags/thriller/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/tv/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/tv/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/tv/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/thriller/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/thriller/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/thriller/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/tv-1/</loc>
@@ -1227,11 +1220,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/tv-1/"/>
   </url>
   <url>
-    <loc>https://jooojub.github.io/en/tags/yocto/</loc>
+    <loc>https://jooojub.github.io/en/tags/tv/</loc>
     <lastmod>2026-04-06</lastmod>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/yocto/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/yocto/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/tv/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/tv/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/tv/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/yocto-1/</loc>
@@ -1239,6 +1232,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/yocto-1/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/yocto-1/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto-1/"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/tags/yocto/</loc>
+    <lastmod>2026-04-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/yocto/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/yocto/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto/"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-03-19-AI-web-summary/</loc>
