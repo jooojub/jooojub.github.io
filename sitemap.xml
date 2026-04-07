@@ -1492,6 +1492,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-04-06-post-gcc-builtin-alloca"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/posts/content/2026-04-07-post-gcc-builtin-choose-expr</loc>
+    <lastmod>2026-04-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-04-07-post-gcc-builtin-choose-expr"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-04-07-post-gcc-builtin-choose-expr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-04-07-post-gcc-builtin-choose-expr"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/snippets/content/2013-06-01-screen-gods-quiz-1</loc>
     <lastmod>2013-06-01</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2013-06-01-screen-gods-quiz-1"/>
@@ -3100,6 +3107,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-04-06-post-gcc-builtin-alloca"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-04-06-post-gcc-builtin-alloca"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-04-06-post-gcc-builtin-alloca"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-04-07-post-gcc-builtin-choose-expr</loc>
+    <lastmod>2026-04-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-04-07-post-gcc-builtin-choose-expr"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-04-07-post-gcc-builtin-choose-expr"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-04-07-post-gcc-builtin-choose-expr"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/snippets/content/2013-06-01-screen-gods-quiz-1</loc>
