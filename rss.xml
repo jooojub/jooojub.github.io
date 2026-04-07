@@ -5,9 +5,30 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 07 Apr 2026 22:31:59 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 23:37:02 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>gcc attribute: format, format_arg</title>
+      <link>https://jooojub.github.io/posts/content/2026-04-08-post-gcc-attribute-format</link>
+      <description><![CDATA[The format attribute specifies that a function takes printf, scanf, strftime or strfmon style arguments which should be type-checked against a format string.]]></description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-04-08-post-gcc-attribute-format</guid>
+    </item>
+    <item>
+      <title>gcc attribute: format, format_arg</title>
+      <link>https://jooojub.github.io/posts/content/2026-04-08-post-gcc-attribute-format</link>
+      <description><![CDATA[The format attribute specifies that a function takes printf, scanf, strftime or strfmon style arguments which should be type-checked against a format string.]]></description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-04-08-post-gcc-attribute-format</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-04-08-AI-web-summary</link>
+      <description><![CDATA[Apr 7, 2026 — 71 AI articles summarized]]></description>
+      <pubDate>Wed, 08 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-04-08-AI-web-summary</guid>
+    </item>
     <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-04-08-AI-web-summary</link>
@@ -28,6 +49,13 @@
       <description><![CDATA[You can use the built-in function __builtin_choose_expr to evaluate code depending on the value of a constant expression. This built-in function returns exp1 if const_exp, which is an integer constant expression, is nonzero. Otherwise it returns exp2.]]></description>
       <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/posts/content/2026-04-07-post-gcc-builtin-choose-expr</guid>
+    </item>
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-04-07-AI-web-summary</link>
+      <description><![CDATA[Apr 6, 2026 — 66 AI articles summarized]]></description>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-04-07-AI-web-summary</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
