@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 21 Apr 2026 07:10:07 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 22 Apr 2026 06:07:10 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-04-22-AI-web-summary</link>
+      <description><![CDATA[Apr 21, 2026 — 66 AI articles summarized]]></description>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-04-22-AI-web-summary</guid>
+    </item>
     <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-04-21-AI-web-summary</link>
