@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 27 Apr 2026 22:10:07 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 08:01:03 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>서울 광진구 타코 단독 모종</title>
+      <link>https://jooojub.github.io/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong</link>
+      <description><![CDATA[서울 광진구 타코 단독 모종]]></description>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong</guid>
+    </item>
     <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-04-28-AI-web-summary</link>
@@ -588,6 +595,13 @@
       <description><![CDATA[Mar 22, 2026 — 37 AI articles summarized]]></description>
       <pubDate>Mon, 23 Mar 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-03-23-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>딤타오 본점</title>
+      <link>https://jooojub.github.io/snippets/content/2026-03-22-location-restaurant-DimtaoMainBranch</link>
+      <description><![CDATA[딤타오 본점]]></description>
+      <pubDate>Sun, 22 Mar 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-03-22-location-restaurant-DimtaoMainBranch</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
