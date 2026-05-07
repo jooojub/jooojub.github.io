@@ -525,6 +525,18 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/tags/pikmin-post-1</loc>
+    <lastmod>2026-05-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/pikmin-post-1"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/pikmin-post-1"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/tags/pikmin-post</loc>
+    <lastmod>2026-05-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/pikmin-post"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/pikmin-post"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/tags/python-1</loc>
     <lastmod>2026-05-07</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/python-1"/>
@@ -3118,6 +3130,12 @@
     <lastmod>2026-05-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower</loc>
+    <lastmod>2026-05-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/insights/content/2026-03-19-AI-web-summary</loc>
