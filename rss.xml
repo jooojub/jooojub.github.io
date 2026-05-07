@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 07 May 2026 09:29:08 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 16:51:35 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Daily Briefing</title>
+      <link>https://jooojub.github.io/insights/content/2026-05-08-AI-web-summary</link>
+      <description><![CDATA[May 7, 2026 — 72 AI articles summarized]]></description>
+      <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/insights/content/2026-05-08-AI-web-summary</guid>
+    </item>
     <item>
       <title>Snow Man - Las Leñas 빅플라워 엽서</title>
       <link>https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower</link>
