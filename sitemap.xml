@@ -237,12 +237,14 @@
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/pikmin-1"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/pikmin-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/pikmin-1"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/pikmin</loc>
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/pikmin"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/pikmin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/pikmin"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/screen-1</loc>
@@ -529,12 +531,14 @@
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/pikmin-post-1"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/pikmin-post-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/pikmin-post-1"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/pikmin-post</loc>
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/pikmin-post"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/pikmin-post"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/pikmin-post"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/python-1</loc>
@@ -625,12 +629,14 @@
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/solo-seedling-1"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/solo-seedling-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/solo-seedling-1"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/solo-seedling</loc>
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/solo-seedling"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/solo-seedling"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/solo-seedling"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/spot-1</loc>
@@ -745,6 +751,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/main/5"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/en/main/6</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/main/6"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/en/posts/aosp-1</loc>
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp-1"/>
@@ -841,6 +852,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/location"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/location"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/location"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/pikmin-1</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/pikmin-1"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/pikmin-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/pikmin-1"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/pikmin</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/pikmin"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/pikmin"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/pikmin"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/snippets/screen-1</loc>
@@ -1123,6 +1148,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/novel"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/en/tags/pikmin-post-1</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/pikmin-post-1"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/pikmin-post-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/pikmin-post-1"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/tags/pikmin-post</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/pikmin-post"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/pikmin-post"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/pikmin-post"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/en/tags/python-1</loc>
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/python-1"/>
@@ -1205,6 +1244,20 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/smartthings"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/smartthings"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/smartthings"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/tags/solo-seedling-1</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/solo-seedling-1"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/solo-seedling-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/solo-seedling-1"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/tags/solo-seedling</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/solo-seedling"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/solo-seedling"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/solo-seedling"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/spot-1</loc>
@@ -1456,138 +1509,161 @@
     <lastmod>2026-04-15</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-15-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-15-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-15-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-16-AI-web-summary</loc>
     <lastmod>2026-04-16</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-16-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-16-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-16-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-17-AI-web-summary</loc>
     <lastmod>2026-04-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-17-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-17-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-17-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-18-AI-web-summary</loc>
     <lastmod>2026-04-18</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-18-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-18-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-18-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-19-AI-web-summary</loc>
     <lastmod>2026-04-19</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-19-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-19-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-19-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-20-AI-web-summary</loc>
     <lastmod>2026-04-20</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-20-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-20-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-20-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-21-AI-web-summary</loc>
     <lastmod>2026-04-21</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-21-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-21-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-21-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-22-AI-web-summary</loc>
     <lastmod>2026-04-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-22-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-22-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-22-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-23-AI-web-summary</loc>
     <lastmod>2026-04-23</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-23-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-23-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-23-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-24-AI-web-summary</loc>
     <lastmod>2026-04-24</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-24-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-24-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-24-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-25-AI-web-summary</loc>
     <lastmod>2026-04-25</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-25-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-25-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-25-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-26-AI-web-summary</loc>
     <lastmod>2026-04-26</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-26-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-26-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-26-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-27-AI-web-summary</loc>
     <lastmod>2026-04-27</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-27-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-27-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-27-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-28-AI-web-summary</loc>
     <lastmod>2026-04-28</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-28-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-28-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-28-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-29-AI-web-summary</loc>
     <lastmod>2026-04-29</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-29-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-29-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-29-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-04-30-AI-web-summary</loc>
     <lastmod>2026-04-30</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-30-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-30-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-30-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-05-01-AI-web-summary</loc>
     <lastmod>2026-05-01</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-01-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-01-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-01-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-05-03-AI-web-summary</loc>
     <lastmod>2026-05-03</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-03-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-03-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-03-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-05-04-AI-web-summary</loc>
     <lastmod>2026-05-04</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-04-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-04-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-04-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-05-05-AI-web-summary</loc>
     <lastmod>2026-05-05</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-05-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-05-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-05-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-05-06-AI-web-summary</loc>
     <lastmod>2026-05-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-06-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-06-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-06-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-05-07-AI-web-summary</loc>
     <lastmod>2026-05-07</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-07-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-07-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-07-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-05-08-AI-web-summary</loc>
     <lastmod>2026-05-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-08-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-08-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-08-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/content/2025-12-11-post-rpi-zero2-image-build-with-yocto</loc>
@@ -3112,36 +3188,48 @@
     <lastmod>2026-04-27</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong</loc>
     <lastmod>2026-04-28</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy</loc>
     <lastmod>2026-05-04</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush</loc>
     <lastmod>2026-05-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling</loc>
     <lastmod>2026-05-06</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower</loc>
     <lastmod>2026-05-07</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/snippets/content/2026-05-08-pikmin-maikohanpikachukyotoshimogyowardbigflowerpostcardbigflower</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-08-pikmin-maikohanpikachukyotoshimogyowardbigflowerpostcardbigflower"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-08-pikmin-maikohanpikachukyotoshimogyowardbigflowerpostcardbigflower"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/insights/content/2026-03-19-AI-web-summary</loc>
@@ -3317,6 +3405,167 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-13-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-13-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-13-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-15-AI-web-summary</loc>
+    <lastmod>2026-04-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-15-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-15-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-15-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-16-AI-web-summary</loc>
+    <lastmod>2026-04-16</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-16-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-16-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-16-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-17-AI-web-summary</loc>
+    <lastmod>2026-04-17</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-17-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-17-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-17-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-18-AI-web-summary</loc>
+    <lastmod>2026-04-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-18-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-18-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-18-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-19-AI-web-summary</loc>
+    <lastmod>2026-04-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-19-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-19-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-19-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-20-AI-web-summary</loc>
+    <lastmod>2026-04-20</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-20-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-20-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-20-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-21-AI-web-summary</loc>
+    <lastmod>2026-04-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-21-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-21-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-21-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-22-AI-web-summary</loc>
+    <lastmod>2026-04-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-22-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-22-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-22-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-23-AI-web-summary</loc>
+    <lastmod>2026-04-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-23-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-23-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-23-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-24-AI-web-summary</loc>
+    <lastmod>2026-04-24</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-24-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-24-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-24-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-25-AI-web-summary</loc>
+    <lastmod>2026-04-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-25-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-25-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-25-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-26-AI-web-summary</loc>
+    <lastmod>2026-04-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-26-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-26-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-26-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-27-AI-web-summary</loc>
+    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-27-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-27-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-27-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-28-AI-web-summary</loc>
+    <lastmod>2026-04-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-28-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-28-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-28-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-29-AI-web-summary</loc>
+    <lastmod>2026-04-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-29-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-29-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-29-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-04-30-AI-web-summary</loc>
+    <lastmod>2026-04-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-04-30-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-04-30-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-04-30-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-05-01-AI-web-summary</loc>
+    <lastmod>2026-05-01</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-01-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-01-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-01-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-05-03-AI-web-summary</loc>
+    <lastmod>2026-05-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-03-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-03-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-03-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-05-04-AI-web-summary</loc>
+    <lastmod>2026-05-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-04-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-04-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-04-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-05-05-AI-web-summary</loc>
+    <lastmod>2026-05-05</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-05-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-05-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-05-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-05-06-AI-web-summary</loc>
+    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-06-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-06-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-06-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-05-07-AI-web-summary</loc>
+    <lastmod>2026-05-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-07-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-07-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-07-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/insights/content/2026-05-08-AI-web-summary</loc>
+    <lastmod>2026-05-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-08-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-08-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/content/2026-05-08-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/posts/content/2025-12-11-post-rpi-zero2-image-build-with-yocto</loc>
@@ -4829,5 +5078,47 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-04-23-stash-aosp-product-graph"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-04-23-stash-aosp-product-graph"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-04-23-stash-aosp-product-graph"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/content/2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant</loc>
+    <lastmod>2026-04-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong</loc>
+    <lastmod>2026-04-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy</loc>
+    <lastmod>2026-05-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush</loc>
+    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling</loc>
+    <lastmod>2026-05-06</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower</loc>
+    <lastmod>2026-05-07</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-05-07-pikmin-snowmanlaslenasbigflowerpostcardbigflower"/>
   </url>
 </urlset>
