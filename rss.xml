@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 09 May 2026 15:19:30 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 06:00:29 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>Fixing pip externally-managed-environment Error on Raspbian</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-10-stash-fixing-pip-externally-managed-environment-on-raspbian</link>
+      <description><![CDATA[How to globally fix the pip externally-managed-environment error on Raspberry Pi OS]]></description>
+      <pubDate>Sun, 10 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-10-stash-fixing-pip-externally-managed-environment-on-raspbian</guid>
+    </item>
     <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-05-10-AI-web-summary</link>
