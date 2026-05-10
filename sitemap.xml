@@ -100,6 +100,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/insights/AI Insights-1"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/insights/AI Insights-2</loc>
+    <lastmod>2026-05-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights-2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/AI Insights-2"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/insights/AI Insights</loc>
     <lastmod>2026-05-10</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/AI Insights"/>
@@ -350,6 +356,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/briefing-1"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/briefing-1"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/briefing-1"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/tags/briefing-2</loc>
+    <lastmod>2026-05-10</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/briefing-2"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/briefing-2"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/briefing</loc>
@@ -1676,6 +1688,12 @@
     <lastmod>2026-05-10</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-10-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-10-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/insights/content/2026-05-11-AI-web-summary</loc>
+    <lastmod>2026-05-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-11-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-11-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/content/2025-12-11-post-rpi-zero2-image-build-with-yocto</loc>
