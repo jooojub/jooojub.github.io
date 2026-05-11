@@ -5,9 +5,23 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 11 May 2026 16:23:45 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 11 May 2026 23:47:33 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>안양 호텔 단독 모종</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-12-pikmin-anyanghotelexclusivemojonghotelsupplies</link>
+      <description><![CDATA[안양 호텔 단독 모종]]></description>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-12-pikmin-anyanghotelexclusivemojonghotelsupplies</guid>
+    </item>
+    <item>
+      <title>Setting Timezone to KST Using timedatectl</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-12-stash-setting-timezone-to-kst-using-timedatectl</link>
+      <description><![CDATA[How to check the current timezone with timedatectl and change it to KST (Asia/Seoul).]]></description>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-12-stash-setting-timezone-to-kst-using-timedatectl</guid>
+    </item>
     <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-05-12-AI-web-summary</link>
