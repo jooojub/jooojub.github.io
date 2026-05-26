@@ -1725,6 +1725,12 @@
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-26-AI-web-summary"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/insights/content/2026-05-27-AI-web-summary</loc>
+    <lastmod>2026-05-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-05-27-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-05-27-AI-web-summary"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/posts/content/2025-12-11-post-rpi-zero2-image-build-with-yocto</loc>
     <lastmod>2025-12-11</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2025-12-11-post-rpi-zero2-image-build-with-yocto"/>
