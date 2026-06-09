@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 08 Jun 2026 23:26:41 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 00:08:38 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -14,6 +14,20 @@
       <description><![CDATA[How to build safe and trustworthy AI agents — system message framework, threat mitigation, and human-in-the-loop patterns for secure, reliable agentic systems.]]></description>
       <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents</guid>
+    </item>
+    <item>
+      <title>AI Agents for Beginners - 7. Planning Design Pattern</title>
+      <link>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-07-planning-design</link>
+      <description><![CDATA[How to build planning agents that decompose complex goals into structured subtasks, route work to specialized agents, and iteratively re-plan based on real-world feedback.]]></description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-07-planning-design</guid>
+    </item>
+    <item>
+      <title>AI Agents for Beginners - 8. Multi-Agent Design Pattern</title>
+      <link>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-08-multi-agent</link>
+      <description><![CDATA[Multi-agent design patterns — when to use them, building blocks of agent communication and coordination, Group Chat / Hand-off / Collaborative Filtering patterns, and a WorkflowBuilder pipeline walkthrough.]]></description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-08-multi-agent</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
