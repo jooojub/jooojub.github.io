@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 09 Jun 2026 01:30:12 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 09 Jun 2026 06:07:47 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -35,6 +35,34 @@
       <description><![CDATA[Metacognition in AI agents — self-reflection, corrective RAG, pre-emptive context loading, goal bootstrapping, intent-aware search, code generation, and SQL as RAG.]]></description>
       <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-09-metacognition</guid>
+    </item>
+    <item>
+      <title>AI Agents for Beginners - 10. AI Agents in Production: Observability &amp; Evaluation</title>
+      <link>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-10-ai-agents-production</link>
+      <description><![CDATA[How to move AI agents from prototype to production — observability with traces and spans, key metrics, OpenTelemetry instrumentation, offline/online evaluation, cost management, and a real expense claim demo.]]></description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-10-ai-agents-production</guid>
+    </item>
+    <item>
+      <title>AI Agents for Beginners - 11. Using Agentic Protocols (MCP, A2A and NLWeb)</title>
+      <link>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-11-agentic-protocols</link>
+      <description><![CDATA[MCP, A2A, and NLWeb — three agentic protocols for standardized tool access, agent-to-agent collaboration, and natural language interfaces on the web.]]></description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-11-agentic-protocols</guid>
+    </item>
+    <item>
+      <title>AI Agents for Beginners - 12. Context Engineering</title>
+      <link>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-12-context-engineering</link>
+      <description><![CDATA[How Context Engineering differs from Prompt Engineering, the five types of context in AI Agents, practical management strategies, and how to recognize and fix Context Poisoning, Distraction, Confusion, and Clash failures.]]></description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-12-context-engineering</guid>
+    </item>
+    <item>
+      <title>AI Agents for Beginners - 13. Memory for AI Agents</title>
+      <link>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-13-agent-memory</link>
+      <description><![CDATA[Memory types for AI Agents (Working, Short-term, Long-term, Persona, Episodic, Entity, Structured RAG), implementation with Mem0, Cognee, and Azure AI Search, and the self-improving agent pattern with code examples.]]></description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-13-agent-memory</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
