@@ -278,6 +278,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/tags/ai-1</loc>
+    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/ai-1"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/ai-1"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/tags/ai-agents-1</loc>
     <lastmod>2026-06-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/ai-agents-1"/>
@@ -288,6 +294,12 @@
     <lastmod>2026-06-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/ai-agents"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/ai-agents"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/tags/ai</loc>
+    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/ai"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/ai"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/android-1</loc>
@@ -1943,6 +1955,12 @@
     <lastmod>2026-06-20</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-06-20-AI-web-summary"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-06-20-AI-web-summary"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/insights/content/2026-06-21-AI-web-summary</loc>
+    <lastmod>2026-06-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/insights/content/2026-06-21-AI-web-summary"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/insights/content/2026-06-21-AI-web-summary"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/insights/content/2026-06-22-AI-web-summary</loc>
@@ -3694,6 +3712,12 @@
     <lastmod>2026-06-17</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-06-17-stash-fail2ban-setup-and-usage"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-06-17-stash-fail2ban-setup-and-usage"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/snippets/content/2026-06-22-stash-antigravity-cli</loc>
+    <lastmod>2026-06-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-06-22-stash-antigravity-cli"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-06-22-stash-antigravity-cli"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/insights/content/2026-03-19-AI-web-summary</loc>
