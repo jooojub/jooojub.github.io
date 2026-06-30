@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Mon, 29 Jun 2026 15:25:42 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 02:12:23 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -336,6 +336,48 @@
       <description><![CDATA[Jun 3, 2026 — 79 AI articles summarized]]></description>
       <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-06-04-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Caffe Gigi</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-cafe-caffegigi</link>
+      <description><![CDATA[Caffe Gigi]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-cafe-caffegigi</guid>
+    </item>
+    <item>
+      <title>Bondi Surf Seafoods</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-restaurant-bondisurfseafoods</link>
+      <description><![CDATA[Bondi Surf Seafoods]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-restaurant-bondisurfseafoods</guid>
+    </item>
+    <item>
+      <title>Gap Park</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-gappark</link>
+      <description><![CDATA[Gap Park]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-gappark</guid>
+    </item>
+    <item>
+      <title>Pirrama Park Public BBQ</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-pirramaparkpublicbbq</link>
+      <description><![CDATA[Pirrama Park Public BBQ]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-pirramaparkpublicbbq</guid>
+    </item>
+    <item>
+      <title>South Bondi Beach</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-southbondibeach</link>
+      <description><![CDATA[South Bondi Beach]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-southbondibeach</guid>
+    </item>
+    <item>
+      <title>Sydney Fish Market</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-sydneyfishmarket</link>
+      <description><![CDATA[Sydney Fish Market]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-sydneyfishmarket</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
