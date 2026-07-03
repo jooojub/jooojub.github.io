@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Thu, 02 Jul 2026 15:24:21 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 04:21:55 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -47,6 +47,13 @@
       <title>참교육 (2026)</title>
       <link>https://jooojub.github.io/snippets/content/2026-06-28-screen-tv-trueeducation2026</link>
       <description><![CDATA[참교육 (2026)]]></description>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-28-screen-tv-trueeducation2026</guid>
+    </item>
+    <item>
+      <title>True Education (2026)</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-28-screen-tv-trueeducation2026</link>
+      <description><![CDATA[True Education (2026)]]></description>
       <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-06-28-screen-tv-trueeducation2026</guid>
     </item>
@@ -93,11 +100,25 @@
       <guid>https://jooojub.github.io/snippets/content/2026-06-23-screen-movie-spoilia2025</guid>
     </item>
     <item>
+      <title>Spoilia (2025)</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-23-screen-movie-spoilia2025</link>
+      <description><![CDATA[Spoilia (2025)]]></description>
+      <pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-23-screen-movie-spoilia2025</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-06-23-AI-web-summary</link>
       <description><![CDATA[Jun 22, 2026 — 52 AI articles summarized]]></description>
       <pubDate>Tue, 23 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-06-23-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Antigravity CLI: Gemini CLI is now Antigravity CLI</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-22-stash-antigravity-cli</link>
+      <description><![CDATA[Gemini CLI was discontinued on June 18, 2026. Install Antigravity CLI and use it with the agy command.]]></description>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-22-stash-antigravity-cli</guid>
     </item>
     <item>
       <title>Antigravity CLI: Gemini CLI is now Antigravity CLI</title>
@@ -149,6 +170,13 @@
       <guid>https://jooojub.github.io/snippets/content/2026-06-17-stash-fail2ban-setup-and-usage</guid>
     </item>
     <item>
+      <title>Fail2ban: Installation, Configuration, and Manual Ban/Unban</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-17-stash-fail2ban-setup-and-usage</link>
+      <description><![CDATA[How to install and configure Fail2ban on Linux, and manually ban/unban IPs and check status.]]></description>
+      <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-17-stash-fail2ban-setup-and-usage</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-06-17-AI-web-summary</link>
       <description><![CDATA[Jun 16, 2026 — 74 AI articles summarized]]></description>
@@ -182,6 +210,13 @@
       <description><![CDATA[Jun 12, 2026 — 64 AI articles summarized]]></description>
       <pubDate>Sat, 13 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-06-13-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>lsof: List Open Files and Ports</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-12-stash-lsof-usage</link>
+      <description><![CDATA[How to use lsof to check open files, listening ports, and process file handles on Linux.]]></description>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-12-stash-lsof-usage</guid>
     </item>
     <item>
       <title>lsof: List Open Files and Ports</title>
@@ -289,6 +324,13 @@
       <guid>https://jooojub.github.io/snippets/content/2026-06-09-books-1984</guid>
     </item>
     <item>
+      <title>1984</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-09-books-1984</link>
+      <description><![CDATA[2 + 2 = 5]]></description>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-09-books-1984</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-06-09-AI-web-summary</link>
       <description><![CDATA[Jun 8, 2026 — 78 AI articles summarized]]></description>
@@ -345,6 +387,20 @@
       <guid>https://jooojub.github.io/insights/content/2026-06-07-AI-web-summary</guid>
     </item>
     <item>
+      <title>Algorithm Cafe Potts Point</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-06-location-cafe-algorithmcafepottspoint</link>
+      <description><![CDATA[Algorithm Cafe Potts Point]]></description>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-06-location-cafe-algorithmcafepottspoint</guid>
+    </item>
+    <item>
+      <title>Algorithm Cafe Potts Point</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-06-location-cafe-algorithmcafepottspoint</link>
+      <description><![CDATA[Algorithm Cafe Potts Point]]></description>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-06-location-cafe-algorithmcafepottspoint</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-06-06-AI-web-summary</link>
       <description><![CDATA[Jun 5, 2026 — 70 AI articles summarized]]></description>
@@ -373,11 +429,60 @@
       <guid>https://jooojub.github.io/snippets/content/2026-06-05-location-spot-theuniversityofsydney</guid>
     </item>
     <item>
+      <title>AP House</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-05-location-cafe-aphouse</link>
+      <description><![CDATA[AP House]]></description>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-05-location-cafe-aphouse</guid>
+    </item>
+    <item>
+      <title>Bar Reggio</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-05-location-restaurant-barreggio</link>
+      <description><![CDATA[Bar Reggio]]></description>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-05-location-restaurant-barreggio</guid>
+    </item>
+    <item>
+      <title>The University of Sydney</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-05-location-spot-theuniversityofsydney</link>
+      <description><![CDATA[The University of Sydney]]></description>
+      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-05-location-spot-theuniversityofsydney</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-06-05-AI-web-summary</link>
       <description><![CDATA[Jun 4, 2026 — 70 AI articles summarized]]></description>
       <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-06-05-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Café Leura - Modern Australian Cafe Restaurant</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-04-location-restaurant-cafeleuramodernaustraliancaferestaurant</link>
+      <description><![CDATA[Café Leura - Modern Australian Cafe Restaurant]]></description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-04-location-restaurant-cafeleuramodernaustraliancaferestaurant</guid>
+    </item>
+    <item>
+      <title>Happy Chef Noodle Restaurant</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-04-location-restaurant-happychefnoodlerestaurant</link>
+      <description><![CDATA[Happy Chef Noodle Restaurant]]></description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-04-location-restaurant-happychefnoodlerestaurant</guid>
+    </item>
+    <item>
+      <title>Featherdale Sydney Wildlife Park</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-04-location-spot-featherdalesydneywildlifepark</link>
+      <description><![CDATA[Featherdale Sydney Wildlife Park]]></description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-04-location-spot-featherdalesydneywildlifepark</guid>
+    </item>
+    <item>
+      <title>Observatory Hill Rotunda</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-04-location-spot-observatoryhillrotunda</link>
+      <description><![CDATA[Observatory Hill Rotunda]]></description>
+      <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-04-location-spot-observatoryhillrotunda</guid>
     </item>
     <item>
       <title>Café Leura - Modern Australian Cafe Restaurant</title>
@@ -457,11 +562,102 @@
       <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-sydneyfishmarket</guid>
     </item>
     <item>
+      <title>Caffe Gigi</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-cafe-caffegigi</link>
+      <description><![CDATA[Caffe Gigi]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-cafe-caffegigi</guid>
+    </item>
+    <item>
+      <title>Bondi Surf Seafoods</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-restaurant-bondisurfseafoods</link>
+      <description><![CDATA[Bondi Surf Seafoods]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-restaurant-bondisurfseafoods</guid>
+    </item>
+    <item>
+      <title>Gap Park</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-gappark</link>
+      <description><![CDATA[Gap Park]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-gappark</guid>
+    </item>
+    <item>
+      <title>Pirrama Park Public BBQ</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-pirramaparkpublicbbq</link>
+      <description><![CDATA[Pirrama Park Public BBQ]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-pirramaparkpublicbbq</guid>
+    </item>
+    <item>
+      <title>South Bondi Beach</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-southbondibeach</link>
+      <description><![CDATA[South Bondi Beach]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-southbondibeach</guid>
+    </item>
+    <item>
+      <title>Sydney Fish Market</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-sydneyfishmarket</link>
+      <description><![CDATA[Sydney Fish Market]]></description>
+      <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-03-location-spot-sydneyfishmarket</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-06-03-AI-web-summary</link>
       <description><![CDATA[Jun 2, 2026 — 75 AI articles summarized]]></description>
       <pubDate>Wed, 03 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-06-03-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Stitch Coffee QVB</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-02-location-cafe-stitchcoffeeqvb</link>
+      <description><![CDATA[Stitch Coffee QVB]]></description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-02-location-cafe-stitchcoffeeqvb</guid>
+    </item>
+    <item>
+      <title>Yo-Chi</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-02-location-cafe-yochi</link>
+      <description><![CDATA[Yo-Chi]]></description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-02-location-cafe-yochi</guid>
+    </item>
+    <item>
+      <title>Bar Totti&apos;s</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-02-location-restaurant-bartottis</link>
+      <description><![CDATA[Bar Totti&apos;s]]></description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-02-location-restaurant-bartottis</guid>
+    </item>
+    <item>
+      <title>Burger Point Circular Quay</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-02-location-restaurant-burgerpointcircularquay</link>
+      <description><![CDATA[Burger Point Circular Quay]]></description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-02-location-restaurant-burgerpointcircularquay</guid>
+    </item>
+    <item>
+      <title>Queen Victoria Building</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-02-location-spot-queenvictoriabuilding</link>
+      <description><![CDATA[Queen Victoria Building]]></description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-02-location-spot-queenvictoriabuilding</guid>
+    </item>
+    <item>
+      <title>St Mary&apos;s Cathedral</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-02-location-spot-stmaryscathedral</link>
+      <description><![CDATA[St Mary&apos;s Cathedral]]></description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-02-location-spot-stmaryscathedral</guid>
+    </item>
+    <item>
+      <title>Sydney Opera House</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-02-location-spot-sydneyoperahouse</link>
+      <description><![CDATA[Sydney Opera House]]></description>
+      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-02-location-spot-sydneyoperahouse</guid>
     </item>
     <item>
       <title>Stitch Coffee QVB</title>
@@ -569,11 +765,81 @@
       <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-spot-royalbotanicgardensvictoriamelbournegardens</guid>
     </item>
     <item>
+      <title>Foster &amp; Black Specialty Coffee Melbourne Central</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-01-location-cafe-fosterblackspecialtycoffeemelbournecentral</link>
+      <description><![CDATA[Foster &amp; Black Specialty Coffee Melbourne Central]]></description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-cafe-fosterblackspecialtycoffeemelbournecentral</guid>
+    </item>
+    <item>
+      <title>Good Measure</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-01-location-cafe-goodmeasure</link>
+      <description><![CDATA[Good Measure]]></description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-cafe-goodmeasure</guid>
+    </item>
+    <item>
+      <title>Patricia Coffee Brewers</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-01-location-cafe-patriciacoffeebrewers</link>
+      <description><![CDATA[Patricia Coffee Brewers]]></description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-cafe-patriciacoffeebrewers</guid>
+    </item>
+    <item>
+      <title>KURIMU Melbourne Central</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-01-location-restaurant-kurimumelbournecentral</link>
+      <description><![CDATA[KURIMU Melbourne Central]]></description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-restaurant-kurimumelbournecentral</guid>
+    </item>
+    <item>
+      <title>San Churro QV Melbourne</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-01-location-restaurant-sanchurroqvmelbourne</link>
+      <description><![CDATA[San Churro QV Melbourne]]></description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-restaurant-sanchurroqvmelbourne</guid>
+    </item>
+    <item>
+      <title>Stalactites Restaurant</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-01-location-restaurant-stalactitesrestaurant</link>
+      <description><![CDATA[Stalactites Restaurant]]></description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-restaurant-stalactitesrestaurant</guid>
+    </item>
+    <item>
+      <title>Royal Botanic Gardens Victoria - Melbourne Gardens</title>
+      <link>https://jooojub.github.io/snippets/content/2026-06-01-location-spot-royalbotanicgardensvictoriamelbournegardens</link>
+      <description><![CDATA[Royal Botanic Gardens Victoria - Melbourne Gardens]]></description>
+      <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-06-01-location-spot-royalbotanicgardensvictoriamelbournegardens</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-06-01-AI-web-summary</link>
       <description><![CDATA[May 31, 2026 — 39 AI articles summarized]]></description>
       <pubDate>Mon, 01 Jun 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-06-01-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Little Crumb Bakery</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-31-location-cafe-littlecrumbbakery</link>
+      <description><![CDATA[Little Crumb Bakery]]></description>
+      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-31-location-cafe-littlecrumbbakery</guid>
+    </item>
+    <item>
+      <title>Dodee Paidang</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-31-location-restaurant-dodeepaidang</link>
+      <description><![CDATA[Dodee Paidang]]></description>
+      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-31-location-restaurant-dodeepaidang</guid>
+    </item>
+    <item>
+      <title>Great Ocean Road Tour</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-31-location-spot-greatoceanroadtour</link>
+      <description><![CDATA[Great Ocean Road Tour]]></description>
+      <pubDate>Sun, 31 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-31-location-spot-greatoceanroadtour</guid>
     </item>
     <item>
       <title>Little Crumb Bakery</title>
@@ -660,11 +926,95 @@
       <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-spot-saintpatrickscathedral</guid>
     </item>
     <item>
+      <title>Little League</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-cafe-LittleLeague</link>
+      <description><![CDATA[Little League]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-cafe-LittleLeague</guid>
+    </item>
+    <item>
+      <title>Pidapipó Carlton</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-cafe-PidapipoCarlton</link>
+      <description><![CDATA[Pidapipó Carlton]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-cafe-PidapipoCarlton</guid>
+    </item>
+    <item>
+      <title>Market Lane Coffee - Queen St, Queen Victoria Market</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-cafe-marketlanecoffeequeenstqueenvictoriamarket</link>
+      <description><![CDATA[Market Lane Coffee - Queen St, Queen Victoria Market]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-cafe-marketlanecoffeequeenstqueenvictoriamarket</guid>
+    </item>
+    <item>
+      <title>American Doughnut Kitchen</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-restaurant-AmericanDoughnutKitchen</link>
+      <description><![CDATA[American Doughnut Kitchen]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-restaurant-AmericanDoughnutKitchen</guid>
+    </item>
+    <item>
+      <title>Charrd</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-restaurant-charrd</link>
+      <description><![CDATA[Charrd]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-restaurant-charrd</guid>
+    </item>
+    <item>
+      <title>OMI Melbourne Central</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-restaurant-omimelbournecentral</link>
+      <description><![CDATA[OMI Melbourne Central]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-restaurant-omimelbournecentral</guid>
+    </item>
+    <item>
+      <title>Queen Victoria Market</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-spot-QueenVictoriaMarket</link>
+      <description><![CDATA[Queen Victoria Market]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-spot-QueenVictoriaMarket</guid>
+    </item>
+    <item>
+      <title>Saint Patrick&apos;s Cathedral</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-30-location-spot-saintpatrickscathedral</link>
+      <description><![CDATA[Saint Patrick&apos;s Cathedral]]></description>
+      <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-30-location-spot-saintpatrickscathedral</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-05-30-AI-web-summary</link>
       <description><![CDATA[May 29, 2026 — 75 AI articles summarized]]></description>
       <pubDate>Sat, 30 May 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-05-30-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Ca Fe In Melbourne</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-29-location-cafe-cafeinmelbourne</link>
+      <description><![CDATA[Ca Fe In Melbourne]]></description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-29-location-cafe-cafeinmelbourne</guid>
+    </item>
+    <item>
+      <title>Ca De Vin</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-29-location-restaurant-cadevin</link>
+      <description><![CDATA[Ca De Vin]]></description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-29-location-restaurant-cadevin</guid>
+    </item>
+    <item>
+      <title>Hyatt Centric Melbourne</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-29-location-spot-hyattcentricmelbourne</link>
+      <description><![CDATA[Hyatt Centric Melbourne]]></description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-29-location-spot-hyattcentricmelbourne</guid>
+    </item>
+    <item>
+      <title>State Library Victoria</title>
+      <link>https://jooojub.github.io/snippets/content/2026-05-29-location-spot-statelibraryvictoria</link>
+      <description><![CDATA[State Library Victoria]]></description>
+      <pubDate>Fri, 29 May 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-05-29-location-spot-statelibraryvictoria</guid>
     </item>
     <item>
       <title>Ca Fe In Melbourne</title>
