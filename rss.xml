@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 08 Jul 2026 02:05:40 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 02:14:34 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -19,6 +19,13 @@
       <title>맨 끝줄 소년</title>
       <link>https://jooojub.github.io/snippets/content/2026-07-07-screen-tv-lastrowboy</link>
       <description><![CDATA[당신의 이야기는, 특별합니까?]]></description>
+      <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-07-screen-tv-lastrowboy</guid>
+    </item>
+    <item>
+      <title>Notes from the Last Row</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-07-screen-tv-lastrowboy</link>
+      <description><![CDATA[Is your story special?]]></description>
       <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-07-07-screen-tv-lastrowboy</guid>
     </item>
@@ -40,6 +47,13 @@
       <title>남경막국수 가족2</title>
       <link>https://jooojub.github.io/snippets/content/2026-07-05-location-restaurant-nanjingmemonoodlefamily2</link>
       <description><![CDATA[남경막국수 가족2]]></description>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-05-location-restaurant-nanjingmemonoodlefamily2</guid>
+    </item>
+    <item>
+      <title>Namgyeong Makguksu Family 2</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-05-location-restaurant-nanjingmemonoodlefamily2</link>
+      <description><![CDATA[Namgyeong Makguksu Family 2]]></description>
       <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-07-05-location-restaurant-nanjingmemonoodlefamily2</guid>
     </item>
