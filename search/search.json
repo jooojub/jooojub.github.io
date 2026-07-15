@@ -2927,6 +2927,15 @@
  {
   "type": "snippets",
   "series": "screen",
+  "key": "4598f6ac79dbf302cca70001d1ff8467",
+  "title": "디렉터스 아레나 시즌 1 (2026)",
+  "file": "2026-07-14-screen-tv-directorsarenaseason12026",
+  "description": "",
+  "content": "\n\n\n\n\n## Review\n우연히 이것저것 보다가 숏드라마라는 장르가 요즘 각광받고 있다는 이야기를 듣고, 어떤 느낌인지 트렌드나 확인해볼 겸 보게 된 프로그램이다.  \n\n사실대로 말하자면 집중해서 본 건 아니고, 개인 프로젝트를 진행하면서 옆에 틀어놓는 수준으로 봤다.\n\n숏드라마라는 장르 특성상 짧은 시간 안에 사람들의 이목을 끌어야 해서 그런지, 오직 도파민만을 추구하는 세상이라는 느낌을 받았다.  \n호흡이 조금만 느려져도 바로 다음 걸로 넘어가 버리는 숏폼의 세계이다 보니, 전개도 빠르고 줄거리와 자극 위주로 흘러가는 것 같았다.  \n\n개인적으로는 스토리를 풀어나가는 과정에서 드러나는 인물들의 감정선이나, 이를 표현하는 연출, 그리고 그 안에 숨겨진 감독의 의도 같은 걸 좋아하는 편이라, 이런 취향에는 솔직히 잘 맞지 않는 세상이었다.  \n\n그런데 신기하게도, 아무리 호흡이 짧더라도 배우들의 연기만큼은 여전히 중요한 요소라는 걸 느낄 수 있었다.  \n\n요즘 트렌드가 어떤 식으로 흘러가는지 볼 수 있었던 시간이었다."
+ },
+ {
+  "type": "snippets",
+  "series": "screen",
   "key": "2c1c402846b0cc504c771b2d7b5bcf5a",
   "title": "God's Quiz Season 1 (2010)",
   "file": "2013-06-01-screen-gods-quiz-1",
@@ -5612,6 +5621,36 @@
   "file": "2026-07-07-screen-tv-lastrowboy",
   "description": "Is your story special?",
   "content": "\n\n\n\n\n## Review\nI assumed the original had to be a novel, so before watching I looked for the book first.  \nTurns out it wasn't a novel at all — the original is a play by Spanish playwright Juan Mayorga, El chico de la última fila (2006).  \nApparently it's been staged in Korea across multiple seasons too, so rather than tracking down the original text, I just binge-watched the show the moment it dropped.\n\nHonestly, as the story unfolded, the ending became fairly predictable.  \nBut that didn't really bother me.  \nI think it's because the twist in this drama isn't there for the sake of fun — it felt more like a device meant to give weight to the story it was ultimately trying to tell.\n\nThis might just be my own overreading, but I loved little details like how everyone keeps calling Heo Mun-oh seonsaengnim (teacher) instead of gyosunim (professor).  \n\nThe sound design and directing tone were great too.  \nThe sound effects placed exactly where they needed to be, along with the camera work, reminded me of director Park Chan-wook's films, which probably explains why the directing suited my taste so well.\n\nThe emotional performances between the characters were excellent too — a dense, layered ensemble that was only possible because veteran actors came together for this.\n\nIn the end, I think what this drama is really trying to say is how far the obsession that a story must be special can push a person.  \n\nVoyeurism and obsession dressed up as literature, and an open ending where someone reaches out again at the very end to say \"let's start a new story\" — this was a drama that left me uneasy yet strangely lingering in my mind.  \n",
+  "lang": "en"
+ },
+ {
+  "type": "snippets",
+  "series": "stash",
+  "key": "d5880c289f0c9c0522bbab5f69b139f5",
+  "title": "Safely Changing a Linux User's Home Directory with usermod -d",
+  "file": "2026-07-09-stash-changing-linux-user-home-directory",
+  "description": "How to safely relocate a Linux user's home directory",
+  "content": "\n## Safely Changing a Linux User's Home Directory with usermod -d\nThere are times when you need to change the location of a specific user's home directory due to insufficient disk space or migration to a separate storage.\n\nAlthough changing the path itself with usermod -d is simple, if the user is currently logged in or data consistency is crucial, it is safer to proceed in order: terminating sessions, backing up, and setting permissions.\n\n### 1. Check for Active Sessions and Processes\nBefore relocating the home directory, check if the user is currently logged in or running any processes.\n\n\n### 2. Terminate the User's Sessions\nTerminate all remaining processes and sessions.\n\npkill -KILL -u terminates all processes owned by the user, and on systemd-based distributions, loginctl terminate-user can clean up login sessions as well.\n\n### 3. Backup the Existing Home Directory\nWhile usermod -d -m automatically moves existing data, it is recommended to create a separate backup first because it is difficult to revert if it fails.\n\nrsync -aHAX preserves permissions, hard links, ACLs, and extended attributes (xattrs), making it ideal for home directory backups.\n\nYou can also back it up in the same way using cp.\n\n\n### 4. Set Ownership and Permissions on the New Home Directory\nDouble-check that the ownership and permissions of the backup copy exactly match the original.\n\nUse chown -R to recursively match ownership, and specify 700 (accessible only by the owner)—the default permission for a home directory—using chmod.\n\n### 5. Change the Home Directory with usermod\nOnce both data and permissions are ready in the new path, change only the home directory path with usermod -d.\n\nIf you have already backed up manually, simply changing the path without the -m option is sufficient.  \nUsing the -m option together allows usermod to directly move the contents of the old home directory to the new path. However, this fails if the new path already exists, so we do not use it in this case where we have already backed up in advance.\n\n### 6. Verify the Change\nVerify that the changed home directory has been correctly applied.\n\n\n### 7. Clean Up the Old Home Directory\nOnly delete the old directory after verifying that logging in and working in the new home directory works without issues.\n\n\n### Bonus: Creating a New User with a Custom Home Directory\nInstead of relocating an existing user, you can also create a new user and specify your desired path as their home directory from the start.\n\n-d specifies the home directory path, -m creates the home directory at that path and copies default files from /etc/skel, and -s specifies the login shell.\n\n### Command Summary\n\n| Command | Description |\n|---|---|\n| ps -u  / who / w | Check active processes and sessions of the user |\n| pkill -KILL -u  | Force-terminate user-owned processes |\n| loginctl terminate-user  | Terminate systemd login sessions |\n| rsync -aHAX src/ dst/ | Backup preserving permissions, hard links, ACLs, and xattrs |\n| chown -R :  | Recursively change directory ownership |\n| chmod 700  | Set default permissions for home directory |\n| usermod -d   | Change the home directory path |\n| usermod -d  -m  | Change home directory and move data simultaneously |\n| useradd -m -d  -s   | Create a new user with the specified path as their home directory |\n",
+  "lang": "en"
+ },
+ {
+  "type": "snippets",
+  "series": "location",
+  "key": "adf776686ed23cc09af5c714116c1233",
+  "title": "Motoishi Dongtan Bukgwangjang Branch",
+  "file": "2026-07-11-location-restaurant-motoicitydongtannuttan",
+  "description": "",
+  "content": "\n\n\n\n\n\n## Ordered\n\n\n\n## Review\nTo escape the heat, I sought refuge in a nearby cafe, and for dinner, I craved some expensive beef for a change, so I went to Motoishi.  \nWhen I looked it up, it said there's usually a long wait, so I went there feeling a bit nervous.  \n\nFortunately, since I arrived early around 5:30 PM, there were still seats.  \nHowever, as expected of a popular spot, the restaurant filled up completely in no time, and anyone who arrived after was waiting.  \nI highly recommend making a reservation before visiting.  \n\nAs a side note, parking at Bukgwangjang is not easy and can be quite chaotic, so it's good to be prepared in advance.  \n\nOrdering was done via a kiosk system, and we ordered the 6-Type Assorted Beef Set.  \nSince soft tofu stew (sundubu-jjigae) was included in the basic side dishes, we didn't add any extra sides.  \nWe paired the food with Kirin draft beer and Highballs.\n\nNot long after, the grill and meat were set up.  \nWe were instructed to grill the meat in a counter-clockwise order. They also served some mochi-like rice cakes and told us to grill them and dip them in a grain syrup-like sauce.  \n\nSince it is a Japanese yakiniku restaurant, we decided to grill and savor the meat slowly piece by piece.  \nThe meat was overall fresh and delicious.  \nYou can enjoy it by pairing it with basic salt, soy sauce, or wasabi to your liking, and everything went well together.  \n\nI enjoyed the meal satisfyingly.  \nSeeing the initial amount of meat, I thought about ordering more if it wasn't enough, but eating it slowly made me surprisingly full.  \n\nThe soft tofu stew that came with it was a bit disappointing for me.  \nIt tasted like they put ramen seasoning in it, as the strong flavor of Jin Ramen powder stood out too much.  \nI originally planned to order a side of ramen, but after tasting the soft tofu stew, I figured the ramen might taste similar, so I skipped it.  \n\nOverall, the meat was delicious, but the soft tofu stew was a letdown.  \nStill, it wasn't a bad place to enjoy high-quality meat in a simple setting.\n\n## Pictures\n\n\n\n\n\n\n\n",
+  "lang": "en"
+ },
+ {
+  "type": "snippets",
+  "series": "screen",
+  "key": "4598f6ac79dbf302cca70001d1ff8467",
+  "title": "Directors Arena Season 1 (2026)",
+  "file": "2026-07-14-screen-tv-directorsarenaseason12026",
+  "description": "",
+  "content": "\n\n\n\n\n## Review\nWhile browsing around, I heard that the short drama genre is getting a lot of spotlight lately, so I watched this show to see what it's like and keep up with the trend.  \n\nTo be honest, I didn't watch it with full focus; I just had it playing in the background while working on a personal project.\n\nPerhaps because the short drama genre needs to grab people's attention in a very short time, it felt like a world solely chasing after dopamine.  \nSince it's the world of short-form content where people swipe to the next video if the pacing slows down even slightly, the progression was fast, focusing mostly on plot and stimulation.  \n\nPersonally, I prefer the emotional flow of the characters revealed during the storytelling, the directing that expresses it, and the director's hidden intentions. So, to be frank, this world didn't align well with my taste.  \n\nHowever, interestingly enough, I could feel that no matter how fast-paced it is, the actors' performances remain a crucial element.  \n\nIt was a good opportunity to observe which way current trends are heading.",
   "lang": "en"
  },
  {

@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 14 Jul 2026 15:36:03 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2026 01:09:12 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -14,6 +14,20 @@
       <description><![CDATA[Jul 14, 2026 — 70 AI articles summarized]]></description>
       <pubDate>Wed, 15 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-07-15-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>디렉터스 아레나 시즌 1 (2026)</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-14-screen-tv-directorsarenaseason12026</link>
+      <description><![CDATA[디렉터스 아레나 시즌 1 (2026)]]></description>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-14-screen-tv-directorsarenaseason12026</guid>
+    </item>
+    <item>
+      <title>Directors Arena Season 1 (2026)</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-14-screen-tv-directorsarenaseason12026</link>
+      <description><![CDATA[Directors Arena Season 1 (2026)]]></description>
+      <pubDate>Tue, 14 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-14-screen-tv-directorsarenaseason12026</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
@@ -44,6 +58,13 @@
       <guid>https://jooojub.github.io/snippets/content/2026-07-11-location-restaurant-motoicitydongtannuttan</guid>
     </item>
     <item>
+      <title>Motoishi Dongtan Bukgwangjang Branch</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-11-location-restaurant-motoicitydongtannuttan</link>
+      <description><![CDATA[Motoishi Dongtan Bukgwangjang Branch]]></description>
+      <pubDate>Sat, 11 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-11-location-restaurant-motoicitydongtannuttan</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-07-11-AI-web-summary</link>
       <description><![CDATA[Jul 10, 2026 — 67 AI articles summarized]]></description>
@@ -56,6 +77,13 @@
       <description><![CDATA[Jul 9, 2026 — 67 AI articles summarized]]></description>
       <pubDate>Fri, 10 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-07-10-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>Safely Changing a Linux User&apos;s Home Directory with usermod -d</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-09-stash-changing-linux-user-home-directory</link>
+      <description><![CDATA[How to safely relocate a Linux user&apos;s home directory]]></description>
+      <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-09-stash-changing-linux-user-home-directory</guid>
     </item>
     <item>
       <title>Safely Changing a Linux User&apos;s Home Directory with usermod -d</title>
