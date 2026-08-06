@@ -5,9 +5,23 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Wed, 05 Aug 2026 15:25:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 06 Aug 2026 01:55:29 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>AOSP: Extracting Logs with adb bugreport</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-06-stash-aosp-adb-bugreport</link>
+      <description><![CDATA[How adb bugreport works internally in AOSP, what it collects, and how to pull out specific logs from the zip.]]></description>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-06-stash-aosp-adb-bugreport</guid>
+    </item>
+    <item>
+      <title>AOSP: Extracting Logs with adb bugreport</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-06-stash-aosp-adb-bugreport</link>
+      <description><![CDATA[How adb bugreport works internally in AOSP, what it collects, and how to pull out specific logs from the zip.]]></description>
+      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-06-stash-aosp-adb-bugreport</guid>
+    </item>
     <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-08-06-AI-web-summary</link>
@@ -44,6 +58,13 @@
       <guid>https://jooojub.github.io/snippets/content/2026-08-02-location-restaurant-lifemoneygasheadoffice</guid>
     </item>
     <item>
+      <title>Life Tonkatsu Head Office</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-02-location-restaurant-lifemoneygasheadoffice</link>
+      <description><![CDATA[Life Tonkatsu Head Office]]></description>
+      <pubDate>Sun, 02 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-02-location-restaurant-lifemoneygasheadoffice</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-08-02-AI-web-summary</link>
       <description><![CDATA[Aug 1, 2026 — 30 AI articles summarized]]></description>
@@ -65,6 +86,20 @@
       <guid>https://jooojub.github.io/snippets/content/2026-08-01-screen-movie-spidermanbrandnewday2026</guid>
     </item>
     <item>
+      <title>Cheonghakdong Chic Naengmyeon</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-01-location-restaurant-cheonghakdong</link>
+      <description><![CDATA[Cheonghakdong Chic Naengmyeon]]></description>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-01-location-restaurant-cheonghakdong</guid>
+    </item>
+    <item>
+      <title>Spider-Man: Brand New Day (2026)</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-01-screen-movie-spidermanbrandnewday2026</link>
+      <description><![CDATA[Spider-Man: Brand New Day (2026)]]></description>
+      <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-01-screen-movie-spidermanbrandnewday2026</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-08-01-AI-web-summary</link>
       <description><![CDATA[Jul 31, 2026 — 67 AI articles summarized]]></description>
@@ -75,6 +110,13 @@
       <title>내 시체를 찾아주세요</title>
       <link>https://jooojub.github.io/snippets/content/2026-07-31-books-PleaseFindMyBody</link>
       <description><![CDATA[내 시체를 찾아주세요]]></description>
+      <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-31-books-PleaseFindMyBody</guid>
+    </item>
+    <item>
+      <title>Please Find My Body</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-31-books-PleaseFindMyBody</link>
+      <description><![CDATA[Please Find My Body]]></description>
       <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-07-31-books-PleaseFindMyBody</guid>
     </item>
@@ -96,6 +138,13 @@
       <title>테디베어는 죽지 않아</title>
       <link>https://jooojub.github.io/snippets/content/2026-07-29-books-TeddyBearsNeverDie</link>
       <description><![CDATA[테디베어는 죽지 않아]]></description>
+      <pubDate>Wed, 29 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-29-books-TeddyBearsNeverDie</guid>
+    </item>
+    <item>
+      <title>Teddy Bears Never Die</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-29-books-TeddyBearsNeverDie</link>
+      <description><![CDATA[Teddy Bears Never Die]]></description>
       <pubDate>Wed, 29 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-07-29-books-TeddyBearsNeverDie</guid>
     </item>
@@ -142,6 +191,13 @@
       <guid>https://jooojub.github.io/snippets/content/2026-07-20-screen-tv-bogummagicalseason12026</guid>
     </item>
     <item>
+      <title>Bogum Magical Season 1 (2026)</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-20-screen-tv-bogummagicalseason12026</link>
+      <description><![CDATA[Bogum Magical Season 1 (2026)]]></description>
+      <pubDate>Mon, 20 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-20-screen-tv-bogummagicalseason12026</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-07-20-AI-web-summary</link>
       <description><![CDATA[Jul 19, 2026 — 33 AI articles summarized]]></description>
@@ -152,6 +208,13 @@
       <title>닭이봉춘천닭갈비 동탄역점</title>
       <link>https://jooojub.github.io/snippets/content/2026-07-19-location-restaurant-chickenchaebongchuncheonchickenclavidonghuastation</link>
       <description><![CDATA[닭이봉춘천닭갈비 동탄역점]]></description>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-19-location-restaurant-chickenchaebongchuncheonchickenclavidonghuastation</guid>
+    </item>
+    <item>
+      <title>Dakibong Chuncheon Dakgalbi Dongtan Station Branch</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-19-location-restaurant-chickenchaebongchuncheonchickenclavidonghuastation</link>
+      <description><![CDATA[Dakibong Chuncheon Dakgalbi Dongtan Station Branch]]></description>
       <pubDate>Sun, 19 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-07-19-location-restaurant-chickenchaebongchuncheonchickenclavidonghuastation</guid>
     </item>
@@ -173,6 +236,13 @@
       <title>파스타라비타</title>
       <link>https://jooojub.github.io/snippets/content/2026-07-17-location-restaurant-pastalavita</link>
       <description><![CDATA[파스타라비타]]></description>
+      <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-07-17-location-restaurant-pastalavita</guid>
+    </item>
+    <item>
+      <title>Pasta La Vita</title>
+      <link>https://jooojub.github.io/snippets/content/2026-07-17-location-restaurant-pastalavita</link>
+      <description><![CDATA[Pasta La Vita]]></description>
       <pubDate>Fri, 17 Jul 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-07-17-location-restaurant-pastalavita</guid>
     </item>
