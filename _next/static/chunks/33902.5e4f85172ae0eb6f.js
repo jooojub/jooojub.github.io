@@ -1,4 +1,4 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[13170],{13170:function(L,e,C){C.r(e),C.d(e,{default:function(){return n}});let n=`<?xml version="1.0" encoding="UTF-8"?>
+"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[33902],{33902:function(L,e,C){C.r(e),C.d(e,{default:function(){return n}});let n=`<?xml version="1.0" encoding="UTF-8"?>
 <svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Icon-Resource/Management-Governance/Res_AWS-Systems-Manager_Parameter-Store_48</title>
     <g id="Icon-Resource/Management-Governance/Res_AWS-Systems-Manager_Parameter-Store_48" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
