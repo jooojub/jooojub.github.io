@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 09 Aug 2026 15:26:39 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 10 Aug 2026 07:20:12 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -16,11 +16,39 @@
       <guid>https://jooojub.github.io/insights/content/2026-08-10-AI-web-summary</guid>
     </item>
     <item>
+      <title>구벼울</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-09-location-cafe-gubyeoul</link>
+      <description><![CDATA[구벼울]]></description>
+      <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-09-location-cafe-gubyeoul</guid>
+    </item>
+    <item>
       <title>Daily Briefing</title>
       <link>https://jooojub.github.io/insights/content/2026-08-09-AI-web-summary</link>
       <description><![CDATA[Aug 8, 2026 — 29 AI articles summarized]]></description>
       <pubDate>Sun, 09 Aug 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-08-09-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>어웨이큰</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-08-location-cafe-awayken</link>
+      <description><![CDATA[어웨이큰]]></description>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-08-location-cafe-awayken</guid>
+    </item>
+    <item>
+      <title>청하 가든</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-08-location-restaurant-cheonghaegarden</link>
+      <description><![CDATA[청하 가든]]></description>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-08-location-restaurant-cheonghaegarden</guid>
+    </item>
+    <item>
+      <title>나무사이에 자연속으로</title>
+      <link>https://jooojub.github.io/snippets/content/2026-08-08-location-stay-inthenaturalnessbetweenthetrees</link>
+      <description><![CDATA[나무사이에 자연속으로]]></description>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-08-08-location-stay-inthenaturalnessbetweenthetrees</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
