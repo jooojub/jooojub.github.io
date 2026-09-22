@@ -84,12 +84,14 @@
     <lastmod>2026-09-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/ai-1"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/ai-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/ai-1"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/ai</loc>
     <lastmod>2026-09-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/ai"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/ai"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/posts/aosp-1</loc>
@@ -256,6 +258,7 @@
     <lastmod>2026-09-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/ai-agents"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/ai-agents"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/ai</loc>
@@ -523,6 +526,20 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/en/posts/ai-1</loc>
+    <lastmod>2026-09-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/ai-1"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/ai-1"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/ai-1"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/ai</loc>
+    <lastmod>2026-09-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/ai"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/ai"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/ai"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/en/posts/aosp-1</loc>
     <lastmod>2026-09-22</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/aosp-1"/>
@@ -675,6 +692,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/stash"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/stash"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/stash"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/tags/ai-agents</loc>
+    <lastmod>2026-09-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/ai-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/ai-agents"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/ai</loc>
@@ -1138,6 +1162,7 @@
     <lastmod>2026-06-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-01-intro"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-01-intro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-01-intro"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-01-intro.png</image:loc>
       <image:title>AI Agents for Beginners - 1. Intro to AI Agents and Agent Use Cases</image:title>
@@ -1148,6 +1173,7 @@
     <lastmod>2026-06-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-02-explore-agentic-frameworks"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-02-explore-agentic-frameworks"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-02-explore-agentic-frameworks"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-02-explore-agentic-frameworks.png</image:loc>
       <image:title>AI Agents for Beginners - 2. Explore Agentic Frameworks</image:title>
@@ -1158,6 +1184,7 @@
     <lastmod>2026-06-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-03-agentic-design-patterns"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-03-agentic-design-patterns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-03-agentic-design-patterns"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-03-agentic-design-patterns.png</image:loc>
       <image:title>AI Agents for Beginners - 3. Agentic Design Patterns</image:title>
@@ -1168,6 +1195,7 @@
     <lastmod>2026-06-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-04-tool-use"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-04-tool-use"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-04-tool-use"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-04-tool-use.png</image:loc>
       <image:title>AI Agents for Beginners - 4. Tool Use Design Pattern</image:title>
@@ -1178,6 +1206,7 @@
     <lastmod>2026-06-08</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-05-agentic-rag"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-05-agentic-rag"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-05-agentic-rag"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-05-agentic-rag.png</image:loc>
       <image:title>AI Agents for Beginners - 5. Agentic RAG</image:title>
@@ -1188,6 +1217,7 @@
     <lastmod>2026-06-09</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-06-building-trustworthy-agents.png</image:loc>
       <image:title>AI Agents for Beginners - 6. Building Trustworthy AI Agents</image:title>
@@ -4619,6 +4649,72 @@
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/gcc/post-gcc-attribute-format.png</image:loc>
       <image:title>gcc attribute: format, format_arg</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-01-intro</loc>
+    <lastmod>2026-06-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-01-intro"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-01-intro"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-01-intro"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-01-intro.png</image:loc>
+      <image:title>AI Agents for Beginners - 1. Intro to AI Agents and Agent Use Cases</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-02-explore-agentic-frameworks</loc>
+    <lastmod>2026-06-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-02-explore-agentic-frameworks"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-02-explore-agentic-frameworks"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-02-explore-agentic-frameworks"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-02-explore-agentic-frameworks.png</image:loc>
+      <image:title>AI Agents for Beginners - 2. Explore Agentic Frameworks</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-03-agentic-design-patterns</loc>
+    <lastmod>2026-06-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-03-agentic-design-patterns"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-03-agentic-design-patterns"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-03-agentic-design-patterns"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-03-agentic-design-patterns.png</image:loc>
+      <image:title>AI Agents for Beginners - 3. Agentic Design Patterns</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-04-tool-use</loc>
+    <lastmod>2026-06-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-04-tool-use"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-04-tool-use"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-04-tool-use"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-04-tool-use.png</image:loc>
+      <image:title>AI Agents for Beginners - 4. Tool Use Design Pattern</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-05-agentic-rag</loc>
+    <lastmod>2026-06-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-05-agentic-rag"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-08-post-ai-agents-for-beginners-05-agentic-rag"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-08-post-ai-agents-for-beginners-05-agentic-rag"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-05-agentic-rag.png</image:loc>
+      <image:title>AI Agents for Beginners - 5. Agentic RAG</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents</loc>
+    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-06-building-trustworthy-agents"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-06-building-trustworthy-agents.png</image:loc>
+      <image:title>AI Agents for Beginners - 6. Building Trustworthy AI Agents</image:title>
     </image:image>
   </url>
   <url>
