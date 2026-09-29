@@ -1,0 +1,604 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="icon" href="/favicon.png"/><title>AI Agents for Beginners - 8. Multi-Agent Design Pattern</title><meta name="title" content="AI Agents for Beginners - 8. Multi-Agent Design Pattern"/><meta name="description" content="Covers multi-agent design patterns: advantages over single agents (Specialization, Scalability, Fault Tolerance), implementation building blocks like agent communication, coordination, and visibility, three core patterns (Group Chat, Hand-off, Collaborative Filtering), and how to build sequential pipelines using WorkflowBuilder with Python code examples."/><link rel="canonical" href="https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-08-multi-agent"/><meta property="og:type" content="website"/><meta property="og:url" content="https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-08-multi-agent"/><meta property="og:title" content="AI Agents for Beginners - 8. Multi-Agent Design Pattern"/><meta property="og:description" content="Covers multi-agent design patterns: advantages over single agents (Specialization, Scalability, Fault Tolerance), implementation building blocks like agent communication, coordination, and visibility, three core patterns (Group Chat, Hand-off, Collaborative Filtering), and how to build sequential pipelines using WorkflowBuilder with Python code examples."/><meta property="og:image" content="https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-08-multi-agent.png"/><meta property="twitter:card" content="summary_large_image"/><meta property="twitter:url" content="https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-08-multi-agent"/><meta property="twitter:title" content="AI Agents for Beginners - 8. Multi-Agent Design Pattern"/><meta property="twitter:description" content="Covers multi-agent design patterns: advantages over single agents (Specialization, Scalability, Fault Tolerance), implementation building blocks like agent communication, coordination, and visibility, three core patterns (Group Chat, Hand-off, Collaborative Filtering), and how to build sequential pipelines using WorkflowBuilder with Python code examples."/><meta property="twitter:image" content="https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-08-multi-agent.png"/><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://jooojub.github.io/posts"},{"@type":"ListItem","position":2,"name":"ai","item":"https://jooojub.github.io/posts/ai"},{"@type":"ListItem","position":3,"name":"AI Agents for Beginners - 8. Multi-Agent Design Pattern","item":"https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-08-multi-agent"}]},{"@context":"https://schema.org","@type":"Article","headline":"AI Agents for Beginners - 8. Multi-Agent Design Pattern","image":["https://jooojub.github.io/assets/posts/ai/ai-agents-for-beginners-08-multi-agent.png"],"datePublished":"2026-06-09T00:00:00.000Z","dateModified":"2026-06-09T00:00:00.000Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-08-multi-agent"},"author":{"@type":"Person","name":"Jooojub"}}]</script><meta name="next-head-count" content="18"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" as="style" crossorigin="anonymous" href="/webfonts/pretendard/web/static/pretendard.css"/><link rel="stylesheet" as="style" crossorigin="anonymous" href="/webfonts/consolas/consolas.css"/><link href="/css/all.css" rel="stylesheet"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DFZBC9YCHG"></script><script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DFZBC9YCHG');
+        </script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9148993622011751" crossorigin="anonymous"></script><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/_next/static/css/448add8fb15dc6b1.css" as="style"/><link rel="stylesheet" href="/_next/static/css/448add8fb15dc6b1.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/_next/static/chunks/webpack-3cf51da8cbe1ffd0.js" defer=""></script><script src="/_next/static/chunks/framework-f0918f007280e2a4.js" defer=""></script><script src="/_next/static/chunks/main-5bb5ecad47a61fda.js" defer=""></script><script src="/_next/static/chunks/pages/_app-71db760acb873cf7.js" defer=""></script><script src="/_next/static/chunks/db23af04-7e47653b741d66e4.js" defer=""></script><script src="/_next/static/chunks/21732-07b37492d52892f5.js" defer=""></script><script src="/_next/static/chunks/24904-1248b1d367790017.js" defer=""></script><script src="/_next/static/chunks/78091-87dbe9a08c30075f.js" defer=""></script><script src="/_next/static/chunks/96881-19b6e85eec6a7080.js" defer=""></script><script src="/_next/static/chunks/pages/en/posts/content/%5BPostView%5D-9653d1e1962f9bce.js" defer=""></script><script src="/_next/static/Pc2OK5_XJkfVt2zvHb7xJ/_buildManifest.js" defer=""></script><script src="/_next/static/Pc2OK5_XJkfVt2zvHb7xJ/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="6.1.18">.elNvHI{color:var(--color-text);border:solid 2px var(--color-text);border-radius:8px;font-size:12px;font-weight:700;line-height:10px;padding:0.4rem 0.4rem;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;opacity:0.5;pointer-events:none;cursor:none;border:solid 2px var(--color-surface);}/*!sc*/
+.elNvHI:hover{opacity:0.5;}/*!sc*/
+.elNvHI:hover{background-color:var(--color-surface);}/*!sc*/
+.cCqYNn{color:var(--color-text);border:solid 2px var(--color-text);border-radius:8px;font-size:12px;font-weight:700;line-height:10px;padding:0.4rem 0.4rem;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;border:solid 2px var(--color-surface);}/*!sc*/
+.cCqYNn:hover{background-color:var(--color-surface);}/*!sc*/
+data-styled.g1[id="BadgeButton__Tag-sc-v6g8ls-0"]{content:"elNvHI,cCqYNn,"}/*!sc*/
+.WjbjN{color:var(--color-text);border:solid 2px var(--color-text);border-radius:24px;font-size:12px;font-weight:700;line-height:10px;padding:8px 16px 10px 16px;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;text-decoration:none;font-size:12px;font-weight:500;background-color:var(--color-background-primary);color:var(--color-text);border:solid 2px var(--color-background-primary);}/*!sc*/
+.cjDQjA{color:var(--color-text);border:solid 2px var(--color-text);border-radius:24px;font-size:12px;font-weight:700;line-height:10px;padding:8px 16px 10px 16px;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;text-decoration:none;border-radius:16px;border:solid 2px var(--color-surface);}/*!sc*/
+.cjDQjA:hover{background-color:var(--color-surface);}/*!sc*/
+data-styled.g3[id="TagButton__TagAnchor-sc-rc8i-0"]{content:"WjbjN,cjDQjA,"}/*!sc*/
+.hAtrJu{display:flex;flex-wrap:wrap;flex-direction:column;margin:1rem 0.7rem;}/*!sc*/
+data-styled.g16[id="Series__SeriesContainer-sc-1h85to6-0"]{content:"hAtrJu,"}/*!sc*/
+.dStELG{padding-left:0;list-style:none;margin-bottom:0;}/*!sc*/
+data-styled.g17[id="Series__SeriesItemContainer-sc-1h85to6-1"]{content:"dStELG,"}/*!sc*/
+.iXeDeJ{padding:1rem 4em;display:flex;flex-wrap:wrap;flex-direction:row;user-select:none;}/*!sc*/
+@media (max-width:992px){.iXeDeJ{padding-left:3rem;padding-right:3rem;}}/*!sc*/
+@media (max-width:768px){.iXeDeJ{padding-left:1.5rem;padding-right:1.5rem;}}/*!sc*/
+data-styled.g22[id="BlogFooter__ContentContainer-sc-ig5jfo-0"]{content:"iXeDeJ,"}/*!sc*/
+.dlUmCS{padding-right:1rem;min-width:160px;max-width:160px;}/*!sc*/
+@media (max-width:768px){.dlUmCS{flex-basis:100%;margin-bottom:30px;}}/*!sc*/
+data-styled.g23[id="BlogFooter__LogoContainer-sc-ig5jfo-1"]{content:"dlUmCS,"}/*!sc*/
+.iOtQmW{display:inline-block;font-weight:700;font-size:24px;color:var(--color-text);cursor:pointer;padding-bottom:1rem;}/*!sc*/
+.iOtQmW:hover{color:var(--color-text-hover);}/*!sc*/
+data-styled.g24[id="BlogFooter__Logo-sc-ig5jfo-2"]{content:"iOtQmW,"}/*!sc*/
+.dmAzXF{font-weight:400;font-size:12px;color:var(--color-text-medium);}/*!sc*/
+data-styled.g25[id="BlogFooter__LogoContent-sc-ig5jfo-3"]{content:"dmAzXF,"}/*!sc*/
+.fdAWcj{padding-top:0.5rem;margin-left:-0.3rem;}/*!sc*/
+data-styled.g26[id="BlogFooter__SocialContainer-sc-ig5jfo-4"]{content:"fdAWcj,"}/*!sc*/
+.gwXbHn{flex:1 200px;padding-right:1rem;}/*!sc*/
+@media (max-width:768px){.gwXbHn{flex-basis:100%;margin-bottom:30px;}}/*!sc*/
+data-styled.g27[id="BlogFooter__TagsContainer-sc-ig5jfo-5"]{content:"gwXbHn,"}/*!sc*/
+.MpanZ{display:flex;flex-wrap:wrap;margin:0rem -0.2rem;}/*!sc*/
+data-styled.g28[id="BlogFooter__TagContainer-sc-ig5jfo-6"]{content:"MpanZ,"}/*!sc*/
+.VtjDo{flex:1 1 200px;padding-right:2rem;}/*!sc*/
+@media (max-width:768px){.VtjDo{flex-basis:100%;margin-bottom:30px;}}/*!sc*/
+data-styled.g29[id="BlogFooter__ArchiveContainer-sc-ig5jfo-7"]{content:"VtjDo,"}/*!sc*/
+.kaeWoC{flex:2 300px;}/*!sc*/
+@media (max-width:768px){.kaeWoC{flex-basis:100%;}}/*!sc*/
+data-styled.g30[id="BlogFooter__RecentContainer-sc-ig5jfo-8"]{content:"kaeWoC,"}/*!sc*/
+.hSzZws{margin:0rem .7rem;}/*!sc*/
+data-styled.g31[id="BlogFooter__RecentCardContainer-sc-ig5jfo-9"]{content:"hSzZws,"}/*!sc*/
+.Xtnrk{padding:0.5rem 3.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3rem;font-weight:400;font-size:16px;color:var(--color-text-medium);}/*!sc*/
+data-styled.g32[id="BlogFooter__CopyrightContainer-sc-ig5jfo-10"]{content:"Xtnrk,"}/*!sc*/
+.JGeOo{position:fixed;right:5%;bottom:12%;z-index:1;text-decoration:none;user-select:none;border:none;width:2.5rem;height:2.5rem;border-radius:50%;cursor:pointer;transition:all 0.2s ease-in-out;white-space:nowrap;vertical-align:middle;font:inherit;outline:none;text-decoration:none;background-color:var(--color-surface);color:var(--color-text);transition:all 0.3s ease-in-out;}/*!sc*/
+.JGeOo:hover{background:var(--color-background-primary);animation:bounce 1s;}/*!sc*/
+data-styled.g33[id="JooojubToBackButton__StyledButton-sc-yixdfa-0"]{content:"JGeOo,"}/*!sc*/
+.leHmZR{color:var(--color-text-medium);padding:0.5rem;font-size:24px;animation:searchIconEntrance 0.5s ease 0s 1 normal forwards;}/*!sc*/
+data-styled.g34[id="SearchModal__IconSearch-sc-122xpe8-0"]{content:"leHmZR,"}/*!sc*/
+.kmeRDC{position:absolute;max-height:70vh;background:var(--color-background);color:var(--color-text);padding:1rem;font-size:14px;overflow-y:auto;top:calc(100% + 10px);width:100%;display:block;z-index:1000;border-radius:1rem;box-shadow:rgba(0,0,0,0.2) 0px 16px 70px;pointer-events:auto;border:1px solid var(--color-surface);display:none;}/*!sc*/
+data-styled.g36[id="SearchModal__ResultContainer-sc-122xpe8-2"]{content:"kmeRDC,"}/*!sc*/
+.iYlOQb{display:flex;align-items:center;justify-content:space-between;user-select:none;padding-top:1rem;padding-bottom:1rem;padding-left:1.5rem;padding-right:1.5rem;}/*!sc*/
+@media (min-width:992px){.iYlOQb{padding-left:3rem;padding-right:3rem;}}/*!sc*/
+@media (min-width:768px) and (max-width:991.98px){.iYlOQb{padding-left:2.5rem;padding-right:2.5rem;}}/*!sc*/
+data-styled.g42[id="BlogHeader__HeaderContainer-sc-1nzl52z-0"]{content:"iYlOQb,"}/*!sc*/
+.bPmaxR{display:flex;align-items:center;font-size:14px;color:var(--color-text);font-weight:600;overflow:hidden;}/*!sc*/
+data-styled.g58[id="JooojubBreadcrumbs__BreadcrumbsWrapper-sc-1rkzttt-0"]{content:"bPmaxR,"}/*!sc*/
+.lkJfqy{display:flex;align-items:center;}/*!sc*/
+.lkJfqy:last-child{overflow:hidden;}/*!sc*/
+.lkJfqy a{color:var(--color-text-medium);text-decoration:none;}/*!sc*/
+.lkJfqy a:hover{color:var(--color-text);}/*!sc*/
+data-styled.g59[id="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1"]{content:"lkJfqy,"}/*!sc*/
+.cPFpYs{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}/*!sc*/
+data-styled.g60[id="JooojubBreadcrumbs__CrumbLabel-sc-1rkzttt-2"]{content:"cPFpYs,"}/*!sc*/
+.exLpEH{display:flex;flex-direction:column;align-items:center;flex-wrap:nowrap;justify-content:center;}/*!sc*/
+data-styled.g77[id="MainContentLayout__TitleContainer-sc-1a5xkpd-0"]{content:"exLpEH,"}/*!sc*/
+.eGSKrX{display:flex;flex-direction:column;align-items:center;flex-wrap:nowrap;justify-content:center;margin-top:0.5rem;font-weight:600;font-size:12px;line-height:18px;color:var(--color-text);}/*!sc*/
+data-styled.g78[id="MainContentLayout__DateContainer-sc-1a5xkpd-1"]{content:"eGSKrX,"}/*!sc*/
+.gvGnPt{font-weight:700;font-size:32px;color:var(--color-text);}/*!sc*/
+data-styled.g79[id="MainContentLayout__GlobalPrimaryTitle-sc-1a5xkpd-2"]{content:"gvGnPt,"}/*!sc*/
+.axuRE{font-weight:400;font-size:18px;margin-top:0.8rem;line-height:24px;text-align:center;color:var(--color-text-medium);margin-bottom:0.5em;}/*!sc*/
+data-styled.g80[id="MainContentLayout__GlobalSubTitle-sc-1a5xkpd-3"]{content:"axuRE,"}/*!sc*/
+.eWnyPa{display:flex;flex-wrap:wrap;gap:0.2rem;justify-content:center;margin-bottom:1rem;margin-top:1rem;}/*!sc*/
+data-styled.g81[id="MainContentLayout__GlobalTagContainer-sc-1a5xkpd-4"]{content:"eWnyPa,"}/*!sc*/
+.hvpEtY{margin:0.5rem 0rem;}/*!sc*/
+data-styled.g82[id="MainContentLayout__CardContainer-sc-1a5xkpd-5"]{content:"hvpEtY,"}/*!sc*/
+.hIPpBH .utterances{max-width:100%!important;}/*!sc*/
+data-styled.g107[id="Utterances__UtterancesContainer-sc-1e9buob-0"]{content:"hIPpBH,"}/*!sc*/
+.fYQZEq{display:flex;justify-content:space-between;align-items:center;border-top-width:1px;border-top:1px solid var(--color-markdown-border);margin-top:2rem;}/*!sc*/
+data-styled.g108[id="PrevNextCard__Container-sc-1lbexim-0"]{content:"fYQZEq,"}/*!sc*/
+.jIABko{margin-top:2rem;margin-bottom:1rem;display:flex;cursor:pointer;color:var(--color-text-medium);}/*!sc*/
+.jIABko:hover{color:var(--color-text);}/*!sc*/
+data-styled.g109[id="PrevNextCard__ItemContainer-sc-1lbexim-1"]{content:"jIABko,"}/*!sc*/
+.bOPzez{align-content:end;}/*!sc*/
+data-styled.g110[id="PrevNextCard__ItemIcon-sc-1lbexim-2"]{content:"bOPzez,"}/*!sc*/
+.gdYiud{display:flex;font-size:16px;font-weight:500;flex-direction:column;margin-left:0.7rem;margin-right:0.7rem;}/*!sc*/
+data-styled.g111[id="PrevNextCard__ItemTitleContainer-sc-1lbexim-3"]{content:"gdYiud,"}/*!sc*/
+.dsxVXK{font-size:14px;font-weight:400;margin-bottom:0.2rem;}/*!sc*/
+data-styled.g112[id="PrevNextCard__ItemSpan-sc-1lbexim-4"]{content:"dsxVXK,"}/*!sc*/
+.bXDVzN{color:var(--color-text);}/*!sc*/
+data-styled.g113[id="PrevNextCard__ItemTitleSpan-sc-1lbexim-5"]{content:"bXDVzN,"}/*!sc*/
+.latjmm{background-color:var(--color-surface);border-radius:20px;overflow:hidden;margin-top:2rem;width:100%;}/*!sc*/
+.latjmm article{width:100%;}/*!sc*/
+data-styled.g114[id="AdPostCardRectangle__Container-sc-1dbg5xp-0"]{content:"latjmm,"}/*!sc*/
+.cwuwNH{display:flex;flex-direction:row;gap:1.5rem;width:100%;}/*!sc*/
+.cwuwNH>*{flex:1;min-width:0;}/*!sc*/
+@media (max-width:768px){.cwuwNH{flex-direction:column;}}/*!sc*/
+data-styled.g115[id="AdCardInPost__AdPostContainer-sc-1daudy3-0"]{content:"cwuwNH,"}/*!sc*/
+.juGjxG{display:flex;flex-direction:column;border-radius:0.5rem;background-color:var(--color-code-block-background);font-size:14px;magin-top:1rem;margin-bottom:1rem;border:1px solid var(--color-markdown-border);position:relative;box-sizing:border-box;overflow:hidden;font-family:"Consolas","Pretendard-Regular","Nunito",sans-serif!important;}/*!sc*/
+data-styled.g195[id="JCodeCard__CodeContainer-sc-14wtt67-0"]{content:"juGjxG,"}/*!sc*/
+.eYVZMR{overflow-x:auto;overflow-y:hidden;}/*!sc*/
+.eYVZMR .shiki{margin-bottom:0.5rem;margin-top:0.5rem;}/*!sc*/
+.eYVZMR .jcode-block{display:flex;flex-direction:column;white-space:pre;font-weight:400;}/*!sc*/
+.eYVZMR .jcode-block[data-lang="shell"],.eYVZMR .jcode-block[data-lang="shellscript"],.eYVZMR .jcode-block[data-lang="bash"],.eYVZMR .jcode-block[data-lang="sh"]{margin-left:15px;}/*!sc*/
+.eYVZMR .has-diff .line span:first-child::before{content:"  ";margin-right:0.5rem;}/*!sc*/
+.eYVZMR:hover .has-focused .line:not(.focused){opacity:1;filter:blur(0rem);}/*!sc*/
+.eYVZMR .has-focused .line:not(.focused){opacity:0.7;transition:filter 0.35s,opacity 0.35s;filter:blur(0.06rem);}/*!sc*/
+.eYVZMR .line{background-color:var(--color-code-block-background);padding:0rem 1rem 0rem 1rem;line-height:20px;min-height:20px;}/*!sc*/
+.eYVZMR .line.diff.remove{background-color:color-mix( in srgb,var(--color-code-block-remove) 30%,transparent );}/*!sc*/
+.eYVZMR .line.diff.remove span:first-child::before{content:"-";font-weight:bold;color:var(--color-code-block-remove);}/*!sc*/
+.eYVZMR .line.diff.remove span{filter:brightness(0.8);}/*!sc*/
+.eYVZMR .line.diff.add{background-color:color-mix( in srgb,var(--color-code-block-add) 25%,transparent );}/*!sc*/
+.eYVZMR .line.diff.add span:first-child::before{content:"+";font-weight:bold;color:var(--color-code-block-add);}/*!sc*/
+.eYVZMR .line.diff.add span{filter:brightness(0.8);}/*!sc*/
+.eYVZMR .line span.highlighted-word{border-radius:0.25em;border:2px solid var(--color-background-primary);}/*!sc*/
+.eYVZMR .line span.shell-dollar-string{font-size:14px;font-weight:600;vertical-align:-2px;display:inline-block;margin-bottom:2px;margin-left:-15px;margin-right:3px;}/*!sc*/
+.eYVZMR .line.highlighted{background-color:var(--color-code-block-highlighted);}/*!sc*/
+.eYVZMR .line.highlighted.warning{background-color:color-mix( in srgb,var(--color-code-block-warning) 30%,transparent );}/*!sc*/
+.eYVZMR .line.highlighted.error{background-color:color-mix( in srgb,var(--color-code-block-error) 30%,transparent );}/*!sc*/
+.eYVZMR .line::before{content:attr(data-line);background-color:transparent;color:var(--color-code-line-text);margin-right:1rem;}/*!sc*/
+data-styled.g196[id="JCodeCard__CodeBlockContainer-sc-14wtt67-1"]{content:"eYVZMR,"}/*!sc*/
+.fEeYPT{position:absolute;top:.1rem;right:10px;z-index:2;font-size:12px;font-weight:500;}/*!sc*/
+data-styled.g197[id="JCodeCard__CodeBlockLangSpan-sc-14wtt67-2"]{content:"fEeYPT,"}/*!sc*/
+.emnPPA{display:flex;font-size:14px;font-weight:400;background-color:transparent;padding:0.2rem 4.5rem 0rem 0.8rem;background-color:var(--color-background);border-bottom:1px solid var(--color-markdown-border);position:relative;}/*!sc*/
+data-styled.g198[id="JCodeCard__TitleContainer-sc-14wtt67-3"]{content:"emnPPA,"}/*!sc*/
+.kzXmJT{display:flex;margin:0 auto 0 0;align-items:center;overflow-x:auto;white-space:nowrap;min-width:0;}/*!sc*/
+data-styled.g199[id="JCodeCard__FileNameContainer-sc-14wtt67-4"]{content:"kzXmJT,"}/*!sc*/
+.fLKnEU{display:flex;}/*!sc*/
+data-styled.g200[id="JCodeCard__ActionContainer-sc-14wtt67-5"]{content:"fLKnEU,"}/*!sc*/
+.dEcEtj{margin-right:0.8rem;}/*!sc*/
+data-styled.g201[id="JCodeCard__TitleIcon-sc-14wtt67-6"]{content:"dEcEtj,"}/*!sc*/
+.eEIFah{display:flex;flex-direction:column;border-radius:0.5rem;background-color:var(--color-code-block-background);font-size:14px;margin-top:1rem;margin-bottom:1rem;border:1px solid var(--color-markdown-border);position:relative;box-sizing:border-box;width:100%;max-width:100%;min-width:0;}/*!sc*/
+.eEIFah.zenuml-container{border:none;background-color:transparent;}/*!sc*/
+data-styled.g213[id="MermaidRender__MermaidContainer-sc-1gpqcvm-0"]{content:"eEIFah,"}/*!sc*/
+.knPKYH{display:flex;font-size:14px;font-weight:400;padding:0.2rem 4.5rem 0rem 0.8rem;background-color:var(--color-background);border-bottom:1px solid var(--color-markdown-border);position:relative;align-items:center;}/*!sc*/
+.knPKYH i{margin-right:0.8rem;color:var(--color-text-medium);}/*!sc*/
+data-styled.g214[id="MermaidRender__MermaidTitle-sc-1gpqcvm-1"]{content:"knPKYH,"}/*!sc*/
+.laELKQ{display:flex;margin:0 auto 0 0;align-items:center;overflow-x:auto;white-space:nowrap;min-width:0;}/*!sc*/
+data-styled.g215[id="MermaidRender__TitleText-sc-1gpqcvm-2"]{content:"laELKQ,"}/*!sc*/
+.dJKlfQ{position:absolute;top:.1rem;right:10px;z-index:2;font-size:12px;font-weight:500;}/*!sc*/
+data-styled.g216[id="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3"]{content:"dJKlfQ,"}/*!sc*/
+.fIOdyc{overflow-x:auto;width:100%;--bs-border-width:1px;--bs-border-color:var(--color-markdown-border);--color-border-frame:var(--color-markdown-border);--color-border-base:var(--color-text-medium);--color-bg-title:var(--color-background);--color-text-title:var(--color-text-medium);--color-bg-base:var(--color-code-block-background);--color-text-message:var(--color-text-medium);--color-message-arrow:var(--color-text);--color-bg-participant:var(--color-surface);--color-text-comment:var(--color-text-medium);--color-outline-primary:var(--color-background-primary);}/*!sc*/
+.fIOdyc .zenuml{font-size:12px;font-weight:400;}/*!sc*/
+.fIOdyc .zenuml .comments{opacity:1!important;}/*!sc*/
+.fIOdyc .zenmul .frame .sequence-diagram .comments code{background-color:var(--color-background-primary);font-size:14px;font-weight:400;color:var(--color-text);}/*!sc*/
+.fIOdyc .zenmul .frame .sequence-diagram .comments code span{font-size:14px!important;font-weight:400!important;color:var(--color-text)!important;}/*!sc*/
+.fIOdyc .zenuml .participant{border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px;}/*!sc*/
+.fIOdyc .zenuml .text-base{font-size:12px;font-weight:400;}/*!sc*/
+.fIOdyc .zenuml .header{border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;}/*!sc*/
+.fIOdyc .zenuml .title{font-size:12px;font-weight:400;margin-left:10px;}/*!sc*/
+.fIOdyc .zenuml .privacy{display:none;}/*!sc*/
+.fIOdyc .zenuml .sequence-diagram{background-color:var(--color-code-block-background);border-radius:0.5rem;}/*!sc*/
+.fIOdyc .zenuml .border-b-2{border-bottom-width:1px;}/*!sc*/
+.fIOdyc .zenuml .border-2{border-bottom-width:1px!important;border-top-width:1px!important;border-left-width:1px!important;border-right-width:1px!important;}/*!sc*/
+.fIOdyc .zenuml .footer{display:none;}/*!sc*/
+.fIOdyc svg{height:auto;font-family:inherit!important;overflow:visible;display:block;margin:0 auto;}/*!sc*/
+.fIOdyc svg>rect:first-of-type{fill:transparent!important;}/*!sc*/
+.fIOdyc svg .cluster rect{fill:var(--color-surface)!important;stroke:var(--color-markdown-border)!important;}/*!sc*/
+.fIOdyc svg text,.fIOdyc svg tspan{font-family:"Pretendard-Regular","Nunito",sans-serif!important;font-size:12px!important;}/*!sc*/
+.fIOdyc svg .messageText{font-size:14px!important;}/*!sc*/
+.fIOdyc svg .note{fill:var(--color-background-primary)!important;stroke:var(--color-background-primary)!important;}/*!sc*/
+.fIOdyc svg .noteText{font-size:14px!important;fill:#ffffff!important;}/*!sc*/
+.fIOdyc svg .actor-box tspan,.fIOdyc svg .labelText{font-size:12px!important;font-weight:500!important;}/*!sc*/
+.fIOdyc svg .nodeLabel,.fIOdyc svg .nodeLabel p{font-size:13px!important;font-family:"Pretendard-Regular","Nunito",sans-serif!important;line-height:1.3!important;}/*!sc*/
+.fIOdyc svg foreignObject .labelBkg{display:inline-block!important;background-color:var(--color-background-primary)!important;border-radius:0.25em!important;padding:0.05em 0.4em!important;}/*!sc*/
+.fIOdyc svg .edgeLabel p{font-size:11px!important;font-family:"Pretendard-Regular","Nunito",sans-serif!important;color:var(--color-text)!important;font-weight:500!important;margin:0!important;}/*!sc*/
+.fIOdyc svg .edgeLabel text,.fIOdyc svg .edgeLabel tspan{fill:var(--color-text)!important;font-weight:500!important;}/*!sc*/
+data-styled.g217[id="MermaidRender__Container-sc-1gpqcvm-4"]{content:"fIOdyc,"}/*!sc*/
+.dXzNpH{font-size:16px;font-weight:400;line-height:28px;font-weight:400;color:var(--color-text-medium);margin-bottom:2rem;}/*!sc*/
+.dXzNpH h1{font-size:32px;font-weight:800;color:var(--color-text);line-height:1.1111;margin-top:0;margin-bottom:0.6em;}/*!sc*/
+.dXzNpH h2{font-size:24px;font-weight:700;color:var(--color-text);line-height:1.33333;margin-top:2em;margin-bottom:0.8em;}/*!sc*/
+.dXzNpH h3{font-size:20px;font-weight:600;color:var(--color-text);line-height:1.6;margin-top:1.6em;margin-bottom:0.6em;}/*!sc*/
+.dXzNpH h4{font-size:17px;font-weight:600;color:var(--color-text);line-height:1.5;margin-top:1.3em;margin-bottom:0.5em;}/*!sc*/
+.dXzNpH h5{font-size:16px;font-weight:600;color:var(--color-text);line-height:1.5;margin-top:1.1em;margin-bottom:0.4em;}/*!sc*/
+.dXzNpH p,.dXzNpH div.p-element{font-size:16px;font-weight:400;line-height:28px;margin-block:16px;margin-bottom:16px;}/*!sc*/
+.dXzNpH code{font-weight:400;font-size:14px;background-color:var(--color-surface);color:var(--color-text);padding:0.05em 0.25em;border:1px solid var(--color-markdown-border);border-radius:0.25em;font-family:"Consolas","Pretendard-Regular","Nunito",sans-serif!important;}/*!sc*/
+.dXzNpH blockquote{border-left:5px solid var(--color-markdown-border);padding-left:0.5rem;margin-left:0.2rem;margin-right:0;margin-top:1rem;margin-bottom:1rem;}/*!sc*/
+.dXzNpH blockquote p a,.dXzNpH blockquote div.p-element a{font-size:16px;color:var(--color-markdown-link);font-weight:600;}/*!sc*/
+.dXzNpH blockquote p a:hover,.dXzNpH blockquote div.p-element a:hover{color:var(--color-text);}/*!sc*/
+.dXzNpH a{font-size:16px;color:var(--color-markdown-link);font-weight:600;}/*!sc*/
+.dXzNpH a:hover{color:var(--color-text);}/*!sc*/
+.dXzNpH b{font-weight:600;color:var(--color-text);}/*!sc*/
+.dXzNpH table{border-collapse:collapse;border:1px solid var(--color-markdown-table-border);border-spacing:10px;font-size:14px;margin-bottom:1.25rem;}/*!sc*/
+.dXzNpH table tr,.dXzNpH table td,.dXzNpH table th{padding:.5rem;}/*!sc*/
+.dXzNpH table thead{background-color:var(--color-markdown-table-header);border-bottom:1px solid var(--color-markdown-table-border);}/*!sc*/
+.dXzNpH table tbody tr:nth-child(even){background-color:var(--color-markdown-table-row-even);}/*!sc*/
+.dXzNpH table tbody tr:nth-child(odd){background-color:var(--color-markdown-table-row-odd);}/*!sc*/
+.dXzNpH pre{font-family:inherit;margin-bottom:2rem;overflow:visible!important;}/*!sc*/
+.dXzNpH pre code.jcode-block{border:none;padding:0;}/*!sc*/
+.dXzNpH mark{background-color:var(--color-markdown-mark-background);color:var(--color-text);padding:0.05em 0.25em;border-radius:0.25em;margin-left:0.25em;margin-right:0.25em;}/*!sc*/
+.dXzNpH .ad{padding:1em;border:1px solid #f0ad4e;background:#fffbe6;margin:1em 0;border-radius:8px;}/*!sc*/
+.dXzNpH ol{padding-left:2rem;margin-bottom:0px;}/*!sc*/
+.dXzNpH ol li{font-weight:500;padding-bottom:0.5rem;color:var(--color-text);}/*!sc*/
+.dXzNpH pictures{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}/*!sc*/
+.dXzNpH pictures img{border-radius:14px;}/*!sc*/
+data-styled.g218[id="PostMarkdownBody__JooojubPostMarkdown-sc-1vohimb-0"]{content:"dXzNpH,"}/*!sc*/
+</style><style data-href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap">@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDshRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDOUhRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style></head><body><div id="__next"><div style="--color-background:rgb(23, 23, 23);--color-background-primary:rgb(46, 89, 132);--color-surface:rgb(38, 38, 38);--color-text:rgba(255, 255, 255, 0.87);--color-text-hover:rgba(255, 255, 255, 0.6);--color-text-medium:hsla(0, 0.00%, 100.00%, 0.60);--color-markdown-border:rgba(255, 255, 255, 0.1);--color-markdown-link:rgb(131, 181, 231);--color-markdown-code-background:var(--color-surface);--color-markdown-code-title:var(--color-background-primary);--color-markdown-mark-background:var(--color-background-primary);--color-markdown-star:rgb(255, 179, 0);--color-markdown-star-empty:rgb(224, 224, 224);--color-code-block-background:rgb(24, 24, 24);;--color-code-line-text:rgb(110, 118, 129);--color-code-block-highlighted:var(--color-surface);--color-code-block-remove:rgb(134, 33, 33);--color-code-block-add:rgb(37, 135, 73);--color-code-block-warning:rgb(255, 179, 0);--color-code-block-error:rgb(134, 33, 33);--color-markdown-table-border:var(--color-markdown-border);--color-markdown-table-header:var(--color-background-primary);--color-markdown-table-row-even:var(--color-surface);--color-markdown-table-row-odd:var(--color-background)"><div class="min-vh-100 w-100 m-0 d-flex flex-column background-main"><div class="
+          position-fixed top-0 start-0 end-0 bottom-0
+          d-none
+          opacity-75 z-1
+        " style="backdrop-filter:blur(1.5px)"></div><div class="position-fixed top-0 end-0 h-100 d-flex flex-column text-break overflow-auto overflow-hidden-x background-main z-1 py-4 px-3" style="box-shadow:-4px 0px 20px rgba(32, 54, 86, 0.1);width:300px;transform:translateX(350px);transition:transform .3s ease-in-out"><div class="text-end" style="padding-right:0.65rem"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark p-1 fs-4 user-select-none color-text hover-color-text cursor-pointer fw-normal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="transition:all 0.3s ease-in-out"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg></div><div class="px-0 py-4"><a data-current="active" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/en"><div class="Menus_menu__32_hU" data-orientation="vertical">Home<div data-current="active" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/en/about"><div class="Menus_menu__32_hU" data-orientation="vertical">About<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/en/posts"><div class="Menus_menu__32_hU" data-orientation="vertical">Posts<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/en/snippets"><div class="Menus_menu__32_hU" data-orientation="vertical">Snippets<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/en/insights"><div class="Menus_menu__32_hU" data-orientation="vertical">Insights<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a></div><div class="d-flex justify-content-end align-items-center mt-auto mb-0 pe-3"><div class="d-flex align-items-center"><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://github.com/jooojub" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="mailto:jooojub@gmail.com" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://www.buymeacoffee.com/jooojub" rel="noopener noreferrer nofollow"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px" class="SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2"><i class="fa-regular fa-cup-togo"></i></div></a></div></div></div><div class="BlogHeader__HeaderContainer-sc-1nzl52z-0 iYlOQb"><div class="d-flex align-items-center cursor-pointer"><img width="40" height="40" src="/assets/images/avatars/toto_128px.jpg" alt="blog logo" class="rounded-circle"/><span class="fw-bold fs-4 align-middle ms-3 color-text hover-color-text"><a class="color-text" style="color:var(--color-text)" href="/en">Jooojub</a></span></div><div class="d-none d-md-flex flex-fill justify-content-start mx-3"><a data-current="active" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/en"><div class="Menus_menu__32_hU" data-orientation="horizontal">Home<div data-current="active" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/en/about"><div class="Menus_menu__32_hU" data-orientation="horizontal">About<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/en/posts"><div class="Menus_menu__32_hU" data-orientation="horizontal">Posts<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/en/snippets"><div class="Menus_menu__32_hU" data-orientation="horizontal">Snippets<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/en/insights"><div class="Menus_menu__32_hU" data-orientation="horizontal">Insights<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a></div><div class="ml-7 d-flex"><div class="p-1 ms-3 color-text hover-color-text fw-semibold fs-5 cursor-pointer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></div><div class="d-block d-md-none p-1 ms-3 color-text hover-color-text fw-semibold fs-5 cursor-pointer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></div></div></div><div style="position:fixed;z-index:999999;top:0;right:0;bottom:0;left:0;display:none;align-items:flex-start;backdrop-filter:blur(1px);justify-content:center;padding:4rem"><div style="width:85vw;position:relative;min-width:400px;box-shadow:rgba(0, 0, 0, 0.2) 0px 16px 70px;pointer-events:auto;border:1px solid var(--color-surface);border-radius:1rem;background:var(--color-background)"><div style="padding:.2rem 1rem 0rem 1rem;width:100%;display:flex;align-items:center;justify-content:space-between"><div class="SearchModal__IconSearch-sc-122xpe8-0 leHmZR"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></div><input style="background:var(--color-background);border:none;outline:2px solid transparent;padding:.5rem .5rem;font-size:16px;color:var(--color-text-medium);font-weight:600;font-family:inherit;width:100%" placeholder="Type to search" value=""/><a color="main" disabled="" class="BadgeButton__Tag-sc-v6g8ls-0 elNvHI"><span>Cls</span></a><a color="main" class="BadgeButton__Tag-sc-v6g8ls-0 cCqYNn"><span>Esc</span></a></div><div class="SearchModal__ResultContainer-sc-122xpe8-2 kmeRDC"></div></div></div><main class="d-flex align-items-start justify-content-between flex-column container flex-grow-1"><style data-emotion="css zvj543">.css-zvj543{width:100%;margin-left:auto;box-sizing:border-box;margin-right:auto;padding-left:16px;padding-right:16px;margin-top:1.5rem;width:100%;}@media (min-width:600px){.css-zvj543{padding-left:24px;padding-right:24px;}}@media (min-width:1200px){.css-zvj543{max-width:1200px;}}@media (min-width:0px){.css-zvj543{padding-left:8px;padding-right:8px;}}@media (min-width:600px){.css-zvj543{padding-left:16px;padding-right:16px;}}@media (min-width:900px){.css-zvj543{padding-left:24px;padding-right:24px;}}</style><div class="MuiContainer-root MuiContainer-maxWidthLg css-zvj543"><div class="MainContentLayout__TitleContainer-sc-1a5xkpd-0 exLpEH"><h1 class="MainContentLayout__GlobalPrimaryTitle-sc-1a5xkpd-2 gvGnPt">AI Agents for Beginners - 8. Multi-Agent Design Pattern</h1><div class="MainContentLayout__GlobalSubTitle-sc-1a5xkpd-3 axuRE">Multi-agent design patterns — when to use them, building blocks of agent communication and coordination, Group Chat / Hand-off / Collaborative Filtering patterns, and a WorkflowBuilder pipeline walkthrough.</div></div><div class="MainContentLayout__DateContainer-sc-1a5xkpd-1 eGSKrX">June 9, 2026</div><div class="MainContentLayout__GlobalTagContainer-sc-1a5xkpd-4 eWnyPa"><a color="primary" href="/en/posts/ai" class="TagButton__TagAnchor-sc-rc8i-0 WjbjN"><span>ai</span></a><a color="main" href="/en/tags/ai-agents" class="TagButton__TagAnchor-sc-rc8i-0 cjDQjA"><span>ai-agents</span></a></div><div class="MainContentLayout__CardContainer-sc-1a5xkpd-5 hvpEtY"><nav aria-label="breadcrumbs" style="margin-bottom:1.5rem" class="JooojubBreadcrumbs__BreadcrumbsWrapper-sc-1rkzttt-0 bPmaxR"><span class="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1 lkJfqy"><a href="/en/posts">Posts</a><div style="padding-top:.15rem;margin-right:.5rem;margin-left:0.3rem"><i class="fa-regular fa-chevron-right"></i></div></span><span class="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1 lkJfqy"><a href="/en/posts/ai">ai</a><div style="padding-top:.15rem;margin-right:.5rem;margin-left:0.3rem"><i class="fa-regular fa-chevron-right"></i></div></span><span class="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1 lkJfqy"><span class="JooojubBreadcrumbs__CrumbLabel-sc-1rkzttt-2 cPFpYs">AI Agents for Beginners - 8. Multi-Agent Design Pattern</span></span></nav><div class="PostMarkdownBody__JooojubPostMarkdown-sc-1vohimb-0 dXzNpH"><h2>AI Agents for Beginners - 8. Multi-Agent Design Pattern</h2>
+<div class="p-element">This post summarizes Lesson 08 of Microsoft&#x27;s <strong>AI Agents for Beginners</strong> course.</div>
+<blockquote>
+<div class="p-element">Source: <a href="https://github.com/microsoft/ai-agents-for-beginners/tree/main/08-multi-agent">microsoft/ai-agents-for-beginners - 08-multi-agent</a></div>
+</blockquote>
+<hr/>
+<h3>Scenarios Where Multi-Agents Are Applicable</h3>
+<div class="p-element">A <mark>Multi-Agent System</mark> is a design pattern where multiple agents work together to achieve a common goal.<br/>
+Using multi-agents provides significant benefits particularly in the following three scenarios:</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Scenario</th><th>Description</th><th>Example</th></tr></thead><tbody><tr><td><strong>Large Workloads</strong></td><td>Dividing large tasks into smaller units for parallel processing</td><td>High-volume data pipelines</td></tr><tr><td><strong>Complex Tasks</strong></td><td>Separating complex tasks into specialized domains</td><td>Autonomous driving: navigation, obstacle detection, and communication agents</td></tr><tr><td><strong>Diverse Expertise</strong></td><td>Each agent possesses distinct expertise</td><td>Healthcare: diagnosis, treatment planning, and patient monitoring agents</td></tr></tbody></table>
+<hr/>
+<h3>Advantages of Using Multi-Agents Over a Singular Agent</h3>
+<div class="p-element">Single-agent systems work well for simple tasks, but multi-agent systems offer several advantages when dealing with complex tasks.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Advantage</th><th>Description</th></tr></thead><tbody><tr><td><strong>Specialization</strong></td><td>Each agent focuses on a specific task → No confusion even with complex requests</td></tr><tr><td><strong>Scalability</strong></td><td>Scale the system by adding new agents without needing to modify existing ones</td></tr><tr><td><strong>Fault Tolerance</strong></td><td>If one agent fails, the remaining agents continue operating</td></tr></tbody></table>
+<div class="p-element">For example, implementing a travel booking system as a <mark>single agent (mom-and-pop)</mark> results in a complex, hard-to-maintain system that tries to handle flights, hotels, and car rentals all at once. Configuring it as a <mark>multi-agent (franchise)</mark> system modularizes each domain with dedicated agents, making expansion and maintenance much easier.</div>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Single Agent vs Multi-Agent</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart LR
+    subgraph Single[&quot;Single Agent (Mom &amp; Pop)&quot;]
+        SA[&quot;SingleAgent\nHandles flights + hotels\n+ car rentals all-in-one&quot;]
+    end
+    subgraph Multi[&quot;Multi-Agent (Franchise)&quot;]
+        FA[&quot;FlightAgent&quot;]
+        HA[&quot;HotelAgent&quot;]
+        CA[&quot;CarAgent&quot;]
+    end
+    User1[&quot;User&quot;] --&gt; SA
+    User2[&quot;User&quot;] --&gt; FA &amp; HA &amp; CA</div></div></pre>
+<hr/>
+<h3>Building Blocks of Implementing the Multi-Agent Design Pattern</h3>
+<div class="p-element">Key building blocks for implementing a multi-agent system:</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Building Block</th><th>Description</th><th>Travel Booking Example</th></tr></thead><tbody><tr><td><strong>Agent Communication</strong></td><td>Determines information sharing methods and protocols between agents</td><td>Flight agent passes travel dates to hotel agent</td></tr><tr><td><strong>Coordination Mechanisms</strong></td><td>Coordination between agents to align with user preferences and constraints</td><td>Coordinating hotel location with car rental pickup point</td></tr><tr><td><strong>Agent Architecture</strong></td><td>Internal decision-making structure and learning mechanisms of agents</td><td>Recommending flights using an ML model based on past preferences</td></tr><tr><td><strong>Visibility</strong></td><td>Tools for tracking agent activities and interactions</td><td>Monitoring each agent&#x27;s status via a dashboard</td></tr><tr><td><strong>Multi-Agent Patterns</strong></td><td>Choosing centralized, decentralized, or hybrid architectures</td><td>Group Chat, Hand-off, Collaborative Filtering</td></tr><tr><td><strong>Human-in-the-Loop</strong></td><td>Defining when agents request human intervention</td><td>Requesting user confirmation before final booking</td></tr></tbody></table>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Multi-Agent Building Blocks</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart TD
+    MAD[&quot;Multi-Agent\nDesign Pattern&quot;]
+    MAD --&gt; Comm[&quot;Agent Communication\nInformation sharing method&quot;]
+    MAD --&gt; Coord[&quot;Coordination\nConstraint alignment&quot;]
+    MAD --&gt; Arch[&quot;Agent Architecture\nDecision-making &amp; learning&quot;]
+    MAD --&gt; Vis[&quot;Visibility\nActivity tracking&quot;]
+    MAD --&gt; Pat[&quot;Patterns\nGroup/Hand-off/Filter&quot;]
+    MAD --&gt; HITL[&quot;Human-in-the-Loop\nDefine intervention points&quot;]</div></div></pre>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<hr/>
+<h3>Multi-Agent Patterns</h3>
+<h4>Group Chat</h4>
+<div class="p-element">A pattern where multiple agents exchange messages in a <strong>group chat</strong> format.<br/>
+Used in team collaboration, customer support, social networking, and more.</div>
+<ul>
+<li>Can be implemented as a <mark>Centralized</mark> architecture via a central server, or a <mark>Decentralized</mark> architecture where agents exchange messages directly</li>
+<li>Each agent sends, receives, and responds to messages in the group chat</li>
+</ul>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Group Chat Pattern</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart LR
+    GroupChat[&quot;Group Chat\n(Central Hub)&quot;]
+    A1[&quot;Agent 1\nTravelPlanner&quot;] &lt;--&gt; GroupChat
+    A2[&quot;Agent 2\nConcierge&quot;] &lt;--&gt; GroupChat
+    A3[&quot;Agent 3\nBudgetReviewer&quot;] &lt;--&gt; GroupChat
+    User[&quot;User&quot;] --&gt; GroupChat
+    GroupChat --&gt; User</div></div></pre>
+<h4>Hand-off</h4>
+<div class="p-element">A pattern where an agent completes a task and <strong>hands it off to the next agent</strong>.<br/>
+Well-suited for customer support, task management, and workflow automation.</div>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah zenuml-container"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Hand-off Pattern</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">zenuml
+    title Hand-off Pattern
+    User-&gt;AgentA: initial request
+    AgentA-&gt;AgentA: process own scope
+    AgentA-&gt;AgentB: hand off with context
+    AgentB-&gt;AgentB: process own scope
+    AgentB-&gt;AgentC: hand off with context
+    AgentC-&gt;User: final response</div></div></pre>
+<h4>Collaborative Filtering</h4>
+<div class="p-element">A pattern where multiple agents <strong>collaborate to generate recommendations</strong> based on their respective expertise.<br/>
+Taking a stock recommendation scenario as an example:</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Agent</th><th>Area of Expertise</th></tr></thead><tbody><tr><td><strong>Industry Expert Agent</strong></td><td>Specific industry domain knowledge</td></tr><tr><td><strong>Technical Analysis Agent</strong></td><td>Chart and pattern analysis</td></tr><tr><td><strong>Fundamental Analysis Agent</strong></td><td>Financial statements and valuation analysis</td></tr></tbody></table>
+<div class="p-element">By collaborating, these three agents provide a far more comprehensive recommendation than a single agent could.</div>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Collaborative Filtering Pattern</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart TD
+    User[&quot;User\n&#x27;Which stock should I buy?&#x27;&quot;]
+    --&gt; Coordinator[&quot;Coordinator Agent\nDispatch requests &amp; aggregate results&quot;]
+
+    Coordinator --&gt; IE[&quot;Industry Expert Agent\nIndustry trends &amp; sector analysis&quot;]
+    Coordinator --&gt; TA[&quot;Technical Analysis Agent\nCharts, patterns &amp; entry point analysis&quot;]
+    Coordinator --&gt; FA[&quot;Fundamental Analysis Agent\nFinancial statements &amp; company valuation&quot;]
+
+    IE --&gt; Agg[&quot;Aggregator\nSynthesize multi-angle insights&quot;]
+    TA --&gt; Agg
+    FA --&gt; Agg
+
+    Agg --&gt; Rec[&quot;Comprehensive Recommendation\nHolistic investment recommendation&quot;]
+    Rec --&gt; User</div></div></pre>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<hr/>
+<h3>Creating Specialized Agents</h3>
+<h4>Setup</h4>
+<pre><div class="JCodeCard__CodeContainer-sc-14wtt67-0 juGjxG"><div class="JCodeCard__TitleContainer-sc-14wtt67-3 emnPPA"><div class="JCodeCard__FileNameContainer-sc-14wtt67-4 kzXmJT"><div class="JCodeCard__TitleIcon-sc-14wtt67-6 dEcEtj"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px"><i class="fa-brands fa-python"></i></div></div>setup.py</div><div class="JCodeCard__ActionContainer-sc-14wtt67-5 fLKnEU"></div><div class="JCodeCard__CodeBlockLangSpan-sc-14wtt67-2 fEeYPT">python</div></div><div class="JCodeCard__CodeBlockContainer-sc-14wtt67-1 eYVZMR"></div></div></pre>
+<div class="p-element"><mark>WorkflowBuilder</mark> allows you to connect agents as a directed graph.<br/>
+First, create specialized agents with focused roles:</div>
+<pre><div class="JCodeCard__CodeContainer-sc-14wtt67-0 juGjxG"><div class="JCodeCard__TitleContainer-sc-14wtt67-3 emnPPA"><div class="JCodeCard__FileNameContainer-sc-14wtt67-4 kzXmJT"><div class="JCodeCard__TitleIcon-sc-14wtt67-6 dEcEtj"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px"><i class="fa-brands fa-python"></i></div></div>specialized_agents.py</div><div class="JCodeCard__ActionContainer-sc-14wtt67-5 fLKnEU"></div><div class="JCodeCard__CodeBlockLangSpan-sc-14wtt67-2 fEeYPT">python</div></div><div class="JCodeCard__CodeBlockContainer-sc-14wtt67-1 eYVZMR"></div></div></pre>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Specialized Agents</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart LR
+    P[&quot;TravelPlanner\nDraft itinerary\n(attractions, logistics)&quot;]
+    C[&quot;TravelConcierge\nReview &amp; enhance plan\n(tips, restaurants, issues)&quot;]
+    P --&gt;|&quot;Pass context&quot;| C</div></div></pre>
+<hr/>
+<h3>Sequential Workflow with WorkflowBuilder</h3>
+<div class="p-element">Connect agents into a sequential pipeline using <code node="[object Object]">WorkflowBuilder</code>.<br/>
+<code node="[object Object]">add_edge(A, B)</code> defines an edge where the output of A flows as input into B:</div>
+<pre><div class="JCodeCard__CodeContainer-sc-14wtt67-0 juGjxG"><div class="JCodeCard__TitleContainer-sc-14wtt67-3 emnPPA"><div class="JCodeCard__FileNameContainer-sc-14wtt67-4 kzXmJT"><div class="JCodeCard__TitleIcon-sc-14wtt67-6 dEcEtj"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px"><i class="fa-brands fa-python"></i></div></div>sequential_workflow.py</div><div class="JCodeCard__ActionContainer-sc-14wtt67-5 fLKnEU"></div><div class="JCodeCard__CodeBlockLangSpan-sc-14wtt67-2 fEeYPT">python</div></div><div class="JCodeCard__CodeBlockContainer-sc-14wtt67-1 eYVZMR"></div></div></pre>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Sequential Workflow: 2-Agent Pipeline</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart LR
+    U[&quot;User\n&#x27;Plan 5-day Paris, $3000&#x27;&quot;]
+    --&gt; W[&quot;WorkflowBuilder\nstart_executor=planner_agent&quot;]
+    W --&gt; P[&quot;TravelPlanner\nDraft itinerary\n(attractions, logistics)&quot;]
+    P --&gt;|&quot;AgentResponseUpdate&quot;| C[&quot;TravelConcierge\nReview &amp; enhance plan\n(tips, restaurants, issues)&quot;]
+    C --&gt;|&quot;AgentResponseUpdate&quot;| S[&quot;Stream to User&quot;]</div></div></pre>
+<hr/>
+<h3>Extending the Workflow</h3>
+<div class="p-element">One of the greatest advantages of multi-agent patterns is that you can add new agents <strong>without modifying existing ones</strong>.<br/>
+Extend it into a 3-step pipeline by adding the <mark>BudgetReviewer</mark> agent:</div>
+<pre><div class="JCodeCard__CodeContainer-sc-14wtt67-0 juGjxG"><div class="JCodeCard__TitleContainer-sc-14wtt67-3 emnPPA"><div class="JCodeCard__FileNameContainer-sc-14wtt67-4 kzXmJT"><div class="JCodeCard__TitleIcon-sc-14wtt67-6 dEcEtj"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px"><i class="fa-brands fa-python"></i></div></div>extended_workflow.py</div><div class="JCodeCard__ActionContainer-sc-14wtt67-5 fLKnEU"></div><div class="JCodeCard__CodeBlockLangSpan-sc-14wtt67-2 fEeYPT">python</div></div><div class="JCodeCard__CodeBlockContainer-sc-14wtt67-1 eYVZMR"></div></div></pre>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Extended 3-Agent Pipeline</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart LR
+    U[&quot;User\n&#x27;5-day Paris, $3000&#x27;&quot;]
+    --&gt; P[&quot;TravelPlanner\nDraft itinerary&quot;]
+    --&gt; C[&quot;TravelConcierge\nReview &amp; enhance&quot;]
+    --&gt; B[&quot;BudgetReviewer\nBudget validation &amp; savings suggestions&quot;]
+    --&gt; R[&quot;Final\nItinerary&quot;]</div></div></pre>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<hr/>
+<h3>Visibility into Multi-Agent Interactions</h3>
+<div class="p-element">As the number of agents grows, <strong>tracking interactions</strong> becomes essential.<br/>
+Secure visibility into multi-agent systems using three tools:</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Tool</th><th>Content</th><th>Application</th></tr></thead><tbody><tr><td><strong>Logging &amp; Monitoring</strong></td><td>Record agents, actions, timestamps, and results in logs</td><td>Debugging, performance optimization</td></tr><tr><td><strong>Visualization Tools</strong></td><td>Visualize information flow between agents as a graph</td><td>Identifying bottlenecks and inefficiencies</td></tr><tr><td><strong>Performance Metrics</strong></td><td>Track task completion time, throughput, and recommendation accuracy</td><td>Pinpointing areas for system improvement</td></tr></tbody></table>
+<div class="p-element">Travel booking dashboard example: Check each agent&#x27;s status, user preferences and constraints, and exchanged information between agents at a glance.</div>
+<hr/>
+<h3>Scenario: Refund Process</h3>
+<div class="p-element">How would a refund process look when designed with multi-agents?<br/>
+Agents are categorized into <strong>process-specific</strong> and <strong>general-purpose</strong>:</div>
+<div class="p-element"><strong>Refund-specific agents</strong></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Agent</th><th>Role</th></tr></thead><tbody><tr><td><strong>Customer Agent</strong></td><td>Represents the customer and initiates the refund process</td></tr><tr><td><strong>Seller Agent</strong></td><td>Represents the seller and processes the refund</td></tr><tr><td><strong>Payment Agent</strong></td><td>Processes the payment refund</td></tr><tr><td><strong>Resolution Agent</strong></td><td>Resolves issues arising during the refund</td></tr><tr><td><strong>Compliance Agent</strong></td><td>Validates compliance with regulations and policies</td></tr></tbody></table>
+<div class="p-element"><strong>General-purpose agents</strong> (Reusable across other business processes)</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Agent</th><th>Role</th></tr></thead><tbody><tr><td><strong>Shipping Agent</strong></td><td>Handles product returns (also usable for outbound purchase shipping)</td></tr><tr><td><strong>Notification Agent</strong></td><td>Sends customer notifications at each step</td></tr><tr><td><strong>Escalation Agent</strong></td><td>Escalates issues to higher-tier support</td></tr><tr><td><strong>Feedback Agent</strong></td><td>Collects customer feedback</td></tr><tr><td><strong>Audit Agent</strong></td><td>Audits the process</td></tr><tr><td><strong>Analytics Agent</strong></td><td>Analyzes data</td></tr></tbody></table>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Refund Process Multi-Agent System</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">%%{init: {&#x27;look&#x27;: &#x27;handDrawn&#x27;, &#x27;themeVariables&#x27;: {&#x27;clusterBkg&#x27;: &#x27;#e8efff28&#x27;, &#x27;clusterBorder&#x27;: &#x27;#aabbcc&#x27;}, &#x27;flowchart&#x27;: {&#x27;subGraphTitleMargin&#x27;: {&#x27;top&#x27;: 14, &#x27;bottom&#x27;: 8}}}}%%
+flowchart TD
+    subgraph Core[&quot;Core Refund Flow (Sequential)&quot;]
+        Customer[&quot;Customer Agent\nRefund request&quot;]
+        Resolution[&quot;Resolution Agent\nIssue analysis &amp; coordination&quot;]
+        Seller[&quot;Seller Agent\nRefund approval&quot;]
+        Payment[&quot;Payment Agent\nPayment refund&quot;]
+    end
+
+    subgraph Checks[&quot;Parallel Validation — Resolution Stage&quot;]
+        direction LR
+        Compliance[&quot;Compliance Agent\nCompliance verification&quot;]
+        Security[&quot;Security Agent\nSecurity verification&quot;]
+        Knowledge[&quot;Knowledge Agent\nPolicy &amp; rules reference&quot;]
+    end
+
+    subgraph Fulfillment[&quot;Parallel Fulfillment — Seller Stage&quot;]
+        Shipping[&quot;Shipping Agent\nReturn shipment processing&quot;]
+    end
+
+    subgraph PostProcess[&quot;Post-Processing (Parallel)&quot;]
+        direction LR
+        Feedback[&quot;Feedback Agent\nCollect customer feedback&quot;]
+        Analytics[&quot;Analytics Agent\nData analysis&quot;]
+        Audit[&quot;Audit Agent\nProcess audit&quot;]
+        Reporting[&quot;Reporting Agent\nGenerate reports&quot;]
+        Quality[&quot;Quality Agent\nQuality verification&quot;]
+    end
+
+    Escalation[&quot;Escalation Agent\nEscalate to higher support&quot;]
+    Notification[&quot;Notification Agent\nStep-by-step customer notifications&quot;]
+
+    Customer --&gt; Resolution
+    Resolution --&gt;|&quot;Complex issue&quot;| Escalation
+    Resolution --&gt; Compliance &amp; Security &amp; Knowledge
+    Compliance &amp; Security &amp; Knowledge --&gt; Seller
+    Seller --&gt; Payment &amp; Shipping
+    Customer &amp; Seller &amp; Payment --&gt; Notification
+    Payment --&gt; Feedback &amp; Analytics &amp; Audit &amp; Reporting &amp; Quality</div></div></pre>
+<div class="p-element">General-purpose agents (Shipping, Notification, Escalation, etc.) can be <strong>reused across other processes</strong>, enhancing the overall modularity and scalability of the system.</div>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<hr/>
+<h3>Summary</h3>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__MermaidTitle-sc-1gpqcvm-1 knPKYH"><div class="MermaidRender__TitleText-sc-1gpqcvm-2 laELKQ"><div style="margin-right:0.4rem"><i class="fa-regular fa-project-diagram"></i></div>Lesson 08 Summary</div><div class="MermaidRender__CodeBlockLangSpan-sc-1gpqcvm-3 dJKlfQ">Mermaid</div></div><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart LR
+    Root[&quot;Multi-Agent\nDesign Pattern&quot;]
+    Root --&gt; Why[&quot;Why Multi-Agent?&quot;]
+    Root --&gt; Blocks[&quot;Building Blocks&quot;]
+    Root --&gt; Patterns[&quot;Patterns&quot;]
+    Root --&gt; Code[&quot;WorkflowBuilder&quot;]
+    Root --&gt; Vis[&quot;Visibility&quot;]
+    Why --&gt; W1[&quot;Specialization&quot;]
+    Why --&gt; W2[&quot;Scalability&quot;]
+    Why --&gt; W3[&quot;Fault Tolerance&quot;]
+    Blocks --&gt; B1[&quot;Communication&quot;]
+    Blocks --&gt; B2[&quot;Coordination&quot;]
+    Blocks --&gt; B3[&quot;Architecture&quot;]
+    Patterns --&gt; P1[&quot;Group Chat&quot;]
+    Patterns --&gt; P2[&quot;Hand-off&quot;]
+    Patterns --&gt; P3[&quot;Collaborative\nFiltering&quot;]
+    Code --&gt; C1[&quot;create_agent x N&quot;]
+    Code --&gt; C2[&quot;WorkflowBuilder\n+ add_edge&quot;]
+    Code --&gt; C3[&quot;stream output&quot;]
+    Vis --&gt; V1[&quot;Logging&quot;]
+    Vis --&gt; V2[&quot;Visualization&quot;]
+    Vis --&gt; V3[&quot;Metrics&quot;]</div></div></pre>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<ul>
+<li><mark>Multi-Agent Systems</mark> overcome the limitations of single agents through Specialization, Scalability, and Fault Tolerance.</li>
+<li>Connect agents into sequential pipelines using <code node="[object Object]">WorkflowBuilder</code>&#x27;s <code node="[object Object]">add_edge</code>, and scale by adding new agents without modifying existing code.</li>
+<li>Choose agent communication and coordination methods using three core patterns: <mark>Group Chat, Hand-off, and Collaborative Filtering</mark>.</li>
+<li>As the number of agents grows, securing <strong>interaction visibility</strong> through Logging, Visualization, and Performance Metrics becomes crucial.</li>
+</ul></div><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div><div class="PrevNextCard__Container-sc-1lbexim-0 fYQZEq"><div class="PrevNextCard__ItemContainer-sc-1lbexim-1 jIABko"><a style="display:flex;text-decoration:none;color:inherit" href="/en/posts/content/2026-06-09-post-ai-agents-for-beginners-09-metacognition"><div class="PrevNextCard__ItemIcon-sc-1lbexim-2 bOPzez"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px"><i class="fa-regular fa-angle-left"></i></div></div><div class="PrevNextCard__ItemTitleContainer-sc-1lbexim-3 gdYiud"><span class="PrevNextCard__ItemSpan-sc-1lbexim-4 dsxVXK">Previous</span><span class="PrevNextCard__ItemTitleSpan-sc-1lbexim-5 bXDVzN">AI Agents for Beginners - 9. Metacognition in AI Agents</span></div></a></div><div class="PrevNextCard__ItemContainer-sc-1lbexim-1 jIABko"><a style="display:flex;text-decoration:none;color:inherit" href="/en/posts/content/2026-06-09-post-ai-agents-for-beginners-07-planning-design"><div class="PrevNextCard__ItemTitleContainer-sc-1lbexim-3 gdYiud"><span class="PrevNextCard__ItemSpan-sc-1lbexim-4 dsxVXK">Next</span><span class="PrevNextCard__ItemTitleSpan-sc-1lbexim-5 bXDVzN">AI Agents for Beginners - 7. Planning Design Pattern</span></div><div class="PrevNextCard__ItemIcon-sc-1lbexim-2 bOPzez"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px"><i class="fa-regular fa-angle-right"></i></div></div></a></div></div><section class="Utterances__UtterancesContainer-sc-1e9buob-0 hIPpBH"></section></div></div></main><footer class="background-main"><div class="BlogFooter__ContentContainer-sc-ig5jfo-0 iXeDeJ"><div class="BlogFooter__LogoContainer-sc-ig5jfo-1 dlUmCS"><a href="/en/about" class="BlogFooter__Logo-sc-ig5jfo-2 iOtQmW">Jooojub</a><div class="BlogFooter__LogoContent-sc-ig5jfo-3 dmAzXF">System S/W engineer</div><div class="BlogFooter__SocialContainer-sc-ig5jfo-4 fdAWcj"><div class="d-flex align-items-center"><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://github.com/jooojub" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="mailto:jooojub@gmail.com" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://www.buymeacoffee.com/jooojub" rel="noopener noreferrer nofollow"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px" class="SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2"><i class="fa-regular fa-cup-togo"></i></div></a></div></div></div><div class="BlogFooter__TagsContainer-sc-ig5jfo-5 gwXbHn"><div class="primary-title mb-2">Explore Tags</div><div class="BlogFooter__TagContainer-sc-ig5jfo-6 MpanZ"></div></div><div class="BlogFooter__ArchiveContainer-sc-ig5jfo-7 VtjDo"><div class="bg-transparent"><span class="primary-title">Series</span><div class="Series__SeriesContainer-sc-1h85to6-0 hAtrJu"><ul class="Series__SeriesItemContainer-sc-1h85to6-1 dStELG"></ul></div></div></div><div class="BlogFooter__RecentContainer-sc-ig5jfo-8 kaeWoC"><div class="primary-title mb-2">Recent Post</div><div class="BlogFooter__RecentCardContainer-sc-ig5jfo-9 hSzZws"></div></div></div><div class="BlogFooter__CopyrightContainer-sc-ig5jfo-10 Xtnrk"><div>© 2026. jooojub. All right reserved.</div></div></footer><button data-mode="primary" class="JooojubToBackButton__StyledButton-sc-yixdfa-0 JGeOo"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"fileName":"2026-06-09-post-ai-agents-for-beginners-08-multi-agent","title":"AI Agents for Beginners - 8. Multi-Agent Design Pattern","cover":"/assets/posts/ai/ai-agents-for-beginners-08-multi-agent.png","tags":["ai-agents"],"date":"2026-06-09","review":"Covers multi-agent design patterns: advantages over single agents (Specialization, Scalability, Fault Tolerance), implementation building blocks like agent communication, coordination, and visibility, three core patterns (Group Chat, Hand-off, Collaborative Filtering), and how to build sequential pipelines using WorkflowBuilder with Python code examples.","description":"Multi-agent design patterns — when to use them, building blocks of agent communication and coordination, Group Chat / Hand-off / Collaborative Filtering patterns, and a WorkflowBuilder pipeline walkthrough.","series":"ai","type":"posts","postKey":"5140d547bd8dde8bef84d2b4e7810a06","content":"\n## AI Agents for Beginners - 8. Multi-Agent Design Pattern\nThis post summarizes Lesson 08 of Microsoft's **AI Agents for Beginners** course.  \n\u003e Source: [microsoft/ai-agents-for-beginners - 08-multi-agent](https://github.com/microsoft/ai-agents-for-beginners/tree/main/08-multi-agent)\n\n---\n\n### Scenarios Where Multi-Agents Are Applicable\n\nA \u003cmark\u003eMulti-Agent System\u003c/mark\u003e is a design pattern where multiple agents work together to achieve a common goal.  \nUsing multi-agents provides significant benefits particularly in the following three scenarios:\n\n| Scenario | Description | Example |\n|---|---|---|\n| **Large Workloads** | Dividing large tasks into smaller units for parallel processing | High-volume data pipelines |\n| **Complex Tasks** | Separating complex tasks into specialized domains | Autonomous driving: navigation, obstacle detection, and communication agents |\n| **Diverse Expertise** | Each agent possesses distinct expertise | Healthcare: diagnosis, treatment planning, and patient monitoring agents |\n\n---\n\n### Advantages of Using Multi-Agents Over a Singular Agent\n\nSingle-agent systems work well for simple tasks, but multi-agent systems offer several advantages when dealing with complex tasks.\n\n| Advantage | Description |\n|---|---|\n| **Specialization** | Each agent focuses on a specific task → No confusion even with complex requests |\n| **Scalability** | Scale the system by adding new agents without needing to modify existing ones |\n| **Fault Tolerance** | If one agent fails, the remaining agents continue operating |\n\nFor example, implementing a travel booking system as a \u003cmark\u003esingle agent (mom-and-pop)\u003c/mark\u003e results in a complex, hard-to-maintain system that tries to handle flights, hotels, and car rentals all at once. Configuring it as a \u003cmark\u003emulti-agent (franchise)\u003c/mark\u003e system modularizes each domain with dedicated agents, making expansion and maintenance much easier.\n\n```mermaid\n{\n    \"title\": \"Single Agent vs Multi-Agent\"\n}\n---\nflowchart LR\n    subgraph Single[\"Single Agent (Mom \u0026 Pop)\"]\n        SA[\"SingleAgent\\nHandles flights + hotels\\n+ car rentals all-in-one\"]\n    end\n    subgraph Multi[\"Multi-Agent (Franchise)\"]\n        FA[\"FlightAgent\"]\n        HA[\"HotelAgent\"]\n        CA[\"CarAgent\"]\n    end\n    User1[\"User\"] --\u003e SA\n    User2[\"User\"] --\u003e FA \u0026 HA \u0026 CA\n```\n\n---\n\n### Building Blocks of Implementing the Multi-Agent Design Pattern\n\nKey building blocks for implementing a multi-agent system:\n\n| Building Block | Description | Travel Booking Example |\n|---|---|---|\n| **Agent Communication** | Determines information sharing methods and protocols between agents | Flight agent passes travel dates to hotel agent |\n| **Coordination Mechanisms** | Coordination between agents to align with user preferences and constraints | Coordinating hotel location with car rental pickup point |\n| **Agent Architecture** | Internal decision-making structure and learning mechanisms of agents | Recommending flights using an ML model based on past preferences |\n| **Visibility** | Tools for tracking agent activities and interactions | Monitoring each agent's status via a dashboard |\n| **Multi-Agent Patterns** | Choosing centralized, decentralized, or hybrid architectures | Group Chat, Hand-off, Collaborative Filtering |\n| **Human-in-the-Loop** | Defining when agents request human intervention | Requesting user confirmation before final booking |\n\n```mermaid\n{\n    \"title\": \"Multi-Agent Building Blocks\"\n}\n---\nflowchart TD\n    MAD[\"Multi-Agent\\nDesign Pattern\"]\n    MAD --\u003e Comm[\"Agent Communication\\nInformation sharing method\"]\n    MAD --\u003e Coord[\"Coordination\\nConstraint alignment\"]\n    MAD --\u003e Arch[\"Agent Architecture\\nDecision-making \u0026 learning\"]\n    MAD --\u003e Vis[\"Visibility\\nActivity tracking\"]\n    MAD --\u003e Pat[\"Patterns\\nGroup/Hand-off/Filter\"]\n    MAD --\u003e HITL[\"Human-in-the-Loop\\nDefine intervention points\"]\n```\n\n```adcard\n```\n\n---\n\n### Multi-Agent Patterns\n\n#### Group Chat\n\nA pattern where multiple agents exchange messages in a **group chat** format.  \nUsed in team collaboration, customer support, social networking, and more.\n\n- Can be implemented as a \u003cmark\u003eCentralized\u003c/mark\u003e architecture via a central server, or a \u003cmark\u003eDecentralized\u003c/mark\u003e architecture where agents exchange messages directly\n- Each agent sends, receives, and responds to messages in the group chat\n\n```mermaid\n{\n    \"title\": \"Group Chat Pattern\"\n}\n---\nflowchart LR\n    GroupChat[\"Group Chat\\n(Central Hub)\"]\n    A1[\"Agent 1\\nTravelPlanner\"] \u003c--\u003e GroupChat\n    A2[\"Agent 2\\nConcierge\"] \u003c--\u003e GroupChat\n    A3[\"Agent 3\\nBudgetReviewer\"] \u003c--\u003e GroupChat\n    User[\"User\"] --\u003e GroupChat\n    GroupChat --\u003e User\n```\n\n#### Hand-off\n\nA pattern where an agent completes a task and **hands it off to the next agent**.  \nWell-suited for customer support, task management, and workflow automation.\n\n```mermaid\n{\n    \"title\": \"Hand-off Pattern\"\n}\n---\nzenuml\n    title Hand-off Pattern\n    User-\u003eAgentA: initial request\n    AgentA-\u003eAgentA: process own scope\n    AgentA-\u003eAgentB: hand off with context\n    AgentB-\u003eAgentB: process own scope\n    AgentB-\u003eAgentC: hand off with context\n    AgentC-\u003eUser: final response\n```\n\n#### Collaborative Filtering\n\nA pattern where multiple agents **collaborate to generate recommendations** based on their respective expertise.  \nTaking a stock recommendation scenario as an example:\n\n| Agent | Area of Expertise |\n|---|---|\n| **Industry Expert Agent** | Specific industry domain knowledge |\n| **Technical Analysis Agent** | Chart and pattern analysis |\n| **Fundamental Analysis Agent** | Financial statements and valuation analysis |\n\nBy collaborating, these three agents provide a far more comprehensive recommendation than a single agent could.\n\n```mermaid\n{\n    \"title\": \"Collaborative Filtering Pattern\"\n}\n---\nflowchart TD\n    User[\"User\\n'Which stock should I buy?'\"]\n    --\u003e Coordinator[\"Coordinator Agent\\nDispatch requests \u0026 aggregate results\"]\n\n    Coordinator --\u003e IE[\"Industry Expert Agent\\nIndustry trends \u0026 sector analysis\"]\n    Coordinator --\u003e TA[\"Technical Analysis Agent\\nCharts, patterns \u0026 entry point analysis\"]\n    Coordinator --\u003e FA[\"Fundamental Analysis Agent\\nFinancial statements \u0026 company valuation\"]\n\n    IE --\u003e Agg[\"Aggregator\\nSynthesize multi-angle insights\"]\n    TA --\u003e Agg\n    FA --\u003e Agg\n\n    Agg --\u003e Rec[\"Comprehensive Recommendation\\nHolistic investment recommendation\"]\n    Rec --\u003e User\n```\n\n```adcard\n```\n\n---\n\n### Creating Specialized Agents\n\n#### Setup\n\n```python\n{\n    \"title\": \"setup.py\",\n    \"ln\": true\n}\n---\nimport logging\nlogging.getLogger(\"agent_framework.azure\").setLevel(logging.ERROR)\n\n%pip install agent-framework azure-ai-projects azure-identity --quiet\n\nimport os\nimport asyncio\n\nfrom agent_framework import AgentResponseUpdate, WorkflowBuilder # [!code highlight]\nfrom agent_framework.azure import AzureAIProjectAgentProvider\nfrom azure.identity import AzureCliCredential\n\nprovider = AzureAIProjectAgentProvider(credential=AzureCliCredential())\n```\n\n\u003cmark\u003eWorkflowBuilder\u003c/mark\u003e allows you to connect agents as a directed graph.  \nFirst, create specialized agents with focused roles:\n\n```python\n{\n    \"title\": \"specialized_agents.py\",\n    \"ln\": true\n}\n---\nfrom agent_framework import AgentResponseUpdate, WorkflowBuilder\nfrom agent_framework.azure import AzureAIProjectAgentProvider\nfrom azure.identity import AzureCliCredential\n\nprovider = AzureAIProjectAgentProvider(credential=AzureCliCredential())\n\nplanner_agent = await provider.create_agent( # [!code highlight]\n    name=\"TravelPlanner\",\n    instructions=\"You are a travel planning specialist. Create detailed trip itineraries \"\n                 \"based on the traveler's preferences. Include daily schedules, \"\n                 \"must-see attractions, and logistical tips.\",\n)\n\nconcierge_agent = await provider.create_agent( # [!code highlight]\n    name=\"TravelConcierge\",\n    instructions=\"You are a travel concierge who reviews and enhances trip plans. \"\n                 \"Review the plan for completeness, add local insider tips, \"\n                 \"suggest restaurants, and identify potential issues.\",\n)\n```\n\n```mermaid\n{\n    \"title\": \"Specialized Agents\"\n}\n---\nflowchart LR\n    P[\"TravelPlanner\\nDraft itinerary\\n(attractions, logistics)\"]\n    C[\"TravelConcierge\\nReview \u0026 enhance plan\\n(tips, restaurants, issues)\"]\n    P --\u003e|\"Pass context\"| C\n```\n\n---\n\n### Sequential Workflow with WorkflowBuilder\n\nConnect agents into a sequential pipeline using `WorkflowBuilder`.  \n`add_edge(A, B)` defines an edge where the output of A flows as input into B:\n\n```python\n{\n    \"title\": \"sequential_workflow.py\",\n    \"ln\": true\n}\n---\nworkflow = WorkflowBuilder(start_executor=planner_agent) \\ # [!code highlight]\n    .add_edge(planner_agent, concierge_agent) \\ # [!code highlight]\n    .build()\n\nlast_author = None\nevents = workflow.run(\n    \"Plan a 5-day trip to Paris for a food-loving couple on a $3000 budget.\",\n    stream=True, # [!code highlight]\n)\n\nasync for event in events: # [!code word:AgentResponseUpdate]\n    if event.type == \"output\" and isinstance(event.data, AgentResponseUpdate):\n        update = event.data\n        author = update.author_name\n        if author != last_author:\n            print(f\"\\n{'='*50}\\n🤖 {author}:\\n{'='*50}\")\n            last_author = author\n        print(update.text, end=\"\", flush=True)\n```\n\n```mermaid\n{\n    \"title\": \"Sequential Workflow: 2-Agent Pipeline\"\n}\n---\nflowchart LR\n    U[\"User\\n'Plan 5-day Paris, $3000'\"]\n    --\u003e W[\"WorkflowBuilder\\nstart_executor=planner_agent\"]\n    W --\u003e P[\"TravelPlanner\\nDraft itinerary\\n(attractions, logistics)\"]\n    P --\u003e|\"AgentResponseUpdate\"| C[\"TravelConcierge\\nReview \u0026 enhance plan\\n(tips, restaurants, issues)\"]\n    C --\u003e|\"AgentResponseUpdate\"| S[\"Stream to User\"]\n```\n\n---\n\n### Extending the Workflow\n\nOne of the greatest advantages of multi-agent patterns is that you can add new agents **without modifying existing ones**.  \nExtend it into a 3-step pipeline by adding the \u003cmark\u003eBudgetReviewer\u003c/mark\u003e agent:\n\n```python\n{\n    \"title\": \"extended_workflow.py\",\n    \"ln\": true\n}\n---\nbudget_agent = await provider.create_agent(\n    name=\"BudgetReviewer\", # [!code highlight]\n    instructions=\"You are a budget-conscious travel advisor. Review the proposed trip plan \"\n                 \"and concierge enhancements against the traveler's stated budget. \"\n                 \"Estimate costs for flights, hotels, meals, and activities. \"\n                 \"Flag anything that risks exceeding the budget and suggest cost-saving \"\n                 \"alternatives while preserving the trip's quality.\",\n)\n\n# TravelPlanner → TravelConcierge → BudgetReviewer\nextended_workflow = WorkflowBuilder(start_executor=planner_agent) \\\n    .add_edge(planner_agent, concierge_agent) \\\n    .add_edge(concierge_agent, budget_agent) \\ # [!code highlight]\n    .build()\n\nevents = extended_workflow.run(\n    \"Plan a 5-day trip to Paris for a food-loving couple on a $3000 budget.\",\n    stream=True,\n)\n\nasync for event in events:\n    if event.type == \"output\" and isinstance(event.data, AgentResponseUpdate):\n        update = event.data\n        author = update.author_name\n        if author != last_author:\n            print(f\"\\n{'='*50}\\n🤖 {author}:\\n{'='*50}\")\n            last_author = author\n        print(update.text, end=\"\", flush=True)\n```\n\n```mermaid\n{\n    \"title\": \"Extended 3-Agent Pipeline\"\n}\n---\nflowchart LR\n    U[\"User\\n'5-day Paris, $3000'\"]\n    --\u003e P[\"TravelPlanner\\nDraft itinerary\"]\n    --\u003e C[\"TravelConcierge\\nReview \u0026 enhance\"]\n    --\u003e B[\"BudgetReviewer\\nBudget validation \u0026 savings suggestions\"]\n    --\u003e R[\"Final\\nItinerary\"]\n```\n\n```adcard\n```\n\n---\n\n### Visibility into Multi-Agent Interactions\n\nAs the number of agents grows, **tracking interactions** becomes essential.  \nSecure visibility into multi-agent systems using three tools:\n\n| Tool | Content | Application |\n|---|---|---|\n| **Logging \u0026 Monitoring** | Record agents, actions, timestamps, and results in logs | Debugging, performance optimization |\n| **Visualization Tools** | Visualize information flow between agents as a graph | Identifying bottlenecks and inefficiencies |\n| **Performance Metrics** | Track task completion time, throughput, and recommendation accuracy | Pinpointing areas for system improvement |\n\nTravel booking dashboard example: Check each agent's status, user preferences and constraints, and exchanged information between agents at a glance.\n\n---\n\n### Scenario: Refund Process\n\nHow would a refund process look when designed with multi-agents?  \nAgents are categorized into **process-specific** and **general-purpose**:\n\n**Refund-specific agents**\n\n| Agent | Role |\n|---|---|\n| **Customer Agent** | Represents the customer and initiates the refund process |\n| **Seller Agent** | Represents the seller and processes the refund |\n| **Payment Agent** | Processes the payment refund |\n| **Resolution Agent** | Resolves issues arising during the refund |\n| **Compliance Agent** | Validates compliance with regulations and policies |\n\n**General-purpose agents** (Reusable across other business processes)\n\n| Agent | Role |\n|---|---|\n| **Shipping Agent** | Handles product returns (also usable for outbound purchase shipping) |\n| **Notification Agent** | Sends customer notifications at each step |\n| **Escalation Agent** | Escalates issues to higher-tier support |\n| **Feedback Agent** | Collects customer feedback |\n| **Audit Agent** | Audits the process |\n| **Analytics Agent** | Analyzes data |\n\n```mermaid\n{\n    \"title\": \"Refund Process Multi-Agent System\"\n}\n---\n%%{init: {'look': 'handDrawn', 'themeVariables': {'clusterBkg': '#e8efff28', 'clusterBorder': '#aabbcc'}, 'flowchart': {'subGraphTitleMargin': {'top': 14, 'bottom': 8}}}}%%\nflowchart TD\n    subgraph Core[\"Core Refund Flow (Sequential)\"]\n        Customer[\"Customer Agent\\nRefund request\"]\n        Resolution[\"Resolution Agent\\nIssue analysis \u0026 coordination\"]\n        Seller[\"Seller Agent\\nRefund approval\"]\n        Payment[\"Payment Agent\\nPayment refund\"]\n    end\n\n    subgraph Checks[\"Parallel Validation — Resolution Stage\"]\n        direction LR\n        Compliance[\"Compliance Agent\\nCompliance verification\"]\n        Security[\"Security Agent\\nSecurity verification\"]\n        Knowledge[\"Knowledge Agent\\nPolicy \u0026 rules reference\"]\n    end\n\n    subgraph Fulfillment[\"Parallel Fulfillment — Seller Stage\"]\n        Shipping[\"Shipping Agent\\nReturn shipment processing\"]\n    end\n\n    subgraph PostProcess[\"Post-Processing (Parallel)\"]\n        direction LR\n        Feedback[\"Feedback Agent\\nCollect customer feedback\"]\n        Analytics[\"Analytics Agent\\nData analysis\"]\n        Audit[\"Audit Agent\\nProcess audit\"]\n        Reporting[\"Reporting Agent\\nGenerate reports\"]\n        Quality[\"Quality Agent\\nQuality verification\"]\n    end\n\n    Escalation[\"Escalation Agent\\nEscalate to higher support\"]\n    Notification[\"Notification Agent\\nStep-by-step customer notifications\"]\n\n    Customer --\u003e Resolution\n    Resolution --\u003e|\"Complex issue\"| Escalation\n    Resolution --\u003e Compliance \u0026 Security \u0026 Knowledge\n    Compliance \u0026 Security \u0026 Knowledge --\u003e Seller\n    Seller --\u003e Payment \u0026 Shipping\n    Customer \u0026 Seller \u0026 Payment --\u003e Notification\n    Payment --\u003e Feedback \u0026 Analytics \u0026 Audit \u0026 Reporting \u0026 Quality\n```\n\nGeneral-purpose agents (Shipping, Notification, Escalation, etc.) can be **reused across other processes**, enhancing the overall modularity and scalability of the system.\n\n```adcard\n```\n\n---\n\n### Summary\n\n```mermaid\n{\n    \"title\": \"Lesson 08 Summary\"\n}\n---\nflowchart LR\n    Root[\"Multi-Agent\\nDesign Pattern\"]\n    Root --\u003e Why[\"Why Multi-Agent?\"]\n    Root --\u003e Blocks[\"Building Blocks\"]\n    Root --\u003e Patterns[\"Patterns\"]\n    Root --\u003e Code[\"WorkflowBuilder\"]\n    Root --\u003e Vis[\"Visibility\"]\n    Why --\u003e W1[\"Specialization\"]\n    Why --\u003e W2[\"Scalability\"]\n    Why --\u003e W3[\"Fault Tolerance\"]\n    Blocks --\u003e B1[\"Communication\"]\n    Blocks --\u003e B2[\"Coordination\"]\n    Blocks --\u003e B3[\"Architecture\"]\n    Patterns --\u003e P1[\"Group Chat\"]\n    Patterns --\u003e P2[\"Hand-off\"]\n    Patterns --\u003e P3[\"Collaborative\\nFiltering\"]\n    Code --\u003e C1[\"create_agent x N\"]\n    Code --\u003e C2[\"WorkflowBuilder\\n+ add_edge\"]\n    Code --\u003e C3[\"stream output\"]\n    Vis --\u003e V1[\"Logging\"]\n    Vis --\u003e V2[\"Visualization\"]\n    Vis --\u003e V3[\"Metrics\"]\n```\n\n```adcard\n```\n\n- \u003cmark\u003eMulti-Agent Systems\u003c/mark\u003e overcome the limitations of single agents through Specialization, Scalability, and Fault Tolerance.\n- Connect agents into sequential pipelines using `WorkflowBuilder`'s `add_edge`, and scale by adding new agents without modifying existing code.\n- Choose agent communication and coordination methods using three core patterns: \u003cmark\u003eGroup Chat, Hand-off, and Collaborative Filtering\u003c/mark\u003e.\n- As the number of agents grows, securing **interaction visibility** through Logging, Visualization, and Performance Metrics becomes crucial.","lang":"en"},"__N_SSG":true},"page":"/en/posts/content/[PostView]","query":{"PostView":"2026-06-09-post-ai-agents-for-beginners-08-multi-agent"},"buildId":"Pc2OK5_XJkfVt2zvHb7xJ","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
