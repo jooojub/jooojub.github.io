@@ -2541,7 +2541,7 @@
   "title": "평택 빨래방 & 세탁소 단독 모종",
   "file": "2026-05-18-pikmin-pyeongtaeklaundromatdrycleanersstandalonemojonglaundrysupplies",
   "description": "",
-  "content": "\n\n\n\n\n\n평택 빨래방 & 세탁소 단독 모종 위치입니다.  \n\n만약 단독으로 나오지 않는다면, 를 켜고 주변을 조금씩 이동해 보시기 바랍니다.  \n\n\n\n\n\n"
+  "content": "\n\n\n\n\n\n\n평택 빨래방 & 세탁소 단독 모종 위치입니다.  \n\n만약 단독으로 나오지 않는다면, 를 켜고 주변을 조금씩 이동해 보시기 바랍니다.  \n\n\n\n\n\n"
  },
  {
   "type": "snippets",
@@ -3342,7 +3342,7 @@
   "title": "경기도 오산시 버섯 & 바나나 단독 모종",
   "file": "2026-09-30-pikmin-gyeonggi-osan-mushroom-banana-seedling",
   "description": "",
-  "content": "\n\n\n\n\n\n2026년 9월, 초가을 무렵, 경기도 오산시 버섯 & 바나나 단독 모종 위치입니다.  \n\n만약 단독으로 나오지 않는다면, 를 켜고 주변을 조금씩 이동해 보시기 바랍니다.\n\n희귀 피크민을 위해 미리 위치를 저장해 두시면 좋은 곳입니다.  \n\n원하는 모종을 노릴 때 활용할 수 있도록 미리 저장해 두시고 방문해 보시기 바랍니다.\n\n\n\n\n"
+  "content": "\n\n\n\n\n\n\n\n2026년 9월, 초가을 무렵, 경기도 오산시 버섯 & 바나나 단독 모종 위치입니다.  \n\n만약 단독으로 나오지 않는다면, 를 켜고 주변을 조금씩 이동해 보시기 바랍니다.\n\n희귀 피크민을 위해 미리 위치를 저장해 두시면 좋은 곳입니다.  \n\n원하는 모종을 노릴 때 활용할 수 있도록 미리 저장해 두시고 방문해 보시기 바랍니다.\n\n\n\n\n\n"
  },
  {
   "type": "snippets",
@@ -3351,7 +3351,7 @@
   "title": "경기도 과천시 액자 단독 모종",
   "file": "2026-10-01-pikmin-gyeonggi-gwacheon-frame-seedling",
   "description": "",
-  "content": "\n\n\n\n\n\n2026년 10월, 가을 무렵, 경기도 과천시 액자 단독 모종 위치입니다.  \n\n만약 단독으로 나오지 않는다면, 를 켜고 주변을 조금씩 이동해 보시기 바랍니다.\n\n의외의 장소에서 액자 단독 모종이 나오는 곳입니다.  \n\n조금만 잘못 움직여도 단독 모종이 사라질 수 있으니 조심히 이동해 보시기 바랍니다.  \n\n\n\n\n"
+  "content": "\n\n\n\n\n\n\n\n2026년 10월, 가을 무렵, 경기도 과천시 액자 단독 모종 위치입니다.  \n\n만약 단독으로 나오지 않는다면, 를 켜고 주변을 조금씩 이동해 보시기 바랍니다.\n\n의외의 장소에서 액자 단독 모종이 나오는 곳입니다.  \n\n조금만 잘못 움직여도 단독 모종이 사라질 수 있으니 조심히 이동해 보시기 바랍니다.  \n\n\n\n\n\n"
  },
  {
   "type": "snippets",
@@ -5347,50 +5347,50 @@
   "type": "snippets",
   "series": "pikmin",
   "key": "36d81cd2b39da4cfacb822cbf12b56e2",
-  "title": "Daegu Curry Restaurant Standalone Seedling",
+  "title": "Daegu Curry Restaurant Solo Seedling",
   "file": "2026-04-27-pikmin-DaeguCurryRestaurantStandaloneMojongCurryRestaurant",
   "description": "",
-  "content": "\n\n\n\n\nDaegu Curry Restaurant Standalone Seedling is the location.  \n\nIf it doesn't appear as a standalone seedling, try enabling  and moving around slowly.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\n\nThis is the location of Daegu Curry Restaurant Solo Seedling.  \n\nIf it does not appear as a solo seedling, please turn on the  and move around the area bit by bit.  \n\n\n\n\n",
   "lang": "en"
  },
  {
   "type": "snippets",
   "series": "pikmin",
   "key": "2a07a3c6bdf294916bc960a17064721a",
-  "title": "Seoul Gwangjin-gu Taco Standalone Seedling",
+  "title": "Solo Taco Seedling in Gwangjin-gu, Seoul",
   "file": "2026-04-28-pikmin-SeoulGwangjinguTacoExclusiveTacoMojong",
   "description": "",
-  "content": "\n\n\n\n\nSeoul Gwangjin-gu Taco Standalone Seedling is the location.  \n\nIf it doesn't appear as a standalone seedling, try enabling  and moving around slowly.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\n\nThis is the location of Solo Taco Seedling in Gwangjin-gu, Seoul.  \n\nIf it doesn't appear as a solo seedling, please turn on the  and try moving around the surrounding area bit by bit.  \n\n\n\n\n",
   "lang": "en"
  },
  {
   "type": "snippets",
   "series": "pikmin",
   "key": "7bf6dff0432f68e3d7fe5e2876be2485",
-  "title": "Anyang Tool Shop Standalone Seedling",
+  "title": "Anyang DIY Store Solo Seedling",
   "file": "2026-05-04-pikmin-AnyangToolShopExclusiveSeedlingGroupBuy",
   "description": "",
-  "content": "\n\n\n\n\nAnyang Tool Shop Standalone Seedling is the location.  \n\nIf it doesn't appear as a standalone seedling, try enabling  and moving around slowly.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\n\nThis is the location of Anyang DIY Store Solo Seedling.  \n\nIf it does not appear as a solo seedling, please turn on the  and move around the area slightly.  \n\n\n\n\n",
   "lang": "en"
  },
  {
   "type": "snippets",
   "series": "pikmin",
   "key": "4db6d46ed46600058c06ecbd00aa4550",
-  "title": "Seoul Gangdong-gu Pharmacy Standalone Seedling",
+  "title": "Solo Pharmacy Seedling in Gangdong-gu, Seoul",
   "file": "2026-05-06-pikmin-SeoulGangdongguPharmacyExclusiveSeedlingToothbrush",
   "description": "",
-  "content": "\n\n\n\n\nSeoul Gangdong-gu Pharmacy Standalone Seedling is the location.  \n\nIf it doesn't appear as a standalone seedling, try enabling  and moving around slowly.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\n\nThis is the location of Solo Pharmacy Seedling in Gangdong-gu, Seoul.  \n\nIf it doesn't appear as a solo spot, try turning on the  and moving around the area slightly.  \n\n\n\n\n",
   "lang": "en"
  },
  {
   "type": "snippets",
   "series": "pikmin",
   "key": "adf5482f0914b8ddaeeb44372ca07002",
-  "title": "Seoul Gangdong-gu Zoo Standalone Seedling",
+  "title": "Solo Zoo Seedling in Gangdong-gu, Seoul",
   "file": "2026-05-06-pikmin-SeoulGangdongguZooSingleDandelionSeedling",
   "description": "",
-  "content": "\n\n\n\n\nSeoul Gangdong-gu Zoo Standalone Seedling is the location.  \n\nIf it doesn't appear as a standalone seedling, try enabling  and moving around slowly.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\n\nThis is the location of Solo Zoo Seedling in Gangdong-gu, Seoul.  \n\nIf it doesn't appear as a solo spot, try turning on the  and moving around the area slightly.  \n\n\n\n\n",
   "lang": "en"
  },
  {
@@ -5407,10 +5407,10 @@
   "type": "snippets",
   "series": "pikmin",
   "key": "a877adf829bed02438d4bafc28d3d64f",
-  "title": "Busan Gijang Cinema Exclusive Seedling - Popcorn",
+  "title": "Busan Gijang Movie Theater Solo Seedling",
   "file": "2026-05-08-pikmin-busangijangcinemaexclusiveseedlingpopcorn",
   "description": "",
-  "content": "\n\n\n\n\n\n\nBusan Gijang Cinema Exclusive Seedling - Popcorn location.  \n\nIf it doesn't appear as an exclusive, try turning on  and moving around the area little by little.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\n\nThis is the location for Busan Gijang Movie Theater Solo Seedling.  \n\nIf it does not appear as a solo spot, please turn on the  and move around the area slightly.  \n\n\n\n\n",
   "lang": "en"
  },
  {
@@ -5447,10 +5447,10 @@
   "type": "snippets",
   "series": "pikmin",
   "key": "aab237c2dd5a8e179c4ffdc2620926b5",
-  "title": "Anyang Hotel Exclusive Seedling - Hotel Supplies",
+  "title": "Anyang Hotel Solo Seedling",
   "file": "2026-05-12-pikmin-anyanghotelexclusivemojonghotelsupplies",
   "description": "",
-  "content": "\n\n\n\n\n\n\nAnyang Hotel Exclusive Seedling - Hotel Supplies location.  \n\nIf it doesn't appear as an exclusive, try turning on  and moving around the area little by little.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\nThis is the location of Anyang Hotel Solo Seedling.  \n\nIf it does not appear as a solo seedling, try turning on  and moving around the area a bit.  \n\n\n\n\n",
   "lang": "en"
  },
  {
@@ -5477,10 +5477,10 @@
   "type": "snippets",
   "series": "pikmin",
   "key": "4c6e30916bd997488519d1d3ca37b247",
-  "title": "Pyeongtaek Laundromat & Dry Cleaners Exclusive Seedling",
+  "title": "Pyeongtaek Laundromat & Dry Cleaner Solo Seedling",
   "file": "2026-05-18-pikmin-pyeongtaeklaundromatdrycleanersstandalonemojonglaundrysupplies",
   "description": "",
-  "content": "\n\n\n\n\n\n\nPyeongtaek Laundromat & Dry Cleaners Exclusive Seedling location.  \n\nIf it doesn't appear as an exclusive, try turning on  and moving around the area little by little.  \n\n\n\n\n\n",
+  "content": "\n\n\n\n\n\n\nThis is the location of Pyeongtaek Laundromat & Dry Cleaner Solo Seedling.  \n\nIf it doesn't appear as a solo spot, turn on the  and try moving around the area little by little.  \n\n\n\n\n",
   "lang": "en"
  },
  {
@@ -6367,20 +6367,20 @@
   "type": "snippets",
   "series": "pikmin",
   "key": "1264d3f070ea3a0216d1cb8d03dd7817",
-  "title": "Solo Mushroom & Banana Seedling in Osan-si, Gyeonggi-do",
+  "title": "Osan-si, Gyeonggi-do Mushroom & Banana Solo Seedling",
   "file": "2026-09-30-pikmin-gyeonggi-osan-mushroom-banana-seedling",
   "description": "",
-  "content": "\n\n\n\n\n\nThis is the location of the Solo Mushroom & Banana Seedling in Osan-si, Gyeonggi-do around early autumn in September 2026.  \n\nIf it does not appear as a solo seedling, try turning on the  and moving around the area slightly.\n\nThis is a great location to save in advance for Rare Pikmin.  \n\nBe sure to save it beforehand and visit when targeting your desired seedlings.\n\n\n\n",
+  "content": "\n\n\n\n\n\n\n\nThis is the location for the Osan-si, Gyeonggi-do Mushroom & Banana Solo Seedling, around early autumn in September 2026.  \n\nIf it does not appear as a solo spot, please turn on the  and try moving around the area bit by bit.\n\nThis is a great place to save in advance for Rare Pikmin.  \n\nPlease save the location beforehand and visit so you can take advantage of it when targeting your desired seedling.\n\n\n\n\n",
   "lang": "en"
  },
  {
   "type": "snippets",
   "series": "pikmin",
   "key": "66cbcbb53e73a669f9a680bb17fa9646",
-  "title": "Picture Frame Solo Seedling in Gwacheon, Gyeonggi-do",
+  "title": "Solo Picture Frame Seedling in Gwacheon-si, Gyeonggi-do",
   "file": "2026-10-01-pikmin-gyeonggi-gwacheon-frame-seedling",
   "description": "",
-  "content": "\n\n\n\n\n\nThis is the location of the Picture Frame Solo Seedling in Gwacheon, Gyeonggi-do around autumn in October 2026.  \n\nIf it does not appear as a solo seedling, try turning on  and moving around the area little by little.\n\nThis is a place where a solo Picture Frame seedling appears in an unexpected spot.  \n\nEven a slight wrong move can cause the solo seedling to disappear, so please move carefully.  \n\n\n\n",
+  "content": "\n\n\n\n\n\n\n\nThis is the location of the Solo Picture Frame Seedling in Gwacheon-si, Gyeonggi-do around autumn in October 2026.  \n\nIf it doesn't appear as a solo seedling, please turn on the  and move around little by little.\n\nThis is a spot where a solo Picture Frame seedling appears in an unexpected location.  \n\nEven a slight movement can cause the solo seedling to disappear, so please move carefully.  \n\n\n\n\n",
   "lang": "en"
  },
  {
