@@ -4551,6 +4551,17 @@
     </image:image>
   </url>
   <url>
+    <loc>https://jooojub.github.io/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/snippets/location/097a474e29adfa40322b4b5020ad67f1.jpg</image:loc>
+      <image:title>곰골식당</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/en/posts/content/2025-12-11-post-rpi-zero2-image-build-with-yocto</loc>
     <lastmod>2025-12-11</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2025-12-11-post-rpi-zero2-image-build-with-yocto"/>
@@ -8139,6 +8150,17 @@
     <image:image>
       <image:loc>https://jooojub.github.io/assets/snippets/pikmin/gyeonggi-anyang-bus-papercraft-seedling.jpg</image:loc>
       <image:title>Bus Papercraft Solo Seedling in Anyang-si, Gyeonggi-do</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner</loc>
+    <lastmod>2026-10-04</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/snippets/location/097a474e29adfa40322b4b5020ad67f1.jpg</image:loc>
+      <image:title>Gomgol Sikdang</image:title>
     </image:image>
   </url>
 </urlset>
