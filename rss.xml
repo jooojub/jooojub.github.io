@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Tue, 06 Oct 2026 07:15:41 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 06 Oct 2026 10:09:45 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -30,6 +30,13 @@
       <guid>https://jooojub.github.io/snippets/content/2026-10-04-location-cafe-ajeossi-coffee-cafe</guid>
     </item>
     <item>
+      <title>너티트릿츠</title>
+      <link>https://jooojub.github.io/snippets/content/2026-10-04-location-cafe-nutty-treats-dessert-cafe</link>
+      <description><![CDATA[너티트릿츠]]></description>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-10-04-location-cafe-nutty-treats-dessert-cafe</guid>
+    </item>
+    <item>
       <title>곰골식당</title>
       <link>https://jooojub.github.io/snippets/content/2026-10-04-location-restaurant-gomgol-sikdang-korean-diner</link>
       <description><![CDATA[곰골식당]]></description>
@@ -42,6 +49,13 @@
       <description><![CDATA[Ajeossi Coffee]]></description>
       <pubDate>Sun, 04 Oct 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/snippets/content/2026-10-04-location-cafe-ajeossi-coffee-cafe</guid>
+    </item>
+    <item>
+      <title>Nutty Treats</title>
+      <link>https://jooojub.github.io/snippets/content/2026-10-04-location-cafe-nutty-treats-dessert-cafe</link>
+      <description><![CDATA[Nutty Treats]]></description>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-10-04-location-cafe-nutty-treats-dessert-cafe</guid>
     </item>
     <item>
       <title>Gomgol Sikdang</title>
