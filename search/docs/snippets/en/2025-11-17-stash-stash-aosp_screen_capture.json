@@ -1,0 +1,1 @@
+"\n## How to take a screen capture in AOSP\nScreen capture is possible using the  tool in the AOSP environment.\n\nIt supports png, jpeg, and jpg formats, and distinguishes them by the filename's extension.\n\nUsing the display ID, you can also capture other display screens.\nConnected display IDs can be checked with dumpsys.\n"
