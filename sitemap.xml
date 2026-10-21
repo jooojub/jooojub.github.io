@@ -53,7 +53,7 @@
   </url>
   <url>
     <loc>https://jooojub.github.io/toolbox</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/toolbox"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/toolbox"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/toolbox"/>
@@ -88,7 +88,7 @@
   </url>
   <url>
     <loc>https://jooojub.github.io/en/toolbox</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/toolbox"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/toolbox"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/toolbox"/>
@@ -546,6 +546,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/toolbox/image-converter</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/toolbox/image-converter"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/toolbox/image-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/toolbox/image-converter"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/toolbox/ladder</loc>
     <lastmod>2026-10-20</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/toolbox/ladder"/>
@@ -992,6 +999,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/yocto"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/yocto"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/yocto"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/toolbox/image-converter</loc>
+    <lastmod>2026-10-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/toolbox/image-converter"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/toolbox/image-converter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/toolbox/image-converter"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/toolbox/ladder</loc>
