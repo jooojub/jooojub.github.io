@@ -372,6 +372,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/docker"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/tags/drm</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/drm"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/drm"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/tags/gcc_builtin</loc>
     <lastmod>2026-10-25</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gcc_builtin"/>
@@ -398,6 +404,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/gnu"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/gnu"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/gnu"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/tags/graphics</loc>
+    <lastmod>2026-10-25</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/graphics"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/graphics"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/humanities</loc>
@@ -1383,6 +1395,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-15-browser-use"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-06-09-post-ai-agents-for-beginners-15-browser-use"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-06-09-post-ai-agents-for-beginners-15-browser-use"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/posts/content/2026-10-26-post-linux-drm-01-architecture</loc>
+    <lastmod>2026-10-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-26-post-linux-drm-01-architecture"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-26-post-linux-drm-01-architecture"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-01-architecture.png</image:loc>
+      <image:title>Linux DRM - 구조와 전체 그림</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://jooojub.github.io/snippets/content/2013-06-01-screen-gods-quiz-1</loc>
