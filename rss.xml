@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sun, 25 Oct 2026 23:58:20 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 26 Oct 2026 05:09:59 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -14,6 +14,27 @@
       <description><![CDATA[An overview of the Linux Direct Rendering Manager (DRM): why it exists, the user and kernel stack, the /dev/dri device nodes, and the core structures drm_driver, drm_device and drm_file in Linux v6.19.]]></description>
       <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/posts/content/2026-10-26-post-linux-drm-01-architecture</guid>
+    </item>
+    <item>
+      <title>Linux DRM - Architecture and the Big Picture</title>
+      <link>https://jooojub.github.io/posts/content/2026-10-26-post-linux-drm-01-architecture</link>
+      <description><![CDATA[An overview of the Linux Direct Rendering Manager (DRM): why it exists, the user and kernel stack, the /dev/dri device nodes, and the core structures drm_driver, drm_device and drm_file in Linux v6.19.]]></description>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-10-26-post-linux-drm-01-architecture</guid>
+    </item>
+    <item>
+      <title>Convert AVI to MP3 with ffmpeg</title>
+      <link>https://jooojub.github.io/snippets/content/2026-10-26-stash-convert-avi-video-to-mp3-audio</link>
+      <description><![CDATA[Extract audio from AVI to MP3 with ffmpeg: VBR and CBR encoding, lossless stream copy when the audio is already MP3, and a batch loop for many files.]]></description>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-10-26-stash-convert-avi-video-to-mp3-audio</guid>
+    </item>
+    <item>
+      <title>Convert AVI to MP3 with ffmpeg</title>
+      <link>https://jooojub.github.io/snippets/content/2026-10-26-stash-convert-avi-video-to-mp3-audio</link>
+      <description><![CDATA[Extract audio from AVI to MP3 with ffmpeg: VBR and CBR encoding, lossless stream copy when the audio is already MP3, and a batch loop for many files.]]></description>
+      <pubDate>Mon, 26 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-10-26-stash-convert-avi-video-to-mp3-audio</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
