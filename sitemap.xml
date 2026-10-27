@@ -1448,6 +1448,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://jooojub.github.io/posts/content/2026-10-28-post-linux-drm-03-open-ioctl</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-03-open-ioctl.png</image:loc>
+      <image:title>Linux DRM - open()과 ioctl() 코드 흐름</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/snippets/content/2013-06-01-screen-gods-quiz-1</loc>
     <lastmod>2013-06-01</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2013-06-01-screen-gods-quiz-1"/>
