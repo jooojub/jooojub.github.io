@@ -1458,6 +1458,16 @@
     </image:image>
   </url>
   <url>
+    <loc>https://jooojub.github.io/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-04-gem-dumb-mmap.png</image:loc>
+      <image:title>Linux DRM - GEM: handle, dumb buffer, mmap</image:title>
+    </image:image>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/snippets/content/2013-06-01-screen-gods-quiz-1</loc>
     <lastmod>2013-06-01</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/snippets/content/2013-06-01-screen-gods-quiz-1"/>
