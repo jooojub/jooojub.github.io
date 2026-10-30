@@ -5,9 +5,16 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Fri, 30 Oct 2026 05:45:20 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Oct 2026 06:59:11 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
+    <item>
+      <title>ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법</title>
+      <link>https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide</link>
+      <description><![CDATA[A user-focused guide to the model files in ComfyUI: what Checkpoint, LoRA, VAE, text encoder, ControlNet and upscale models are, how base, fine-tuned, merged and distilled models differ, and which model family fits which job.]]></description>
+      <pubDate>Fri, 30 Oct 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide</guid>
+    </item>
     <item>
       <title>Linux DRM - PRIME과 dma-buf로 버퍼 공유하기</title>
       <link>https://jooojub.github.io/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf</link>

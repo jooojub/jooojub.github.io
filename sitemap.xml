@@ -358,6 +358,12 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/tags/comfyui</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/comfyui"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/comfyui"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/tags/dessert</loc>
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/dessert"/>
@@ -531,6 +537,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/spot"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/spot"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/tags/stable-diffusion</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/stable-diffusion"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/stable-diffusion"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/stay</loc>
@@ -1465,6 +1477,16 @@
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-04-gem-dumb-mmap.png</image:loc>
       <image:title>Linux DRM - GEM: handle, dumb buffer, mmap</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/comfyui-model-guide.png</image:loc>
+      <image:title>ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법</image:title>
     </image:image>
   </url>
   <url>

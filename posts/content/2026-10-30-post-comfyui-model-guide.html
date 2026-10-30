@@ -1,0 +1,1216 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="icon" href="/favicon.png"/><title>ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법</title><meta name="title" content="ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법"/><meta name="description" content="ComfyUI의 models 폴더에 들어가는 Checkpoint, LoRA, VAE, Text Encoder, ControlNet, Upscale 모델이 각각 무엇인지 정리합니다. Base·Fine-tune·Merge·Turbo 모델의 차이와 SD1.5, SDXL, Pony, Illustrious, Flux 같은 모델 계열별 용도, 호환 규칙, VRAM별 선택 기준을 사용자 관점에서 설명합니다."/><link rel="canonical" href="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/><meta property="og:type" content="website"/><meta property="og:url" content="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/><meta property="og:title" content="ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법"/><meta property="og:description" content="ComfyUI의 models 폴더에 들어가는 Checkpoint, LoRA, VAE, Text Encoder, ControlNet, Upscale 모델이 각각 무엇인지 정리합니다. Base·Fine-tune·Merge·Turbo 모델의 차이와 SD1.5, SDXL, Pony, Illustrious, Flux 같은 모델 계열별 용도, 호환 규칙, VRAM별 선택 기준을 사용자 관점에서 설명합니다."/><meta property="og:image" content="https://jooojub.github.io/assets/posts/ai/comfyui-model-guide.png"/><meta property="twitter:card" content="summary_large_image"/><meta property="twitter:url" content="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/><meta property="twitter:title" content="ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법"/><meta property="twitter:description" content="ComfyUI의 models 폴더에 들어가는 Checkpoint, LoRA, VAE, Text Encoder, ControlNet, Upscale 모델이 각각 무엇인지 정리합니다. Base·Fine-tune·Merge·Turbo 모델의 차이와 SD1.5, SDXL, Pony, Illustrious, Flux 같은 모델 계열별 용도, 호환 규칙, VRAM별 선택 기준을 사용자 관점에서 설명합니다."/><meta property="twitter:image" content="https://jooojub.github.io/assets/posts/ai/comfyui-model-guide.png"/><script type="application/ld+json">[{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://jooojub.github.io/posts"},{"@type":"ListItem","position":2,"name":"ai","item":"https://jooojub.github.io/posts/ai"},{"@type":"ListItem","position":3,"name":"ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법","item":"https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"}]},{"@context":"https://schema.org","@type":"Article","headline":"ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법","image":["https://jooojub.github.io/assets/posts/ai/comfyui-model-guide.png"],"datePublished":"2026-10-30T00:00:00.000Z","dateModified":"2026-10-30T00:00:00.000Z","mainEntityOfPage":{"@type":"WebPage","@id":"https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"},"author":{"@type":"Person","name":"Jooojub"}}]</script><meta name="next-head-count" content="18"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" as="style" crossorigin="anonymous" href="/webfonts/pretendard/web/static/pretendard.css"/><link rel="stylesheet" as="style" crossorigin="anonymous" href="/webfonts/consolas/consolas.css"/><link href="/css/all.css" rel="stylesheet"/><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-DFZBC9YCHG"></script><script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-DFZBC9YCHG');
+        </script><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9148993622011751" crossorigin="anonymous"></script><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link data-next-font="" rel="preconnect" href="/" crossorigin="anonymous"/><link rel="preload" href="/_next/static/css/448add8fb15dc6b1.css" as="style"/><link rel="stylesheet" href="/_next/static/css/448add8fb15dc6b1.css" data-n-g=""/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-78c92fac7aa8fdd8.js"></script><script src="/_next/static/chunks/webpack-4f1b9271b5a257fd.js" defer=""></script><script src="/_next/static/chunks/framework-f0918f007280e2a4.js" defer=""></script><script src="/_next/static/chunks/main-5bb5ecad47a61fda.js" defer=""></script><script src="/_next/static/chunks/pages/_app-4cab57fe45b90aab.js" defer=""></script><script src="/_next/static/chunks/db23af04-7e47653b741d66e4.js" defer=""></script><script src="/_next/static/chunks/21732-07b37492d52892f5.js" defer=""></script><script src="/_next/static/chunks/24904-1248b1d367790017.js" defer=""></script><script src="/_next/static/chunks/78091-87dbe9a08c30075f.js" defer=""></script><script src="/_next/static/chunks/96881-868332c12c7e7441.js" defer=""></script><script src="/_next/static/chunks/pages/posts/content/%5BPostView%5D-ce70f6eb5f33ae83.js" defer=""></script><script src="/_next/static/rogmkhSqFcxp9uf2AY7yf/_buildManifest.js" defer=""></script><script src="/_next/static/rogmkhSqFcxp9uf2AY7yf/_ssgManifest.js" defer=""></script><style data-styled="" data-styled-version="6.1.18">.elNvHI{color:var(--color-text);border:solid 2px var(--color-text);border-radius:8px;font-size:12px;font-weight:700;line-height:10px;padding:0.4rem 0.4rem;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;opacity:0.5;pointer-events:none;cursor:none;border:solid 2px var(--color-surface);}/*!sc*/
+.elNvHI:hover{opacity:0.5;}/*!sc*/
+.elNvHI:hover{background-color:var(--color-surface);}/*!sc*/
+.cCqYNn{color:var(--color-text);border:solid 2px var(--color-text);border-radius:8px;font-size:12px;font-weight:700;line-height:10px;padding:0.4rem 0.4rem;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;border:solid 2px var(--color-surface);}/*!sc*/
+.cCqYNn:hover{background-color:var(--color-surface);}/*!sc*/
+data-styled.g1[id="BadgeButton__Tag-sc-v6g8ls-0"]{content:"elNvHI,cCqYNn,"}/*!sc*/
+.kMJTxV{color:var(--color-text);border:solid 2px var(--color-text);border-radius:24px;font-size:12px;font-weight:700;line-height:10px;padding:8px 16px 10px 16px;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;text-decoration:none;font-size:12px;font-weight:500;background-color:var(--color-background-primary);color:var(--color-text);border:solid 2px var(--color-background-primary);}/*!sc*/
+.glNgVc{color:var(--color-text);border:solid 2px var(--color-text);border-radius:24px;font-size:12px;font-weight:700;line-height:10px;padding:8px 16px 10px 16px;margin:0.3rem 0.3rem;cursor:pointer;transition:all 0.2s ease-in-out;display:flex;align-items:center;text-decoration:none;border-radius:16px;border:solid 2px var(--color-surface);}/*!sc*/
+.glNgVc:hover{background-color:var(--color-surface);}/*!sc*/
+data-styled.g3[id="TagButton__TagAnchor-sc-rc8i-0"]{content:"kMJTxV,glNgVc,"}/*!sc*/
+.JGeOo{position:fixed;right:5%;bottom:12%;z-index:1;text-decoration:none;user-select:none;border:none;width:2.5rem;height:2.5rem;border-radius:50%;cursor:pointer;transition:all 0.2s ease-in-out;white-space:nowrap;vertical-align:middle;font:inherit;outline:none;text-decoration:none;background-color:var(--color-surface);color:var(--color-text);transition:all 0.3s ease-in-out;}/*!sc*/
+.JGeOo:hover{background:var(--color-background-primary);animation:bounce 1s;}/*!sc*/
+data-styled.g17[id="JooojubToBackButton__StyledButton-sc-yixdfa-0"]{content:"JGeOo,"}/*!sc*/
+.hAtrJu{display:flex;flex-wrap:wrap;flex-direction:column;margin:1rem 0.7rem;}/*!sc*/
+data-styled.g18[id="Series__SeriesContainer-sc-1h85to6-0"]{content:"hAtrJu,"}/*!sc*/
+.dStELG{padding-left:0;list-style:none;margin-bottom:0;}/*!sc*/
+data-styled.g19[id="Series__SeriesItemContainer-sc-1h85to6-1"]{content:"dStELG,"}/*!sc*/
+.iXeDeJ{padding:1rem 4em;display:flex;flex-wrap:wrap;flex-direction:row;user-select:none;}/*!sc*/
+@media (max-width:992px){.iXeDeJ{padding-left:3rem;padding-right:3rem;}}/*!sc*/
+@media (max-width:768px){.iXeDeJ{padding-left:1.5rem;padding-right:1.5rem;}}/*!sc*/
+data-styled.g23[id="BlogFooter__ContentContainer-sc-ig5jfo-0"]{content:"iXeDeJ,"}/*!sc*/
+.dlUmCS{padding-right:1rem;min-width:160px;max-width:160px;}/*!sc*/
+@media (max-width:768px){.dlUmCS{flex-basis:100%;margin-bottom:30px;}}/*!sc*/
+data-styled.g24[id="BlogFooter__LogoContainer-sc-ig5jfo-1"]{content:"dlUmCS,"}/*!sc*/
+.iOtQmW{display:inline-block;font-weight:700;font-size:24px;color:var(--color-text);cursor:pointer;padding-bottom:1rem;}/*!sc*/
+.iOtQmW:hover{color:var(--color-text-hover);}/*!sc*/
+data-styled.g25[id="BlogFooter__Logo-sc-ig5jfo-2"]{content:"iOtQmW,"}/*!sc*/
+.dmAzXF{font-weight:400;font-size:12px;color:var(--color-text-medium);}/*!sc*/
+data-styled.g26[id="BlogFooter__LogoContent-sc-ig5jfo-3"]{content:"dmAzXF,"}/*!sc*/
+.fdAWcj{padding-top:0.5rem;margin-left:-0.3rem;}/*!sc*/
+data-styled.g27[id="BlogFooter__SocialContainer-sc-ig5jfo-4"]{content:"fdAWcj,"}/*!sc*/
+.gwXbHn{flex:1 200px;padding-right:1rem;}/*!sc*/
+@media (max-width:768px){.gwXbHn{flex-basis:100%;margin-bottom:30px;}}/*!sc*/
+data-styled.g28[id="BlogFooter__TagsContainer-sc-ig5jfo-5"]{content:"gwXbHn,"}/*!sc*/
+.MpanZ{display:flex;flex-wrap:wrap;margin:0rem -0.2rem;}/*!sc*/
+data-styled.g29[id="BlogFooter__TagContainer-sc-ig5jfo-6"]{content:"MpanZ,"}/*!sc*/
+.VtjDo{flex:1 1 200px;padding-right:2rem;}/*!sc*/
+@media (max-width:768px){.VtjDo{flex-basis:100%;margin-bottom:30px;}}/*!sc*/
+data-styled.g30[id="BlogFooter__ArchiveContainer-sc-ig5jfo-7"]{content:"VtjDo,"}/*!sc*/
+.kaeWoC{flex:2 300px;}/*!sc*/
+@media (max-width:768px){.kaeWoC{flex-basis:100%;}}/*!sc*/
+data-styled.g31[id="BlogFooter__RecentContainer-sc-ig5jfo-8"]{content:"kaeWoC,"}/*!sc*/
+.hSzZws{margin:0rem .7rem;}/*!sc*/
+data-styled.g32[id="BlogFooter__RecentCardContainer-sc-ig5jfo-9"]{content:"hSzZws,"}/*!sc*/
+.Xtnrk{padding:0.5rem 3.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3rem;font-weight:400;font-size:16px;color:var(--color-text-medium);}/*!sc*/
+data-styled.g33[id="BlogFooter__CopyrightContainer-sc-ig5jfo-10"]{content:"Xtnrk,"}/*!sc*/
+.leHmZR{color:var(--color-text-medium);padding:0.5rem;font-size:24px;animation:searchIconEntrance 0.5s ease 0s 1 normal forwards;}/*!sc*/
+data-styled.g34[id="SearchModal__IconSearch-sc-122xpe8-0"]{content:"leHmZR,"}/*!sc*/
+.kmeRDC{position:absolute;max-height:70vh;background:var(--color-background);color:var(--color-text);padding:1rem;font-size:14px;overflow-y:auto;top:calc(100% + 10px);width:100%;display:block;z-index:1000;border-radius:1rem;box-shadow:rgba(0,0,0,0.2) 0px 16px 70px;pointer-events:auto;border:1px solid var(--color-surface);display:none;}/*!sc*/
+data-styled.g36[id="SearchModal__ResultContainer-sc-122xpe8-2"]{content:"kmeRDC,"}/*!sc*/
+.iYlOQb{display:flex;align-items:center;justify-content:space-between;user-select:none;padding-top:1rem;padding-bottom:1rem;padding-left:1.5rem;padding-right:1.5rem;}/*!sc*/
+@media (min-width:992px){.iYlOQb{padding-left:3rem;padding-right:3rem;}}/*!sc*/
+@media (min-width:768px) and (max-width:991.98px){.iYlOQb{padding-left:2.5rem;padding-right:2.5rem;}}/*!sc*/
+data-styled.g43[id="BlogHeader__HeaderContainer-sc-1nzl52z-0"]{content:"iYlOQb,"}/*!sc*/
+.bPmaxR{display:flex;align-items:center;font-size:14px;color:var(--color-text);font-weight:600;overflow:hidden;}/*!sc*/
+data-styled.g59[id="JooojubBreadcrumbs__BreadcrumbsWrapper-sc-1rkzttt-0"]{content:"bPmaxR,"}/*!sc*/
+.lkJfqy{display:flex;align-items:center;}/*!sc*/
+.lkJfqy:last-child{overflow:hidden;}/*!sc*/
+.lkJfqy a{color:var(--color-text-medium);text-decoration:none;}/*!sc*/
+.lkJfqy a:hover{color:var(--color-text);}/*!sc*/
+data-styled.g60[id="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1"]{content:"lkJfqy,"}/*!sc*/
+.cPFpYs{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}/*!sc*/
+data-styled.g61[id="JooojubBreadcrumbs__CrumbLabel-sc-1rkzttt-2"]{content:"cPFpYs,"}/*!sc*/
+.exLpEH{display:flex;flex-direction:column;align-items:center;flex-wrap:nowrap;justify-content:center;}/*!sc*/
+data-styled.g93[id="MainContentLayout__TitleContainer-sc-1a5xkpd-0"]{content:"exLpEH,"}/*!sc*/
+.eGSKrX{display:flex;flex-direction:column;align-items:center;flex-wrap:nowrap;justify-content:center;margin-top:0.5rem;font-weight:600;font-size:12px;line-height:18px;color:var(--color-text);}/*!sc*/
+data-styled.g94[id="MainContentLayout__DateContainer-sc-1a5xkpd-1"]{content:"eGSKrX,"}/*!sc*/
+.gvGnPt{font-weight:700;font-size:32px;color:var(--color-text);}/*!sc*/
+data-styled.g95[id="MainContentLayout__GlobalPrimaryTitle-sc-1a5xkpd-2"]{content:"gvGnPt,"}/*!sc*/
+.axuRE{font-weight:400;font-size:18px;margin-top:0.8rem;line-height:24px;text-align:center;color:var(--color-text-medium);margin-bottom:0.5em;}/*!sc*/
+data-styled.g96[id="MainContentLayout__GlobalSubTitle-sc-1a5xkpd-3"]{content:"axuRE,"}/*!sc*/
+.eWnyPa{display:flex;flex-wrap:wrap;gap:0.2rem;justify-content:center;margin-bottom:1rem;margin-top:1rem;}/*!sc*/
+data-styled.g97[id="MainContentLayout__GlobalTagContainer-sc-1a5xkpd-4"]{content:"eWnyPa,"}/*!sc*/
+.hvpEtY{margin:0.5rem 0rem;}/*!sc*/
+data-styled.g98[id="MainContentLayout__CardContainer-sc-1a5xkpd-5"]{content:"hvpEtY,"}/*!sc*/
+.hIPpBH .utterances{max-width:100%!important;}/*!sc*/
+data-styled.g123[id="Utterances__UtterancesContainer-sc-1e9buob-0"]{content:"hIPpBH,"}/*!sc*/
+.fYQZEq{display:flex;justify-content:space-between;align-items:center;border-top-width:1px;border-top:1px solid var(--color-markdown-border);margin-top:2rem;}/*!sc*/
+data-styled.g124[id="PrevNextCard__Container-sc-1lbexim-0"]{content:"fYQZEq,"}/*!sc*/
+.jIABko{margin-top:2rem;margin-bottom:1rem;display:flex;cursor:pointer;color:var(--color-text-medium);}/*!sc*/
+.jIABko:hover{color:var(--color-text);}/*!sc*/
+data-styled.g125[id="PrevNextCard__ItemContainer-sc-1lbexim-1"]{content:"jIABko,"}/*!sc*/
+.bOPzez{align-content:end;}/*!sc*/
+data-styled.g126[id="PrevNextCard__ItemIcon-sc-1lbexim-2"]{content:"bOPzez,"}/*!sc*/
+.gdYiud{display:flex;font-size:16px;font-weight:500;flex-direction:column;margin-left:0.7rem;margin-right:0.7rem;}/*!sc*/
+data-styled.g127[id="PrevNextCard__ItemTitleContainer-sc-1lbexim-3"]{content:"gdYiud,"}/*!sc*/
+.dsxVXK{font-size:14px;font-weight:400;margin-bottom:0.2rem;}/*!sc*/
+data-styled.g128[id="PrevNextCard__ItemSpan-sc-1lbexim-4"]{content:"dsxVXK,"}/*!sc*/
+.bXDVzN{color:var(--color-text);}/*!sc*/
+data-styled.g129[id="PrevNextCard__ItemTitleSpan-sc-1lbexim-5"]{content:"bXDVzN,"}/*!sc*/
+.latjmm{background-color:var(--color-surface);border-radius:20px;overflow:hidden;margin-top:2rem;width:100%;}/*!sc*/
+.latjmm article{width:100%;}/*!sc*/
+data-styled.g130[id="AdPostCardRectangle__Container-sc-1dbg5xp-0"]{content:"latjmm,"}/*!sc*/
+.cwuwNH{display:flex;flex-direction:row;gap:1.5rem;width:100%;}/*!sc*/
+.cwuwNH>*{flex:1;min-width:0;}/*!sc*/
+@media (max-width:768px){.cwuwNH{flex-direction:column;}}/*!sc*/
+data-styled.g131[id="AdCardInPost__AdPostContainer-sc-1daudy3-0"]{content:"cwuwNH,"}/*!sc*/
+.ffcoJo{display:flex;flex-direction:column;border-radius:0.5rem;background-color:var(--color-code-block-background);font-size:14px;margin-top:1rem;margin-bottom:1rem;border:1px solid var(--color-markdown-border);position:relative;box-sizing:border-box;font-family:"Pretendard-Regular","Nunito",sans-serif!important;}/*!sc*/
+data-styled.g225[id="RequireCard__RequireCardContainer-sc-ovixmw-0"]{content:"ffcoJo,"}/*!sc*/
+.cMJpRs{display:flex;font-size:14px;font-weight:400;padding:0.2rem 4.5rem 0rem 0.8rem;background-color:var(--color-background);border-bottom:1px solid var(--color-markdown-border);position:relative;align-items:center;}/*!sc*/
+.cMJpRs i{margin-right:0.8rem;color:var(--color-text-medium);}/*!sc*/
+data-styled.g226[id="RequireCard__RequireCardTitle-sc-ovixmw-1"]{content:"cMJpRs,"}/*!sc*/
+.epEtBZ{display:flex;margin:0 auto 0 0;align-items:center;overflow-x:auto;white-space:nowrap;min-width:0;}/*!sc*/
+data-styled.g227[id="RequireCard__TitleText-sc-ovixmw-2"]{content:"epEtBZ,"}/*!sc*/
+.fYGva-D{padding:1rem 1.25rem;font-size:14px;line-height:1.2;color:var(--color-text);white-space:pre-wrap;}/*!sc*/
+.fYGva-D>*:first-child{margin-top:0;}/*!sc*/
+.fYGva-D>*:last-child{margin-bottom:0;}/*!sc*/
+.fYGva-D.fYGva-D p{font-size:14px;margin:0;}/*!sc*/
+.fYGva-D blockquote{border-left:4px solid var(--color-markdown-border);padding-left:1rem;margin-left:0;color:var(--color-text-medium);}/*!sc*/
+.fYGva-D.fYGva-D a{color:var(--color-markdown-link);text-decoration:none;}/*!sc*/
+.fYGva-D.fYGva-D a:hover{text-decoration:underline;}/*!sc*/
+.fYGva-D mark{background-color:var(--color-markdown-mark-background);color:var(--color-text);padding:0.1em 0.3em;border-radius:0.25em;}/*!sc*/
+.fYGva-D.fYGva-D ul{line-height:0rem;}/*!sc*/
+.fYGva-D.fYGva-D ul li{line-height:1.5rem;}/*!sc*/
+data-styled.g228[id="RequireCard__RequireCardContent-sc-ovixmw-3"]{content:"fYGva-D,"}/*!sc*/
+.eEIFah{display:flex;flex-direction:column;border-radius:0.5rem;background-color:var(--color-code-block-background);font-size:14px;margin-top:1rem;margin-bottom:1rem;border:1px solid var(--color-markdown-border);position:relative;box-sizing:border-box;width:100%;max-width:100%;min-width:0;}/*!sc*/
+.eEIFah.zenuml-container{border:none;background-color:transparent;}/*!sc*/
+data-styled.g229[id="MermaidRender__MermaidContainer-sc-1gpqcvm-0"]{content:"eEIFah,"}/*!sc*/
+.fIOdyc{overflow-x:auto;width:100%;--bs-border-width:1px;--bs-border-color:var(--color-markdown-border);--color-border-frame:var(--color-markdown-border);--color-border-base:var(--color-text-medium);--color-bg-title:var(--color-background);--color-text-title:var(--color-text-medium);--color-bg-base:var(--color-code-block-background);--color-text-message:var(--color-text-medium);--color-message-arrow:var(--color-text);--color-bg-participant:var(--color-surface);--color-text-comment:var(--color-text-medium);--color-outline-primary:var(--color-background-primary);}/*!sc*/
+.fIOdyc .zenuml{font-size:12px;font-weight:400;}/*!sc*/
+.fIOdyc .zenuml .comments{opacity:1!important;}/*!sc*/
+.fIOdyc .zenmul .frame .sequence-diagram .comments code{background-color:var(--color-background-primary);font-size:14px;font-weight:400;color:var(--color-text);}/*!sc*/
+.fIOdyc .zenmul .frame .sequence-diagram .comments code span{font-size:14px!important;font-weight:400!important;color:var(--color-text)!important;}/*!sc*/
+.fIOdyc .zenuml .participant{border-bottom-width:1px;border-top-width:1px;border-left-width:1px;border-right-width:1px;}/*!sc*/
+.fIOdyc .zenuml .text-base{font-size:12px;font-weight:400;}/*!sc*/
+.fIOdyc .zenuml .header{border-top-left-radius:0.5rem;border-top-right-radius:0.5rem;}/*!sc*/
+.fIOdyc .zenuml .title{font-size:12px;font-weight:400;margin-left:10px;}/*!sc*/
+.fIOdyc .zenuml .privacy{display:none;}/*!sc*/
+.fIOdyc .zenuml .sequence-diagram{background-color:var(--color-code-block-background);border-radius:0.5rem;}/*!sc*/
+.fIOdyc .zenuml .border-b-2{border-bottom-width:1px;}/*!sc*/
+.fIOdyc .zenuml .border-2{border-bottom-width:1px!important;border-top-width:1px!important;border-left-width:1px!important;border-right-width:1px!important;}/*!sc*/
+.fIOdyc .zenuml .footer{display:none;}/*!sc*/
+.fIOdyc svg{height:auto;font-family:inherit!important;overflow:visible;display:block;margin:0 auto;}/*!sc*/
+.fIOdyc svg>rect:first-of-type{fill:transparent!important;}/*!sc*/
+.fIOdyc svg .cluster rect{fill:var(--color-surface)!important;stroke:var(--color-markdown-border)!important;}/*!sc*/
+.fIOdyc svg text,.fIOdyc svg tspan{font-family:"Pretendard-Regular","Nunito",sans-serif!important;font-size:12px!important;}/*!sc*/
+.fIOdyc svg .messageText{font-size:14px!important;}/*!sc*/
+.fIOdyc svg .note{fill:var(--color-background-primary)!important;stroke:var(--color-background-primary)!important;}/*!sc*/
+.fIOdyc svg .noteText{font-size:14px!important;fill:#ffffff!important;}/*!sc*/
+.fIOdyc svg .actor-box tspan,.fIOdyc svg .labelText{font-size:12px!important;font-weight:500!important;}/*!sc*/
+.fIOdyc svg .nodeLabel,.fIOdyc svg .nodeLabel p{font-size:13px!important;font-family:"Pretendard-Regular","Nunito",sans-serif!important;line-height:1.3!important;}/*!sc*/
+.fIOdyc svg foreignObject .labelBkg{display:inline-block!important;background-color:var(--color-background-primary)!important;border-radius:0.25em!important;padding:0.05em 0.4em!important;}/*!sc*/
+.fIOdyc svg .edgeLabel p{font-size:11px!important;font-family:"Pretendard-Regular","Nunito",sans-serif!important;color:var(--color-text)!important;font-weight:500!important;margin:0!important;}/*!sc*/
+.fIOdyc svg .edgeLabel text,.fIOdyc svg .edgeLabel tspan{fill:var(--color-text)!important;font-weight:500!important;}/*!sc*/
+data-styled.g233[id="MermaidRender__Container-sc-1gpqcvm-4"]{content:"fIOdyc,"}/*!sc*/
+.dXzNpH{font-size:16px;font-weight:400;line-height:28px;font-weight:400;color:var(--color-text-medium);margin-bottom:2rem;}/*!sc*/
+.dXzNpH h1{font-size:32px;font-weight:800;color:var(--color-text);line-height:1.1111;margin-top:0;margin-bottom:0.6em;}/*!sc*/
+.dXzNpH h2{font-size:24px;font-weight:700;color:var(--color-text);line-height:1.33333;margin-top:2em;margin-bottom:0.8em;}/*!sc*/
+.dXzNpH h3{font-size:20px;font-weight:600;color:var(--color-text);line-height:1.6;margin-top:1.6em;margin-bottom:0.6em;}/*!sc*/
+.dXzNpH h4{font-size:17px;font-weight:600;color:var(--color-text);line-height:1.5;margin-top:1.3em;margin-bottom:0.5em;}/*!sc*/
+.dXzNpH h5{font-size:16px;font-weight:600;color:var(--color-text);line-height:1.5;margin-top:1.1em;margin-bottom:0.4em;}/*!sc*/
+.dXzNpH p,.dXzNpH div.p-element{font-size:16px;font-weight:400;line-height:28px;margin-block:16px;margin-bottom:16px;}/*!sc*/
+.dXzNpH code{font-weight:400;font-size:14px;background-color:var(--color-surface);color:var(--color-text);padding:0.05em 0.25em;border:1px solid var(--color-markdown-border);border-radius:0.25em;font-family:"Consolas","Pretendard-Regular","Nunito",sans-serif!important;}/*!sc*/
+.dXzNpH blockquote{border-left:5px solid var(--color-markdown-border);padding-left:0.5rem;margin-left:0.2rem;margin-right:0;margin-top:1rem;margin-bottom:1rem;}/*!sc*/
+.dXzNpH blockquote p a,.dXzNpH blockquote div.p-element a{font-size:16px;color:var(--color-markdown-link);font-weight:600;}/*!sc*/
+.dXzNpH blockquote p a:hover,.dXzNpH blockquote div.p-element a:hover{color:var(--color-text);}/*!sc*/
+.dXzNpH a{font-size:16px;color:var(--color-markdown-link);font-weight:600;}/*!sc*/
+.dXzNpH a:hover{color:var(--color-text);}/*!sc*/
+.dXzNpH b{font-weight:600;color:var(--color-text);}/*!sc*/
+.dXzNpH table{border-collapse:collapse;border:1px solid var(--color-markdown-table-border);border-spacing:10px;font-size:14px;margin-bottom:1.25rem;}/*!sc*/
+.dXzNpH table tr,.dXzNpH table td,.dXzNpH table th{padding:.5rem;}/*!sc*/
+.dXzNpH table thead{background-color:var(--color-markdown-table-header);border-bottom:1px solid var(--color-markdown-table-border);}/*!sc*/
+.dXzNpH table tbody tr:nth-child(even){background-color:var(--color-markdown-table-row-even);}/*!sc*/
+.dXzNpH table tbody tr:nth-child(odd){background-color:var(--color-markdown-table-row-odd);}/*!sc*/
+.dXzNpH pre{font-family:inherit;margin-bottom:2rem;overflow:visible!important;}/*!sc*/
+.dXzNpH pre code.jcode-block{border:none;padding:0;}/*!sc*/
+.dXzNpH mark{background-color:var(--color-markdown-mark-background);color:var(--color-text);padding:0.05em 0.25em;border-radius:0.25em;margin-left:0.25em;margin-right:0.25em;}/*!sc*/
+.dXzNpH .ad{padding:1em;border:1px solid #f0ad4e;background:#fffbe6;margin:1em 0;border-radius:8px;}/*!sc*/
+.dXzNpH ol{padding-left:2rem;margin-bottom:0px;}/*!sc*/
+.dXzNpH ol li{font-weight:500;padding-bottom:0.5rem;color:var(--color-text);}/*!sc*/
+.dXzNpH pictures{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap;}/*!sc*/
+.dXzNpH pictures img{border-radius:14px;}/*!sc*/
+data-styled.g234[id="PostMarkdownBody__JooojubPostMarkdown-sc-1vohimb-0"]{content:"dXzNpH,"}/*!sc*/
+</style><style data-href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap">@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDshRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDOUhRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDLshRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDIkhRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDGUmRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDFwmRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDDsmRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXI3I6Li01BKofiOc5wtlZ2di8HDBImRTA.woff) format('woff')}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:200;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:600;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:700;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:800;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOOaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIMeaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIOuaBTMnFcQIG.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofIO-aBTMnFcQIG.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C4,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Nunito';font-style:normal;font-weight:900;font-display:swap;src:url(https://fonts.gstatic.com/s/nunito/v32/XRXV3I6Li01BKofINeaBTMnFcQ.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}</style></head><body><div id="__next"><div style="--color-background:rgb(23, 23, 23);--color-background-primary:rgb(46, 89, 132);--color-surface:rgb(38, 38, 38);--color-text:rgba(255, 255, 255, 0.87);--color-text-hover:rgba(255, 255, 255, 0.6);--color-text-medium:hsla(0, 0.00%, 100.00%, 0.60);--color-markdown-border:rgba(255, 255, 255, 0.1);--color-markdown-link:rgb(131, 181, 231);--color-markdown-code-background:var(--color-surface);--color-markdown-code-title:var(--color-background-primary);--color-markdown-mark-background:var(--color-background-primary);--color-markdown-star:rgb(255, 179, 0);--color-markdown-star-empty:rgb(224, 224, 224);--color-code-block-background:rgb(24, 24, 24);;--color-code-line-text:rgb(110, 118, 129);--color-code-block-highlighted:var(--color-surface);--color-code-block-remove:rgb(134, 33, 33);--color-code-block-add:rgb(37, 135, 73);--color-code-block-warning:rgb(255, 179, 0);--color-code-block-error:rgb(134, 33, 33);--color-markdown-table-border:var(--color-markdown-border);--color-markdown-table-header:var(--color-background-primary);--color-markdown-table-row-even:var(--color-surface);--color-markdown-table-row-odd:var(--color-background)"><div class="min-vh-100 w-100 m-0 d-flex flex-column background-main"><div class="
+          position-fixed top-0 start-0 end-0 bottom-0
+          d-none
+          opacity-75 z-1
+        " style="backdrop-filter:blur(1.5px)"></div><div class="position-fixed top-0 end-0 h-100 d-flex flex-column text-break overflow-auto overflow-hidden-x background-main z-1 py-4 px-3" style="box-shadow:-4px 0px 20px rgba(32, 54, 86, 0.1);width:300px;transform:translateX(350px);transition:transform .3s ease-in-out"><div class="text-end" style="padding-right:0.65rem"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" class="svg-inline--fa fa-xmark p-1 fs-4 user-select-none color-text hover-color-text cursor-pointer fw-normal" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" style="transition:all 0.3s ease-in-out"><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg></div><div class="px-0 py-4"><a data-current="active" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/"><div class="Menus_menu__32_hU" data-orientation="vertical">Home<div data-current="active" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/about"><div class="Menus_menu__32_hU" data-orientation="vertical">About<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/posts"><div class="Menus_menu__32_hU" data-orientation="vertical">Posts<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/snippets"><div class="Menus_menu__32_hU" data-orientation="vertical">Snippets<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/insights"><div class="Menus_menu__32_hU" data-orientation="vertical">Insights<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="vertical" href="/toolbox"><div class="Menus_menu__32_hU" data-orientation="vertical">Toolbox<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a></div><div class="d-flex justify-content-end align-items-center mt-auto mb-0 pe-3"><div class="d-flex align-items-center"><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://github.com/jooojub" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="mailto:jooojub@gmail.com" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://www.buymeacoffee.com/jooojub" rel="noopener noreferrer nofollow"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px" class="SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2"><i class="fa-regular fa-cup-togo"></i></div></a></div></div></div><div class="BlogHeader__HeaderContainer-sc-1nzl52z-0 iYlOQb"><div class="d-flex align-items-center cursor-pointer"><img width="40" height="40" src="/assets/images/avatars/toto_128px.jpg" alt="blog logo" class="rounded-circle"/><span class="fw-bold fs-4 align-middle ms-3 color-text hover-color-text"><a class="color-text" style="color:var(--color-text)" href="/">Jooojub</a></span></div><div class="d-none d-md-flex flex-fill justify-content-start mx-3"><a data-current="active" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/"><div class="Menus_menu__32_hU" data-orientation="horizontal">Home<div data-current="active" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/about"><div class="Menus_menu__32_hU" data-orientation="horizontal">About<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/posts"><div class="Menus_menu__32_hU" data-orientation="horizontal">Posts<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/snippets"><div class="Menus_menu__32_hU" data-orientation="horizontal">Snippets<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/insights"><div class="Menus_menu__32_hU" data-orientation="horizontal">Insights<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a><a data-current="inactive" class="Menus_menu_item_container__TM8xW" data-orientation="horizontal" href="/toolbox"><div class="Menus_menu__32_hU" data-orientation="horizontal">Toolbox<div data-current="inactive" class="Menus_menu_selector__pkeMS"></div></div></a></div><div class="ml-7 d-flex"><div class="p-1 ms-3 color-text hover-color-text fw-semibold fs-5 cursor-pointer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></div><div class="d-block d-md-none p-1 ms-3 color-text hover-color-text fw-semibold fs-5 cursor-pointer"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></div></div></div><div style="position:fixed;z-index:999999;top:0;right:0;bottom:0;left:0;display:none;align-items:flex-start;backdrop-filter:blur(1px);justify-content:center;padding:4rem"><div style="width:85vw;position:relative;min-width:400px;box-shadow:rgba(0, 0, 0, 0.2) 0px 16px 70px;pointer-events:auto;border:1px solid var(--color-surface);border-radius:1rem;background:var(--color-background)"><div style="padding:.2rem 1rem 0rem 1rem;width:100%;display:flex;align-items:center;justify-content:space-between"><div class="SearchModal__IconSearch-sc-122xpe8-0 leHmZR"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="magnifying-glass" class="svg-inline--fa fa-magnifying-glass " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg></div><input style="background:var(--color-background);border:none;outline:2px solid transparent;padding:.5rem .5rem;font-size:16px;color:var(--color-text-medium);font-weight:600;font-family:inherit;width:100%" placeholder="Type to search" value=""/><a color="main" disabled="" class="BadgeButton__Tag-sc-v6g8ls-0 elNvHI"><span>Cls</span></a><a color="main" class="BadgeButton__Tag-sc-v6g8ls-0 cCqYNn"><span>Esc</span></a></div><div class="SearchModal__ResultContainer-sc-122xpe8-2 kmeRDC"></div></div></div><main class="d-flex align-items-start justify-content-between flex-column container flex-grow-1"><style data-emotion="css zvj543">.css-zvj543{width:100%;margin-left:auto;box-sizing:border-box;margin-right:auto;padding-left:16px;padding-right:16px;margin-top:1.5rem;width:100%;}@media (min-width:600px){.css-zvj543{padding-left:24px;padding-right:24px;}}@media (min-width:1200px){.css-zvj543{max-width:1200px;}}@media (min-width:0px){.css-zvj543{padding-left:8px;padding-right:8px;}}@media (min-width:600px){.css-zvj543{padding-left:16px;padding-right:16px;}}@media (min-width:900px){.css-zvj543{padding-left:24px;padding-right:24px;}}</style><div class="MuiContainer-root MuiContainer-maxWidthLg css-zvj543"><div class="MainContentLayout__TitleContainer-sc-1a5xkpd-0 exLpEH"><h1 class="MainContentLayout__GlobalPrimaryTitle-sc-1a5xkpd-2 gvGnPt">ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법</h1><div class="MainContentLayout__GlobalSubTitle-sc-1a5xkpd-3 axuRE">A user-focused guide to the model files in ComfyUI: what Checkpoint, LoRA, VAE, text encoder, ControlNet and upscale models are, how base, fine-tuned, merged and distilled models differ, and which model family fits which job.</div></div><div class="MainContentLayout__DateContainer-sc-1a5xkpd-1 eGSKrX">October 30, 2026</div><div class="MainContentLayout__GlobalTagContainer-sc-1a5xkpd-4 eWnyPa"><a color="primary" href="/posts/ai" class="TagButton__TagAnchor-sc-rc8i-0 kMJTxV"><span>ai</span></a><a color="main" href="/tags/comfyui" class="TagButton__TagAnchor-sc-rc8i-0 glNgVc"><span>comfyui</span></a><a color="main" href="/tags/stable-diffusion" class="TagButton__TagAnchor-sc-rc8i-0 glNgVc"><span>stable-diffusion</span></a></div><div class="MainContentLayout__CardContainer-sc-1a5xkpd-5 hvpEtY"><nav aria-label="breadcrumbs" style="margin-bottom:1.5rem" class="JooojubBreadcrumbs__BreadcrumbsWrapper-sc-1rkzttt-0 bPmaxR"><span class="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1 lkJfqy"><a href="/posts">Posts</a><div style="padding-top:.15rem;margin-right:.5rem;margin-left:0.3rem"><i class="fa-regular fa-chevron-right"></i></div></span><span class="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1 lkJfqy"><a href="/posts/ai">ai</a><div style="padding-top:.15rem;margin-right:.5rem;margin-left:0.3rem"><i class="fa-regular fa-chevron-right"></i></div></span><span class="JooojubBreadcrumbs__Crumb-sc-1rkzttt-1 lkJfqy"><span class="JooojubBreadcrumbs__CrumbLabel-sc-1rkzttt-2 cPFpYs">ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법</span></span></nav><div class="PostMarkdownBody__JooojubPostMarkdown-sc-1vohimb-0 dXzNpH"><h2>ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법</h2>
+<pre><div class="RequireCard__RequireCardContainer-sc-ovixmw-0 ffcoJo"><div class="RequireCard__RequireCardTitle-sc-ovixmw-1 cMJpRs"><div class="RequireCard__TitleText-sc-ovixmw-2 epEtBZ"><div style="margin-right:0.2rem"><i class="fa-regular fa-list-check"></i></div>Reqruies</div></div><div class="RequireCard__RequireCardContent-sc-ovixmw-3 fYGva-D"><ul>
+<li>ComfyUI: 최신 안정 버전 기준</li>
+<li>모델 정보: 2026년 중반 기준 (모델은 빠르게 바뀝니다)</li>
+</ul></div></div></pre>
+<h3>Introduction</h3>
+<div class="p-element">ComfyUI를 처음 켜면 노드는 어떻게든 연결하게 됩니다. 막히는 곳은 그다음입니다. <code node="[object Object]">models</code> 폴더에는 checkpoint, LoRA, VAE, clip, controlnet 같은 폴더가 줄줄이 있고, Civitai나 Hugging Face에는 이름만 봐서는 뭐가 다른지 모를 모델이 수천 개 있습니다. &quot;Base&quot;, &quot;Merge&quot;, &quot;Turbo&quot;, &quot;Pony&quot;, &quot;Illustrious&quot;, &quot;Flux&quot; 같은 말도 어디서나 보이지만 설명해 주는 곳은 드뭅니다.</div>
+<div class="p-element">이 글은 모델이 어떻게 학습되는지는 다루지 않습니다. <mark>어떤 파일이 무슨 역할이고, 어떤 상황에 무엇을 골라서, 어디에 넣고 어떻게 쓰는지</mark>를 사용자 입장에서 정리합니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>질문</th><th>이 글에서 보는 내용</th></tr></thead><tbody><tr><td>models 폴더의 파일은 각각 뭔가?</td><td>폴더별 역할과 노드 연결</td></tr><tr><td>Checkpoint, Base, Merge는 뭐가 다른가?</td><td>모델의 &quot;출신&quot; 구분</td></tr><tr><td>SD1.5, SDXL, Pony, Flux 중 뭘 쓰나?</td><td>계열별 특징과 용도</td></tr><tr><td>LoRA는 어떻게 쓰나?</td><td>강도, 트리거 단어, 호환</td></tr><tr><td>에러가 나거나 결과가 이상하면?</td><td>호환 규칙과 증상별 원인</td></tr></tbody></table>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<h3>The Big Picture: What Goes Into One Image</h3>
+<div class="p-element">이미지 한 장은 여러 모델 파일이 이어서 일을 한 결과입니다. 각 파일이 파이프라인의 어느 단계를 맡는지만 알아도 폴더 이름이 대부분 이해됩니다.</div>
+<pre><div class="MermaidRender__MermaidContainer-sc-1gpqcvm-0 eEIFah"><div class="MermaidRender__Container-sc-1gpqcvm-4 fIOdyc mermaid-chart">flowchart TB
+    A[&quot;Text Encoder&lt;br/&gt;(CLIP / T5)&quot;] --&gt; B[&quot;Diffusion Model&lt;br/&gt;(UNet / DiT)&quot;]
+    L[&quot;LoRA&quot;] -.-&gt; B
+    L -.-&gt; A
+    C[&quot;ControlNet&quot;] -.-&gt; B
+    B --&gt; D[&quot;VAE Decode&quot;]
+    D --&gt; E[&quot;Upscale Model&quot;]</div></div></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>단계</th><th>하는 일</th><th>파일 종류</th></tr></thead><tbody><tr><td>프롬프트 해석</td><td>글을 모델이 이해하는 숫자로 바꿉니다</td><td>Text Encoder (CLIP, T5)</td></tr><tr><td>그림 만들기</td><td>노이즈에서 이미지를 조금씩 만들어 갑니다</td><td>Diffusion Model (UNet, DiT)</td></tr><tr><td>보정</td><td>화풍, 캐릭터, 구도를 바꿉니다</td><td>LoRA, ControlNet, Embedding</td></tr><tr><td>픽셀로 변환</td><td>내부 표현을 실제 이미지로 풀어냅니다</td><td>VAE</td></tr><tr><td>후처리</td><td>해상도를 키우고 디테일을 살립니다</td><td>Upscale Model, Detailer</td></tr></tbody></table>
+<div class="p-element">핵심은 <mark>Diffusion Model이 중심이고, 나머지는 그 모델에 맞춰야 한다</mark>는 점입니다. 이 규칙은 뒤에서 계속 나옵니다.</div>
+<h3>The models Folder Map</h3>
+<div class="p-element">기본 설치에서 모델은 <code node="[object Object]">ComfyUI/models/</code> 아래에 있습니다. 파일을 넣고 나서 새로고침(<code node="[object Object]">R</code> 키)하거나 ComfyUI를 다시 켜면 노드의 드롭다운에 나타납니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>폴더</th><th>들어가는 것</th><th>쓰는 노드</th></tr></thead><tbody><tr><td><code node="[object Object]">checkpoints</code></td><td>올인원 모델 (Diffusion + CLIP + VAE)</td><td>Load Checkpoint</td></tr><tr><td><code node="[object Object]">diffusion_models</code> (예전 <code node="[object Object]">unet</code>)</td><td>Diffusion Model만 따로 쪼갠 파일, GGUF</td><td>Load Diffusion Model, UNet Loader</td></tr><tr><td><code node="[object Object]">text_encoders</code> (예전 <code node="[object Object]">clip</code>)</td><td>CLIP, T5 같은 글 해석 모델</td><td>Load CLIP, DualCLIP Loader</td></tr><tr><td><code node="[object Object]">vae</code></td><td>VAE 단독 파일</td><td>Load VAE</td></tr><tr><td><code node="[object Object]">loras</code></td><td>LoRA</td><td>Load LoRA</td></tr><tr><td><code node="[object Object]">controlnet</code></td><td>ControlNet, T2I-Adapter</td><td>Load ControlNet Model</td></tr><tr><td><code node="[object Object]">embeddings</code></td><td>Textual Inversion</td><td>프롬프트에 <code node="[object Object]">embedding:이름</code></td></tr><tr><td><code node="[object Object]">upscale_models</code></td><td>ESRGAN 계열 업스케일러</td><td>Load Upscale Model</td></tr><tr><td><code node="[object Object]">clip_vision</code></td><td>이미지를 이해하는 CLIP (IP-Adapter, Redux용)</td><td>Load CLIP Vision</td></tr><tr><td><code node="[object Object]">ipadapter</code></td><td>IP-Adapter (커스텀 노드 필요)</td><td>IPAdapter 노드</td></tr><tr><td><code node="[object Object]">ultralytics/bbox</code>, <code node="[object Object]">sams</code></td><td>얼굴 검출, 영역 분할 (Impact Pack용)</td><td>Detector, SAM Loader</td></tr></tbody></table>
+<blockquote>
+<div class="p-element">이미 Automatic1111이나 다른 UI를 쓰고 있다면 모델을 복사하지 않아도 됩니다. ComfyUI 폴더의 <code node="[object Object]">extra_model_paths.yaml.example</code>을 <code node="[object Object]">extra_model_paths.yaml</code>로 바꾸고 경로를 적으면 같은 폴더를 공유합니다. 수십 GB 모델을 두 벌로 두지 않아도 됩니다.</div>
+</blockquote>
+<h3>Checkpoint: The All-in-One File</h3>
+<div class="p-element">Checkpoint는 가장 흔히 받는 파일입니다. 안에 Diffusion Model, Text Encoder, VAE가 한 파일로 들어 있어서, <mark>Load Checkpoint 노드 하나가 MODEL, CLIP, VAE 세 가지 출력을 모두 내줍니다</mark>. 처음에는 이 노드 하나에 KSampler와 VAE Decode만 연결하면 이미지가 나옵니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Load Checkpoint 출력</th><th>연결하는 곳</th></tr></thead><tbody><tr><td>MODEL</td><td>KSampler (LoRA를 쓰면 LoRA를 거쳐서)</td></tr><tr><td>CLIP</td><td>CLIP Text Encode (프롬프트 입력 노드)</td></tr><tr><td>VAE</td><td>VAE Decode</td></tr></tbody></table>
+<h4>Checkpoint vs split models</h4>
+<div class="p-element">SD1.5와 SDXL은 보통 올인원 Checkpoint로 배포됩니다. 반면 Flux, SD3.5, Qwen-Image, Wan 같은 최근 모델은 <mark>부품별로 쪼개서 배포</mark>하는 경우가 많습니다. 모델이 커서 Text Encoder만 몇 GB이기 때문입니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>구분</th><th>올인원 (Checkpoint)</th><th>분리형 (split)</th></tr></thead><tbody><tr><td>파일</td><td>1개</td><td>Diffusion Model + Text Encoder + VAE</td></tr><tr><td>폴더</td><td><code node="[object Object]">checkpoints</code></td><td><code node="[object Object]">diffusion_models</code>, <code node="[object Object]">text_encoders</code>, <code node="[object Object]">vae</code></td></tr><tr><td>노드</td><td>Load Checkpoint</td><td>Load Diffusion Model + Load CLIP + Load VAE</td></tr><tr><td>장점</td><td>간단하다</td><td>Text Encoder를 다른 정밀도로 바꾸거나 여러 모델이 공유할 수 있다</td></tr><tr><td>예</td><td>SD1.5, SDXL 계열</td><td>Flux, SD3.5, Z-Image, Qwen-Image, Wan</td></tr></tbody></table>
+<div class="p-element">분리형은 공식 workflow(예제 JSON)를 먼저 받아서 쓰는 것이 가장 쉽습니다. 노드 연결과 필요한 파일 이름이 이미 정해져 있기 때문입니다. ComfyUI의 <code node="[object Object]">Workflow → Browse Templates</code>에 모델별 예제가 들어 있습니다.</div>
+<h3>File Formats and Precision</h3>
+<div class="p-element">같은 모델이라도 파일 이름 뒤에 붙은 꼬리표에 따라 크기와 안전성이 달라집니다.</div>
+<h4>Extension</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>확장자</th><th>설명</th><th>권장</th></tr></thead><tbody><tr><td><code node="[object Object]">.safetensors</code></td><td>숫자(텐서)만 담은 안전한 형식</td><td>항상 이것을 받으세요</td></tr><tr><td><code node="[object Object]">.ckpt</code></td><td>Python pickle 기반이라 열 때 코드가 실행될 수 있습니다</td><td>가능하면 피하세요</td></tr><tr><td><code node="[object Object]">.gguf</code></td><td>양자화한 큰 모델용 형식 (커스텀 노드 <code node="[object Object]">ComfyUI-GGUF</code> 필요)</td><td>VRAM이 부족할 때</td></tr><tr><td><code node="[object Object]">.pt</code>, <code node="[object Object]">.pth</code>, <code node="[object Object]">.bin</code></td><td>구형 형식, 업스케일러 등에 남아 있습니다</td><td>출처를 믿을 때만</td></tr></tbody></table>
+<h4>Precision (fp32, fp16, bf16, fp8)</h4>
+<div class="p-element">정밀도는 숫자 하나를 몇 비트로 저장하느냐입니다. 비트가 적을수록 파일이 작고 VRAM을 덜 쓰지만 품질이 조금 떨어질 수 있습니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>표기</th><th>의미</th><th>특징</th></tr></thead><tbody><tr><td>fp32</td><td>32비트</td><td>가장 크고 거의 쓰지 않습니다</td></tr><tr><td>fp16, bf16</td><td>16비트</td><td>기본값입니다. 품질 손실이 사실상 없습니다</td></tr><tr><td>fp8 (<code node="[object Object]">e4m3fn</code>, <code node="[object Object]">e5m2</code>)</td><td>8비트</td><td>크기가 절반입니다. 눈으로 구분이 어려운 경우가 많습니다</td></tr><tr><td>Q8, Q5, Q4 (GGUF)</td><td>양자화</td><td>숫자가 작을수록 작고 품질이 조금씩 떨어집니다</td></tr></tbody></table>
+<div class="p-element">체크포인트 이름의 <code node="[object Object]">pruned</code>, <code node="[object Object]">ema</code>도 자주 보입니다. 학습할 때만 필요한 가중치를 덜어낸 파일이 <code node="[object Object]">pruned</code>이고, 생성만 하는 사용자는 이쪽을 받으면 됩니다. 대략 SD1.5 fp16은 2GB, SDXL fp16은 6~7GB 정도입니다.</div>
+<h3>Base, Fine-tune, Merge: Where a Model Comes From</h3>
+<div class="p-element">Civitai의 체크포인트는 &quot;어떻게 만들어졌는지&quot;로 크게 세 종류가 있습니다. 이 구분을 알면 모델 설명을 읽을 때 훨씬 편합니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>종류</th><th>만든 방식</th><th>특징</th><th>예</th></tr></thead><tbody><tr><td>Base (원본)</td><td>회사가 처음부터 대규모로 학습</td><td>범용입니다. 특정 화풍이 없어서 다른 모델의 뿌리가 됩니다</td><td>SD1.5, SDXL 1.0, Flux.1 dev</td></tr><tr><td>Fine-tune</td><td>Base에 추가 데이터를 학습</td><td>한 방향(애니, 실사, 특정 소재)에 특화됩니다</td><td>Pony Diffusion, Illustrious XL</td></tr><tr><td>Merge</td><td>여러 모델의 가중치를 비율로 섞음</td><td>학습 없이 섞어서 취향 맞는 결과를 만듭니다</td><td>Civitai의 인기 모델 대부분</td></tr></tbody></table>
+<h4>Merge는 나쁜 것인가</h4>
+<div class="p-element">아닙니다. 다만 성격을 알아야 합니다.</div>
+<ul>
+<li><b>장점:</b> 여러 모델의 장점을 섞어서 결과가 바로 예쁘게 나옵니다.</li>
+<li><b>단점:</b> 어떤 모델이 얼마나 섞였는지 불투명하고, 프롬프트 반응이 모델마다 다릅니다. 라이선스도 섞입니다.</li>
+<li><b>팁:</b> 초보에게는 인기 많은 merge가 오히려 쉽습니다. 고급 사용자는 Base나 Fine-tune에 LoRA를 얹어서 직접 조절합니다.</li>
+</ul>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<h4>Distilled: Turbo, Lightning, Hyper, schnell</h4>
+<div class="p-element">&quot;몇 단계 만에 그리게 줄인&quot; 모델들입니다. 원래 20<del>30 steps가 필요한 모델을 1</del>8 steps로 줄였습니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>이름</th><th>보통 steps</th><th>CFG</th><th>비고</th></tr></thead><tbody><tr><td>SDXL Turbo, SD Turbo</td><td>1~4</td><td>1 전후</td><td>속도 위주, 해상도 낮음</td></tr><tr><td>SDXL-Lightning, Hyper-SD</td><td>2~8</td><td>1~2</td><td>LoRA로도 배포되어 아무 SDXL 모델에 얹을 수 있습니다</td></tr><tr><td>LCM</td><td>4~8</td><td>1~2</td><td>LoRA를 얹는 방식, 설정이 까다롭습니다</td></tr><tr><td>Flux.1 schnell</td><td>1~4</td><td>1</td><td>라이선스가 자유롭습니다 (Apache 2.0)</td></tr></tbody></table>
+<div class="p-element">빠르게 구도를 훑어볼 때는 좋지만, 디테일과 프롬프트 충실도는 일반 모델이 보통 더 낫습니다. 구도를 Turbo로 잡고 마지막만 일반 모델로 올리는 식으로 나눠 쓰기도 합니다.</div>
+<h4>Other labels you will see</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>라벨</th><th>뜻</th></tr></thead><tbody><tr><td>Inpainting</td><td>이미지 일부를 다시 그리기용 모델. 요즘은 일반 모델로도 inpaint가 되어서 꼭 필요하지는 않습니다</td></tr><tr><td>Refiner</td><td>SDXL 후반부를 다듬는 보조 모델. 지금은 거의 쓰지 않습니다</td></tr><tr><td>Edit / Kontext</td><td>이미지를 주고 &quot;이렇게 바꿔 줘&quot;라고 지시하는 편집용 모델</td></tr><tr><td>NSFW / SFW</td><td>학습 데이터 성향. 모델 페이지의 안내와 라이선스를 확인하세요</td></tr></tbody></table>
+<h3>Model Families: Which One Should I Use</h3>
+<div class="p-element">이름이 아무리 많아도, 큰 줄기는 &quot;어떤 Base에서 갈라졌는가&quot;입니다. <mark>같은 줄기끼리만 LoRA, ControlNet, VAE를 공유</mark>합니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>계열</th><th>기본 해상도</th><th>프롬프트 스타일</th><th>VRAM 기준</th><th>잘하는 것</th></tr></thead><tbody><tr><td>SD 1.5</td><td>512</td><td>짧은 태그 + 문장</td><td>4~6GB</td><td>가볍고 생태계가 가장 큽니다. 구형 LoRA와 ControlNet이 많습니다</td></tr><tr><td>SDXL</td><td>1024</td><td>태그 + 문장</td><td>8GB~</td><td>균형 잡힌 범용. 선택지가 가장 많습니다</td></tr><tr><td>Pony / Illustrious / NoobAI</td><td>1024</td><td>태그 위주</td><td>8GB~</td><td>애니·일러스트, 캐릭터 이해 (SDXL 기반)</td></tr><tr><td>Flux.1 (dev, schnell)</td><td>1024 이상</td><td>자연어 문장</td><td>12GB~ (fp8, GGUF로 절감)</td><td>사실적인 묘사, 손과 글자, 긴 프롬프트 이해</td></tr><tr><td>SD 3.5 (Large, Medium)</td><td>1024</td><td>자연어</td><td>8GB~</td><td>프롬프트 충실도, 라이선스는 약관 확인</td></tr><tr><td>Z-Image (Turbo)</td><td>1024 이상</td><td>자연어</td><td>12~16GB</td><td>작은 모델로 빠르게(8 steps 전후) 사실적인 사진, 한글·중국어·영어 글자</td></tr><tr><td>Qwen-Image</td><td>1024 이상</td><td>자연어</td><td>큼</td><td>이미지 속 글자(한글 포함) 표현이 강점</td></tr><tr><td>Flux.1 Kontext, Qwen-Image-Edit</td><td>입력 이미지 기준</td><td>지시문</td><td>큼</td><td>기존 이미지를 지시대로 편집</td></tr><tr><td>Wan, HunyuanVideo, LTX-Video</td><td>영상</td><td>자연어</td><td>큼</td><td>텍스트/이미지 → 영상</td></tr></tbody></table>
+<h4>상황별로 고르기</h4>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>하고 싶은 것</th><th>추천</th></tr></thead><tbody><tr><td>처음이라 우선 뭐든 돌려 보고 싶다</td><td>SDXL 계열의 인기 merge 하나</td></tr><tr><td>애니, 일러스트, 특정 캐릭터</td><td>Illustrious / NoobAI 계열 (또는 Pony)</td></tr><tr><td>사진처럼 사실적인 인물, 제품</td><td>Flux.1 dev 계열 또는 SDXL 실사 fine-tune</td></tr><tr><td>이미지 안에 글자를 넣어야 한다</td><td>Flux, Qwen-Image 또는 Z-Image</td></tr><tr><td>큰 GPU 없이 사진 느낌을 빠르게</td><td>Z-Image Turbo (8 steps 전후)</td></tr><tr><td>VRAM이 8GB 이하</td><td>SD1.5, SDXL (fp16), 또는 Flux GGUF Q4~Q5</td></tr><tr><td>기존 사진을 지시대로 수정</td><td>Flux.1 Kontext, Qwen-Image-Edit</td></tr><tr><td>짧은 영상</td><td>Wan 계열</td></tr><tr><td>상업적으로 쓴다</td><td>모델 카드의 라이선스부터 확인 (Flux dev는 비상업 조건)</td></tr></tbody></table>
+<h4>계열별 사용 팁</h4>
+<ul>
+<li><b>SD1.5:</b> 구형이라 해상도를 512 근처로 두고, 크게 뽑으려면 업스케일로 올립니다. 애니 계열은 Clip skip 2를 요구하는 경우가 많습니다.</li>
+<li><b>SDXL:</b> 1024x1024 근처(1216x832, 832x1216 등 비슷한 면적)로 뽑습니다. 해상도가 크게 벗어나면 구도가 깨집니다.</li>
+<li><b>Pony:</b> 품질 태그(<code node="[object Object]">score_9, score_8_up, score_7_up</code> 등)를 앞에 붙이는 방식이 필요합니다.</li>
+<li><b>Illustrious / NoobAI:</b> Danbooru 태그 위주로 씁니다. 모델 카드가 추천하는 품질 태그를 따르세요.</li>
+<li><b>Z-Image Turbo:</b> 분리형이라 Diffusion Model, Text Encoder(Qwen 계열 LLM), VAE를 따로 받습니다. steps는 8 전후, CFG는 1 전후로 두고 문장으로 설명합니다. 공식 템플릿 workflow가 가장 쉽습니다.</li>
+<li><b>Flux:</b> 문장으로 설명합니다. CFG는 1로 두고 FluxGuidance 노드로 강도(3.5 전후)를 조절합니다. dev는 negative prompt가 사실상 듣지 않습니다.</li>
+</ul>
+<div class="p-element">모델마다 권장 설정이 다르니, <mark>모델 상세 페이지의 Sampler, Steps, CFG, Clip skip 안내를 먼저 따라 하는 것</mark>이 가장 빠릅니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>계열</th><th>Steps</th><th>CFG</th><th>샘플러 예</th></tr></thead><tbody><tr><td>Z-Image Turbo</td><td>8 전후</td><td>1</td><td>모델 카드 안내</td></tr><tr><td>SD1.5 / SDXL</td><td>20~30</td><td>5~8</td><td><code node="[object Object]">dpmpp_2m</code> + <code node="[object Object]">karras</code>, <code node="[object Object]">euler_ancestral</code></td></tr><tr><td>Illustrious / Pony</td><td>25~30</td><td>4~7</td><td><code node="[object Object]">euler_ancestral</code>, <code node="[object Object]">dpmpp_2m</code></td></tr><tr><td>Flux dev</td><td>20~30</td><td>1 (+ FluxGuidance 3.5)</td><td><code node="[object Object]">euler</code> + <code node="[object Object]">simple</code></td></tr><tr><td>Flux schnell</td><td>1~4</td><td>1</td><td><code node="[object Object]">euler</code> + <code node="[object Object]">simple</code></td></tr><tr><td>Turbo / Lightning</td><td>2~8</td><td>1~2</td><td>모델 카드 안내</td></tr></tbody></table>
+<h3>LoRA: Small Add-on Files</h3>
+<div class="p-element">LoRA는 Checkpoint 위에 얹는 작은 보정 파일입니다. 용량이 수십~수백 MB라서 모델 전체를 받지 않고도 특정 캐릭터, 화풍, 옷, 포즈를 추가할 수 있습니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>LoRA 종류</th><th>용도</th><th>예</th></tr></thead><tbody><tr><td>Character</td><td>특정 인물, 캐릭터</td><td>얼굴과 의상 유지</td></tr><tr><td>Style</td><td>화풍, 색감</td><td>수채화, 특정 작가풍</td></tr><tr><td>Concept</td><td>특정 소재, 사물, 포즈</td><td>특정 옷, 배경</td></tr><tr><td>Detail / Slider</td><td>디테일, 나이, 표정 같은 한 축의 조절</td><td>슬라이더 LoRA</td></tr><tr><td>Speed</td><td>적은 steps로 그리게 함</td><td>Lightning, Hyper, LCM</td></tr></tbody></table>
+<h4>How to use it in ComfyUI</h4>
+<ol>
+<li>파일을 <code node="[object Object]">models/loras</code>에 넣고 새로고침합니다.</li>
+<li>Load LoRA 노드를 Load Checkpoint 뒤에 연결합니다. MODEL과 CLIP을 받아서 다시 MODEL과 CLIP을 내보냅니다.</li>
+<li>나온 MODEL은 KSampler로, CLIP은 CLIP Text Encode로 연결합니다.</li>
+<li>여러 개를 쓰려면 Load LoRA 노드를 이어서 붙입니다.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>노드 입력</th><th>의미</th><th>처음 값</th></tr></thead><tbody><tr><td>strength_model</td><td>그림 생성 모델에 주는 영향</td><td>0.6 ~ 1.0</td></tr><tr><td>strength_clip</td><td>글 해석에 주는 영향</td><td>strength_model과 같게, 문제가 있으면 낮춤</td></tr></tbody></table>
+<div class="p-element">Flux나 영상 모델처럼 Text Encoder를 건드리지 않는 경우는 <code node="[object Object]">LoraLoaderModelOnly</code> 노드를 씁니다.</div>
+<h4>LoRA를 쓸 때 꼭 알아야 할 것</h4>
+<ul>
+<li><b>계열이 맞아야 합니다.</b> SD1.5용 LoRA는 SDXL에 못 씁니다. Flux용은 Flux에만 됩니다.</li>
+<li><b>트리거 단어를 확인하세요.</b> 많은 LoRA가 프롬프트에 특정 단어를 써야 작동합니다. 모델 페이지에 적혀 있습니다.</li>
+<li><b>강도는 낮게 시작하세요.</b> 1.0에서 얼굴이 뭉개지거나 색이 탁해지면 0.6~0.8로 낮춥니다.</li>
+<li><b>여러 개를 겹치면 서로 싸웁니다.</b> 합이 1.5~2를 넘으면 결과가 깨지기 쉽습니다.</li>
+<li><b>같은 SDXL이라도 Pony용 LoRA를 Illustrious에, 또는 반대로 쓰면</b> 잘 안 맞는 경우가 많습니다. 학습한 모델 계열을 확인하세요.</li>
+</ul>
+<h3>VAE, Text Encoder, Embedding</h3>
+<h4>VAE</h4>
+<div class="p-element">VAE는 모델 내부의 압축된 표현(latent)을 실제 픽셀 이미지로 바꿔 주는 부품입니다. 대부분의 Checkpoint는 VAE가 들어 있어서 따로 받을 필요가 없습니다. 증상이 있을 때만 별도 VAE를 연결합니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>원인과 해결</th></tr></thead><tbody><tr><td>색이 탁하고 회색빛이다</td><td>내장 VAE가 약한 모델입니다. 모델이 권장하는 VAE를 Load VAE로 연결합니다</td></tr><tr><td>SDXL에서 검은 이미지</td><td>fp16 NaN 문제입니다. <code node="[object Object]">sdxl-vae-fp16-fix</code> 같은 수정 VAE를 사용합니다</td></tr><tr><td>Flux/SD3에서 색이 이상하다</td><td>Flux는 전용 <code node="[object Object]">ae.safetensors</code>를 써야 합니다. SD1.5, SDXL의 VAE와 호환되지 않습니다</td></tr></tbody></table>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<h4>Text Encoder (CLIP, T5)</h4>
+<div class="p-element">프롬프트를 모델이 이해하는 숫자로 바꿉니다. 계열마다 쓰는 조합이 다릅니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>계열</th><th>Text Encoder</th></tr></thead><tbody><tr><td>SD1.5</td><td>CLIP-L</td></tr><tr><td>SDXL</td><td>CLIP-L + CLIP-G</td></tr><tr><td>Flux, SD3.5</td><td>CLIP-L + T5-XXL (긴 문장 이해)</td></tr><tr><td>Z-Image, Qwen-Image</td><td>Qwen 계열 LLM (한글 등 다국어 이해)</td></tr></tbody></table>
+<div class="p-element">T5-XXL은 fp16 기준 약 9~10GB로 커서, 메모리가 부족하면 fp8 버전을 쓰기도 합니다. SD1.5 계열 애니 모델은 <code node="[object Object]">CLIP Set Last Layer</code> 노드를 -2로 두면 Clip skip 2와 같습니다.</div>
+<h4>Embedding (Textual Inversion)</h4>
+<div class="p-element">아주 작은 파일(수십 KB)로, 특정 개념을 하나의 단어처럼 만들어 줍니다. <code node="[object Object]">models/embeddings</code>에 넣고 프롬프트에 <code node="[object Object]">embedding:파일이름</code>으로 부릅니다. 예전에는 <code node="[object Object]">EasyNegative</code> 같은 negative embedding이 흔했지만, 지금은 LoRA와 최신 모델에 밀려 쓰임이 줄었습니다.</div>
+<h3>ControlNet, IP-Adapter and Upscalers</h3>
+<h4>ControlNet: Control the Composition</h4>
+<div class="p-element">ControlNet은 참고 이미지에서 윤곽선, 깊이, 포즈 같은 정보를 뽑아서 그림의 구도를 고정하는 모델입니다. 전처리(Preprocessor) 노드는 <code node="[object Object]">comfyui_controlnet_aux</code> 커스텀 노드에 들어 있습니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>종류</th><th>입력으로 쓰는 정보</th><th>이럴 때</th></tr></thead><tbody><tr><td>Canny</td><td>외곽선</td><td>사진의 형태를 그대로 두고 화풍만 바꿀 때</td></tr><tr><td>Depth</td><td>거리 정보</td><td>공간감과 원근을 유지할 때</td></tr><tr><td>OpenPose</td><td>사람 뼈대</td><td>포즈를 지정할 때</td></tr><tr><td>Lineart / Scribble</td><td>선화, 낙서</td><td>스케치를 완성작으로 만들 때</td></tr><tr><td>Tile</td><td>원본 질감</td><td>업스케일하며 디테일을 살릴 때</td></tr></tbody></table>
+<div class="p-element">ControlNet도 <mark>계열이 맞아야 합니다</mark>. SD1.5용을 SDXL에 쓸 수 없고, Flux는 전용 ControlNet 또는 Union 모델을 씁니다.</div>
+<h4>IP-Adapter and Redux: Image as a Prompt</h4>
+<div class="p-element">글 대신 참고 이미지로 스타일이나 인물의 느낌을 가져옵니다. IP-Adapter는 커스텀 노드(<code node="[object Object]">ComfyUI_IPAdapter_plus</code>)와 <code node="[object Object]">clip_vision</code> 모델이 필요하고, Flux는 Redux가 비슷한 역할을 합니다. LoRA를 학습하기 부담스러울 때 좋은 대안입니다.</div>
+<h4>Upscale Models</h4>
+<div class="p-element"><code node="[object Object]">Load Upscale Model</code> → <code node="[object Object]">Upscale Image (using Model)</code>로 쓰는 ESRGAN 계열 모델입니다. 학습 없이 빠르게 해상도를 2~4배로 키웁니다. 애니는 애니용, 사진은 사진용을 고르는 식으로 화풍에 맞춰 선택합니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>방식</th><th>설명</th><th>특징</th></tr></thead><tbody><tr><td>Upscale Model</td><td>이미지 자체를 확대</td><td>빠르고 결과가 안정적입니다</td></tr><tr><td>Latent Upscale + 재샘플링</td><td>latent를 키운 뒤 다시 그림</td><td>디테일이 새로 생기지만 denoise가 높으면 모양이 변합니다</td></tr><tr><td>두 방식을 조합</td><td>모델로 키운 뒤 낮은 denoise(0.2~0.4)로 한 번 더</td><td>가장 많이 쓰는 방식입니다</td></tr></tbody></table>
+<h4>Detailer (Impact Pack)</h4>
+<div class="p-element">얼굴이 작게 나와 뭉개질 때, 얼굴 영역만 검출해서 그 부분만 크게 다시 그리는 방식입니다. 검출 모델은 <code node="[object Object]">ultralytics/bbox</code>에 두고, 영역 분할 모델은 <code node="[object Object]">sams</code>에 둡니다. ComfyUI Manager에서 Impact Pack을 설치하면 함께 받을 수 있습니다.</div>
+<h3>Compatibility Rules: Mix Only What Matches</h3>
+<div class="p-element">오류가 나거나 결과가 이상하면 대부분 &quot;계열이 안 맞는&quot; 경우입니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>조합</th><th>되나?</th><th>비고</th></tr></thead><tbody><tr><td>SDXL Checkpoint + SDXL LoRA</td><td>O</td><td>이상적</td></tr><tr><td>SDXL Checkpoint + SD1.5 LoRA</td><td>X</td><td>에러나 의미 없는 결과</td></tr><tr><td>Pony Checkpoint + Illustrious LoRA</td><td>대체로 어색</td><td>둘 다 SDXL 기반이지만 학습 방식이 달라 호환이 낮습니다</td></tr><tr><td>SD1.5 Checkpoint + SDXL ControlNet</td><td>X</td><td>계열 일치 필요</td></tr><tr><td>Flux + SDXL VAE</td><td>X</td><td>Flux는 전용 VAE</td></tr><tr><td>SDXL Checkpoint + 다른 SDXL VAE</td><td>O</td><td>색 문제가 있을 때 교체</td></tr></tbody></table>
+<div class="p-element">에러 메시지로도 짐작할 수 있습니다. <code node="[object Object]">mat1 and mat2 shapes cannot be multiplied</code>, <code node="[object Object]">size mismatch</code> 같은 메시지는 거의 항상 <mark>서로 다른 계열의 모델을 연결했다</mark>는 뜻입니다.</div>
+<h3>VRAM Guide</h3>
+<div class="p-element">ComfyUI는 모델을 필요할 때만 올리고 내리는 식으로 메모리를 아끼기 때문에, 부족해도 느리게나마 도는 경우가 많습니다. 그래도 목표를 정할 때는 아래가 기준이 됩니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>VRAM</th><th>편하게 쓸 수 있는 것</th><th>부족할 때 방법</th></tr></thead><tbody><tr><td>6~8GB</td><td>SD1.5, SDXL (fp16)</td><td>해상도를 낮추고 tiled VAE를 사용</td></tr><tr><td>12GB</td><td>SDXL 전반, Flux fp8, Z-Image Turbo</td><td>Flux GGUF Q5 정도</td></tr><tr><td>16GB</td><td>Flux dev fp8, SD3.5 Large</td><td>영상 모델은 짧은 길이로</td></tr><tr><td>24GB~</td><td>Flux fp16, Qwen-Image, 영상 모델</td><td></td></tr></tbody></table>
+<div class="p-element">부족하면 ① 같은 모델의 fp8·GGUF 버전, ② T5 같은 Text Encoder를 fp8 버전으로, ③ <code node="[object Object]">--lowvram</code> 옵션 순으로 시도합니다. 메모리가 부족해서 OOM(Out Of Memory)이 나는 경우에는 해상도를 낮추는 것이 가장 빠른 해결입니다.</div>
+<h3>Where to Get Models and How to Read a Model Page</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>사이트</th><th>특징</th></tr></thead><tbody><tr><td>Hugging Face</td><td>공식 배포처. Base, 분리형 모델, 공식 workflow가 여기에 있습니다</td></tr><tr><td>Civitai</td><td>커뮤니티 모델. Checkpoint, LoRA가 가장 많고, 예시 이미지로 화풍을 가늠할 수 있습니다</td></tr><tr><td>ComfyUI Manager</td><td>ComfyUI 안에서 모델과 커스텀 노드를 검색하고 설치합니다</td></tr></tbody></table>
+<div class="p-element">Civitai 모델 페이지에서 먼저 볼 항목입니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>항목</th><th>확인할 것</th></tr></thead><tbody><tr><td>Base Model</td><td>SD 1.5, SDXL 1.0, Pony, Illustrious, Flux.1 D 등 계열. 내 LoRA와 맞는지 판단하는 기준입니다</td></tr><tr><td>Type</td><td>Checkpoint, LoRA, VAE, Embedding, ControlNet</td></tr><tr><td>Version 설명</td><td>권장 Sampler, Steps, CFG, Clip skip, VAE</td></tr><tr><td>Trigger Words</td><td>LoRA를 켜는 단어</td></tr><tr><td>License</td><td>상업적 이용 가능 여부</td></tr><tr><td>예시 이미지</td><td>우측 정보 버튼으로 프롬프트와 workflow를 확인할 수 있습니다</td></tr></tbody></table>
+<div class="p-element">받기 전 체크리스트입니다.</div>
+<ul>
+<li><b><code node="[object Object]">.safetensors</code></b>인지 확인합니다.</li>
+<li><b>Base Model</b>이 내가 쓰는 계열과 같은지 봅니다.</li>
+<li><b>fp16, fp8, pruned</b> 중 내 VRAM에 맞는 것을 고릅니다.</li>
+<li><b>라이선스</b>와 출처를 확인합니다. 모르는 곳의 <code node="[object Object]">.ckpt</code>나 <code node="[object Object]">.exe</code>를 같이 주는 파일은 받지 마세요.</li>
+</ul>
+<h3>Troubleshooting</h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>증상</th><th>가능한 원인</th><th>해결</th></tr></thead><tbody><tr><td>모델이 드롭다운에 안 보인다</td><td>폴더 위치가 틀렸거나 새로고침 전</td><td>올바른 폴더에 넣고 <code node="[object Object]">R</code> 키</td></tr><tr><td><code node="[object Object]">mat1 and mat2 shapes...</code> 에러</td><td>서로 다른 계열 연결</td><td>Checkpoint, LoRA, ControlNet의 Base Model을 맞춤</td></tr><tr><td>검은 이미지</td><td>fp16 VAE NaN, 잘못된 VAE</td><td>수정 VAE를 연결하거나 fp32 VAE</td></tr><tr><td>색이 탁하다</td><td>VAE 문제</td><td>권장 VAE 사용</td></tr><tr><td>LoRA를 넣어도 변화가 없다</td><td>트리거 단어 누락, 강도가 낮음, 다른 계열</td><td>트리거 단어 추가, 강도 상향, 계열 확인</td></tr><tr><td>결과가 뭉개지고 이상하다</td><td>해상도가 모델 기본값과 크게 다름</td><td>SDXL은 1024 근처로</td></tr><tr><td>사람이 이상한 형태로 나온다</td><td>CFG가 너무 높음, LoRA 과적용</td><td>CFG와 LoRA 강도 낮춤</td></tr><tr><td>같은 프롬프트인데 Flux에서 negative가 안 먹는다</td><td>Flux dev는 negative를 쓰지 않는 설계</td><td>원하는 것을 긍정문으로 서술</td></tr><tr><td>Out Of Memory</td><td>VRAM 부족</td><td>해상도 축소, fp8/GGUF, <code node="[object Object]">--lowvram</code></td></tr><tr><td>너무 빨리, 이상하게 완성된다</td><td>Turbo/Lightning에 일반 설정(CFG 7, 30 steps) 사용</td><td>steps 4<del>8, CFG 1</del>2로</td></tr></tbody></table>
+<pre><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div></pre>
+<h3>Summary</h3>
+<div class="p-element">이 Post 에서 확인한 것은 다음과 같습니다.</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>주제</th><th>핵심</th></tr></thead><tbody><tr><td>models 폴더</td><td>파일 종류마다 폴더와 노드가 정해져 있고, 새로고침해야 보입니다</td></tr><tr><td>Checkpoint</td><td>Diffusion + CLIP + VAE가 든 올인원, 최근 모델은 분리형이 많습니다</td></tr><tr><td>파일 형식</td><td><code node="[object Object]">.safetensors</code>를 받고, VRAM에 맞춰 fp16 / fp8 / GGUF를 고릅니다</td></tr><tr><td>Base / Fine-tune / Merge</td><td>원본, 한 방향 특화, 가중치 혼합. 초보에게는 인기 merge가 쉽습니다</td></tr><tr><td>Distilled</td><td>Turbo, Lightning, schnell은 적은 steps로 빠르게, 설정이 다릅니다</td></tr><tr><td>모델 계열</td><td>SD1.5, SDXL, Pony / Illustrious, Flux, Z-Image, Qwen-Image, 영상 모델 중 용도와 VRAM으로 고릅니다</td></tr><tr><td>LoRA</td><td>계열 일치, 트리거 단어, 낮은 강도에서 시작합니다</td></tr><tr><td>보조 모델</td><td>VAE, Text Encoder, ControlNet, IP-Adapter, Upscale, Detailer</td></tr><tr><td>호환 규칙</td><td>같은 계열끼리만 섞이고, 에러는 대부분 계열 불일치입니다</td></tr></tbody></table></div><div class="AdCardInPost__AdPostContainer-sc-1daudy3-0 cwuwNH"><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div><div class="AdPostCardRectangle__Container-sc-1dbg5xp-0 latjmm"><article><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9148993622011751" data-ad-slot="6826531982" data-ad-format="auto" data-full-width-responsive="true"></ins></article></div></div><div class="PrevNextCard__Container-sc-1lbexim-0 fYQZEq"><div class="PrevNextCard__ItemContainer-sc-1lbexim-1 jIABko"></div><div class="PrevNextCard__ItemContainer-sc-1lbexim-1 jIABko"><a style="display:flex;text-decoration:none;color:inherit" href="/posts/content/2026-06-09-post-ai-agents-for-beginners-15-browser-use"><div class="PrevNextCard__ItemTitleContainer-sc-1lbexim-3 gdYiud"><span class="PrevNextCard__ItemSpan-sc-1lbexim-4 dsxVXK">Next</span><span class="PrevNextCard__ItemTitleSpan-sc-1lbexim-5 bXDVzN">AI Agents for Beginners - 15. Computer Use Agent (CUA)</span></div><div class="PrevNextCard__ItemIcon-sc-1lbexim-2 bOPzez"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px"><i class="fa-regular fa-angle-right"></i></div></div></a></div></div><section class="Utterances__UtterancesContainer-sc-1e9buob-0 hIPpBH"></section></div></div></main><footer class="background-main"><div class="BlogFooter__ContentContainer-sc-ig5jfo-0 iXeDeJ"><div class="BlogFooter__LogoContainer-sc-ig5jfo-1 dlUmCS"><a href="/about" class="BlogFooter__Logo-sc-ig5jfo-2 iOtQmW">Jooojub</a><div class="BlogFooter__LogoContent-sc-ig5jfo-3 dmAzXF">System S/W engineer</div><div class="BlogFooter__SocialContainer-sc-ig5jfo-4 fdAWcj"><div class="d-flex align-items-center"><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://github.com/jooojub" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="mailto:jooojub@gmail.com" rel="noopener noreferrer nofollow"><svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="envelope" class="svg-inline--fa fa-envelope SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"></path></svg></a><a class="SocialIcons_link_icon_bg__aT9Wz" target="_blank" href="https://www.buymeacoffee.com/jooojub" rel="noopener noreferrer nofollow"><div style="display:inline-block;margin-top:-2px;margin-bottom:-6px" class="SocialIcons_icon__2vRL2 + SocialIcons_link_icon__JUDo2"><i class="fa-regular fa-cup-togo"></i></div></a></div></div></div><div class="BlogFooter__TagsContainer-sc-ig5jfo-5 gwXbHn"><div class="primary-title mb-2">Explore Tags</div><div class="BlogFooter__TagContainer-sc-ig5jfo-6 MpanZ"></div></div><div class="BlogFooter__ArchiveContainer-sc-ig5jfo-7 VtjDo"><div class="bg-transparent"><span class="primary-title">Series</span><div class="Series__SeriesContainer-sc-1h85to6-0 hAtrJu"><ul class="Series__SeriesItemContainer-sc-1h85to6-1 dStELG"></ul></div></div></div><div class="BlogFooter__RecentContainer-sc-ig5jfo-8 kaeWoC"><div class="primary-title mb-2">Recent Post</div><div class="BlogFooter__RecentCardContainer-sc-ig5jfo-9 hSzZws"></div></div></div><div class="BlogFooter__CopyrightContainer-sc-ig5jfo-10 Xtnrk"><div>© 2026. jooojub. All right reserved.</div></div></footer><button data-mode="primary" class="JooojubToBackButton__StyledButton-sc-yixdfa-0 JGeOo"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-left" class="svg-inline--fa fa-arrow-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"></path></svg></button></div></div></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{"fileName":"2026-10-30-post-comfyui-model-guide","title":"ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법","cover":"/assets/posts/ai/comfyui-model-guide.png","tags":["comfyui","stable-diffusion"],"date":"2026-10-30","review":"ComfyUI의 models 폴더에 들어가는 Checkpoint, LoRA, VAE, Text Encoder, ControlNet, Upscale 모델이 각각 무엇인지 정리합니다. Base·Fine-tune·Merge·Turbo 모델의 차이와 SD1.5, SDXL, Pony, Illustrious, Flux 같은 모델 계열별 용도, 호환 규칙, VRAM별 선택 기준을 사용자 관점에서 설명합니다.","description":"A user-focused guide to the model files in ComfyUI: what Checkpoint, LoRA, VAE, text encoder, ControlNet and upscale models are, how base, fine-tuned, merged and distilled models differ, and which model family fits which job.","series":"ai","type":"posts","postKey":"68f6dd46f06b3322c71014e605911302","content":"\n## ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법\n```require\n- ComfyUI: 최신 안정 버전 기준\n- 모델 정보: 2026년 중반 기준 (모델은 빠르게 바뀝니다)\n```\n\n### Introduction\nComfyUI를 처음 켜면 노드는 어떻게든 연결하게 됩니다. 막히는 곳은 그다음입니다. `models` 폴더에는 checkpoint, LoRA, VAE, clip, controlnet 같은 폴더가 줄줄이 있고, Civitai나 Hugging Face에는 이름만 봐서는 뭐가 다른지 모를 모델이 수천 개 있습니다. \"Base\", \"Merge\", \"Turbo\", \"Pony\", \"Illustrious\", \"Flux\" 같은 말도 어디서나 보이지만 설명해 주는 곳은 드뭅니다.\n\n이 글은 모델이 어떻게 학습되는지는 다루지 않습니다. \u003cmark\u003e어떤 파일이 무슨 역할이고, 어떤 상황에 무엇을 골라서, 어디에 넣고 어떻게 쓰는지\u003c/mark\u003e를 사용자 입장에서 정리합니다.\n\n| 질문 | 이 글에서 보는 내용 |\n|---|---|\n| models 폴더의 파일은 각각 뭔가? | 폴더별 역할과 노드 연결 |\n| Checkpoint, Base, Merge는 뭐가 다른가? | 모델의 \"출신\" 구분 |\n| SD1.5, SDXL, Pony, Flux 중 뭘 쓰나? | 계열별 특징과 용도 |\n| LoRA는 어떻게 쓰나? | 강도, 트리거 단어, 호환 |\n| 에러가 나거나 결과가 이상하면? | 호환 규칙과 증상별 원인 |\n\n\n```adcard\n```\n\n### The Big Picture: What Goes Into One Image\n이미지 한 장은 여러 모델 파일이 이어서 일을 한 결과입니다. 각 파일이 파이프라인의 어느 단계를 맡는지만 알아도 폴더 이름이 대부분 이해됩니다.\n\n```mermaid\nflowchart TB\n    A[\"Text Encoder\u003cbr/\u003e(CLIP / T5)\"] --\u003e B[\"Diffusion Model\u003cbr/\u003e(UNet / DiT)\"]\n    L[\"LoRA\"] -.-\u003e B\n    L -.-\u003e A\n    C[\"ControlNet\"] -.-\u003e B\n    B --\u003e D[\"VAE Decode\"]\n    D --\u003e E[\"Upscale Model\"]\n```\n\n| 단계 | 하는 일 | 파일 종류 |\n|---|---|---|\n| 프롬프트 해석 | 글을 모델이 이해하는 숫자로 바꿉니다 | Text Encoder (CLIP, T5) |\n| 그림 만들기 | 노이즈에서 이미지를 조금씩 만들어 갑니다 | Diffusion Model (UNet, DiT) |\n| 보정 | 화풍, 캐릭터, 구도를 바꿉니다 | LoRA, ControlNet, Embedding |\n| 픽셀로 변환 | 내부 표현을 실제 이미지로 풀어냅니다 | VAE |\n| 후처리 | 해상도를 키우고 디테일을 살립니다 | Upscale Model, Detailer |\n\n핵심은 \u003cmark\u003eDiffusion Model이 중심이고, 나머지는 그 모델에 맞춰야 한다\u003c/mark\u003e는 점입니다. 이 규칙은 뒤에서 계속 나옵니다.\n\n### The models Folder Map\n기본 설치에서 모델은 `ComfyUI/models/` 아래에 있습니다. 파일을 넣고 나서 새로고침(`R` 키)하거나 ComfyUI를 다시 켜면 노드의 드롭다운에 나타납니다.\n\n| 폴더 | 들어가는 것 | 쓰는 노드 |\n|---|---|---|\n| `checkpoints` | 올인원 모델 (Diffusion + CLIP + VAE) | Load Checkpoint |\n| `diffusion_models` (예전 `unet`) | Diffusion Model만 따로 쪼갠 파일, GGUF | Load Diffusion Model, UNet Loader |\n| `text_encoders` (예전 `clip`) | CLIP, T5 같은 글 해석 모델 | Load CLIP, DualCLIP Loader |\n| `vae` | VAE 단독 파일 | Load VAE |\n| `loras` | LoRA | Load LoRA |\n| `controlnet` | ControlNet, T2I-Adapter | Load ControlNet Model |\n| `embeddings` | Textual Inversion | 프롬프트에 `embedding:이름` |\n| `upscale_models` | ESRGAN 계열 업스케일러 | Load Upscale Model |\n| `clip_vision` | 이미지를 이해하는 CLIP (IP-Adapter, Redux용) | Load CLIP Vision |\n| `ipadapter` | IP-Adapter (커스텀 노드 필요) | IPAdapter 노드 |\n| `ultralytics/bbox`, `sams` | 얼굴 검출, 영역 분할 (Impact Pack용) | Detector, SAM Loader |\n\n\u003e 이미 Automatic1111이나 다른 UI를 쓰고 있다면 모델을 복사하지 않아도 됩니다. ComfyUI 폴더의 `extra_model_paths.yaml.example`을 `extra_model_paths.yaml`로 바꾸고 경로를 적으면 같은 폴더를 공유합니다. 수십 GB 모델을 두 벌로 두지 않아도 됩니다.\n\n### Checkpoint: The All-in-One File\nCheckpoint는 가장 흔히 받는 파일입니다. 안에 Diffusion Model, Text Encoder, VAE가 한 파일로 들어 있어서, \u003cmark\u003eLoad Checkpoint 노드 하나가 MODEL, CLIP, VAE 세 가지 출력을 모두 내줍니다\u003c/mark\u003e. 처음에는 이 노드 하나에 KSampler와 VAE Decode만 연결하면 이미지가 나옵니다.\n\n| Load Checkpoint 출력 | 연결하는 곳 |\n|---|---|\n| MODEL | KSampler (LoRA를 쓰면 LoRA를 거쳐서) |\n| CLIP | CLIP Text Encode (프롬프트 입력 노드) |\n| VAE | VAE Decode |\n\n#### Checkpoint vs split models\nSD1.5와 SDXL은 보통 올인원 Checkpoint로 배포됩니다. 반면 Flux, SD3.5, Qwen-Image, Wan 같은 최근 모델은 \u003cmark\u003e부품별로 쪼개서 배포\u003c/mark\u003e하는 경우가 많습니다. 모델이 커서 Text Encoder만 몇 GB이기 때문입니다.\n\n| 구분 | 올인원 (Checkpoint) | 분리형 (split) |\n|---|---|---|\n| 파일 | 1개 | Diffusion Model + Text Encoder + VAE |\n| 폴더 | `checkpoints` | `diffusion_models`, `text_encoders`, `vae` |\n| 노드 | Load Checkpoint | Load Diffusion Model + Load CLIP + Load VAE |\n| 장점 | 간단하다 | Text Encoder를 다른 정밀도로 바꾸거나 여러 모델이 공유할 수 있다 |\n| 예 | SD1.5, SDXL 계열 | Flux, SD3.5, Z-Image, Qwen-Image, Wan |\n\n분리형은 공식 workflow(예제 JSON)를 먼저 받아서 쓰는 것이 가장 쉽습니다. 노드 연결과 필요한 파일 이름이 이미 정해져 있기 때문입니다. ComfyUI의 `Workflow → Browse Templates`에 모델별 예제가 들어 있습니다.\n\n### File Formats and Precision\n같은 모델이라도 파일 이름 뒤에 붙은 꼬리표에 따라 크기와 안전성이 달라집니다.\n\n#### Extension\n| 확장자 | 설명 | 권장 |\n|---|---|---|\n| `.safetensors` | 숫자(텐서)만 담은 안전한 형식 | 항상 이것을 받으세요 |\n| `.ckpt` | Python pickle 기반이라 열 때 코드가 실행될 수 있습니다 | 가능하면 피하세요 |\n| `.gguf` | 양자화한 큰 모델용 형식 (커스텀 노드 `ComfyUI-GGUF` 필요) | VRAM이 부족할 때 |\n| `.pt`, `.pth`, `.bin` | 구형 형식, 업스케일러 등에 남아 있습니다 | 출처를 믿을 때만 |\n\n#### Precision (fp32, fp16, bf16, fp8)\n정밀도는 숫자 하나를 몇 비트로 저장하느냐입니다. 비트가 적을수록 파일이 작고 VRAM을 덜 쓰지만 품질이 조금 떨어질 수 있습니다.\n\n| 표기 | 의미 | 특징 |\n|---|---|---|\n| fp32 | 32비트 | 가장 크고 거의 쓰지 않습니다 |\n| fp16, bf16 | 16비트 | 기본값입니다. 품질 손실이 사실상 없습니다 |\n| fp8 (`e4m3fn`, `e5m2`) | 8비트 | 크기가 절반입니다. 눈으로 구분이 어려운 경우가 많습니다 |\n| Q8, Q5, Q4 (GGUF) | 양자화 | 숫자가 작을수록 작고 품질이 조금씩 떨어집니다 |\n\n체크포인트 이름의 `pruned`, `ema`도 자주 보입니다. 학습할 때만 필요한 가중치를 덜어낸 파일이 `pruned`이고, 생성만 하는 사용자는 이쪽을 받으면 됩니다. 대략 SD1.5 fp16은 2GB, SDXL fp16은 6~7GB 정도입니다.\n\n### Base, Fine-tune, Merge: Where a Model Comes From\nCivitai의 체크포인트는 \"어떻게 만들어졌는지\"로 크게 세 종류가 있습니다. 이 구분을 알면 모델 설명을 읽을 때 훨씬 편합니다.\n\n| 종류 | 만든 방식 | 특징 | 예 |\n|---|---|---|---|\n| Base (원본) | 회사가 처음부터 대규모로 학습 | 범용입니다. 특정 화풍이 없어서 다른 모델의 뿌리가 됩니다 | SD1.5, SDXL 1.0, Flux.1 dev |\n| Fine-tune | Base에 추가 데이터를 학습 | 한 방향(애니, 실사, 특정 소재)에 특화됩니다 | Pony Diffusion, Illustrious XL |\n| Merge | 여러 모델의 가중치를 비율로 섞음 | 학습 없이 섞어서 취향 맞는 결과를 만듭니다 | Civitai의 인기 모델 대부분 |\n\n#### Merge는 나쁜 것인가\n아닙니다. 다만 성격을 알아야 합니다.\n\n- \u003cb\u003e장점:\u003c/b\u003e 여러 모델의 장점을 섞어서 결과가 바로 예쁘게 나옵니다.\n- \u003cb\u003e단점:\u003c/b\u003e 어떤 모델이 얼마나 섞였는지 불투명하고, 프롬프트 반응이 모델마다 다릅니다. 라이선스도 섞입니다.\n- \u003cb\u003e팁:\u003c/b\u003e 초보에게는 인기 많은 merge가 오히려 쉽습니다. 고급 사용자는 Base나 Fine-tune에 LoRA를 얹어서 직접 조절합니다.\n\n\n```adcard\n```\n\n#### Distilled: Turbo, Lightning, Hyper, schnell\n\"몇 단계 만에 그리게 줄인\" 모델들입니다. 원래 20~30 steps가 필요한 모델을 1~8 steps로 줄였습니다.\n\n| 이름 | 보통 steps | CFG | 비고 |\n|---|---|---|---|\n| SDXL Turbo, SD Turbo | 1~4 | 1 전후 | 속도 위주, 해상도 낮음 |\n| SDXL-Lightning, Hyper-SD | 2~8 | 1~2 | LoRA로도 배포되어 아무 SDXL 모델에 얹을 수 있습니다 |\n| LCM | 4~8 | 1~2 | LoRA를 얹는 방식, 설정이 까다롭습니다 |\n| Flux.1 schnell | 1~4 | 1 | 라이선스가 자유롭습니다 (Apache 2.0) |\n\n빠르게 구도를 훑어볼 때는 좋지만, 디테일과 프롬프트 충실도는 일반 모델이 보통 더 낫습니다. 구도를 Turbo로 잡고 마지막만 일반 모델로 올리는 식으로 나눠 쓰기도 합니다.\n\n#### Other labels you will see\n| 라벨 | 뜻 |\n|---|---|\n| Inpainting | 이미지 일부를 다시 그리기용 모델. 요즘은 일반 모델로도 inpaint가 되어서 꼭 필요하지는 않습니다 |\n| Refiner | SDXL 후반부를 다듬는 보조 모델. 지금은 거의 쓰지 않습니다 |\n| Edit / Kontext | 이미지를 주고 \"이렇게 바꿔 줘\"라고 지시하는 편집용 모델 |\n| NSFW / SFW | 학습 데이터 성향. 모델 페이지의 안내와 라이선스를 확인하세요 |\n\n### Model Families: Which One Should I Use\n이름이 아무리 많아도, 큰 줄기는 \"어떤 Base에서 갈라졌는가\"입니다. \u003cmark\u003e같은 줄기끼리만 LoRA, ControlNet, VAE를 공유\u003c/mark\u003e합니다.\n\n| 계열 | 기본 해상도 | 프롬프트 스타일 | VRAM 기준 | 잘하는 것 |\n|---|---|---|---|---|\n| SD 1.5 | 512 | 짧은 태그 + 문장 | 4~6GB | 가볍고 생태계가 가장 큽니다. 구형 LoRA와 ControlNet이 많습니다 |\n| SDXL | 1024 | 태그 + 문장 | 8GB~ | 균형 잡힌 범용. 선택지가 가장 많습니다 |\n| Pony / Illustrious / NoobAI | 1024 | 태그 위주 | 8GB~ | 애니·일러스트, 캐릭터 이해 (SDXL 기반) |\n| Flux.1 (dev, schnell) | 1024 이상 | 자연어 문장 | 12GB~ (fp8, GGUF로 절감) | 사실적인 묘사, 손과 글자, 긴 프롬프트 이해 |\n| SD 3.5 (Large, Medium) | 1024 | 자연어 | 8GB~ | 프롬프트 충실도, 라이선스는 약관 확인 |\n| Z-Image (Turbo) | 1024 이상 | 자연어 | 12~16GB | 작은 모델로 빠르게(8 steps 전후) 사실적인 사진, 한글·중국어·영어 글자 |\n| Qwen-Image | 1024 이상 | 자연어 | 큼 | 이미지 속 글자(한글 포함) 표현이 강점 |\n| Flux.1 Kontext, Qwen-Image-Edit | 입력 이미지 기준 | 지시문 | 큼 | 기존 이미지를 지시대로 편집 |\n| Wan, HunyuanVideo, LTX-Video | 영상 | 자연어 | 큼 | 텍스트/이미지 → 영상 |\n\n#### 상황별로 고르기\n| 하고 싶은 것 | 추천 |\n|---|---|\n| 처음이라 우선 뭐든 돌려 보고 싶다 | SDXL 계열의 인기 merge 하나 |\n| 애니, 일러스트, 특정 캐릭터 | Illustrious / NoobAI 계열 (또는 Pony) |\n| 사진처럼 사실적인 인물, 제품 | Flux.1 dev 계열 또는 SDXL 실사 fine-tune |\n| 이미지 안에 글자를 넣어야 한다 | Flux, Qwen-Image 또는 Z-Image |\n| 큰 GPU 없이 사진 느낌을 빠르게 | Z-Image Turbo (8 steps 전후) |\n| VRAM이 8GB 이하 | SD1.5, SDXL (fp16), 또는 Flux GGUF Q4~Q5 |\n| 기존 사진을 지시대로 수정 | Flux.1 Kontext, Qwen-Image-Edit |\n| 짧은 영상 | Wan 계열 |\n| 상업적으로 쓴다 | 모델 카드의 라이선스부터 확인 (Flux dev는 비상업 조건) |\n\n#### 계열별 사용 팁\n- \u003cb\u003eSD1.5:\u003c/b\u003e 구형이라 해상도를 512 근처로 두고, 크게 뽑으려면 업스케일로 올립니다. 애니 계열은 Clip skip 2를 요구하는 경우가 많습니다.\n- \u003cb\u003eSDXL:\u003c/b\u003e 1024x1024 근처(1216x832, 832x1216 등 비슷한 면적)로 뽑습니다. 해상도가 크게 벗어나면 구도가 깨집니다.\n- \u003cb\u003ePony:\u003c/b\u003e 품질 태그(`score_9, score_8_up, score_7_up` 등)를 앞에 붙이는 방식이 필요합니다.\n- \u003cb\u003eIllustrious / NoobAI:\u003c/b\u003e Danbooru 태그 위주로 씁니다. 모델 카드가 추천하는 품질 태그를 따르세요.\n- \u003cb\u003eZ-Image Turbo:\u003c/b\u003e 분리형이라 Diffusion Model, Text Encoder(Qwen 계열 LLM), VAE를 따로 받습니다. steps는 8 전후, CFG는 1 전후로 두고 문장으로 설명합니다. 공식 템플릿 workflow가 가장 쉽습니다.\n- \u003cb\u003eFlux:\u003c/b\u003e 문장으로 설명합니다. CFG는 1로 두고 FluxGuidance 노드로 강도(3.5 전후)를 조절합니다. dev는 negative prompt가 사실상 듣지 않습니다.\n\n모델마다 권장 설정이 다르니, \u003cmark\u003e모델 상세 페이지의 Sampler, Steps, CFG, Clip skip 안내를 먼저 따라 하는 것\u003c/mark\u003e이 가장 빠릅니다.\n\n| 계열 | Steps | CFG | 샘플러 예 |\n|---|---|---|---|\n| Z-Image Turbo | 8 전후 | 1 | 모델 카드 안내 |\n| SD1.5 / SDXL | 20~30 | 5~8 | `dpmpp_2m` + `karras`, `euler_ancestral` |\n| Illustrious / Pony | 25~30 | 4~7 | `euler_ancestral`, `dpmpp_2m` |\n| Flux dev | 20~30 | 1 (+ FluxGuidance 3.5) | `euler` + `simple` |\n| Flux schnell | 1~4 | 1 | `euler` + `simple` |\n| Turbo / Lightning | 2~8 | 1~2 | 모델 카드 안내 |\n\n### LoRA: Small Add-on Files\nLoRA는 Checkpoint 위에 얹는 작은 보정 파일입니다. 용량이 수십~수백 MB라서 모델 전체를 받지 않고도 특정 캐릭터, 화풍, 옷, 포즈를 추가할 수 있습니다.\n\n| LoRA 종류 | 용도 | 예 |\n|---|---|---|\n| Character | 특정 인물, 캐릭터 | 얼굴과 의상 유지 |\n| Style | 화풍, 색감 | 수채화, 특정 작가풍 |\n| Concept | 특정 소재, 사물, 포즈 | 특정 옷, 배경 |\n| Detail / Slider | 디테일, 나이, 표정 같은 한 축의 조절 | 슬라이더 LoRA |\n| Speed | 적은 steps로 그리게 함 | Lightning, Hyper, LCM |\n\n#### How to use it in ComfyUI\n1. 파일을 `models/loras`에 넣고 새로고침합니다.\n2. Load LoRA 노드를 Load Checkpoint 뒤에 연결합니다. MODEL과 CLIP을 받아서 다시 MODEL과 CLIP을 내보냅니다.\n3. 나온 MODEL은 KSampler로, CLIP은 CLIP Text Encode로 연결합니다.\n4. 여러 개를 쓰려면 Load LoRA 노드를 이어서 붙입니다.\n\n| 노드 입력 | 의미 | 처음 값 |\n|---|---|---|\n| strength_model | 그림 생성 모델에 주는 영향 | 0.6 ~ 1.0 |\n| strength_clip | 글 해석에 주는 영향 | strength_model과 같게, 문제가 있으면 낮춤 |\n\nFlux나 영상 모델처럼 Text Encoder를 건드리지 않는 경우는 `LoraLoaderModelOnly` 노드를 씁니다.\n\n#### LoRA를 쓸 때 꼭 알아야 할 것\n- \u003cb\u003e계열이 맞아야 합니다.\u003c/b\u003e SD1.5용 LoRA는 SDXL에 못 씁니다. Flux용은 Flux에만 됩니다.\n- \u003cb\u003e트리거 단어를 확인하세요.\u003c/b\u003e 많은 LoRA가 프롬프트에 특정 단어를 써야 작동합니다. 모델 페이지에 적혀 있습니다.\n- \u003cb\u003e강도는 낮게 시작하세요.\u003c/b\u003e 1.0에서 얼굴이 뭉개지거나 색이 탁해지면 0.6~0.8로 낮춥니다.\n- \u003cb\u003e여러 개를 겹치면 서로 싸웁니다.\u003c/b\u003e 합이 1.5~2를 넘으면 결과가 깨지기 쉽습니다.\n- \u003cb\u003e같은 SDXL이라도 Pony용 LoRA를 Illustrious에, 또는 반대로 쓰면\u003c/b\u003e 잘 안 맞는 경우가 많습니다. 학습한 모델 계열을 확인하세요.\n\n### VAE, Text Encoder, Embedding\n#### VAE\nVAE는 모델 내부의 압축된 표현(latent)을 실제 픽셀 이미지로 바꿔 주는 부품입니다. 대부분의 Checkpoint는 VAE가 들어 있어서 따로 받을 필요가 없습니다. 증상이 있을 때만 별도 VAE를 연결합니다.\n\n| 증상 | 원인과 해결 |\n|---|---|\n| 색이 탁하고 회색빛이다 | 내장 VAE가 약한 모델입니다. 모델이 권장하는 VAE를 Load VAE로 연결합니다 |\n| SDXL에서 검은 이미지 | fp16 NaN 문제입니다. `sdxl-vae-fp16-fix` 같은 수정 VAE를 사용합니다 |\n| Flux/SD3에서 색이 이상하다 | Flux는 전용 `ae.safetensors`를 써야 합니다. SD1.5, SDXL의 VAE와 호환되지 않습니다 |\n\n\n```adcard\n```\n\n#### Text Encoder (CLIP, T5)\n프롬프트를 모델이 이해하는 숫자로 바꿉니다. 계열마다 쓰는 조합이 다릅니다.\n\n| 계열 | Text Encoder |\n|---|---|\n| SD1.5 | CLIP-L |\n| SDXL | CLIP-L + CLIP-G |\n| Flux, SD3.5 | CLIP-L + T5-XXL (긴 문장 이해) |\n| Z-Image, Qwen-Image | Qwen 계열 LLM (한글 등 다국어 이해) |\n\nT5-XXL은 fp16 기준 약 9~10GB로 커서, 메모리가 부족하면 fp8 버전을 쓰기도 합니다. SD1.5 계열 애니 모델은 `CLIP Set Last Layer` 노드를 -2로 두면 Clip skip 2와 같습니다.\n\n#### Embedding (Textual Inversion)\n아주 작은 파일(수십 KB)로, 특정 개념을 하나의 단어처럼 만들어 줍니다. `models/embeddings`에 넣고 프롬프트에 `embedding:파일이름`으로 부릅니다. 예전에는 `EasyNegative` 같은 negative embedding이 흔했지만, 지금은 LoRA와 최신 모델에 밀려 쓰임이 줄었습니다.\n\n### ControlNet, IP-Adapter and Upscalers\n#### ControlNet: Control the Composition\nControlNet은 참고 이미지에서 윤곽선, 깊이, 포즈 같은 정보를 뽑아서 그림의 구도를 고정하는 모델입니다. 전처리(Preprocessor) 노드는 `comfyui_controlnet_aux` 커스텀 노드에 들어 있습니다.\n\n| 종류 | 입력으로 쓰는 정보 | 이럴 때 |\n|---|---|---|\n| Canny | 외곽선 | 사진의 형태를 그대로 두고 화풍만 바꿀 때 |\n| Depth | 거리 정보 | 공간감과 원근을 유지할 때 |\n| OpenPose | 사람 뼈대 | 포즈를 지정할 때 |\n| Lineart / Scribble | 선화, 낙서 | 스케치를 완성작으로 만들 때 |\n| Tile | 원본 질감 | 업스케일하며 디테일을 살릴 때 |\n\nControlNet도 \u003cmark\u003e계열이 맞아야 합니다\u003c/mark\u003e. SD1.5용을 SDXL에 쓸 수 없고, Flux는 전용 ControlNet 또는 Union 모델을 씁니다.\n\n#### IP-Adapter and Redux: Image as a Prompt\n글 대신 참고 이미지로 스타일이나 인물의 느낌을 가져옵니다. IP-Adapter는 커스텀 노드(`ComfyUI_IPAdapter_plus`)와 `clip_vision` 모델이 필요하고, Flux는 Redux가 비슷한 역할을 합니다. LoRA를 학습하기 부담스러울 때 좋은 대안입니다.\n\n#### Upscale Models\n`Load Upscale Model` → `Upscale Image (using Model)`로 쓰는 ESRGAN 계열 모델입니다. 학습 없이 빠르게 해상도를 2~4배로 키웁니다. 애니는 애니용, 사진은 사진용을 고르는 식으로 화풍에 맞춰 선택합니다.\n\n| 방식 | 설명 | 특징 |\n|---|---|---|\n| Upscale Model | 이미지 자체를 확대 | 빠르고 결과가 안정적입니다 |\n| Latent Upscale + 재샘플링 | latent를 키운 뒤 다시 그림 | 디테일이 새로 생기지만 denoise가 높으면 모양이 변합니다 |\n| 두 방식을 조합 | 모델로 키운 뒤 낮은 denoise(0.2~0.4)로 한 번 더 | 가장 많이 쓰는 방식입니다 |\n\n#### Detailer (Impact Pack)\n얼굴이 작게 나와 뭉개질 때, 얼굴 영역만 검출해서 그 부분만 크게 다시 그리는 방식입니다. 검출 모델은 `ultralytics/bbox`에 두고, 영역 분할 모델은 `sams`에 둡니다. ComfyUI Manager에서 Impact Pack을 설치하면 함께 받을 수 있습니다.\n\n### Compatibility Rules: Mix Only What Matches\n오류가 나거나 결과가 이상하면 대부분 \"계열이 안 맞는\" 경우입니다.\n\n| 조합 | 되나? | 비고 |\n|---|---|---|\n| SDXL Checkpoint + SDXL LoRA | O | 이상적 |\n| SDXL Checkpoint + SD1.5 LoRA | X | 에러나 의미 없는 결과 |\n| Pony Checkpoint + Illustrious LoRA | 대체로 어색 | 둘 다 SDXL 기반이지만 학습 방식이 달라 호환이 낮습니다 |\n| SD1.5 Checkpoint + SDXL ControlNet | X | 계열 일치 필요 |\n| Flux + SDXL VAE | X | Flux는 전용 VAE |\n| SDXL Checkpoint + 다른 SDXL VAE | O | 색 문제가 있을 때 교체 |\n\n에러 메시지로도 짐작할 수 있습니다. `mat1 and mat2 shapes cannot be multiplied`, `size mismatch` 같은 메시지는 거의 항상 \u003cmark\u003e서로 다른 계열의 모델을 연결했다\u003c/mark\u003e는 뜻입니다.\n\n### VRAM Guide\nComfyUI는 모델을 필요할 때만 올리고 내리는 식으로 메모리를 아끼기 때문에, 부족해도 느리게나마 도는 경우가 많습니다. 그래도 목표를 정할 때는 아래가 기준이 됩니다.\n\n| VRAM | 편하게 쓸 수 있는 것 | 부족할 때 방법 |\n|---|---|---|\n| 6~8GB | SD1.5, SDXL (fp16) | 해상도를 낮추고 tiled VAE를 사용 |\n| 12GB | SDXL 전반, Flux fp8, Z-Image Turbo | Flux GGUF Q5 정도 |\n| 16GB | Flux dev fp8, SD3.5 Large | 영상 모델은 짧은 길이로 |\n| 24GB~ | Flux fp16, Qwen-Image, 영상 모델 | |\n\n부족하면 ① 같은 모델의 fp8·GGUF 버전, ② T5 같은 Text Encoder를 fp8 버전으로, ③ `--lowvram` 옵션 순으로 시도합니다. 메모리가 부족해서 OOM(Out Of Memory)이 나는 경우에는 해상도를 낮추는 것이 가장 빠른 해결입니다.\n\n### Where to Get Models and How to Read a Model Page\n| 사이트 | 특징 |\n|---|---|\n| Hugging Face | 공식 배포처. Base, 분리형 모델, 공식 workflow가 여기에 있습니다 |\n| Civitai | 커뮤니티 모델. Checkpoint, LoRA가 가장 많고, 예시 이미지로 화풍을 가늠할 수 있습니다 |\n| ComfyUI Manager | ComfyUI 안에서 모델과 커스텀 노드를 검색하고 설치합니다 |\n\nCivitai 모델 페이지에서 먼저 볼 항목입니다.\n\n| 항목 | 확인할 것 |\n|---|---|\n| Base Model | SD 1.5, SDXL 1.0, Pony, Illustrious, Flux.1 D 등 계열. 내 LoRA와 맞는지 판단하는 기준입니다 |\n| Type | Checkpoint, LoRA, VAE, Embedding, ControlNet |\n| Version 설명 | 권장 Sampler, Steps, CFG, Clip skip, VAE |\n| Trigger Words | LoRA를 켜는 단어 |\n| License | 상업적 이용 가능 여부 |\n| 예시 이미지 | 우측 정보 버튼으로 프롬프트와 workflow를 확인할 수 있습니다 |\n\n받기 전 체크리스트입니다.\n\n- \u003cb\u003e`.safetensors`\u003c/b\u003e인지 확인합니다.\n- \u003cb\u003eBase Model\u003c/b\u003e이 내가 쓰는 계열과 같은지 봅니다.\n- \u003cb\u003efp16, fp8, pruned\u003c/b\u003e 중 내 VRAM에 맞는 것을 고릅니다.\n- \u003cb\u003e라이선스\u003c/b\u003e와 출처를 확인합니다. 모르는 곳의 `.ckpt`나 `.exe`를 같이 주는 파일은 받지 마세요.\n\n### Troubleshooting\n| 증상 | 가능한 원인 | 해결 |\n|---|---|---|\n| 모델이 드롭다운에 안 보인다 | 폴더 위치가 틀렸거나 새로고침 전 | 올바른 폴더에 넣고 `R` 키 |\n| `mat1 and mat2 shapes...` 에러 | 서로 다른 계열 연결 | Checkpoint, LoRA, ControlNet의 Base Model을 맞춤 |\n| 검은 이미지 | fp16 VAE NaN, 잘못된 VAE | 수정 VAE를 연결하거나 fp32 VAE |\n| 색이 탁하다 | VAE 문제 | 권장 VAE 사용 |\n| LoRA를 넣어도 변화가 없다 | 트리거 단어 누락, 강도가 낮음, 다른 계열 | 트리거 단어 추가, 강도 상향, 계열 확인 |\n| 결과가 뭉개지고 이상하다 | 해상도가 모델 기본값과 크게 다름 | SDXL은 1024 근처로 |\n| 사람이 이상한 형태로 나온다 | CFG가 너무 높음, LoRA 과적용 | CFG와 LoRA 강도 낮춤 |\n| 같은 프롬프트인데 Flux에서 negative가 안 먹는다 | Flux dev는 negative를 쓰지 않는 설계 | 원하는 것을 긍정문으로 서술 |\n| Out Of Memory | VRAM 부족 | 해상도 축소, fp8/GGUF, `--lowvram` |\n| 너무 빨리, 이상하게 완성된다 | Turbo/Lightning에 일반 설정(CFG 7, 30 steps) 사용 | steps 4~8, CFG 1~2로 |\n\n\n```adcard\n```\n\n### Summary\n이 Post 에서 확인한 것은 다음과 같습니다.\n\n| 주제 | 핵심 |\n|---|---|\n| models 폴더 | 파일 종류마다 폴더와 노드가 정해져 있고, 새로고침해야 보입니다 |\n| Checkpoint | Diffusion + CLIP + VAE가 든 올인원, 최근 모델은 분리형이 많습니다 |\n| 파일 형식 | `.safetensors`를 받고, VRAM에 맞춰 fp16 / fp8 / GGUF를 고릅니다 |\n| Base / Fine-tune / Merge | 원본, 한 방향 특화, 가중치 혼합. 초보에게는 인기 merge가 쉽습니다 |\n| Distilled | Turbo, Lightning, schnell은 적은 steps로 빠르게, 설정이 다릅니다 |\n| 모델 계열 | SD1.5, SDXL, Pony / Illustrious, Flux, Z-Image, Qwen-Image, 영상 모델 중 용도와 VRAM으로 고릅니다 |\n| LoRA | 계열 일치, 트리거 단어, 낮은 강도에서 시작합니다 |\n| 보조 모델 | VAE, Text Encoder, ControlNet, IP-Adapter, Upscale, Detailer |\n| 호환 규칙 | 같은 계열끼리만 섞이고, 에러는 대부분 계열 불일치입니다 |\n"},"__N_SSG":true},"page":"/posts/content/[PostView]","query":{"PostView":"2026-10-30-post-comfyui-model-guide"},"buildId":"rogmkhSqFcxp9uf2AY7yf","isFallback":false,"gsp":true,"scriptLoader":[]}</script></body></html>
