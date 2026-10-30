@@ -362,6 +362,7 @@
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/comfyui"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/comfyui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/comfyui"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/dessert</loc>
@@ -543,6 +544,7 @@
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/stable-diffusion"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/stable-diffusion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/stable-diffusion"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/tags/stay</loc>
@@ -853,6 +855,13 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/cafe"/>
   </url>
   <url>
+    <loc>https://jooojub.github.io/en/tags/comfyui</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/comfyui"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/comfyui"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/comfyui"/>
+  </url>
+  <url>
     <loc>https://jooojub.github.io/en/tags/dessert</loc>
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/dessert"/>
@@ -1026,6 +1035,13 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/spot"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/spot"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/spot"/>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/tags/stable-diffusion</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/tags/stable-diffusion"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/tags/stable-diffusion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/tags/stable-diffusion"/>
   </url>
   <url>
     <loc>https://jooojub.github.io/en/tags/stay</loc>
@@ -1454,6 +1470,7 @@
     <lastmod>2026-10-27</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-27-post-linux-drm-02-register"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-27-post-linux-drm-02-register"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-27-post-linux-drm-02-register"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-02-register.png</image:loc>
       <image:title>Linux DRM - 코어 초기화와 드라이버 등록</image:title>
@@ -1464,6 +1481,7 @@
     <lastmod>2026-10-28</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-03-open-ioctl.png</image:loc>
       <image:title>Linux DRM - open()과 ioctl() 코드 흐름</image:title>
@@ -1474,6 +1492,7 @@
     <lastmod>2026-10-29</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-04-gem-dumb-mmap.png</image:loc>
       <image:title>Linux DRM - GEM: handle, dumb buffer, mmap</image:title>
@@ -1484,6 +1503,7 @@
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-30-post-comfyui-model-guide"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/ai/comfyui-model-guide.png</image:loc>
       <image:title>ComfyUI 모델 파일 정리 - Checkpoint, LoRA, VAE 그리고 모델 고르는 법</image:title>
@@ -1494,6 +1514,7 @@
     <lastmod>2026-10-30</lastmod>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf"/>
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-05-prime-dma-buf.png</image:loc>
       <image:title>Linux DRM - PRIME과 dma-buf로 버퍼 공유하기</image:title>
@@ -5370,6 +5391,61 @@
     <image:image>
       <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-01-architecture.png</image:loc>
       <image:title>Linux DRM - Architecture and the Big Picture</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-10-27-post-linux-drm-02-register</loc>
+    <lastmod>2026-10-27</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-27-post-linux-drm-02-register"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-27-post-linux-drm-02-register"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-27-post-linux-drm-02-register"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-02-register.png</image:loc>
+      <image:title>Linux DRM - Core Initialization and Driver Registration</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-10-28-post-linux-drm-03-open-ioctl</loc>
+    <lastmod>2026-10-28</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-28-post-linux-drm-03-open-ioctl"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-03-open-ioctl.png</image:loc>
+      <image:title>Linux DRM - Code Flow of open() and ioctl()</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-29-post-linux-drm-04-gem-dumb-mmap"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-04-gem-dumb-mmap.png</image:loc>
+      <image:title>Linux DRM - GEM: handle, dumb buffer, mmap</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-10-30-post-comfyui-model-guide</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-30-post-comfyui-model-guide"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-30-post-comfyui-model-guide"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/ai/comfyui-model-guide.png</image:loc>
+      <image:title>ComfyUI Model Guide - Checkpoint, LoRA, VAE, and How to Choose the Right Model</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://jooojub.github.io/en/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf</loc>
+    <lastmod>2026-10-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jooojub.github.io/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://jooojub.github.io/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jooojub.github.io/en/posts/content/2026-10-30-post-linux-drm-05-prime-dma-buf"/>
+    <image:image>
+      <image:loc>https://jooojub.github.io/assets/posts/linux/linux-drm-05-prime-dma-buf.png</image:loc>
+      <image:title>Linux DRM - Sharing Buffers with PRIME and dma-buf</image:title>
     </image:image>
   </url>
   <url>
