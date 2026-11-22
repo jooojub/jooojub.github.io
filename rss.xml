@@ -5,7 +5,7 @@
     <link>https://jooojub.github.io</link>
     <description>Jooojub's Blog</description>
     <language>ko</language>
-    <lastBuildDate>Sat, 21 Nov 2026 15:22:07 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 22 Nov 2026 13:04:24 GMT</lastBuildDate>
     <atom:link href="https://jooojub.github.io/rss.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -63,6 +63,48 @@
       <description><![CDATA[Nov 14, 2026 — 35 AI articles summarized]]></description>
       <pubDate>Sun, 15 Nov 2026 00:00:00 GMT</pubDate>
       <guid>https://jooojub.github.io/insights/content/2026-11-15-AI-web-summary</guid>
+    </item>
+    <item>
+      <title>콜렉티브커피클럽</title>
+      <link>https://jooojub.github.io/snippets/content/2026-11-14-location-cafe-collective-coffee-club</link>
+      <description><![CDATA[콜렉티브커피클럽]]></description>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-11-14-location-cafe-collective-coffee-club</guid>
+    </item>
+    <item>
+      <title>사계절왕호떡</title>
+      <link>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-four-seasons-king-hotteok</link>
+      <description><![CDATA[사계절왕호떡]]></description>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-four-seasons-king-hotteok</guid>
+    </item>
+    <item>
+      <title>탁오네</title>
+      <link>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-tak-o-ne</link>
+      <description><![CDATA[탁오네]]></description>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-tak-o-ne</guid>
+    </item>
+    <item>
+      <title>Collective Coffee Club</title>
+      <link>https://jooojub.github.io/snippets/content/2026-11-14-location-cafe-collective-coffee-club</link>
+      <description><![CDATA[Collective Coffee Club]]></description>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-11-14-location-cafe-collective-coffee-club</guid>
+    </item>
+    <item>
+      <title>Four Seasons King Hotteok</title>
+      <link>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-four-seasons-king-hotteok</link>
+      <description><![CDATA[Four Seasons King Hotteok]]></description>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-four-seasons-king-hotteok</guid>
+    </item>
+    <item>
+      <title>Takone</title>
+      <link>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-tak-o-ne</link>
+      <description><![CDATA[Takone]]></description>
+      <pubDate>Sat, 14 Nov 2026 00:00:00 GMT</pubDate>
+      <guid>https://jooojub.github.io/snippets/content/2026-11-14-location-restaurant-tak-o-ne</guid>
     </item>
     <item>
       <title>Daily Briefing</title>
